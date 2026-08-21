@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import {
   Fraunces,
   Instrument_Sans,
@@ -134,6 +135,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
+        <Analytics />
       </body>
     </html>
   );
