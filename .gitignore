@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+.vercel
+.yarn/install-state.gz
+*.log
+.env*
+!.env.example
+tsconfig.tsbuildinfo

@@ -1,0 +1,295 @@
+{
+  "identity": {
+    "displayName": "Tiago Castro",
+    "fullName": "Tiago Gonçalves de Castro",
+    "initials": "TG",
+    "wordmarkFirst": "TIAGO",
+    "wordmarkMiddle": "G",
+    "wordmarkLast": "CASTRO",
+    "wordmark": "TIAGO G CASTRO",
+    "role": "Desenvolvedor Full Stack",
+    "email": "tiagogcastro1@gmail.com",
+    "phone": "+55 21 96428-4144",
+    "city": "Rio de Janeiro",
+    "country": "Brasil",
+    "countryCode": "BR"
+  },
+  "structuredData": {
+    "language": "pt-BR",
+    "openGraphLocale": "pt_BR"
+  },
+  "metadata": {
+    "title": "Tiago Castro | Desenvolvedor Full Stack",
+    "description": "Desenvolvedor Full Stack com mais de 6 anos construindo e evoluindo produtos, integrações, dados, SEO e infraestrutura em cloud."
+  },
+  "accessibility": {
+    "skip": "Pular para o conteúdo",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "externalLink": "Abre em uma nova aba"
+  },
+  "common": {
+    "current": "atual",
+    "viewExperience": "Ver experiência",
+    "talkToMe": "Falar comigo",
+    "downloadResume": "Baixar currículo",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "email": "E-mail",
+    "whatsapp": "WhatsApp",
+    "website": "Visitar projeto",
+    "npm": "Ver no npm",
+    "source": "Ver código",
+    "learnMore": "Saiba mais"
+  },
+  "header": {
+    "navLabel": "Navegação principal",
+    "experience": "Experiência",
+    "projects": "Projetos",
+    "profile": "Perfil",
+    "contact": "Contato",
+    "language": "Idioma",
+    "languageLabel": "Selecionar idioma",
+    "comingSoon": "em breve",
+    "languages": {
+      "shortPortuguese": "PT",
+      "portuguese": "PT-BR",
+      "english": "EN",
+      "spanish": "ES"
+    }
+  },
+  "hero": {
+    "eyebrow": "Desenvolvedor Full Stack",
+    "firstName": "Tiago",
+    "lastName": "Castro",
+    "statement": "Construo software para funcionar no mundo real.",
+    "narrative": "Há mais de 6 anos, desenvolvo e evoluo produtos que precisam crescer sem parar a operação.",
+    "scope": {
+      "development": "Desenvolvimento",
+      "seo": "SEO",
+      "cloud": "Cloud",
+      "data": "Dados"
+    },
+    "scopeLabel": "Frentes de atuação",
+    "scopeText": "Do produto à infraestrutura, conecto as frentes que sustentam crescimento e operação.",
+    "location": "Rio de Janeiro, Brasil",
+    "availabilityLabel": "Aberto a oportunidades",
+    "availability": "Disponível para novos desafios e projetos.",
+    "workModes": "CLT · PJ · Freelance · Consultoria · Outras colaborações",
+    "remote": "Remoto no Brasil e exterior",
+    "statusLabel": "Atuação agora",
+    "lakeitRole": "Desenvolvedor Fullstack Cloud",
+    "lakeitPeriod": "Jan/2024 - atual",
+    "lakeitContext": "Plataforma enterprise de dados.",
+    "futbuynowRole": "Freelance",
+    "futbuynowPeriod": "Fev/2023 - atual",
+    "futbuynowContext": "Marketplace e operação digital."
+  },
+  "profile": {
+    "index": "02 / Perfil",
+    "title": "Tecnologia a serviço do produto.",
+    "intro": "Atuo do backend à nuvem para transformar necessidades de negócio em sistemas confiáveis, fáceis de operar e preparados para evoluir.",
+    "credentials": {
+      "degree": "Graduação concluída em Análise e Desenvolvimento de Sistemas",
+      "focus": "Maior profundidade em backend, AWS e arquitetura cloud"
+    },
+    "capabilities": {
+      "backend": {
+        "label": "Backend",
+        "title": "Sistemas e integrações",
+        "detail": "Uso Node.js, TypeScript e Python para construir APIs, regras de negócio e integrações que mantêm a operação funcionando.",
+        "tools": "Node.js · TypeScript · Python"
+      },
+      "frontend": {
+        "label": "Interfaces",
+        "title": "Produtos web",
+        "detail": "Com React e Next.js, transformo fluxos complexos em interfaces claras para clientes e equipes internas.",
+        "tools": "React · Next.js · Tailwind CSS"
+      },
+      "cloudData": {
+        "label": "Cloud e dados",
+        "title": "Informação disponível e segura",
+        "detail": "Na AWS, conecto aplicações, processamento e bancos de dados para que a informação chegue ao lugar certo com segurança.",
+        "tools": "AWS · PostgreSQL · MySQL · Redis"
+      },
+      "delivery": {
+        "label": "Infraestrutura",
+        "title": "Ambientes reproduzíveis",
+        "detail": "Uso infraestrutura como código e automação para entregar mudanças com consistência e investigar problemas de ponta a ponta.",
+        "tools": "Terraform · Docker · GitHub Actions"
+      }
+    },
+    "resumeText": "Se quiser ver minha experiência completa, baixe meu currículo."
+  },
+  "experience": {
+    "lakeit": {
+      "label": "Experiência profissional",
+      "company": "HITSS · Projeto LakeIT",
+      "role": "Desenvolvedor Fullstack Cloud",
+      "period": "Jan/2024 - atual",
+      "description": "No LakeIT, evoluo uma plataforma enterprise de dados usada por clientes, com atuação em aplicação, processamento e infraestrutura AWS.",
+      "blocks": {
+        "data": {
+          "label": "Dados",
+          "title": "Dados prontos para uso",
+          "detail": "Desenvolvo pipelines configuráveis que automatizam o processamento e entregam informação para análise.",
+          "evidence": "Dezenas de pipelines em clientes",
+          "stack": "AWS Glue · S3 · Athena · Python"
+        },
+        "infra": {
+          "label": "Cloud e infra",
+          "title": "Cloud que pode evoluir",
+          "metricModules": "+29 módulos Terraform",
+          "metricEnvironments": "+3 ambientes versionados",
+          "detail": "Modularizei uma infraestrutura com centenas de recursos para tornar mudanças mais previsíveis entre ambientes.",
+          "stack": "AWS · Terraform · Terragrunt · GitHub Actions"
+        },
+        "ai": {
+          "label": "IA",
+          "title": "IA aplicada aos dados",
+          "detail": "Crio recursos que transformam perguntas sobre o catálogo em consultas, respostas e gráficos.",
+          "stack": "Amazon Bedrock · Athena · Vertex AI · BigQuery"
+        }
+      },
+      "cost": {
+        "label": "Custo AWS",
+        "title": "Contribuí para reestruturar a infraestrutura AWS.",
+        "detail": "Reorganizei componentes, módulos e ambientes para tornar a infraestrutura mais enxuta, repetível e segura de evoluir.",
+        "before": "Antes",
+        "beforeValue": "> US$ 2.300 / mês",
+        "after": "Depois",
+        "afterValue": "~ US$ 800 - 1.000 / mês",
+        "peak": "Picos históricos da conta analisada passaram de US$ 6 mil por mês.",
+        "savingValue": "+ US$ 15 mil / ano",
+        "savingLabel": "economia anual estimada",
+        "note": "Valores da conta AWS analisada; redução associada a diferentes mudanças ao longo do período."
+      },
+      "responsibility": {
+        "label": "Responsabilidade de ponta a ponta",
+        "title": "Comecei entregando funcionalidades e hoje <highlight>participo de decisões</highlight> que atravessam aplicação, dados, infraestrutura e operação.",
+        "progress": {
+          "label": "Evolução da atuação",
+          "delivery": "Entrega de funcionalidades",
+          "decisions": "Decisões técnicas",
+          "operation": "Visão da operação"
+        },
+        "collaboration": {
+          "refinements": "Refinamentos",
+          "training": "Treinamentos",
+          "demonstrations": "Demonstrações",
+          "clients": "Contato com clientes"
+        }
+      }
+    },
+    "futbuynow": {
+      "label": "Cliente · Freelance\nResponsabilidade técnica",
+      "company": "Futbuynow",
+      "period": "Fev/2023 - atual",
+      "description": "Sou responsável pela evolução técnica de um marketplace em produção, do produto e pagamentos ao crescimento e à automação.",
+      "blocks": {
+        "product": {
+          "label": "Produto e operação",
+          "title": "Marketplace de ponta a ponta",
+          "detail": "Evoluo a compra e o painel operacional, incluindo vendedores, afiliados, comissões e fidelidade.",
+          "tools": "Node.js · Next.js · MySQL · Redis"
+        },
+        "payments": {
+          "label": "Pagamentos",
+          "title": "Fluxo automatizado",
+          "detail": "Integro pagamentos à confirmação do pedido, fidelidade e acompanhamento em tempo real.",
+          "tools": "OpenPix · Stripe · PayPal"
+        },
+        "ai": {
+          "label": "IA e automações",
+          "title": "Operação assistida",
+          "detail": "Crio agentes e automações para monitoramento, tradução e análise de sinais da operação.",
+          "tools": "Agentes · monitoramento · tradução"
+        },
+        "seo": {
+          "label": "SEO e aquisição"
+        }
+      },
+      "metrics": {
+        "label": "Operação em números",
+        "monthlyValue": "~3.407",
+        "monthlyLabel": "pedidos pagos / mês",
+        "monthlyPeriod": "mai-jul/2026",
+        "yearsValue": "+4",
+        "yearsLabel": "anos de operação",
+        "yearsPeriod": "plataforma em produção",
+        "ordersValue": "+65.000",
+        "ordersLabel": "pedidos processados",
+        "ordersPeriod": "volume acumulado",
+        "coinsValue": "+30 bi",
+        "coinsLabel": "coins comercializadas",
+        "coinsPeriod": "volume acumulado",
+        "growthLabel": "Evolução da operação",
+        "growthTitle": "A média de pedidos pagos mais que dobrou <highlight>durante minha atuação</highlight>.",
+        "growthDetail": "Durante o período, evoluí produto, pagamentos, SEO, analytics e estabilidade para acompanhar o aumento da operação.",
+        "growthFrom": "~1.483 / mês",
+        "growthFromPeriod": "out-dez/2023",
+        "growthTo": "~3.407 / mês",
+        "growthToPeriod": "mai-jul/2026",
+        "growthNote": "Evolução da operação durante minha atuação; o crescimento comercial resulta de diferentes frentes do negócio.",
+        "seoValue": "+84%",
+        "seoLabel": "cliques no Search Console",
+        "seoPeriod": "jun → jul/2026",
+        "seoTotalValue": "30,4 mil",
+        "seoTotalLabel": "cliques orgânicos em 12 meses"
+      }
+    }
+  },
+  "contactBreak": {
+    "modes": {
+      "clt": "CLT",
+      "pj": "PJ",
+      "freelance": "Freelance",
+      "consulting": "Consultoria",
+      "recurring": "Projetos recorrentes"
+    }
+  },
+  "projects": {
+    "index": "04 / Projetos",
+    "title": "Produtos e ferramentas que construí.",
+    "intro": "Projetos autorais e open source que aplicam IA, cloud e automação a problemas concretos.",
+    "featured": "Projeto em destaque",
+    "signalInput": "Muitos sinais",
+    "signalFilter": "Filtro",
+    "signalOutput": "Sinal útil",
+    "items": {
+      "nexsift": {
+        "name": "NexSift",
+        "type": "Projeto autoral",
+        "description": "Ferramenta autoral que filtra múltiplos sinais e organiza informação útil para apoiar pesquisas e decisões."
+      },
+      "awsIac": {
+        "name": "AWS IaC Blueprint",
+        "type": "Open Source",
+        "description": "Infraestrutura como código para testar ambientes AWS localmente com segurança e baixo custo."
+      },
+      "aiI18n": {
+        "name": "ai-i18n-translate",
+        "type": "NPM · Open Source",
+        "description": "Pacote open source que traduz arquivos de internacionalização com IA sem alterar chaves ou estrutura."
+      }
+    }
+  },
+  "contact": {
+    "index": "05 / Contato",
+    "title": "Vamos conversar.",
+    "intro": "Estou aberto a oportunidades, projetos e conversas sobre tecnologia. Escolha um canal e fale diretamente comigo.",
+    "channels": {
+      "hiring": "Contratação",
+      "project": "Projeto",
+      "networking": "Networking",
+      "code": "Código",
+      "resume": "Currículo"
+    }
+  },
+  "footer": {
+    "role": "Desenvolvedor Full Stack",
+    "location": "Rio de Janeiro, Brasil",
+    "availability": "Remoto Brasil + exterior",
+    "copyright": "© {year} Tiago Castro"
+  }
+}
