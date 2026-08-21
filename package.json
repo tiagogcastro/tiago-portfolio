@@ -1,7 +1,7 @@
 {
   "name": "tiago-portfolio",
   "version": "1.0.0",
-  "description": "Portfolio profissional de Tiago Castro, Desenvolvedor Full Stack.",
+  "description": "Professional portfolio of Tiago Castro, Full Stack Developer.",
   "private": true,
   "packageManager": "yarn@4.9.2",
   "scripts": {
@@ -22,7 +22,7 @@
     "next-intl"
   ],
   "author": "Tiago Castro",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "homepage": "https://tiagogcastro.com.br",
   "repository": {
     "type": "git",

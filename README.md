@@ -1,44 +1,44 @@
 # Tiago G Castro | Portfolio
 
-Portfólio profissional de Tiago Castro, Desenvolvedor Full Stack com mais de seis anos de experiência em produtos digitais, backend, cloud, dados e infraestrutura.
+Professional portfolio of Tiago Castro, a Full Stack Developer with over six years of experience building and evolving production software across backend, cloud, data, and infrastructure.
 
 [tiagogcastro.com.br](https://tiagogcastro.com.br)
 
-## Sobre o projeto
+## About
 
-O site apresenta minha trajetória por meio de casos reais, responsabilidades e resultados. Em vez de funcionar como uma cópia do currículo, a experiência conecta contexto, trabalho realizado e impacto em produção.
+This website presents my experience through real-world projects, responsibilities, and measurable outcomes. Instead of reproducing a traditional resume, it connects business context, engineering work, and production impact.
 
-Os principais casos apresentados são:
+The main case studies are:
 
-- LakeIT: plataforma enterprise de dados, infraestrutura AWS, Terraform e IA aplicada a dados.
-- Futbuynow: marketplace, pagamentos, SEO, analytics e automações para a operação.
-- Projetos autorais e open source voltados a IA, cloud e produtividade.
+- LakeIT: an enterprise data platform involving AWS infrastructure, Terraform, data pipelines, and applied AI.
+- Futbuynow: a marketplace covering payments, SEO, analytics, automation, and day-to-day technical ownership.
+- Personal and open source projects focused on AI, cloud, and developer productivity.
 
-## Diferenciais
+## Highlights
 
-- Design editorial responsivo para desktop e mobile.
-- Conteúdo localizado com `next-intl`.
-- Casos profissionais orientados a impacto e métricas.
-- Open Graph dinâmico, metadados, JSON-LD, sitemap e robots.
-- Currículos em português e inglês para download.
-- Animações com suporte a `prefers-reduced-motion`.
+- Responsive editorial design for desktop and mobile.
+- Localized content powered by `next-intl`.
+- Professional case studies centered on impact and measurable results.
+- Dynamic Open Graph image, metadata, JSON-LD, sitemap, and robots configuration.
+- Downloadable resumes in Portuguese and English.
+- Motion with support for `prefers-reduced-motion`.
 
-## Tecnologias
+## Tech Stack
 
-- Next.js 16 e React 19
-- TypeScript em modo estrito
+- Next.js 16 and React 19
+- TypeScript in strict mode
 - Tailwind CSS 4
 - next-intl
 - Motion
 - Lucide React
 - Yarn 4
 
-## Executando localmente
+## Running Locally
 
-Requisitos:
+Requirements:
 
-- Node.js 20.9 ou superior
-- Corepack habilitado
+- Node.js 20.9 or newer
+- Corepack enabled
 
 ```bash
 corepack enable
@@ -46,48 +46,50 @@ yarn install
 yarn dev
 ```
 
-O servidor de desenvolvimento inicia em [localhost:3000](http://localhost:3000).
+The development server starts at [localhost:3000](http://localhost:3000).
 
 ## Scripts
 
 ```bash
-yarn dev        # servidor de desenvolvimento
-yarn lint       # análise estática
-yarn typecheck  # verificação do TypeScript
-yarn build      # build de produção
-yarn check      # lint, tipos e build
-yarn format     # formatação com Prettier
+yarn dev        # start the development server
+yarn lint       # run static analysis
+yarn typecheck  # check TypeScript types
+yarn build      # create a production build
+yarn check      # run lint, type checking, and build
+yarn format     # format files with Prettier
 ```
 
-## Estrutura
+## Project Structure
 
 ```text
-messages/               traduções da interface
-public/resume/          currículos para download
-src/app/                rotas, metadados e estilos globais
-src/components/         componentes compartilhados
-src/config/             configuração pública do site
-src/content/            dados estruturados
-src/features/home/      seções e componentes da página inicial
-src/i18n/               roteamento e configuração de idiomas
+messages/               interface translations
+public/resume/          downloadable resumes
+src/app/                routes, metadata, and global styles
+src/components/         shared components
+src/config/             public site configuration
+src/content/            structured content
+src/features/home/      home page sections and components
+src/i18n/               locale routing and configuration
 ```
 
-## Internacionalização
+## Internationalization
 
-O idioma padrão é português do Brasil, servido em `/`. O roteamento está preparado para receber novos idiomas com prefixo de locale.
+Brazilian Portuguese is the default locale and is served from `/`. The routing structure supports additional languages through locale-prefixed paths.
 
-Todo texto visível é mantido em `messages/pt-BR.json`, incluindo labels, períodos e textos acessíveis.
+All visible copy is maintained in `messages/pt-BR.json`, including labels, dates, and accessible text.
 
-## Deploy
+## Deployment
 
-O projeto pode ser publicado diretamente na Vercel. Atualmente não depende de variáveis de ambiente.
+The project can be deployed directly to Vercel and currently requires no environment variables.
+
+Run the complete verification pipeline before deploying:
 
 ```bash
 yarn check
 ```
 
-Execute a verificação completa antes de publicar.
+## License
 
-## Licença
+The source code is available under the [MIT License](LICENSE).
 
-Este é um projeto pessoal e está marcado como `UNLICENSED`. O conteúdo, a identidade visual e os dados profissionais não possuem permissão automática para redistribuição.
+The license does not cover resumes, biographical information, portfolio copy, professional data, or visual identity assets. Those materials remain copyright of Tiago Castro and may not be reused without permission.
