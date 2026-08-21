@@ -11,6 +11,12 @@ export const siteConfig = {
   nexsift: "https://nexsift.vercel.app",
   lakeit: "https://www.claro.com.br/empresas/data-analytics/lakeit",
   futbuynow: "https://www.futbuynow.com",
+  credentials: {
+    degree:
+      "https://descomplica.jacad.com.br/academico/docs/about/243787DC053R339224",
+    awsServerless:
+      "https://www.credly.com/badges/c12ab3fd-2e95-4f3e-b4db-9d1eb75be81d",
+  },
   resume: {
     "pt-BR": "/resume/tiago-castro-desenvolvedor-fullstack-cloud-pt-br.pdf",
     "en-US": "/resume/tiago-castro-fullstack-cloud-developer-en-us.pdf",

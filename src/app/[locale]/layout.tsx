@@ -87,6 +87,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   const metadata = await getTranslations("metadata");
   const identity = await getTranslations("identity");
   const structuredData = await getTranslations("structuredData");
+  const education = await getTranslations("profile.education");
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -94,6 +95,58 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
     url: siteConfig.domain,
     jobTitle: identity("role"),
     sameAs: [siteConfig.linkedin, siteConfig.github],
+    alumniOf: {
+      "@type": "EducationalOrganization",
+      name: education("degree.institution"),
+    },
+    knowsLanguage: [
+      structuredData("languages.portuguese"),
+      structuredData("languages.english"),
+      structuredData("languages.spanish"),
+    ],
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: education("degree.title"),
+        credentialCategory: education("degree.detail"),
+        dateCreated: "2026-07",
+        url: siteConfig.credentials.degree,
+        recognizedBy: {
+          "@type": "EducationalOrganization",
+          name: education("degree.institution"),
+        },
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: education("credentials.serverless.title"),
+        credentialCategory: "Digital badge",
+        url: siteConfig.credentials.awsServerless,
+        recognizedBy: {
+          "@type": "Organization",
+          name: education("credentials.serverless.issuer"),
+        },
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: education("credentials.technical.title"),
+        credentialCategory: "Course completion",
+        dateCreated: "2025-07",
+        recognizedBy: {
+          "@type": "Organization",
+          name: education("credentials.technical.issuer"),
+        },
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: education("credentials.javascript.title"),
+        credentialCategory: "Course completion",
+        dateCreated: "2023-02",
+        recognizedBy: {
+          "@type": "Organization",
+          name: education("credentials.javascript.issuer"),
+        },
+      },
+    ],
     address: {
       "@type": "PostalAddress",
       addressLocality: identity("city"),

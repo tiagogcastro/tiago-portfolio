@@ -2,16 +2,15 @@ import {
   CloudCog,
   Code2,
   FileDown,
-  GraduationCap,
   PanelsTopLeft,
   Workflow,
 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
-import { ProfileSystemMap } from "@/components/visual/ProfileSystemMap";
 import { Reveal } from "@/components/visual/Reveal";
 import { siteConfig } from "@/config/site";
+import { EducationCredentials } from "../components/EducationCredentials";
 
 const capabilities = [
   ["backend", Code2],
@@ -30,7 +29,7 @@ export async function ProfileSection() {
       className="section-rule route-background bg-surface relative overflow-hidden py-20 sm:py-24 lg:py-28"
     >
       <Container className="relative">
-        <Reveal className="grid gap-8 lg:grid-cols-[0.3fr_1.05fr_0.65fr] lg:items-start lg:gap-10">
+        <Reveal className="grid gap-8 lg:grid-cols-[0.3fr_1.7fr] lg:items-start lg:gap-10">
           <p className="mono-label text-accent">{t("index")}</p>
           <div>
             <h2 className="font-display max-w-4xl text-[clamp(2.8rem,5.5vw,5.5rem)] leading-[0.92] font-semibold tracking-[-0.05em] text-balance">
@@ -39,21 +38,7 @@ export async function ProfileSection() {
             <p className="text-secondary mt-5 max-w-2xl text-lg leading-8">
               {t("intro")}
             </p>
-            <div className="text-secondary mt-6 flex flex-wrap gap-3 text-sm">
-              <span className="bg-background/50 flex items-center gap-2 border border-white/10 px-3 py-2">
-                <GraduationCap
-                  aria-hidden="true"
-                  className="text-mineral size-4"
-                />
-                {t("credentials.degree")}
-              </span>
-              <span className="bg-background/50 flex items-center gap-2 border border-white/10 px-3 py-2">
-                <Code2 aria-hidden="true" className="text-accent size-4" />
-                {t("credentials.focus")}
-              </span>
-            </div>
           </div>
-          <ProfileSystemMap />
         </Reveal>
 
         <div className="mt-12 grid gap-px bg-white/10 md:grid-cols-2 lg:mt-16">
@@ -80,6 +65,8 @@ export async function ProfileSection() {
             </Reveal>
           ))}
         </div>
+
+        <EducationCredentials />
 
         <Reveal className="mt-10 flex flex-col items-start justify-between gap-5 border-t border-white/15 pt-8 sm:flex-row sm:items-center">
           <p className="text-secondary max-w-md">{t("resumeText")}</p>

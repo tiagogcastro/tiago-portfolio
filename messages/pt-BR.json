@@ -16,7 +16,12 @@
   },
   "structuredData": {
     "language": "pt-BR",
-    "openGraphLocale": "pt_BR"
+    "openGraphLocale": "pt_BR",
+    "languages": {
+      "portuguese": "Português",
+      "english": "Inglês",
+      "spanish": "Espanhol"
+    }
   },
   "metadata": {
     "title": "Tiago Castro | Desenvolvedor Full Stack",
@@ -89,10 +94,6 @@
     "index": "02 / Perfil",
     "title": "Tecnologia a serviço do produto.",
     "intro": "Atuo do backend à nuvem para transformar necessidades de negócio em sistemas confiáveis, fáceis de operar e preparados para evoluir.",
-    "credentials": {
-      "degree": "Graduação concluída em Análise e Desenvolvimento de Sistemas",
-      "focus": "Maior profundidade em backend, AWS e arquitetura cloud"
-    },
     "capabilities": {
       "backend": {
         "label": "Backend",
@@ -117,6 +118,52 @@
         "title": "Ambientes reproduzíveis",
         "detail": "Uso infraestrutura como código e automação para entregar mudanças com consistência e investigar problemas de ponta a ponta.",
         "tools": "Terraform · Docker · GitHub Actions"
+      }
+    },
+    "education": {
+      "label": "Formação e credenciais",
+      "title": "Fundamentos que sustentam a prática.",
+      "degree": {
+        "label": "Graduação",
+        "title": "Análise e Desenvolvimento de Sistemas",
+        "institution": "Descomplica UniAmérica",
+        "detail": "Curso Superior de Tecnologia",
+        "period": "Graduação concluída em jul. 2026",
+        "action": "Validar conclusão"
+      },
+      "credentials": {
+        "label": "Credenciais e cursos",
+        "serverless": {
+          "title": "AWS Serverless Demonstrated",
+          "issuer": "Amazon Web Services Training and Certification",
+          "detail": "Badge prático em arquiteturas serverless com Lambda, API Gateway, Step Functions e DynamoDB.",
+          "action": "Ver credencial"
+        },
+        "technical": {
+          "title": "AWS Technical Essentials",
+          "issuer": "AWS Skill Builder",
+          "period": "Concluído em jul. 2025"
+        },
+        "javascript": {
+          "title": "JavaScript e TypeScript do Básico ao Avançado",
+          "issuer": "Udemy",
+          "period": "Concluído em fev. 2023"
+        }
+      },
+      "languages": {
+        "label": "Idiomas",
+        "portuguese": {
+          "name": "Português",
+          "level": "Nativo"
+        },
+        "english": {
+          "name": "Inglês",
+          "level": "Técnico para documentação, código e ferramentas"
+        },
+        "spanish": {
+          "name": "Espanhol",
+          "level": "Básico"
+        }
       }
     },
     "resumeText": "Se quiser ver minha experiência completa, baixe meu currículo."

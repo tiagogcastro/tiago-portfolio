@@ -114,10 +114,11 @@ summary:focus-visible {
   inset: 0;
   pointer-events: none;
   content: "";
-  opacity: 0.2;
-  background-image: url("data:image/svg+xml,%3Csvg width='800' height='420' viewBox='0 0 800 420' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-40 330C110 220 162 385 302 250S516 75 840 170' fill='none' stroke='%2391b8a3' stroke-width='1.4' stroke-dasharray='7 12'/%3E%3Cpath d='M-20 370C144 250 214 410 340 278S580 112 830 210' fill='none' stroke='%23f3f1eb' stroke-opacity='.35'/%3E%3C/svg%3E");
-  background-position: center;
-  background-size: cover;
+  opacity: 0.34;
+  background-image: url("data:image/svg+xml,%3Csvg width='420' height='820' viewBox='0 0 420 820' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M106-40C248 78 54 190 188 312S336 506 198 626S60 744 156 860' fill='none' stroke='%2391b8a3' stroke-width='1.8' stroke-dasharray='7 12'/%3E%3Cpath d='M154-40C294 94 102 212 232 336S368 530 244 652S112 766 206 860' fill='none' stroke='%23f3f1eb' stroke-width='1.2' stroke-opacity='.4' stroke-dasharray='2 11'/%3E%3C/svg%3E");
+  background-repeat: repeat-y;
+  background-position: right top;
+  background-size: min(52vw, 32rem) auto;
 }
 
 .text-balance {
