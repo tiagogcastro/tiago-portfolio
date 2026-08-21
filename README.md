@@ -92,4 +92,4 @@ yarn check
 
 The source code is available under the [MIT License](LICENSE).
 
-The license does not cover resumes, biographical information, portfolio copy, professional data, or visual identity assets. Those materials remain copyright of Tiago Castro and may not be reused without permission.
+Resumes, biographical information, portfolio copy, professional data, and visual identity assets are excluded from the code license. See the [Content Notice](CONTENT_NOTICE.md) for details.
