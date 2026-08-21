@@ -24,10 +24,10 @@ export async function LakeItJourney() {
             </span>
           </div>
           <p className="mono-label text-accent mt-8">{t(`${block}.label`)}</p>
-          <h4 className="font-heading mt-4 text-2xl leading-tight font-semibold text-balance">
+          <h4 className="font-heading mt-4 text-xl leading-tight font-semibold text-balance sm:text-2xl">
             {t(`${block}.title`)}
           </h4>
-          <p className="text-secondary mt-5 leading-7">
+          <p className="text-secondary mt-4 text-sm leading-6 sm:mt-5 sm:text-base sm:leading-7">
             {t(`${block}.detail`)}
           </p>
           {block === "infra" ? (

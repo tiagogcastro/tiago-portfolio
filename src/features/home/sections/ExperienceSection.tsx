@@ -10,6 +10,7 @@ import {
 import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/layout/Container";
 import { Reveal } from "@/components/visual/Reveal";
+import { SystemsInterlude } from "@/components/visual/SystemsInterlude";
 import { siteConfig } from "@/config/site";
 import { CostComparison } from "../components/CostComparison";
 import { ExperiencePeriod } from "../components/ExperiencePeriod";
@@ -59,7 +60,7 @@ export async function ExperienceSection() {
                 <p className="mono-label text-mineral">
                   {t("lakeit.responsibility.label")}
                 </p>
-                <h4 className="font-display mt-5 max-w-3xl text-3xl leading-tight font-semibold tracking-[-0.03em] text-balance sm:text-4xl">
+                <h4 className="font-display mt-5 max-w-3xl text-2xl leading-snug font-semibold tracking-[-0.03em] text-balance sm:text-4xl sm:leading-tight">
                   {t.rich("lakeit.responsibility.title", {
                     highlight: (chunks) => (
                       <span className="text-mineral">{chunks}</span>
@@ -111,7 +112,11 @@ export async function ExperienceSection() {
         </ExperiencePeriod>
       </Container>
 
-      <div className="route-background bg-surface relative border-y border-white/15">
+      <Reveal>
+        <SystemsInterlude />
+      </Reveal>
+
+      <div className="route-background bg-surface relative border-b border-white/15">
         <Container className="relative">
           <ExperiencePeriod
             id="futbuynow"
@@ -127,14 +132,14 @@ export async function ExperienceSection() {
                   <p className="mono-label text-mineral-bright">
                     {t("futbuynow.metrics.growthLabel")}
                   </p>
-                  <h4 className="font-heading mt-4 max-w-3xl text-2xl leading-snug font-semibold text-balance sm:text-3xl">
+                  <h4 className="font-heading mt-4 max-w-3xl text-xl leading-snug font-semibold text-balance sm:text-3xl">
                     {t.rich("futbuynow.metrics.growthTitle", {
                       highlight: (chunks) => (
                         <span className="text-mineral-bright">{chunks}</span>
                       ),
                     })}
                   </h4>
-                  <p className="text-secondary mt-4 max-w-2xl leading-7">
+                  <p className="text-secondary mt-4 max-w-2xl text-sm leading-6 sm:text-base sm:leading-7">
                     {t("futbuynow.metrics.growthDetail")}
                   </p>
                 </div>

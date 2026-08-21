@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { GitHubIcon, LinkedInIcon } from "@/components/brand/SocialIcons";
 import { Container } from "@/components/layout/Container";
 import { ExternalLink } from "@/components/ui/ExternalLink";
+import { ContactSignalField } from "@/components/visual/ContactSignalField";
 import { Reveal } from "@/components/visual/Reveal";
 import { siteConfig } from "@/config/site";
 
@@ -51,9 +52,10 @@ export async function ContactSection() {
   return (
     <section
       id="contato"
-      className="section-rule bg-surface py-20 sm:py-28 lg:py-36"
+      className="section-rule bg-surface relative overflow-hidden py-20 sm:py-28 lg:py-36"
     >
-      <Container>
+      <ContactSignalField />
+      <Container className="relative">
         <Reveal>
           <p className="mono-label text-accent">{t("index")}</p>
           <h2 className="font-display mt-8 text-[clamp(4rem,12vw,12rem)] leading-[0.78] font-semibold tracking-[-0.075em]">

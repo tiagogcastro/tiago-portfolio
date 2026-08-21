@@ -9,6 +9,7 @@ import {
 import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
+import { ProfileSystemMap } from "@/components/visual/ProfileSystemMap";
 import { Reveal } from "@/components/visual/Reveal";
 import { siteConfig } from "@/config/site";
 
@@ -29,7 +30,7 @@ export async function ProfileSection() {
       className="section-rule route-background bg-surface relative overflow-hidden py-20 sm:py-24 lg:py-28"
     >
       <Container className="relative">
-        <Reveal className="grid gap-8 lg:grid-cols-[0.45fr_1.55fr]">
+        <Reveal className="grid gap-8 lg:grid-cols-[0.3fr_1.05fr_0.65fr] lg:items-start lg:gap-10">
           <p className="mono-label text-accent">{t("index")}</p>
           <div>
             <h2 className="font-display max-w-4xl text-[clamp(2.8rem,5.5vw,5.5rem)] leading-[0.92] font-semibold tracking-[-0.05em] text-balance">
@@ -52,6 +53,7 @@ export async function ProfileSection() {
               </span>
             </div>
           </div>
+          <ProfileSystemMap />
         </Reveal>
 
         <div className="mt-12 grid gap-px bg-white/10 md:grid-cols-2 lg:mt-16">
