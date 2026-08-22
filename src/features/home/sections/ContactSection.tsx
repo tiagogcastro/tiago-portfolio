@@ -1,4 +1,4 @@
-import { FileDown, Mail, MessageCircle } from "lucide-react";
+import { ArrowRight, FileDown, Mail, MessageCircle } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { GitHubIcon, LinkedInIcon } from "@/components/brand/SocialIcons";
 import { Container } from "@/components/layout/Container";
@@ -88,12 +88,10 @@ export async function ContactSection() {
                 >
                   <channel.icon aria-hidden="true" className="size-5" />
                   {channel.value}
-                  <span
+                  <ArrowRight
                     aria-hidden="true"
-                    className="transition-transform group-hover:translate-x-1"
-                  >
-                    →
-                  </span>
+                    className="size-5 transition-transform group-hover:translate-x-1"
+                  />
                 </a>
               )}
             </Reveal>

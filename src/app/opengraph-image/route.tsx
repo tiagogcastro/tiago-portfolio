@@ -1,11 +1,11 @@
 import { ImageResponse } from "next/og";
 import messages from "../../../messages/pt-BR.json";
 
-export const alt = messages.metadata.title;
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
+const size = { width: 1200, height: 630 };
 
-export default function OpenGraphImage() {
+export const dynamic = "force-static";
+
+export function GET() {
   return new ImageResponse(
     <div
       style={{
@@ -41,7 +41,7 @@ export default function OpenGraphImage() {
             textTransform: "uppercase",
           }}
         >
-          {messages.hero.eyebrow}
+          Brasil · Remoto
         </span>
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>
@@ -81,8 +81,8 @@ export default function OpenGraphImage() {
         }}
       >
         <span style={{ fontSize: 26 }}>{messages.hero.statement}</span>
-        <span style={{ color: "#c4a56a", fontSize: 28, fontWeight: 700 }}>
-          {messages.hero.narrative}
+        <span style={{ color: "#c4a56a", fontSize: 25, fontWeight: 700 }}>
+          Full Stack · Cloud · AWS
         </span>
       </div>
     </div>,

@@ -46,10 +46,10 @@ export async function ProjectItem({
             }
           >
             {link.type === "github"
-              ? common("source")
+              ? common("source", { name: t(`${base}.name`) })
               : link.type === "npm"
-                ? common("npm")
-                : common("website")}
+                ? common("npm", { name: t(`${base}.name`) })
+                : common("website", { name: t(`${base}.name`) })}
           </ExternalLink>
         ))}
       </div>

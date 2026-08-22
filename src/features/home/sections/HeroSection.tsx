@@ -33,6 +33,9 @@ export async function HeroSection() {
         <Reveal className="flex min-w-0 flex-col gap-8 lg:gap-10">
           <div>
             <h1 className="font-display text-[clamp(3.75rem,12.2vw,11.5rem)] leading-[0.72] font-semibold tracking-[-0.08em] uppercase">
+              <span className="font-heading text-accent mb-6 block text-sm leading-none font-semibold tracking-[0.14em] sm:text-base">
+                {t("positioning")}
+              </span>
               <span className="block">{t("firstName")}</span>
               <span className="text-secondary block">{t("lastName")}</span>
             </h1>

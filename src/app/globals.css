@@ -34,8 +34,8 @@
   --color-mineral-deep: var(--mineral-deep);
   --font-display: var(--font-fraunces);
   --font-heading: var(--font-instrument);
-  --font-body: var(--font-inter);
-  --font-mono: var(--font-jetbrains);
+  --font-body: var(--font-instrument);
+  --font-mono: var(--font-instrument);
 }
 
 * {
@@ -52,7 +52,7 @@ body {
   overflow-x: hidden;
   background: var(--background);
   color: var(--text);
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-instrument), sans-serif;
   text-rendering: optimizeLegibility;
 }
 
@@ -130,8 +130,9 @@ summary:focus-visible {
 }
 
 .mono-label {
-  font-family: var(--font-jetbrains), monospace;
+  font-family: var(--font-instrument), sans-serif;
   font-size: 0.7rem;
+  font-variant-numeric: tabular-nums;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }

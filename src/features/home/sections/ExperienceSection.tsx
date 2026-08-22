@@ -37,6 +37,7 @@ export async function ExperienceSection() {
 
   return (
     <section id="experiencia" className="section-rule contour-background">
+      <h2 className="sr-only">{t("title")}</h2>
       <Container>
         <ExperiencePeriod
           id="lakeit"

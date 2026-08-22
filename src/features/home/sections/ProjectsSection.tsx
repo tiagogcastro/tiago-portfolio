@@ -57,8 +57,8 @@ export async function ProjectsSection() {
                   icon={link.type === "github" ? GitHubIcon : Globe2}
                 >
                   {link.type === "github"
-                    ? common("source")
-                    : common("website")}
+                    ? common("source", { name: t("items.nexsift.name") })
+                    : common("website", { name: t("items.nexsift.name") })}
                 </ExternalLink>
               ))}
             </div>

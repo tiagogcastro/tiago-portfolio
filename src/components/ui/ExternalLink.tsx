@@ -1,10 +1,14 @@
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import type { IconComponent } from "@/types/icons";
+
+type LinkIcon = React.ComponentType<{
+  className?: string;
+  "aria-hidden"?: React.AriaAttributes["aria-hidden"];
+}>;
 
 type ExternalLinkProps = React.ComponentProps<"a"> & {
   showIcon?: boolean;
-  icon?: IconComponent;
+  icon?: LinkIcon;
 };
 
 export function ExternalLink({

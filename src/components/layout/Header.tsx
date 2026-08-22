@@ -19,9 +19,9 @@ import { GitHubIcon, LinkedInIcon } from "../brand/SocialIcons";
 import { Container } from "./Container";
 
 const navItems = [
+  ["profile", "#perfil", UserRound],
   ["experience", "#experiencia", BriefcaseBusiness],
   ["projects", "#projetos", FolderKanban],
-  ["profile", "#perfil", UserRound],
   ["contact", "#contato", Send],
 ] as const;
 
