@@ -1,5 +1,6 @@
 "use client";
 
+import { Info } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -47,7 +48,8 @@ export function Tooltip({ label, content, children, className }: TooltipProps) {
       onMouseEnter={openWithDelay}
       onMouseLeave={() => {
         cancelScheduledOpen();
-        if (!rootRef.current?.contains(document.activeElement)) setIsOpen(false);
+        if (!rootRef.current?.contains(document.activeElement))
+          setIsOpen(false);
       }}
       onBlur={(event) => {
         if (!rootRef.current?.contains(event.relatedTarget)) {
@@ -69,9 +71,10 @@ export function Tooltip({ label, content, children, className }: TooltipProps) {
         aria-describedby={isOpen ? id : undefined}
         onFocus={() => setIsOpen(true)}
         onClick={() => setIsOpen(true)}
-        className="text-accent hover:text-accent-hover inline-flex min-h-8 cursor-default items-center text-left text-sm font-semibold"
+        className="text-accent hover:text-accent-hover inline-flex min-h-8 cursor-default items-center gap-2 text-left text-sm font-semibold"
       >
         {children}
+        <Info aria-hidden="true" className="size-4" />
       </button>
       <span
         id={id}

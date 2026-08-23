@@ -7,3 +7,17 @@ out
 .env*
 !.env.example
 tsconfig.tsbuildinfo
+
+# AI tooling configs and credentials (never commit)
+opencode.json
+opencode.jsonc
+.claude/
+.claude.json
+.codex/
+.cursor/
+.cursorrules
+.cursorrules.json
+.gemini/
+.continue/
+.agent/
+.settings.json
