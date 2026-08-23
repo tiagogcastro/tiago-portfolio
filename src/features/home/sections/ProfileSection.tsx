@@ -1,86 +1,166 @@
-import {
-  CloudCog,
-  Code2,
-  FileDown,
-  PanelsTopLeft,
-  Workflow,
-} from "lucide-react";
+import { BadgeCheck, FileDown, GraduationCap, Languages } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
+import { ExternalLink } from "@/components/ui/ExternalLink";
 import { Reveal } from "@/components/visual/Reveal";
 import { siteConfig } from "@/config/site";
-import { EducationCredentials } from "../components/EducationCredentials";
+import { TechnicalInterlude } from "../components/TechnicalInterlude";
 
-const capabilities = [
-  ["backend", Code2],
-  ["frontend", PanelsTopLeft],
-  ["cloudData", CloudCog],
-  ["delivery", Workflow],
-] as const;
+const capabilities = ["backend", "frontend", "cloudData", "delivery"] as const;
 
 export async function ProfileSection() {
   const t = await getTranslations("profile");
   const common = await getTranslations("common");
 
   return (
-    <section
-      id="perfil"
-      className="section-rule route-background bg-surface relative overflow-hidden py-20 sm:py-24 lg:py-28"
-    >
-      <Container className="relative">
-        <Reveal className="grid gap-8 lg:grid-cols-[0.3fr_1.7fr] lg:items-start lg:gap-10">
-          <p className="mono-label text-accent">{t("index")}</p>
-          <div>
-            <h2 className="font-display max-w-4xl text-[clamp(2.8rem,5.5vw,5.5rem)] leading-[0.92] font-semibold tracking-[-0.05em] text-balance">
+    <section id="perfil" className="section-rule bg-surface">
+      <div className="py-20 sm:py-28">
+        <Container>
+          <Reveal className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-end lg:gap-16">
+            <h2 className="font-display text-[clamp(3rem,6vw,6rem)] leading-[0.92] font-semibold tracking-[-0.035em]">
               {t("title")}
             </h2>
-            <p className="text-secondary mt-5 max-w-2xl text-lg leading-8">
+            <p className="text-secondary max-w-2xl text-lg leading-8">
               {t("intro")}
             </p>
+          </Reveal>
+
+          <div className="mt-14 grid gap-px bg-white/15 sm:grid-cols-2 lg:mt-20">
+            {capabilities.map((capability) => (
+              <Reveal key={capability} className="bg-surface-soft p-7 sm:p-9">
+                <h3 className="font-heading text-xl font-semibold">
+                  {t(`capabilities.${capability}.title`)}
+                </h3>
+                <p className="text-secondary mt-5 max-w-xl leading-7">
+                  {t(`capabilities.${capability}.detail`)}
+                </p>
+                <p className="border-mineral/30 text-muted mt-6 border-t pt-4 font-mono text-sm leading-6">
+                  {t(`capabilities.${capability}.tools`)}
+                </p>
+              </Reveal>
+            ))}
           </div>
-        </Reveal>
+        </Container>
+      </div>
 
-        <div className="mt-12 grid gap-px bg-white/10 md:grid-cols-2 lg:mt-16">
-          {capabilities.map(([capability, Icon], index) => (
-            <Reveal key={capability} className="bg-surface p-7 sm:p-9">
-              <div className="flex items-center justify-between">
-                <Icon aria-hidden="true" className="text-mineral size-6" />
-                <span className="text-muted font-mono text-[0.65rem]">
-                  0{index + 1}
-                </span>
-              </div>
-              <p className="mono-label text-accent mt-8">
-                {t(`capabilities.${capability}.label`)}
-              </p>
-              <h3 className="font-heading mt-3 text-2xl font-semibold">
-                {t(`capabilities.${capability}.title`)}
+      <div className="bg-surface pb-20 sm:pb-28">
+        <Container>
+          <TechnicalInterlude
+            title={t("processVisual.title")}
+            caption={t("processVisual.caption")}
+            image="/images/work-loop.svg"
+            items={[
+              t("processVisual.items.understand"),
+              t("processVisual.items.build"),
+              t("processVisual.items.improve"),
+            ]}
+          />
+        </Container>
+      </div>
+
+      <div className="bg-background text-foreground border-t border-white/15 py-20 sm:py-28">
+        <Container>
+          <Reveal className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
+            <div>
+              <h3 className="font-display text-[clamp(3rem,5vw,5.5rem)] leading-[0.92] font-semibold tracking-[-0.035em]">
+                {t("education.title")}
               </h3>
-              <p className="text-secondary mt-4 max-w-xl leading-7">
-                {t(`capabilities.${capability}.detail`)}
+              <p className="text-secondary mt-5 max-w-md text-lg leading-8">
+                {t("education.intro")}
               </p>
-              <p className="text-muted mt-6 font-mono text-[0.68rem] uppercase">
-                {t(`capabilities.${capability}.tools`)}
-              </p>
-            </Reveal>
-          ))}
-        </div>
+            </div>
 
-        <EducationCredentials />
+            <div className="border-t border-white/15">
+              <div className="grid gap-6 border-b border-white/15 py-7 sm:grid-cols-[auto_1fr] sm:items-start">
+                <GraduationCap
+                  aria-hidden="true"
+                  className="text-accent size-7"
+                />
+                <div>
+                  <ExternalLink
+                    href={siteConfig.credentials.degree}
+                    className="font-heading text-xl font-semibold"
+                  >
+                    {t("education.degree.title")}
+                  </ExternalLink>
+                  <p className="text-secondary mt-2">
+                    {t("education.degree.institution")} ·{" "}
+                    {t("education.degree.period")}
+                  </p>
+                </div>
+              </div>
 
-        <Reveal className="mt-10 flex flex-col items-start justify-between gap-5 border-t border-white/15 pt-8 sm:flex-row sm:items-center">
-          <p className="text-secondary max-w-md">{t("resumeText")}</p>
-          <Button
-            href={siteConfig.resume["pt-BR"]}
-            download
-            variant="outline"
-            icon={FileDown}
-            trailingIcon={false}
-          >
-            {common("downloadResume")}
-          </Button>
-        </Reveal>
-      </Container>
+              <div className="grid gap-6 border-b border-white/15 py-7 sm:grid-cols-[auto_1fr] sm:items-start">
+                <BadgeCheck aria-hidden="true" className="text-accent size-7" />
+                <div>
+                  <ExternalLink
+                    href={siteConfig.credentials.awsServerless}
+                    className="font-heading text-xl font-semibold"
+                  >
+                    {t("education.credentials.serverless.title")}
+                  </ExternalLink>
+                  <p className="text-secondary mt-2 max-w-2xl">
+                    {t("education.credentials.serverless.detail")}
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid gap-6 border-b border-white/15 py-7 sm:grid-cols-2">
+                <div>
+                  <p className="font-heading font-semibold">
+                    {t("education.credentials.technical.title")}
+                  </p>
+                  <p className="text-muted mt-2 text-sm">
+                    {t("education.credentials.technical.issuer")} ·{" "}
+                    {t("education.credentials.technical.period")}
+                  </p>
+                </div>
+                <div>
+                  <p className="font-heading font-semibold">
+                    {t("education.credentials.javascript.title")}
+                  </p>
+                  <p className="text-muted mt-2 text-sm">
+                    {t("education.credentials.javascript.issuer")} ·{" "}
+                    {t("education.credentials.javascript.period")}
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid gap-6 py-7 sm:grid-cols-[auto_1fr] sm:items-start">
+                <Languages aria-hidden="true" className="text-accent size-7" />
+                <div className="grid gap-5 sm:grid-cols-3">
+                  {(["portuguese", "english", "spanish"] as const).map(
+                    (language) => (
+                      <div key={language}>
+                        <p className="font-semibold">
+                          {t(`education.languages.${language}.name`)}
+                        </p>
+                        <p className="text-secondary mt-1 text-sm leading-6">
+                          {t(`education.languages.${language}.level`)}
+                        </p>
+                      </div>
+                    ),
+                  )}
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal className="mt-10 flex flex-col items-start justify-between gap-5 border-t border-white/15 pt-8 sm:flex-row sm:items-center">
+            <p className="text-secondary max-w-md">{t("resumeText")}</p>
+            <Button
+              href={siteConfig.resume["pt-BR"]}
+              download
+              variant="outline"
+              icon={FileDown}
+              trailingIcon={false}
+            >
+              {common("downloadResume")}
+            </Button>
+          </Reveal>
+        </Container>
+      </div>
     </section>
   );
 }

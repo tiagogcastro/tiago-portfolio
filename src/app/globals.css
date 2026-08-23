@@ -1,19 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #12161c;
-  --surface: #191e25;
-  --surface-soft: #222832;
-  --text: #f3f1eb;
-  --text-secondary: #b8bec5;
-  --muted: #747d87;
-  --paper: #f2f0e9;
-  --paper-text: #171a1f;
-  --accent: #c4a56a;
-  --accent-hover: #d2b77c;
-  --mineral: #91b8a3;
-  --mineral-bright: #add2be;
-  --mineral-deep: #203d35;
+  --background: #141815;
+  --surface: #1b211d;
+  --surface-soft: #232a25;
+  --text: #f2f0e8;
+  --text-secondary: #c5c5ba;
+  --muted: #969d94;
+  --paper: #e8e2d4;
+  --paper-text: #1b201c;
+  --accent: #c9aa70;
+  --accent-hover: #d8bd8a;
+  --mineral: #789987;
+  --mineral-bright: #a8bdae;
+  --mineral-deep: #26372e;
+  --signal: #c9aa70;
   --line: color-mix(in srgb, var(--text) 15%, transparent);
   --header-height: 4.5rem;
 }
@@ -32,10 +33,11 @@
   --color-mineral: var(--mineral);
   --color-mineral-bright: var(--mineral-bright);
   --color-mineral-deep: var(--mineral-deep);
-  --font-display: var(--font-fraunces);
-  --font-heading: var(--font-instrument);
-  --font-body: var(--font-instrument);
-  --font-mono: var(--font-instrument);
+  --color-signal: var(--signal);
+  --font-display: var(--font-newsreader);
+  --font-heading: var(--font-plex-sans);
+  --font-body: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
 }
 
 * {
@@ -52,7 +54,7 @@ body {
   overflow-x: hidden;
   background: var(--background);
   color: var(--text);
-  font-family: var(--font-instrument), sans-serif;
+  font-family: var(--font-plex-sans), sans-serif;
   text-rendering: optimizeLegibility;
 }
 
@@ -61,11 +63,13 @@ body {
   color: var(--background);
 }
 
-a,
-button,
-summary {
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
+@layer base {
+  a,
+  button,
+  summary {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 [aria-disabled="true"],
@@ -81,32 +85,35 @@ summary:focus-visible {
 }
 
 .editorial-grid {
-  background-image:
-    linear-gradient(
-      to right,
-      color-mix(in srgb, var(--text) 5%, transparent) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      to bottom,
-      color-mix(in srgb, var(--text) 4%, transparent) 1px,
-      transparent 1px
-    );
-  background-size: min(7.5vw, 7rem) min(7.5vw, 7rem);
+  background-image: linear-gradient(
+    to right,
+    transparent calc(100% - 1px),
+    color-mix(in srgb, var(--text) 5%, transparent) 1px
+  );
+  background-size: min(12vw, 9rem) 100%;
 }
 
 .contour-background {
-  background-image:
-    radial-gradient(
-      circle at 12% 22%,
-      color-mix(in srgb, var(--mineral) 12%, transparent),
-      transparent 24rem
-    ),
-    radial-gradient(
-      circle at 88% 72%,
-      color-mix(in srgb, var(--accent) 8%, transparent),
-      transparent 26rem
-    );
+  background: var(--background);
+}
+
+.hero-field {
+  background-image: url("/images/data-routes.svg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: min(66rem, 76vw) auto;
+}
+
+.data-field {
+  background-image: url("/images/data-routes.svg");
+  background-repeat: no-repeat;
+  background-position: right 12%;
+  background-size: min(58rem, 70vw) auto;
+}
+
+.green-panel {
+  --text-secondary: #ffffff;
+  --muted: #ffffff;
 }
 
 .route-background::before {
@@ -114,11 +121,13 @@ summary:focus-visible {
   inset: 0;
   pointer-events: none;
   content: "";
-  opacity: 0.34;
-  background-image: url("data:image/svg+xml,%3Csvg width='420' height='820' viewBox='0 0 420 820' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M106-40C248 78 54 190 188 312S336 506 198 626S60 744 156 860' fill='none' stroke='%2391b8a3' stroke-width='1.8' stroke-dasharray='7 12'/%3E%3Cpath d='M154-40C294 94 102 212 232 336S368 530 244 652S112 766 206 860' fill='none' stroke='%23f3f1eb' stroke-width='1.2' stroke-opacity='.4' stroke-dasharray='2 11'/%3E%3C/svg%3E");
-  background-repeat: repeat-y;
-  background-position: right top;
-  background-size: min(52vw, 32rem) auto;
+  opacity: 0.7;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 3rem,
+    color-mix(in srgb, var(--text) 4%, transparent) calc(3rem + 1px)
+  );
 }
 
 .text-balance {
@@ -130,11 +139,10 @@ summary:focus-visible {
 }
 
 .mono-label {
-  font-family: var(--font-instrument), sans-serif;
-  font-size: 0.7rem;
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.75rem;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 @media (prefers-reduced-motion: reduce) {

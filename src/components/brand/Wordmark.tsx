@@ -18,10 +18,10 @@ export function Wordmark({ label, className, ...props }: WordmarkProps) {
         x="15"
         y="29"
         fill="currentColor"
-        fontFamily="var(--font-instrument), sans-serif"
-        fontSize="25"
-        fontWeight="650"
-        letterSpacing="1.25"
+        style={{ fontFamily: "var(--font-newsreader), serif" }}
+        fontSize="23"
+        fontWeight="600"
+        letterSpacing="0.6"
       >
         {label}
       </text>

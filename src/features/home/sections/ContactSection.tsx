@@ -1,9 +1,8 @@
-import { ArrowRight, FileDown, Mail, MessageCircle } from "lucide-react";
+import { FileDown, Globe2, Mail, MapPin, MessageCircle } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { GitHubIcon, LinkedInIcon } from "@/components/brand/SocialIcons";
 import { Container } from "@/components/layout/Container";
 import { ExternalLink } from "@/components/ui/ExternalLink";
-import { ContactSignalField } from "@/components/visual/ContactSignalField";
 import { Reveal } from "@/components/visual/Reveal";
 import { siteConfig } from "@/config/site";
 
@@ -11,89 +10,104 @@ export async function ContactSection() {
   const t = await getTranslations("contact");
   const common = await getTranslations("common");
   const identity = await getTranslations("identity");
+  const hero = await getTranslations("hero");
   const channels = [
     {
-      key: "hiring",
       value: identity("email"),
       href: `mailto:${siteConfig.email}`,
-      external: false,
       icon: Mail,
+      target: "_self",
+      download: false,
     },
     {
-      key: "project",
       value: common("whatsapp"),
       href: siteConfig.whatsappUrl,
-      external: true,
       icon: MessageCircle,
+      target: "_blank",
+      download: false,
     },
     {
-      key: "networking",
       value: common("linkedin"),
       href: siteConfig.linkedin,
-      external: true,
       icon: LinkedInIcon,
+      target: "_blank",
+      download: false,
     },
     {
-      key: "code",
       value: common("github"),
       href: siteConfig.github,
-      external: true,
       icon: GitHubIcon,
+      target: "_blank",
+      download: false,
     },
     {
-      key: "resume",
       value: common("downloadResume"),
       href: siteConfig.resume["pt-BR"],
-      external: false,
       icon: FileDown,
+      target: "_self",
+      download: true,
     },
   ] as const;
 
   return (
     <section
       id="contato"
-      className="section-rule bg-surface relative overflow-hidden py-20 sm:py-28 lg:py-36"
+      className="green-panel section-rule bg-mineral-deep py-20 sm:py-28"
     >
-      <ContactSignalField />
-      <Container className="relative">
-        <Reveal>
-          <p className="mono-label text-accent">{t("index")}</p>
-          <h2 className="font-display mt-8 text-[clamp(4rem,12vw,12rem)] leading-[0.78] font-semibold tracking-[-0.075em]">
+      <Container>
+        <Reveal className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-end lg:gap-16">
+          <h2 className="font-display text-[clamp(3.5rem,7vw,7rem)] leading-[0.9] font-semibold tracking-[-0.035em]">
             {t("title")}
           </h2>
-          <p className="text-secondary mt-8 text-lg">{t("intro")}</p>
+          <p className="text-secondary max-w-xl text-lg leading-8">
+            {t.rich("availabilityTitle", {
+              highlight: (chunks) => (
+                <span className="text-accent font-semibold">{chunks}</span>
+              ),
+            })}
+          </p>
         </Reveal>
-        <div className="mt-14 border-t border-white/15 lg:mt-20">
+
+        <Reveal className="bg-surface-soft border-accent/40 mt-12 grid gap-8 border-t-2 p-8 sm:p-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-end lg:gap-16">
+          <h3 className="font-display max-w-3xl text-3xl leading-[1.25] font-semibold sm:text-4xl">
+            {t.rich("ctaTitle", {
+              highlight: (chunks) => (
+                <span className="text-accent">{chunks}</span>
+              ),
+            })}
+          </h3>
+          <div>
+            <p className="text-secondary max-w-xl text-lg leading-8">
+              {t("ctaText")}
+            </p>
+            <p className="text-secondary mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+              <span className="flex items-center gap-2">
+                <MapPin aria-hidden="true" className="size-4" />
+                {hero("location")}
+              </span>
+              <span className="flex items-center gap-2">
+                <Globe2 aria-hidden="true" className="size-4" />
+                {hero("remote")}
+              </span>
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="mt-12 grid border-t border-l border-white/15 sm:grid-cols-2 lg:grid-cols-3">
           {channels.map((channel) => (
             <Reveal
-              key={channel.key}
-              className="grid gap-2 border-b border-white/15 py-5 sm:grid-cols-[0.6fr_1.4fr] sm:items-center lg:py-7"
+              key={channel.href}
+              className="border-r border-b border-white/15 p-6 sm:p-8"
             >
-              <p className="mono-label text-muted">
-                {t(`channels.${channel.key}`)}
-              </p>
-              {channel.external ? (
-                <ExternalLink
-                  href={channel.href}
-                  icon={channel.icon}
-                  className="font-heading w-fit text-xl font-semibold sm:text-2xl"
-                >
-                  {channel.value}
-                </ExternalLink>
-              ) : (
-                <a
-                  href={channel.href}
-                  download={channel.key === "resume" ? true : undefined}
-                  className="group font-heading hover:text-accent flex w-fit items-center gap-3 text-xl font-semibold transition-colors sm:text-2xl"
-                >
-                  <channel.icon aria-hidden="true" className="size-5" />
-                  {channel.value}
-                  <ArrowRight
-                    aria-hidden="true"
-                    className="size-5 transition-transform group-hover:translate-x-1"
-                  />
-                </a>
-              )}
+              <ExternalLink
+                href={channel.href}
+                icon={channel.icon}
+                target={channel.target}
+                download={channel.download}
+                className="font-heading w-fit text-lg font-semibold sm:text-xl"
+              >
+                {channel.value}
+              </ExternalLink>
             </Reveal>
           ))}
         </div>

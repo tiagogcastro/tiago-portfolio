@@ -3,11 +3,10 @@ import { GitHubIcon, LinkedInIcon } from "@/components/brand/SocialIcons";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { ExternalLink } from "@/components/ui/ExternalLink";
-import { BackgroundGrid } from "@/components/visual/BackgroundGrid";
 import { Reveal } from "@/components/visual/Reveal";
 import { siteConfig } from "@/config/site";
 
-const scope = ["development", "seo", "cloud", "data"] as const;
+const scope = ["development", "cloud", "data", "seo"] as const;
 
 export async function HeroSection() {
   const t = await getTranslations("hero");
@@ -17,44 +16,37 @@ export async function HeroSection() {
   return (
     <section
       id="top"
-      className="contour-background relative min-h-[100svh] overflow-hidden pt-[var(--header-height)]"
+      className="hero-field relative min-h-[88svh] pt-[var(--header-height)]"
     >
-      <BackgroundGrid />
-      <div
-        aria-hidden="true"
-        className="border-mineral/20 absolute top-[18%] right-[-9rem] size-[30rem] rounded-full border sm:size-[42rem]"
-      />
-      <div
-        aria-hidden="true"
-        className="border-accent/15 absolute top-[24%] right-[-4rem] size-[20rem] rounded-full border sm:size-[31rem]"
-      />
+      <Container className="grid min-h-[calc(88svh-var(--header-height))] gap-12 py-14 lg:grid-cols-[1.18fr_0.82fr] lg:items-center lg:gap-16 lg:py-24">
+        <Reveal>
+          <h1 className="font-display text-[clamp(4.5rem,10vw,9.5rem)] leading-[0.82] font-semibold tracking-[-0.045em]">
+            <span className="block">{t("firstName")}</span>
+            <span className="text-mineral-bright block">{t("lastName")}</span>
+          </h1>
+          <p className="font-heading mt-8 max-w-2xl text-xl leading-8 font-medium sm:text-2xl">
+            {t("positioning")}
+          </p>
+          <p className="text-secondary mt-4 max-w-[62ch] text-lg leading-8">
+            {t("narrative")}
+          </p>
 
-      <Container className="relative grid min-h-[calc(100svh-var(--header-height))] gap-8 py-7 lg:grid-cols-[minmax(0,1.45fr)_minmax(310px,0.55fr)] lg:items-center lg:gap-12 lg:py-20 xl:py-24">
-        <Reveal className="flex min-w-0 flex-col gap-8 lg:gap-10">
-          <div>
-            <h1 className="font-display text-[clamp(3.75rem,12.2vw,11.5rem)] leading-[0.72] font-semibold tracking-[-0.08em] uppercase">
-              <span className="font-heading text-accent mb-6 block text-sm leading-none font-semibold tracking-[0.14em] sm:text-base">
-                {t("positioning")}
-              </span>
-              <span className="block">{t("firstName")}</span>
-              <span className="text-secondary block">{t("lastName")}</span>
-            </h1>
-            <div className="border-accent mt-8 max-w-3xl border-l-2 pl-5 lg:mt-10">
-              <p className="text-secondary max-w-2xl text-lg leading-8 text-balance sm:text-xl">
-                {t("narrative")}
-              </p>
-              <div className="mt-5 flex gap-5 text-sm font-semibold">
-                <ExternalLink href={siteConfig.linkedin} icon={LinkedInIcon}>
-                  {common("linkedin")}
-                </ExternalLink>
-                <ExternalLink href={siteConfig.github} icon={GitHubIcon}>
-                  {common("github")}
-                </ExternalLink>
-              </div>
-            </div>
-          </div>
+          <ul className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-2">
+            {scope.map((item) => (
+              <li
+                key={item}
+                className="border-mineral/35 bg-background/80 flex items-center gap-3 border-l-2 px-4 py-3 text-sm leading-6"
+              >
+                <span
+                  aria-hidden="true"
+                  className="bg-white/30 size-1.5 shrink-0"
+                />
+                {t(`scope.${item}`)}
+              </li>
+            ))}
+          </ul>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="mt-10 flex flex-wrap gap-3">
             <Button href="#experiencia" direction="down">
               {common("viewExperience")}
             </Button>
@@ -64,72 +56,51 @@ export async function HeroSection() {
           </div>
         </Reveal>
 
-        <Reveal
-          className="flex flex-col gap-8 border-t border-white/15 pt-7 lg:gap-10 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-8"
-          transition={{ delay: 0.12, duration: 0.55 }}
-        >
-          <div>
-            <p className="mono-label text-muted mb-5">{t("statusLabel")}</p>
-            <div className="relative space-y-1 before:absolute before:top-3 before:bottom-3 before:left-[5px] before:w-px before:bg-white/20">
-              <div className="relative grid grid-cols-[12px_1fr] gap-4 pb-7">
-                <span className="bg-mineral mt-1.5 size-[11px]" />
-                <div>
-                  <a
-                    href="#lakeit"
-                    className="font-heading hover:text-mineral inline-flex text-lg font-semibold underline-offset-4 transition-colors hover:underline"
-                  >
-                    {experience("lakeit.company")}
-                  </a>
-                  <p className="text-secondary mt-1 text-sm">
-                    {t("lakeitRole")}
-                  </p>
-                  <p className="text-secondary mt-3 max-w-xs text-sm leading-6">
-                    {t("lakeitContext")}
-                  </p>
-                  <p className="text-muted mt-2 font-mono text-xs">
-                    {t("lakeitPeriod")}
-                  </p>
-                </div>
-              </div>
-              <div className="relative grid grid-cols-[12px_1fr] gap-4">
-                <span className="border-mineral bg-background mt-1.5 size-[11px] border-2" />
-                <div>
-                  <a
-                    href="#futbuynow"
-                    className="font-heading hover:text-mineral inline-flex text-lg font-semibold underline-offset-4 transition-colors hover:underline"
-                  >
-                    {experience("futbuynow.company")}
-                  </a>
-                  <p className="text-secondary mt-1 text-sm">
-                    {t("futbuynowRole")}
-                  </p>
-                  <p className="text-secondary mt-3 max-w-xs text-sm leading-6">
-                    {t("futbuynowContext")}
-                  </p>
-                  <p className="text-muted mt-2 font-mono text-xs">
-                    {t("futbuynowPeriod")}
-                  </p>
-                </div>
-              </div>
+        <Reveal className="bg-surface-soft border border-white/15 p-7 sm:p-9">
+          <p className="text-accent font-mono text-sm">{t("statusLabel")}</p>
+          <div className="mt-5 space-y-6">
+            <div>
+              <a
+                href="#lakeit"
+                className="font-heading hover:text-accent text-lg font-semibold underline-offset-4 hover:underline"
+              >
+                {experience("lakeit.company")}
+              </a>
+              <p className="text-secondary mt-2 text-sm leading-6">
+                {t("lakeitRole")} · {t("lakeitPeriod")}
+              </p>
+              <p className="text-muted mt-1 text-sm leading-5">
+                {t("lakeitStatus")}
+              </p>
+            </div>
+            <div className="border-t border-white/15 pt-6">
+              <a
+                href="#futbuynow"
+                className="font-heading hover:text-accent text-lg font-semibold underline-offset-4 hover:underline"
+              >
+                {experience("futbuynow.company")}
+              </a>
+              <p className="text-secondary mt-2 text-sm leading-6">
+                {t("futbuynowRole")} · {t("futbuynowPeriod")}
+              </p>
+              <p className="text-muted mt-1 text-sm leading-5">
+                {t("futbuynowStatus")}
+              </p>
             </div>
           </div>
-
-          <div className="border-t border-white/15 pt-6">
-            <p className="mono-label text-muted">{t("scopeLabel")}</p>
-            <p className="text-secondary mt-3 max-w-xs text-sm leading-6">
-              {t("scopeText")}
-            </p>
-            <ul className="mt-5 grid grid-cols-2 gap-x-4 gap-y-3">
-              {scope.map((item) => (
-                <li
-                  key={item}
-                  className="font-heading flex items-center gap-2 text-sm font-semibold"
-                >
-                  <span aria-hidden="true" className="bg-mineral size-1.5" />
-                  {t(`scope.${item}`)}
-                </li>
-              ))}
-            </ul>
+          <div className="mt-7 grid gap-4 border-t border-white/15 pt-6 text-sm sm:grid-cols-2">
+            <div>
+              <ExternalLink href={siteConfig.linkedin} icon={LinkedInIcon}>
+                {common("linkedin")}
+              </ExternalLink>
+              <p className="text-muted mt-1 leading-5">{t("linkedinStatus")}</p>
+            </div>
+            <div>
+              <ExternalLink href={siteConfig.github} icon={GitHubIcon}>
+                {common("github")}
+              </ExternalLink>
+              <p className="text-muted mt-1 leading-5">{t("githubStatus")}</p>
+            </div>
           </div>
         </Reveal>
       </Container>
