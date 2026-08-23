@@ -1,6 +1,7 @@
 import { Mail, MapPin, MessageCircle } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { GitHubIcon, LinkedInIcon } from "../brand/SocialIcons";
+import { Mark } from "../brand/Mark";
 import { Wordmark } from "../brand/Wordmark";
 import { ExternalLink } from "../ui/ExternalLink";
 import { siteConfig } from "@/config/site";
@@ -18,10 +19,13 @@ export async function Footer() {
       <Container>
         <div className="grid gap-10 border-b border-white/15 pb-10 md:grid-cols-[1fr_auto] md:items-end">
           <div className="max-w-xl">
-            <Wordmark
-              label={identity("wordmark")}
-              className="text-foreground max-w-sm"
-            />
+            <div className="flex items-center gap-3">
+              <Mark className="size-9 shrink-0" />
+              <Wordmark
+                label={identity("wordmark")}
+                className="text-foreground w-32 sm:w-36"
+              />
+            </div>
             <p className="font-heading text-secondary mt-5 text-lg leading-7 sm:text-xl">
               {hero("statement")}
             </p>

@@ -39,7 +39,7 @@ export function generateStaticParams() {
 
 export const viewport: Viewport = {
   colorScheme: "dark",
-  themeColor: "#12161c",
+  themeColor: "#141815",
 };
 
 export async function generateMetadata({
@@ -56,13 +56,26 @@ export async function generateMetadata({
   return {
     metadataBase: new URL(siteConfig.domain),
     applicationName: identity("displayName"),
-    title: t("title"),
+    title: {
+      default: t("title"),
+      template: `%s · ${identity("displayName")}`,
+    },
     description: t("description"),
     authors: [{ name: identity("fullName"), url: "/" }],
     creator: identity("fullName"),
     publisher: identity("displayName"),
     category: "technology",
     alternates: { canonical: "/" },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true },
+    },
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
     openGraph: {
       type: "website",
       locale: structuredData("openGraphLocale"),
@@ -84,6 +97,11 @@ export async function generateMetadata({
       title: t("title"),
       description: t("description"),
       images: ["/opengraph-image"],
+    },
+    appleWebApp: {
+      capable: true,
+      title: identity("displayName"),
+      statusBarStyle: "black-translucent",
     },
   };
 }

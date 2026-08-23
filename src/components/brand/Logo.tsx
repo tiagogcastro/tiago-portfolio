@@ -1,3 +1,4 @@
+import { Mark } from "./Mark";
 import { Wordmark } from "./Wordmark";
 
 type LogoProps = {
@@ -9,12 +10,13 @@ export function Logo({ name, wordmark }: LogoProps) {
   return (
     <a
       href="#top"
-      className="group block w-[10.5rem] sm:w-[12.5rem]"
+      className="group flex items-center gap-3"
       aria-label={name}
     >
+      <Mark className="size-9 shrink-0 transition-transform group-hover:-translate-y-0.5" />
       <Wordmark
         label={wordmark}
-        className="text-foreground transition-transform group-hover:-translate-y-0.5"
+        className="text-foreground w-32 transition-transform group-hover:-translate-y-0.5 sm:w-36"
       />
     </a>
   );

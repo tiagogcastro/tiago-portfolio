@@ -3,14 +3,14 @@ import { siteConfig } from "@/config/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `${siteConfig.name} | Desenvolvedor Full Stack`,
-    short_name: siteConfig.name,
+    name: `${siteConfig.name} · Desenvolvedor Full Stack e Cloud`,
+    short_name: "Tiago Castro",
     description:
-      "Portfólio de Tiago Castro, Desenvolvedor Full Stack especializado em Cloud e AWS.",
+      "Portfólio de Tiago Castro, desenvolvedor full stack que cria e evolui sites, sistemas e produtos digitais.",
     start_url: "/",
     display: "minimal-ui",
-    background_color: "#12161c",
-    theme_color: "#12161c",
+    background_color: "#141815",
+    theme_color: "#141815",
     lang: "pt-BR",
     categories: ["portfolio", "technology"],
     icons: [
@@ -19,6 +19,11 @@ export default function manifest(): MetadataRoute.Manifest {
         sizes: "any",
         type: "image/svg+xml",
         purpose: "any",
+      },
+      {
+        src: "/apple-icon",
+        sizes: "180x180",
+        type: "image/png",
       },
     ],
   };
