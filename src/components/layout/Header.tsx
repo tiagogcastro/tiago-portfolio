@@ -1,15 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import {
-  BriefcaseBusiness,
-  FileDown,
-  FolderKanban,
-  Menu,
-  Send,
-  UserRound,
-  X,
-} from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { FileDown, Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -19,10 +11,10 @@ import { GitHubIcon, LinkedInIcon } from "../brand/SocialIcons";
 import { Container } from "./Container";
 
 const navItems = [
-  ["profile", "#perfil", UserRound],
-  ["experience", "#experiencia", BriefcaseBusiness],
-  ["projects", "#projetos", FolderKanban],
-  ["contact", "#contato", Send],
+  ["experience", "#experiencia"],
+  ["projects", "#projetos"],
+  ["profile", "#perfil"],
+  ["contact", "#contato"],
 ] as const;
 
 export function Header() {
@@ -31,6 +23,42 @@ export function Header() {
   const accessibility = useTranslations("accessibility");
   const identity = useTranslations("identity");
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    const closeOnOutsideClick = (event: PointerEvent) => {
+      const target = event.target as Node;
+
+      if (
+        !menuRef.current?.contains(target) &&
+        !menuButtonRef.current?.contains(target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", closeOnEscape);
+    document.addEventListener("pointerdown", closeOnOutsideClick);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", closeOnEscape);
+      document.removeEventListener("pointerdown", closeOnOutsideClick);
+    };
+  }, [isOpen]);
 
   return (
     <header className="bg-background/90 fixed inset-x-0 top-0 z-40 border-b border-white/10 backdrop-blur-xl">
@@ -41,19 +69,18 @@ export function Header() {
           aria-label={t("navLabel")}
           className="hidden items-center gap-6 xl:flex"
         >
-          {navItems.map(([key, href, Icon]) => (
+          {navItems.map(([key, href]) => (
             <a
               key={key}
               href={href}
-              className="font-heading text-secondary hover:text-foreground flex items-center gap-2 text-xs font-medium tracking-wide transition-colors"
+              className="font-heading text-secondary hover:text-foreground text-xs font-medium tracking-wide transition-colors"
             >
-              <Icon aria-hidden="true" className="size-3.5" />
               {t(key)}
             </a>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-4 sm:flex">
+        <div className="hidden items-center gap-4 xl:flex">
           <div className="group relative">
             <button
               type="button"
@@ -110,6 +137,7 @@ export function Header() {
         </div>
 
         <button
+          ref={menuButtonRef}
           type="button"
           className="grid size-11 place-items-center xl:hidden"
           onClick={() => setIsOpen((value) => !value)}
@@ -124,7 +152,9 @@ export function Header() {
       </Container>
 
       <div
+        ref={menuRef}
         id="mobile-menu"
+        aria-hidden={!isOpen}
         className={cn(
           "bg-background absolute inset-x-0 top-full border-b border-white/10 px-5 transition-all xl:hidden",
           isOpen
@@ -133,14 +163,13 @@ export function Header() {
         )}
       >
         <nav className="flex flex-col py-5" aria-label={t("navLabel")}>
-          {navItems.map(([key, href, Icon]) => (
+          {navItems.map(([key, href]) => (
             <a
               key={key}
               href={href}
               onClick={() => setIsOpen(false)}
-              className="font-heading flex items-center gap-3 border-b border-white/10 py-4 text-xl"
+              className="font-heading border-b border-white/10 py-4 text-xl"
             >
-              <Icon aria-hidden="true" className="text-mineral size-5" />
               {t(key)}
             </a>
           ))}
@@ -162,6 +191,7 @@ export function Header() {
               href={siteConfig.linkedin}
               target="_blank"
               rel="noreferrer"
+              onClick={() => setIsOpen(false)}
             >
               <LinkedInIcon aria-hidden="true" className="size-4" />
               {common("linkedin")}
@@ -171,6 +201,7 @@ export function Header() {
               href={siteConfig.github}
               target="_blank"
               rel="noreferrer"
+              onClick={() => setIsOpen(false)}
             >
               <GitHubIcon aria-hidden="true" className="size-4" />
               {common("github")}
@@ -179,6 +210,7 @@ export function Header() {
               className="flex items-center gap-2"
               href={siteConfig.resume["pt-BR"]}
               download
+              onClick={() => setIsOpen(false)}
             >
               <FileDown aria-hidden="true" className="size-4" />
               {common("downloadResume")}

@@ -6,29 +6,24 @@ import type { projects } from "@/content/projects";
 
 type Project = (typeof projects)[number];
 
-export async function ProjectItem({
-  project,
-  index,
-}: {
-  project: Project;
-  index: number;
-}) {
+export async function ProjectItem({ project }: { project: Project }) {
   const t = await getTranslations();
   const common = await getTranslations("common");
   const base = project.translationKey;
 
   return (
-    <article className="group hover:border-accent grid gap-5 border-b border-white/15 py-7 transition-colors sm:grid-cols-[3rem_1fr_auto] sm:items-start sm:gap-8 lg:py-9">
-      <span className="text-muted font-mono text-xs">0{index + 1}</span>
+    <article className="group hover:border-accent grid gap-6 border-b border-white/15 py-8 transition-colors lg:grid-cols-[1fr_auto] lg:items-start lg:gap-10">
       <div>
-        <p className="mono-label text-mineral">{t(`${base}.type`)}</p>
-        <h3 className="font-heading mt-3 text-2xl font-semibold sm:text-3xl">
+        <h3 className="font-heading text-2xl font-semibold sm:text-3xl">
           {t(`${base}.name`)}
         </h3>
+        <p className="text-mineral mt-2 font-mono text-sm">
+          {t(`${base}.type`)}
+        </p>
         <p className="text-secondary mt-3 max-w-2xl leading-7">
           {t(`${base}.description`)}
         </p>
-        <p className="text-muted mt-5 font-mono text-[0.68rem] uppercase">
+        <p className="text-muted mt-5 font-mono text-sm leading-6">
           {project.technologies.join(" · ")}
         </p>
       </div>

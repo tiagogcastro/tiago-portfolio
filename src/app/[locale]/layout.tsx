@@ -1,24 +1,31 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
-import { Fraunces, Instrument_Sans } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans, Newsreader } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
-import { NoiseTexture } from "@/components/visual/NoiseTexture";
 import { siteConfig } from "@/config/site";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 
-const fraunces = Fraunces({
+const newsreader = Newsreader({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-newsreader",
+  weight: ["400", "600"],
   display: "swap",
 });
-const instrument = Instrument_Sans({
+const plexSans = IBM_Plex_Sans({
   subsets: ["latin"],
-  variable: "--font-instrument",
+  variable: "--font-plex-sans",
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  variable: "--font-plex-mono",
+  weight: ["400", "500"],
   display: "swap",
 });
 type LayoutProps = {
@@ -188,7 +195,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   return (
     <html
       lang={structuredData("language")}
-      className={`${fraunces.variable} ${instrument.variable}`}
+      className={`${newsreader.variable} ${plexSans.variable} ${plexMono.variable}`}
     >
       <body>
         <NextIntlClientProvider>
@@ -201,7 +208,6 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
           <Header />
           {children}
           <Footer />
-          <NoiseTexture />
         </NextIntlClientProvider>
         <script
           type="application/ld+json"

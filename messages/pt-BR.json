@@ -49,6 +49,7 @@
   "common": {
     "current": "atual",
     "viewExperience": "Ver experiência",
+    "viewProjects": "Ver projetos",
     "talkToMe": "Falar comigo",
     "downloadResume": "Baixar currículo",
     "linkedin": "LinkedIn",
@@ -78,69 +79,81 @@
   },
   "hero": {
     "eyebrow": "Desenvolvedor Full Stack",
-    "positioning": "Desenvolvedor Full Stack, Cloud e AWS",
+    "positioning": "Criação e evolução de sites, sistemas e produtos digitais.",
     "firstName": "Tiago",
     "lastName": "Castro",
-    "statement": "Construo software para funcionar no mundo real.",
-    "narrative": "Há mais de 6 anos, desenvolvo e evoluo produtos que precisam crescer sem parar a operação.",
+    "statement": "Produto, infraestrutura e operação no mesmo trabalho.",
+    "narrative": "Há mais de 6 anos, construo sistemas usados por empresas, clientes e equipes que precisam continuar operando enquanto crescem.",
     "scope": {
-      "development": "Desenvolvimento",
-      "seo": "SEO",
-      "cloud": "Cloud",
-      "data": "Dados"
+      "development": "Sites e sistemas · telas, pagamentos e integrações",
+      "seo": "Crescimento · busca no Google e tarefas automáticas",
+      "cloud": "Estrutura online · velocidade, segurança e custos",
+      "data": "Informação · organização, processamento e análise"
     },
     "scopeLabel": "Frentes de atuação",
     "scopeText": "Do produto à infraestrutura, conecto as frentes que sustentam crescimento e operação.",
     "location": "Rio de Janeiro, Brasil",
     "availabilityLabel": "Aberto a oportunidades",
-    "availability": "Disponível para novos desafios e projetos.",
-    "workModes": "CLT · PJ · Freelance · Consultoria · Outras colaborações",
+    "availability": "Sempre aberto a networking, oportunidades e projetos que façam sentido.",
+    "workModes": "CLT · PJ · Freelance · Consultoria · Projetos recorrentes",
     "remote": "Remoto no Brasil e exterior",
     "statusLabel": "Atuação agora",
     "lakeitRole": "Desenvolvedor Fullstack Cloud",
     "lakeitPeriod": "Jan/2024 - atual",
-    "lakeitContext": "Plataforma enterprise de dados.",
+    "lakeitStatus": "Plataforma de dados com processamento, consultas e infraestrutura na AWS.",
     "futbuynowRole": "Freelance",
     "futbuynowPeriod": "Fev/2023 - atual",
-    "futbuynowContext": "Marketplace e operação digital."
+    "futbuynowStatus": "Marketplace em produção com pagamentos, SEO e automações.",
+    "linkedinStatus": "Histórico profissional completo.",
+    "githubStatus": "Código aberto e projetos autorais."
   },
   "profile": {
     "index": "02 / Perfil",
-    "title": "Tecnologia a serviço do produto.",
-    "intro": "Atuo do backend à nuvem para transformar necessidades de negócio em sistemas confiáveis, fáceis de operar e preparados para evoluir.",
+    "title": "Como eu trabalho.",
+    "intro": "Construo a parte visível e a que ninguém vê, acompanho custos e resolvo problemas depois que o sistema entra em uso.",
+    "processVisual": {
+      "title": "Da necessidade ao software em uso.",
+      "caption": "O objetivo é reduzir esforço, evitar falhas e permitir que o produto continue evoluindo.",
+      "items": {
+        "understand": "Entender o trabalho real",
+        "build": "Construir sem complicar",
+        "improve": "Medir e melhorar"
+      }
+    },
     "capabilities": {
       "backend": {
         "label": "Backend",
-        "title": "Sistemas e integrações",
-        "detail": "Uso Node.js, TypeScript e Python para construir APIs, regras de negócio e integrações que mantêm a operação funcionando.",
+        "title": "Sistemas que sustentam a operação",
+        "detail": "Pagamentos, cadastros e regras de negócio funcionando juntos, sem trabalho manual.",
         "tools": "Node.js · TypeScript · Python"
       },
       "frontend": {
         "label": "Interfaces",
-        "title": "Produtos web",
-        "detail": "Com React e Next.js, transformo fluxos complexos em interfaces claras para clientes e equipes internas.",
+        "title": "Sites e produtos digitais",
+        "detail": "Processos complexos em telas rápidas e claras para clientes e equipes.",
         "tools": "React · Next.js · Tailwind CSS"
       },
       "cloudData": {
         "label": "Cloud e dados",
         "title": "Informação disponível e segura",
-        "detail": "Na AWS, conecto aplicações, processamento e bancos de dados para que a informação chegue ao lugar certo com segurança.",
-        "tools": "AWS · PostgreSQL · MySQL · Redis"
+        "detail": "Grandes volumes de informação organizados para respostas rápidas e seguras.",
+        "tools": "AWS · GCP · PostgreSQL · MySQL · Redis"
       },
       "delivery": {
         "label": "Infraestrutura",
-        "title": "Ambientes reproduzíveis",
-        "detail": "Uso infraestrutura como código e automação para entregar mudanças com consistência e investigar problemas de ponta a ponta.",
+        "title": "Mudanças sem parar a operação",
+        "detail": "Ambientes e entregas automatizados para menos erros e recuperação mais segura.",
         "tools": "Terraform · Docker · GitHub Actions"
       }
     },
     "education": {
       "label": "Formação e credenciais",
-      "title": "Fundamentos que sustentam a prática.",
+      "title": "Formação e credenciais.",
+      "intro": "Formação concluída, prática em sistemas que ajustam sua capacidade conforme o uso e estudo contínuo voltado a produtos em operação.",
       "degree": {
         "label": "Graduação",
         "title": "Análise e Desenvolvimento de Sistemas",
-        "institution": "Descomplica UniAmérica",
+        "institution": "Centro Universitário União das Américas Descomplica",
         "detail": "Curso Superior de Tecnologia",
         "period": "Graduação concluída em jul. 2026",
         "action": "Validar conclusão"
@@ -150,7 +163,7 @@
         "serverless": {
           "title": "AWS Serverless Demonstrated",
           "issuer": "Amazon Web Services Training and Certification",
-          "detail": "Badge prático em arquiteturas serverless com Lambda, API Gateway, Step Functions e DynamoDB.",
+          "detail": "Credencial prática sobre serviços que recebem solicitações, coordenam tarefas e armazenam dados conforme a demanda.",
           "action": "Ver credencial"
         },
         "technical": {
@@ -172,7 +185,7 @@
         },
         "english": {
           "name": "Inglês",
-          "level": "Técnico para documentação, código e ferramentas"
+          "level": "Técnico para documentação e código"
         },
         "spanish": {
           "name": "Espanhol",
@@ -184,47 +197,62 @@
   },
   "experience": {
     "title": "Experiência profissional",
+    "intro": "Cada trabalho mostra o contexto que encontrei, o que mudei, por que mudei e os resultados acompanhados.",
+    "technologyHelp": "Tecnologias usadas",
+    "technologyHelpLabel": "Mostrar tecnologias usadas em {area}",
+    "interlude": {
+      "title": "De dados para comércio digital.",
+      "caption": "Contextos diferentes exigem decisões diferentes, mas ambos precisam continuar funcionando enquanto mudam.",
+      "items": {
+        "understand": "Informação pronta para uso",
+        "change": "Custos e riscos sob controle",
+        "measure": "Vendas em movimento"
+      }
+    },
     "lakeit": {
       "label": "Experiência profissional",
       "company": "HITSS · Projeto LakeIT",
       "role": "Desenvolvedor Fullstack Cloud",
       "period": "Jan/2024 - atual",
-      "description": "No LakeIT, evoluo uma plataforma enterprise de dados usada por clientes, com atuação em aplicação, processamento e infraestrutura AWS.",
+      "description": "Plataforma de dados usada por empresas para organizar, processar e consultar grandes volumes de informação.",
       "blocks": {
         "data": {
           "label": "Dados",
-          "title": "Dados prontos para uso",
-          "detail": "Desenvolvo pipelines configuráveis que automatizam o processamento e entregam informação para análise.",
-          "evidence": "Dezenas de pipelines em clientes",
-          "stack": "AWS Glue · S3 · Athena · Python"
+          "title": "Automatizei o preparo das informações",
+          "detail": "Fluxos automáticos que preparam as informações sem trabalho manual.",
+          "evidence": "Dezenas de fluxos em uso por clientes",
+          "stack": "AWS Glue · S3 · Athena · Python",
+          "technologyDetail": "Python implementa as automações; AWS Glue executa o processamento, S3 armazena os arquivos e Athena permite consultar grandes volumes de informação."
         },
         "infra": {
           "label": "Cloud e infra",
-          "title": "Cloud que pode evoluir",
+          "title": "Dividi uma estrutura complexa em partes menores",
           "metricModules": "+29 módulos Terraform",
           "metricEnvironments": "+3 ambientes versionados",
-          "detail": "Modularizei uma infraestrutura com centenas de recursos para tornar mudanças mais previsíveis entre ambientes.",
-          "stack": "AWS · Terraform · Terragrunt · GitHub Actions"
+          "detail": "Reorganizei a estrutura em partes menores e repetíveis entre ambientes.",
+          "evidence": "+29 partes reutilizáveis em +3 ambientes",
+          "stack": "AWS · Terraform · Terragrunt · GitHub Actions",
+          "technologyDetail": "Terraform e Terragrunt descrevem, versionam e reutilizam a estrutura em arquivos. GitHub Actions confere e publica mudanças automaticamente."
         },
         "ai": {
           "label": "IA",
-          "title": "IA aplicada aos dados",
-          "detail": "Crio recursos que transformam perguntas sobre o catálogo em consultas, respostas e gráficos.",
-          "stack": "Amazon Bedrock · Athena · Vertex AI · BigQuery"
+          "title": "Transformei perguntas em respostas e gráficos",
+          "detail": "Perguntas em linguagem comum viram consultas, respostas e gráficos.",
+          "stack": "Amazon Bedrock · Athena · Vertex AI · BigQuery",
+          "technologyDetail": "Amazon Bedrock e Vertex AI interpretam as perguntas; Athena e BigQuery consultam as informações usadas para montar respostas e gráficos."
         }
       },
       "cost": {
         "label": "Custo AWS",
-        "title": "Contribuí para reestruturar a infraestrutura AWS.",
-        "detail": "Reorganizei componentes, módulos e ambientes para tornar a infraestrutura mais enxuta, repetível e segura de evoluir.",
+        "title": "Reorganizei a estrutura online para reduzir custos.",
+        "detail": "Revisei componentes e ambientes para diminuir desperdícios e tornar futuras mudanças mais seguras.",
         "before": "Antes",
         "beforeValue": "> US$ 2.300 / mês",
         "after": "Depois",
         "afterValue": "~ US$ 800 - 1.000 / mês",
         "peak": "Picos históricos da conta analisada passaram de US$ 6 mil por mês.",
         "savingValue": "+ US$ 15 mil / ano",
-        "savingLabel": "economia anual estimada",
-        "note": "Valores da conta AWS analisada; redução associada a diferentes mudanças ao longo do período."
+        "savingLabel": "economia anual estimada"
       },
       "responsibility": {
         "label": "Responsabilidade de ponta a ponta",
@@ -247,25 +275,28 @@
       "label": "Cliente · Freelance\nResponsabilidade técnica",
       "company": "Futbuynow",
       "period": "Fev/2023 - atual",
-      "description": "Sou responsável pela evolução técnica de um marketplace em produção, do produto e pagamentos ao crescimento e à automação.",
+      "description": "Marketplace em produção com compra, pagamento, vendedores e operação diária.",
       "blocks": {
         "product": {
           "label": "Produto e operação",
-          "title": "Marketplace de ponta a ponta",
-          "detail": "Evoluo a compra e o painel operacional, incluindo vendedores, afiliados, comissões e fidelidade.",
-          "tools": "Node.js · Next.js · MySQL · Redis"
+          "title": "Reestruturei a jornada de compra",
+          "detail": "Acompanho vendedores, afiliados, comissões e fidelidade no painel e na compra.",
+          "tools": "Node.js · Next.js · MySQL · Redis",
+          "technologyDetail": "Next.js constrói as telas e parte do servidor; Node.js executa as regras da operação. MySQL guarda os dados principais e Redis acelera consultas frequentes."
         },
         "payments": {
           "label": "Pagamentos",
-          "title": "Fluxo automatizado",
-          "detail": "Integro pagamentos à confirmação do pedido, fidelidade e acompanhamento em tempo real.",
-          "tools": "OpenPix · Stripe · PayPal"
+          "title": "Conectei pagamento e confirmação",
+          "detail": "Pagamento conectado ao pedido e à fidelidade, sem conferências manuais.",
+          "tools": "OpenPix · Stripe · PayPal",
+          "technologyDetail": "Conectei OpenPix, Stripe e PayPal ao sistema para confirmar pagamentos e atualizar pedidos automaticamente."
         },
         "ai": {
           "label": "IA e automações",
-          "title": "Operação assistida",
-          "detail": "Crio agentes e automações para monitoramento, tradução e análise de sinais da operação.",
-          "tools": "Agentes · monitoramento · tradução"
+          "title": "Automatizei análises da operação",
+          "detail": "Relatórios e análise de cliques que orientam melhorias nas interfaces.",
+          "tools": "Agentes · monitoramento · tradução",
+          "technologyDetail": "Combinei rotinas automáticas, ferramentas de análise e inteligência artificial para acompanhar falhas, traduzir conteúdo, gerar relatórios e entender como as pessoas usam as telas."
         },
         "seo": {
           "label": "SEO e aquisição"
@@ -285,7 +316,7 @@
         "coinsValue": "+30 bi",
         "coinsLabel": "coins comercializadas",
         "coinsPeriod": "volume acumulado",
-        "growthLabel": "Evolução da operação",
+        "growthLabel": "Evolução da operação após eu assumir a liderança técnica",
         "growthTitle": "A média de pedidos pagos mais que dobrou <highlight>durante minha atuação</highlight>.",
         "growthDetail": "Durante o período, evoluí produto, pagamentos, SEO, analytics e estabilidade para acompanhar o aumento da operação.",
         "growthFrom": "~1.483 / mês",
@@ -294,10 +325,10 @@
         "growthToPeriod": "mai-jul/2026",
         "growthNote": "Evolução da operação durante minha atuação; o crescimento comercial resulta de diferentes frentes do negócio.",
         "seoValue": "+84%",
-        "seoLabel": "cliques no Search Console",
+        "seoLabel": "cliques vindos da busca do Google",
         "seoPeriod": "jun → jul/2026",
-        "seoTotalValue": "30,4 mil",
-        "seoTotalLabel": "cliques orgânicos em 12 meses"
+        "seoTotalValue": "+30,4 mil",
+        "seoTotalLabel": "cliques vindos do Google em 12 meses"
       }
     }
   },
@@ -312,8 +343,8 @@
   },
   "projects": {
     "index": "04 / Projetos",
-    "title": "Produtos e ferramentas que construí.",
-    "intro": "Projetos autorais e open source que aplicam IA, cloud e automação a problemas concretos.",
+    "title": "Projetos que podem ser abertos.",
+    "intro": "Código, interface e decisões de arquitetura visíveis. O NexSift é o trabalho autoral mais completo desta seleção.",
     "featured": "Projeto em destaque",
     "signalInput": "Muitos sinais",
     "signalFilter": "Filtro",
@@ -322,29 +353,40 @@
       "nexsift": {
         "name": "NexSift",
         "type": "Projeto autoral",
-        "description": "Ferramenta autoral que filtra múltiplos sinais e organiza informação útil para apoiar pesquisas e decisões."
+        "description": "Criei um radar que seleciona mudanças relevantes em tecnologia, verifica as fontes e explica por que cada sinal importa.",
+        "homeAlt": "Página inicial do NexSift com a mensagem Menos ruído, mais sinal e quatro sinais recentes",
+        "homeCaption": "Figura 1. Página inicial: proposta e seleção curta do radar, sem feed infinito.",
+        "mobileAlt": "Versão móvel do NexSift mostrando três sinais recentes e suas notas de relevância",
+        "mobileTitle": "A leitura continua curta no celular.",
+        "mobileCaption": "A mesma hierarquia do radar foi preservada em uma coluna: título, relevância e data aparecem antes do contexto.",
+        "radarAlt": "Arquivo de sinais do NexSift com busca, filtros por tópico e pontuação de relevância",
+        "radarCaption": "Figura 2. O arquivo reúne busca, tópicos, fontes e relevância em uma única leitura.",
+        "topicsAlt": "Página de tópicos do NexSift organizada em sete áreas de tecnologia",
+        "topicsCaption": "Figura 3. Sete lentes editoriais organizam o que o produto acompanha."
       },
       "awsIac": {
         "name": "AWS IaC Blueprint",
         "type": "Open Source",
-        "description": "Infraestrutura como código para testar ambientes AWS localmente com segurança e baixo custo."
+        "description": "Criei uma forma segura e barata de testar, no próprio computador, a estrutura que depois mantém sistemas online."
       },
       "aiI18n": {
         "name": "ai-i18n-translate",
         "type": "NPM · Open Source",
-        "description": "Pacote open source que traduz arquivos de internacionalização com IA sem alterar chaves ou estrutura."
+        "description": "Criei uma ferramenta que traduz textos de sistemas sem quebrar os códigos usados para identificá-los."
       }
     }
   },
   "contact": {
     "index": "05 / Contato",
-    "title": "Vamos conversar.",
-    "intro": "Estou aberto a oportunidades, projetos e conversas sobre tecnologia. Escolha um canal e fale diretamente comigo.",
+    "title": "Entre em contato.",
+    "availabilityTitle": "Sempre aberto a networking, oportunidades e projetos <highlight>que façam sentido</highlight>.",
+    "ctaTitle": "Quer um <highlight>site como este</highlight>, evoluir um sistema que já existe ou <highlight>apoio técnico</highlight> em um projeto em andamento?",
+    "ctaText": "Meu contato está logo abaixo, e respondo com o mesmo cuidado que dedico aos sistemas em produção.",
     "channels": {
-      "hiring": "Contratação",
-      "project": "Projeto",
-      "networking": "Networking",
-      "code": "Código",
+      "hiring": "E-mail",
+      "project": "WhatsApp",
+      "networking": "LinkedIn",
+      "code": "GitHub",
       "resume": "Currículo"
     }
   },

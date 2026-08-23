@@ -1,269 +1,216 @@
-import {
-  AppWindow,
-  ArrowDown,
-  CreditCard,
-  Presentation,
-  SearchCheck,
-  Sparkles,
-  UsersRound,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/layout/Container";
+import { ExternalLink } from "@/components/ui/ExternalLink";
+import { Tooltip } from "@/components/ui/Tooltip";
 import { Reveal } from "@/components/visual/Reveal";
-import { SystemsInterlude } from "@/components/visual/SystemsInterlude";
 import { siteConfig } from "@/config/site";
 import { CostComparison } from "../components/CostComparison";
-import { ExperiencePeriod } from "../components/ExperiencePeriod";
-import { LakeItJourney } from "../components/LakeItJourney";
-import { Metric } from "../components/Metric";
+import { TechnicalInterlude } from "../components/TechnicalInterlude";
 
-const collaborationItems = [
-  ["refinements", UsersRound],
-  ["training", Presentation],
-  ["demonstrations", AppWindow],
-  ["clients", UsersRound],
-] as const;
-
-const responsibilityProgress = ["delivery", "decisions", "operation"] as const;
-
-const futbuynowBlocks = [
-  ["product", AppWindow],
-  ["payments", CreditCard],
-  ["ai", Sparkles],
-] as const;
+const lakeItBlocks = ["data", "infra", "ai"] as const;
+const futbuynowBlocks = ["product", "payments", "ai"] as const;
 
 export async function ExperienceSection() {
   const t = await getTranslations("experience");
 
   return (
-    <section id="experiencia" className="section-rule contour-background">
-      <h2 className="sr-only">{t("title")}</h2>
+    <section id="experiencia" className="section-rule py-20 sm:py-28">
       <Container>
-        <ExperiencePeriod
-          id="lakeit"
-          label={t("lakeit.label")}
-          company={t("lakeit.company")}
-          role={t("lakeit.role")}
-          period={t("lakeit.period")}
-          description={t("lakeit.description")}
-          href={siteConfig.lakeit}
-          priority
-        >
-          <LakeItJourney />
+        <Reveal className="grid gap-6 border-b border-white/15 pb-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-end lg:gap-16">
+          <h2 className="font-display text-[clamp(3rem,6vw,6rem)] leading-[0.92] font-semibold tracking-[-0.035em]">
+            {t("title")}
+          </h2>
+          <p className="text-secondary max-w-2xl text-lg leading-8">
+            {t("intro")}
+          </p>
+        </Reveal>
 
-          <Reveal className="bg-surface-soft relative mt-12 overflow-hidden border border-white/15 p-7 sm:p-9 lg:mt-16 lg:p-10">
-            <div
-              aria-hidden="true"
-              className="from-mineral-deep/55 absolute top-0 right-0 h-full w-1/3 bg-gradient-to-l to-transparent"
-            />
-            <div className="relative grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:gap-12">
-              <div>
-                <p className="mono-label text-mineral">
-                  {t("lakeit.responsibility.label")}
-                </p>
-                <h4 className="font-display mt-5 max-w-3xl text-2xl leading-snug font-semibold tracking-[-0.03em] text-balance sm:text-4xl sm:leading-tight">
-                  {t.rich("lakeit.responsibility.title", {
-                    highlight: (chunks) => (
-                      <span className="text-mineral">{chunks}</span>
-                    ),
-                  })}
-                </h4>
-              </div>
-              <div className="border-t border-white/15 pt-7 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-10">
-                <p className="mono-label text-muted">
-                  {t("lakeit.responsibility.progress.label")}
-                </p>
-                <ol className="relative mt-6 space-y-5 before:absolute before:top-2 before:bottom-2 before:left-[5px] before:w-px before:bg-white/15">
-                  {responsibilityProgress.map((item, index) => (
-                    <li
-                      key={item}
-                      className="relative grid grid-cols-[12px_1fr] items-center gap-4"
-                    >
-                      <span
-                        className={
-                          index === responsibilityProgress.length - 1
-                            ? "bg-mineral size-[11px]"
-                            : "border-muted bg-surface-soft size-[11px] border"
-                        }
-                      />
-                      <span className="font-heading font-semibold">
-                        {t(`lakeit.responsibility.progress.${item}`)}
-                      </span>
-                    </li>
-                  ))}
-                </ol>
-              </div>
+        <article id="lakeit" className="py-16 lg:py-24">
+          <Reveal className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
+            <div>
+              <p className="text-muted font-mono text-sm">
+                {t("lakeit.period")}
+              </p>
+              <p className="text-mineral mt-3 font-mono text-sm">
+                {t("lakeit.role")}
+              </p>
             </div>
-            <div className="relative mt-7 grid gap-4 border-t border-white/15 pt-6 sm:grid-cols-4">
-              {collaborationItems.map(([item, Icon]) => (
-                <div
-                  key={item}
-                  className="text-secondary flex items-center gap-3 text-sm"
+            <div>
+              <h3 className="font-display text-[clamp(2.75rem,5vw,5rem)] leading-[0.95] font-semibold tracking-[-0.035em]">
+                <ExternalLink
+                  href={siteConfig.lakeit}
+                  className="no-underline hover:no-underline"
                 >
-                  <Icon aria-hidden="true" className="text-mineral size-4" />
-                  {t(`lakeit.responsibility.collaboration.${item}`)}
-                </div>
-              ))}
+                  {t("lakeit.company")}
+                </ExternalLink>
+              </h3>
+              <p className="text-secondary mt-5 max-w-[68ch] text-xl leading-8">
+                {t("lakeit.description")}
+              </p>
             </div>
           </Reveal>
 
-          <div className="mt-12 lg:mt-16">
-            <CostComparison />
-          </div>
-        </ExperiencePeriod>
-      </Container>
+          <div className="mt-12 grid border-y border-white/15 lg:grid-cols-3">
+            {lakeItBlocks.map((block) => {
+              const evidence =
+                block === "data"
+                  ? t("lakeit.blocks.data.evidence")
+                  : block === "infra"
+                    ? t("lakeit.blocks.infra.evidence")
+                    : null;
 
-      <Reveal>
-        <SystemsInterlude />
-      </Reveal>
-
-      <div className="route-background bg-surface relative border-b border-white/15">
-        <Container className="relative">
-          <ExperiencePeriod
-            id="futbuynow"
-            label={t("futbuynow.label")}
-            company={t("futbuynow.company")}
-            period={t("futbuynow.period")}
-            description={t("futbuynow.description")}
-            href={siteConfig.futbuynow}
-          >
-            <Reveal className="border-mineral/25 bg-mineral-deep overflow-hidden border">
-              <div className="grid gap-9 p-7 sm:p-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-14 lg:p-12">
-                <div>
-                  <p className="mono-label text-mineral-bright">
-                    {t("futbuynow.metrics.growthLabel")}
-                  </p>
-                  <h4 className="font-heading mt-4 max-w-3xl text-xl leading-snug font-semibold text-balance sm:text-3xl">
-                    {t.rich("futbuynow.metrics.growthTitle", {
-                      highlight: (chunks) => (
-                        <span className="text-mineral-bright">{chunks}</span>
-                      ),
-                    })}
-                  </h4>
-                  <p className="text-secondary mt-4 max-w-2xl text-sm leading-6 sm:text-base sm:leading-7">
-                    {t("futbuynow.metrics.growthDetail")}
-                  </p>
-                </div>
-
-                <div className="border-t border-white/15 pt-7 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-10">
-                  <div>
-                    <strong className="font-display block text-3xl whitespace-nowrap sm:text-4xl">
-                      {t("futbuynow.metrics.growthFrom")}
-                    </strong>
-                    <p className="text-secondary mt-2 font-mono text-[0.68rem]">
-                      {t("futbuynow.metrics.growthFromPeriod")}
-                    </p>
-                  </div>
-                  <ArrowDown
-                    aria-hidden="true"
-                    className="text-mineral-bright my-5 size-6"
-                  />
-                  <div>
-                    <strong className="font-display text-mineral-bright block text-3xl whitespace-nowrap sm:text-4xl">
-                      {t("futbuynow.metrics.growthTo")}
-                    </strong>
-                    <p className="text-secondary mt-2 font-mono text-[0.68rem]">
-                      {t("futbuynow.metrics.growthToPeriod")}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <p className="text-secondary border-t border-white/15 px-7 py-4 text-xs leading-5 sm:px-10 lg:px-12">
-                {t("futbuynow.metrics.growthNote")}
-              </p>
-            </Reveal>
-
-            <Reveal className="mt-12">
-              <p className="mono-label text-mineral">
-                {t("futbuynow.metrics.label")}
-              </p>
-              <div className="mt-6 grid gap-px bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
-                <div className="bg-background p-6 sm:col-span-2 lg:p-9">
-                  <p className="font-display text-mineral text-6xl font-semibold tracking-[-0.05em] sm:text-8xl">
-                    {t("futbuynow.metrics.monthlyValue")}
-                  </p>
-                  <p className="font-heading mt-4 text-xl font-semibold">
-                    {t("futbuynow.metrics.monthlyLabel")}
-                  </p>
-                  <p className="text-muted mt-2 font-mono text-[0.68rem]">
-                    {t("futbuynow.metrics.monthlyPeriod")}
-                  </p>
-                </div>
-                <Metric
-                  className="bg-background p-6"
-                  value={t("futbuynow.metrics.yearsValue")}
-                  label={t("futbuynow.metrics.yearsLabel")}
-                  period={t("futbuynow.metrics.yearsPeriod")}
-                />
-                <Metric
-                  className="bg-background p-6"
-                  value={t("futbuynow.metrics.ordersValue")}
-                  label={t("futbuynow.metrics.ordersLabel")}
-                  period={t("futbuynow.metrics.ordersPeriod")}
-                />
-                <Metric
-                  className="bg-background p-6"
-                  value={t("futbuynow.metrics.coinsValue")}
-                  label={t("futbuynow.metrics.coinsLabel")}
-                  period={t("futbuynow.metrics.coinsPeriod")}
-                />
-                <div className="bg-background p-6 sm:col-span-2 lg:col-span-3 lg:p-9">
-                  <div className="flex items-center gap-3">
-                    <SearchCheck
-                      aria-hidden="true"
-                      className="text-mineral size-5 shrink-0"
-                    />
-                    <p className="mono-label text-mineral">
-                      {t("futbuynow.blocks.seo.label")}
-                    </p>
-                  </div>
-                  <div className="mt-6 grid gap-6 sm:grid-cols-2 sm:gap-0">
-                    <div>
-                      <p className="font-display text-mineral text-5xl font-semibold sm:text-6xl">
-                        {t("futbuynow.metrics.seoValue")}
-                      </p>
-                      <p className="font-heading mt-3 text-xl font-semibold">
-                        {t("futbuynow.metrics.seoLabel")}
-                      </p>
-                      <p className="text-muted mt-2 font-mono text-[0.68rem]">
-                        {t("futbuynow.metrics.seoPeriod")}
-                      </p>
-                    </div>
-                    <div className="border-t border-white/15 pt-6 sm:border-t-0 sm:border-l sm:pt-0 sm:pl-8">
-                      <p className="font-display text-mineral text-5xl font-semibold sm:text-6xl">
-                        {t("futbuynow.metrics.seoTotalValue")}
-                      </p>
-                      <p className="font-heading mt-3 text-xl font-semibold">
-                        {t("futbuynow.metrics.seoTotalLabel")}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-
-            <div className="mt-12 grid gap-px bg-white/10 lg:grid-cols-3">
-              {futbuynowBlocks.map(([block, Icon]) => (
-                <Reveal key={block} className="bg-surface p-7 sm:p-9">
-                  <Icon aria-hidden="true" className="text-mineral size-6" />
-                  <p className="mono-label text-mineral mt-7">
-                    {t(`futbuynow.blocks.${block}.label`)}
-                  </p>
-                  <h4 className="font-heading mt-4 text-2xl font-semibold">
-                    {t(`futbuynow.blocks.${block}.title`)}
+              return (
+                <Reveal
+                  key={block}
+                  className="flex flex-col border-b border-white/15 py-7 lg:border-r lg:border-b-0 lg:px-7 lg:first:pl-0 lg:last:border-r-0 lg:last:pr-0"
+                >
+                  <h4 className="font-heading text-xl font-semibold">
+                    {t(`lakeit.blocks.${block}.title`)}
                   </h4>
                   <p className="text-secondary mt-4 leading-7">
-                    {t(`futbuynow.blocks.${block}.detail`)}
+                    {t(`lakeit.blocks.${block}.detail`)}
                   </p>
-                  <p className="text-muted mt-6 font-mono text-[0.68rem] leading-5 uppercase">
-                    {t(`futbuynow.blocks.${block}.tools`)}
-                  </p>
+                  <Tooltip
+                    label={t("technologyHelpLabel", {
+                      area: t(`lakeit.blocks.${block}.title`),
+                    })}
+                    content={t(`lakeit.blocks.${block}.technologyDetail`)}
+                    className="mt-4"
+                  >
+                    {t("technologyHelp")}
+                  </Tooltip>
+                  {evidence ? (
+                    <p className="text-accent mt-auto max-w-[18rem] border-t border-white/15 pt-6 font-semibold">
+                      {evidence}
+                    </p>
+                  ) : null}
                 </Reveal>
-              ))}
+              );
+            })}
+          </div>
+
+          <div className="mt-12">
+            <CostComparison />
+          </div>
+        </article>
+
+        <TechnicalInterlude
+          title={t("interlude.title")}
+          caption={t("interlude.caption")}
+          image="/images/impact-route.svg"
+          items={[
+            t("interlude.items.understand"),
+            t("interlude.items.change"),
+            t("interlude.items.measure"),
+          ]}
+        />
+
+        <article
+          id="futbuynow"
+          className="border-t border-white/15 py-16 lg:py-24"
+        >
+          <Reveal className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
+            <div>
+              <p className="text-muted font-mono text-sm">
+                {t("futbuynow.period")}
+              </p>
+              <p className="text-mineral mt-3 font-mono text-sm">
+                {t("futbuynow.label")}
+              </p>
             </div>
-          </ExperiencePeriod>
-        </Container>
-      </div>
+            <div>
+              <h3 className="font-display text-[clamp(2.75rem,5vw,5rem)] leading-[0.95] font-semibold tracking-[-0.035em]">
+                <ExternalLink
+                  href={siteConfig.futbuynow}
+                  className="no-underline hover:no-underline"
+                >
+                  {t("futbuynow.company")}
+                </ExternalLink>
+              </h3>
+              <p className="text-secondary mt-5 max-w-[68ch] text-xl leading-8">
+                {t("futbuynow.description")}
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal className="border-mineral/25 mt-12 grid gap-px border bg-white/15 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              ["monthlyValue", "monthlyLabel", "monthlyPeriod"],
+              ["ordersValue", "ordersLabel", "ordersPeriod"],
+              ["seoValue", "seoLabel", "seoPeriod"],
+              ["seoTotalValue", "seoTotalLabel", null],
+            ].map(([value, label, period]) => (
+              <div key={value} className="bg-surface p-6 lg:p-8">
+                <strong className="font-display text-accent block text-4xl font-semibold">
+                  {t(`futbuynow.metrics.${value}`)}
+                </strong>
+                <p className="mt-3 font-semibold">
+                  {t(`futbuynow.metrics.${label}`)}
+                </p>
+                {period ? (
+                  <p className="text-muted mt-2 font-mono text-sm">
+                    {t(`futbuynow.metrics.${period}`)}
+                  </p>
+                ) : null}
+              </div>
+            ))}
+          </Reveal>
+
+          <Reveal className="green-panel border-mineral/40 bg-mineral-deep mt-10 border p-6 sm:p-8">
+            <p className="text-mineral-bright font-mono text-sm">
+              {t("futbuynow.metrics.growthLabel")}
+            </p>
+            <div className="mt-6 grid max-w-3xl gap-4 sm:grid-cols-[1fr_auto_1fr] sm:items-center sm:gap-6">
+              <div>
+                <p className="text-secondary font-mono text-sm">
+                  {t("futbuynow.metrics.growthFromPeriod")}
+                </p>
+                <strong className="font-display mt-2 block text-4xl font-semibold">
+                  {t("futbuynow.metrics.growthFrom")}
+                </strong>
+              </div>
+              <ArrowRight
+                aria-hidden="true"
+                className="text-signal size-7 rotate-90 sm:rotate-0"
+              />
+              <div>
+                <p className="text-secondary font-mono text-sm">
+                  {t("futbuynow.metrics.growthToPeriod")}
+                </p>
+                <strong className="font-display text-accent mt-2 block text-4xl font-semibold">
+                  {t("futbuynow.metrics.growthTo")}
+                </strong>
+              </div>
+            </div>
+          </Reveal>
+
+          <div className="mt-10 grid gap-4 lg:grid-cols-3">
+            {futbuynowBlocks.map((block) => (
+              <Reveal
+                key={block}
+                className="border-mineral/25 bg-surface-soft border-t-2 p-6"
+              >
+                <h4 className="font-heading text-xl font-semibold">
+                  {t(`futbuynow.blocks.${block}.title`)}
+                </h4>
+                <p className="text-secondary mt-3 leading-7">
+                  {t(`futbuynow.blocks.${block}.detail`)}
+                </p>
+                <Tooltip
+                  label={t("technologyHelpLabel", {
+                    area: t(`futbuynow.blocks.${block}.title`),
+                  })}
+                  content={t(`futbuynow.blocks.${block}.technologyDetail`)}
+                  className="mt-5"
+                >
+                  {t("technologyHelp")}
+                </Tooltip>
+              </Reveal>
+            ))}
+          </div>
+        </article>
+      </Container>
     </section>
   );
 }

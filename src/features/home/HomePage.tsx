@@ -8,9 +8,9 @@ export function HomePage() {
   return (
     <main id="conteudo">
       <HeroSection />
-      <ProfileSection />
       <ExperienceSection />
       <ProjectsSection />
+      <ProfileSection />
       <ContactSection />
     </main>
   );
