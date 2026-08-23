@@ -56,10 +56,10 @@ export async function ContactSection() {
     >
       <Container>
         <Reveal className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-end lg:gap-16">
-          <h2 className="font-display text-[clamp(3.5rem,7vw,7rem)] leading-[0.9] font-semibold tracking-[-0.035em]">
+          <h2 className="font-display text-[clamp(3rem,6vw,6rem)] leading-[0.9] font-semibold tracking-[-0.035em]">
             {t("title")}
           </h2>
-          <p className="text-secondary max-w-xl text-lg leading-8">
+          <p className="text-secondary max-w-xl text-base leading-7">
             {t.rich("availabilityTitle", {
               highlight: (chunks) => (
                 <span className="text-accent font-semibold">{chunks}</span>
@@ -69,7 +69,7 @@ export async function ContactSection() {
         </Reveal>
 
         <Reveal className="bg-surface-soft border-accent/40 mt-12 grid gap-8 border-t-2 p-8 sm:p-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-end lg:gap-16">
-          <h3 className="font-display max-w-3xl text-3xl leading-[1.25] font-semibold sm:text-4xl">
+          <h3 className="font-display max-w-3xl text-2xl leading-[1.3] font-semibold sm:text-3xl">
             {t.rich("ctaTitle", {
               highlight: (chunks) => (
                 <span className="text-accent">{chunks}</span>
@@ -77,7 +77,7 @@ export async function ContactSection() {
             })}
           </h3>
           <div>
-            <p className="text-secondary max-w-xl text-lg leading-8">
+            <p className="text-secondary max-w-xl text-base leading-7">
               {t("ctaText")}
             </p>
             <p className="text-secondary mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm">

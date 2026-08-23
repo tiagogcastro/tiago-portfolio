@@ -18,10 +18,10 @@ export async function ProfileSection() {
       <div className="py-20 sm:py-28">
         <Container>
           <Reveal className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-end lg:gap-16">
-            <h2 className="font-display text-[clamp(3rem,6vw,6rem)] leading-[0.92] font-semibold tracking-[-0.035em]">
+            <h2 className="font-display text-[clamp(2.5rem,5vw,5rem)] leading-[0.92] font-semibold tracking-[-0.035em]">
               {t("title")}
             </h2>
-            <p className="text-secondary max-w-2xl text-lg leading-8">
+            <p className="text-secondary max-w-2xl text-base leading-7">
               {t("intro")}
             </p>
           </Reveal>
@@ -63,10 +63,10 @@ export async function ProfileSection() {
         <Container>
           <Reveal className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
             <div>
-              <h3 className="font-display text-[clamp(3rem,5vw,5.5rem)] leading-[0.92] font-semibold tracking-[-0.035em]">
+              <h3 className="font-display text-[clamp(2.5rem,4.5vw,5rem)] leading-[0.92] font-semibold tracking-[-0.035em]">
                 {t("education.title")}
               </h3>
-              <p className="text-secondary mt-5 max-w-md text-lg leading-8">
+              <p className="text-secondary mt-5 max-w-md text-base leading-7">
                 {t("education.intro")}
               </p>
             </div>
