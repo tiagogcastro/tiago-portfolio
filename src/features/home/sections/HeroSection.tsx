@@ -18,19 +18,82 @@ export async function HeroSection() {
       id="top"
       className="hero-field relative min-h-[88svh] pt-[var(--header-height)]"
     >
-      <Container className="grid min-h-[calc(88svh-var(--header-height))] gap-12 py-14 lg:grid-cols-[1.18fr_0.82fr] lg:items-center lg:gap-16 lg:py-24">
-        <Reveal>
-          <h1 className="font-display text-[clamp(4.5rem,10vw,9.5rem)] leading-[0.82] font-semibold tracking-[-0.045em]">
+      <Container className="grid min-h-[calc(88svh-var(--header-height))] gap-8 py-14 lg:grid-cols-[1.18fr_0.82fr] lg:items-center lg:gap-16 lg:py-24">
+        <Reveal className="lg:order-1">
+          <h1 className="font-display text-[clamp(3.5rem,12vw,9.5rem)] leading-[0.82] font-semibold tracking-[-0.045em]">
             <span className="block">{t("firstName")}</span>
             <span className="text-mineral-bright block">{t("lastName")}</span>
           </h1>
-          <p className="font-heading mt-8 max-w-2xl text-xl leading-8 font-medium sm:text-2xl">
+          <p className="font-heading mt-6 max-w-2xl text-lg leading-7 font-medium sm:text-2xl sm:leading-8">
             {t("positioning")}
           </p>
-          <p className="text-secondary mt-4 max-w-[62ch] text-lg leading-8">
+        </Reveal>
+
+        <div className="order-2 flex flex-wrap gap-3 lg:order-3">
+          <Button href="#experiencia" direction="down">
+            {common("viewExperience")}
+          </Button>
+          <Button href="#contato" variant="outline">
+            {common("talkToMe")}
+          </Button>
+        </div>
+
+        <Reveal className="bg-surface-soft order-3 border border-white/15 p-5 sm:p-9 lg:order-4">
+          <p className="text-accent font-mono text-sm">{t("statusLabel")}</p>
+          <div className="mt-5 space-y-5">
+            <div>
+              <a
+                href="#lakeit"
+                className="font-heading hover:text-accent text-lg font-semibold underline-offset-4 hover:underline"
+              >
+                {experience("lakeit.company")}
+              </a>
+              <p className="text-secondary mt-1.5 text-sm leading-6">
+                {t("lakeitRole")} · {t("lakeitPeriod")}
+              </p>
+              <p className="text-muted mt-1 hidden text-sm leading-5 sm:block">
+                {t("lakeitStatus")}
+              </p>
+            </div>
+            <div className="border-t border-white/15 pt-5">
+              <a
+                href="#futbuynow"
+                className="font-heading hover:text-accent text-lg font-semibold underline-offset-4 hover:underline"
+              >
+                {experience("futbuynow.company")}
+              </a>
+              <p className="text-secondary mt-1.5 text-sm leading-6">
+                {t("futbuynowRole")} · {t("futbuynowPeriod")}
+              </p>
+              <p className="text-muted mt-1 hidden text-sm leading-5 sm:block">
+                {t("futbuynowStatus")}
+              </p>
+            </div>
+          </div>
+          <div className="mt-6 grid grid-cols-2 gap-4 border-t border-white/15 pt-5 text-sm">
+            <div>
+              <ExternalLink href={siteConfig.linkedin} icon={LinkedInIcon}>
+                {common("linkedin")}
+              </ExternalLink>
+              <p className="text-muted mt-1 hidden leading-5 sm:block">
+                {t("linkedinStatus")}
+              </p>
+            </div>
+            <div>
+              <ExternalLink href={siteConfig.github} icon={GitHubIcon}>
+                {common("github")}
+              </ExternalLink>
+              <p className="text-muted mt-1 hidden leading-5 sm:block">
+                {t("githubStatus")}
+              </p>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal className="order-4 lg:order-2">
+          <p className="text-secondary mt-4 max-w-[62ch] text-base leading-7">
             {t("narrative")}
           </p>
-
           <ul className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-2">
             {scope.map((item) => (
               <li
@@ -45,63 +108,6 @@ export async function HeroSection() {
               </li>
             ))}
           </ul>
-
-          <div className="mt-10 flex flex-wrap gap-3">
-            <Button href="#experiencia" direction="down">
-              {common("viewExperience")}
-            </Button>
-            <Button href="#contato" variant="outline">
-              {common("talkToMe")}
-            </Button>
-          </div>
-        </Reveal>
-
-        <Reveal className="bg-surface-soft border border-white/15 p-7 sm:p-9">
-          <p className="text-accent font-mono text-sm">{t("statusLabel")}</p>
-          <div className="mt-5 space-y-6">
-            <div>
-              <a
-                href="#lakeit"
-                className="font-heading hover:text-accent text-lg font-semibold underline-offset-4 hover:underline"
-              >
-                {experience("lakeit.company")}
-              </a>
-              <p className="text-secondary mt-2 text-sm leading-6">
-                {t("lakeitRole")} · {t("lakeitPeriod")}
-              </p>
-              <p className="text-muted mt-1 text-sm leading-5">
-                {t("lakeitStatus")}
-              </p>
-            </div>
-            <div className="border-t border-white/15 pt-6">
-              <a
-                href="#futbuynow"
-                className="font-heading hover:text-accent text-lg font-semibold underline-offset-4 hover:underline"
-              >
-                {experience("futbuynow.company")}
-              </a>
-              <p className="text-secondary mt-2 text-sm leading-6">
-                {t("futbuynowRole")} · {t("futbuynowPeriod")}
-              </p>
-              <p className="text-muted mt-1 text-sm leading-5">
-                {t("futbuynowStatus")}
-              </p>
-            </div>
-          </div>
-          <div className="mt-7 grid gap-4 border-t border-white/15 pt-6 text-sm sm:grid-cols-2">
-            <div>
-              <ExternalLink href={siteConfig.linkedin} icon={LinkedInIcon}>
-                {common("linkedin")}
-              </ExternalLink>
-              <p className="text-muted mt-1 leading-5">{t("linkedinStatus")}</p>
-            </div>
-            <div>
-              <ExternalLink href={siteConfig.github} icon={GitHubIcon}>
-                {common("github")}
-              </ExternalLink>
-              <p className="text-muted mt-1 leading-5">{t("githubStatus")}</p>
-            </div>
-          </div>
         </Reveal>
       </Container>
     </section>

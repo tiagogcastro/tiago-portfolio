@@ -18,10 +18,10 @@ export async function ExperienceSection() {
     <section id="experiencia" className="section-rule py-20 sm:py-28">
       <Container>
         <Reveal className="grid gap-6 border-b border-white/15 pb-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-end lg:gap-16">
-          <h2 className="font-display text-[clamp(3rem,6vw,6rem)] leading-[0.92] font-semibold tracking-[-0.035em]">
+          <h2 className="font-display text-[clamp(2.5rem,5vw,5rem)] leading-[0.92] font-semibold tracking-[-0.035em]">
             {t("title")}
           </h2>
-          <p className="text-secondary max-w-2xl text-lg leading-8">
+          <p className="text-secondary max-w-2xl text-base leading-7">
             {t("intro")}
           </p>
         </Reveal>
@@ -37,7 +37,7 @@ export async function ExperienceSection() {
               </p>
             </div>
             <div>
-              <h3 className="font-display text-[clamp(2.75rem,5vw,5rem)] leading-[0.95] font-semibold tracking-[-0.035em]">
+              <h3 className="font-display text-[clamp(2.25rem,4.25vw,4.5rem)] leading-[0.95] font-semibold tracking-[-0.035em]">
                 <ExternalLink
                   href={siteConfig.lakeit}
                   className="no-underline hover:no-underline"
@@ -45,7 +45,7 @@ export async function ExperienceSection() {
                   {t("lakeit.company")}
                 </ExternalLink>
               </h3>
-              <p className="text-secondary mt-5 max-w-[68ch] text-xl leading-8">
+              <p className="text-secondary mt-5 max-w-[68ch] text-lg leading-7">
                 {t("lakeit.description")}
               </p>
             </div>
@@ -120,7 +120,7 @@ export async function ExperienceSection() {
               </p>
             </div>
             <div>
-              <h3 className="font-display text-[clamp(2.75rem,5vw,5rem)] leading-[0.95] font-semibold tracking-[-0.035em]">
+              <h3 className="font-display text-[clamp(2.25rem,4.25vw,4.5rem)] leading-[0.95] font-semibold tracking-[-0.035em]">
                 <ExternalLink
                   href={siteConfig.futbuynow}
                   className="no-underline hover:no-underline"
@@ -128,7 +128,7 @@ export async function ExperienceSection() {
                   {t("futbuynow.company")}
                 </ExternalLink>
               </h3>
-              <p className="text-secondary mt-5 max-w-[68ch] text-xl leading-8">
+              <p className="text-secondary mt-5 max-w-[68ch] text-lg leading-7">
                 {t("futbuynow.description")}
               </p>
             </div>

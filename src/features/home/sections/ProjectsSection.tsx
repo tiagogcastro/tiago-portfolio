@@ -31,10 +31,10 @@ export async function ProjectsSection() {
     <section id="projetos" className="section-rule bg-surface py-20 sm:py-28">
       <Container>
         <Reveal className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-end lg:gap-16">
-          <h2 className="font-display max-w-2xl text-[clamp(3rem,6vw,6rem)] leading-[0.92] font-semibold tracking-[-0.035em]">
+          <h2 className="font-display max-w-2xl text-[clamp(2.5rem,5vw,5rem)] leading-[0.92] font-semibold tracking-[-0.035em]">
             {t("title")}
           </h2>
-          <p className="text-secondary max-w-2xl text-lg leading-8">
+          <p className="text-secondary max-w-2xl text-base leading-7">
             {t("intro")}
           </p>
         </Reveal>
@@ -45,12 +45,12 @@ export async function ProjectsSection() {
               <p className="text-mineral font-mono text-sm">
                 {t("items.nexsift.type")}
               </p>
-              <h3 className="font-display mt-4 text-6xl font-semibold tracking-[-0.035em] sm:text-8xl">
+              <h3 className="font-display mt-4 text-5xl font-semibold tracking-[-0.035em] sm:text-7xl">
                 {t("items.nexsift.name")}
               </h3>
             </div>
             <div>
-              <p className="text-secondary max-w-2xl text-lg leading-8">
+              <p className="text-secondary max-w-2xl text-base leading-7">
                 {t("items.nexsift.description")}
               </p>
               <p className="text-muted mt-5 max-w-2xl font-mono text-sm leading-6">
@@ -105,10 +105,10 @@ export async function ProjectsSection() {
               </div>
             </figure>
             <div>
-              <p className="font-display text-4xl leading-tight font-semibold sm:text-5xl">
+              <p className="font-display text-3xl leading-tight font-semibold sm:text-4xl">
                 {t("items.nexsift.mobileTitle")}
               </p>
-              <p className="text-secondary mt-5 max-w-xl text-lg leading-8">
+              <p className="text-secondary mt-5 max-w-xl text-base leading-7">
                 {t("items.nexsift.mobileCaption")}
               </p>
             </div>
