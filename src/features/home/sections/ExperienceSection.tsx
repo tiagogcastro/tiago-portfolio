@@ -53,12 +53,7 @@ export async function ExperienceSection() {
 
           <div className="mt-12 grid border-y border-white/15 lg:grid-cols-3">
             {lakeItBlocks.map((block) => {
-              const evidence =
-                block === "data"
-                  ? t("lakeit.blocks.data.evidence")
-                  : block === "infra"
-                    ? t("lakeit.blocks.infra.evidence")
-                    : null;
+              const evidence = t(`lakeit.blocks.${block}.evidence`);
 
               return (
                 <Reveal

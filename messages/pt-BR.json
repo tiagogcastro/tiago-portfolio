@@ -218,7 +218,7 @@
       "blocks": {
         "data": {
           "label": "Dados",
-          "title": "Automatizei o preparo das informações",
+          "title": "Automatizei o preparo das informações em pipelines",
           "detail": "Fluxos automáticos que preparam as informações sem trabalho manual.",
           "evidence": "Dezenas de fluxos em uso por clientes",
           "stack": "AWS Glue · S3 · Athena · Python",
@@ -238,6 +238,7 @@
           "label": "IA",
           "title": "Transformei perguntas em respostas e gráficos",
           "detail": "Perguntas em linguagem comum viram consultas, respostas e gráficos.",
+          "evidence": "Respostas e gráficos em linguagem natural",
           "stack": "Amazon Bedrock · Athena · Vertex AI · BigQuery",
           "technologyDetail": "Amazon Bedrock e Vertex AI interpretam as perguntas; Athena e BigQuery consultam as informações usadas para montar respostas e gráficos."
         }
