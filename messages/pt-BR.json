@@ -360,8 +360,8 @@
         "mobileAlt": "Versão móvel do NexSift mostrando três sinais recentes e suas notas de relevância",
         "mobileTitle": "A leitura continua curta no celular.",
         "mobileCaption": "A mesma hierarquia do radar foi preservada em uma coluna: título, relevância e data aparecem antes do contexto.",
-        "radarAlt": "Arquivo de sinais do NexSift com busca, filtros por tópico e pontuação de relevância",
-        "radarCaption": "Figura 2. O arquivo reúne busca, tópicos, fontes e relevância em uma única leitura.",
+        "aiAlt": "Categoria de Inteligência Artificial do NexSift com busca e sinais acompanhados de fonte e relevância",
+        "aiCaption": "Figura 2. A categoria de Inteligência Artificial reúne sinais selecionados com contexto, fontes e relevância.",
         "topicsAlt": "Página de tópicos do NexSift organizada em sete áreas de tecnologia",
         "topicsCaption": "Figura 3. Sete lentes editoriais organizam o que o produto acompanha."
       },
