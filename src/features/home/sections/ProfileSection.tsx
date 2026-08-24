@@ -84,7 +84,7 @@ export async function ProfileSection() {
                   >
                     {t("education.degree.title")}
                   </ExternalLink>
-                  <p className="text-secondary mt-2">
+                  <p className="text-secondary mt-2 max-w-xl">
                     {t("education.degree.institution")} ·{" "}
                     {t("education.degree.period")}
                   </p>
