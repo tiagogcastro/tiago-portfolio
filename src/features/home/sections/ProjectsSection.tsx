@@ -128,7 +128,7 @@ export async function ProjectsSection() {
                       className="h-auto w-full"
                     />
                   </div>
-                  <figcaption className="text-muted mt-3 font-mono text-sm leading-6">
+                  <figcaption className="text-muted mt-3 max-w-[65ch] font-mono text-sm leading-6">
                     {t(`items.nexsift.${figure.captionKey}`)}
                   </figcaption>
                 </figure>

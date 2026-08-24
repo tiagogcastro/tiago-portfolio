@@ -25,7 +25,7 @@ export async function HeroSection() {
               <span className="block">{t("firstName")}</span>
               <span className="text-mineral-bright block">{t("lastName")}</span>
             </h1>
-            <p className="font-heading mt-6 max-w-2xl text-lg leading-7 font-medium sm:text-2xl sm:leading-8">
+            <p className="font-heading mt-6 max-w-2xl text-lg leading-7 font-medium text-white sm:text-2xl sm:leading-8">
               {t("positioning")}
             </p>
           </Reveal>
