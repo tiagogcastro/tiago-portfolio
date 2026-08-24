@@ -10,9 +10,9 @@ import { ProjectItem } from "../components/ProjectItem";
 
 const nexsiftFigures = [
   {
-    src: "/projects/nexsift/radar.png",
-    altKey: "radarAlt",
-    captionKey: "radarCaption",
+    src: "/projects/nexsift/ai.png",
+    altKey: "aiAlt",
+    captionKey: "aiCaption",
   },
   {
     src: "/projects/nexsift/topics.png",
