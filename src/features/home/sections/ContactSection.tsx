@@ -1,16 +1,17 @@
 import { FileDown, Globe2, Mail, MapPin, MessageCircle } from "lucide-react";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { GitHubIcon, LinkedInIcon } from "@/components/brand/SocialIcons";
 import { Container } from "@/components/layout/Container";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { Reveal } from "@/components/visual/Reveal";
-import { siteConfig } from "@/config/site";
+import { resumeHref, siteConfig } from "@/config/site";
 
 export async function ContactSection() {
   const t = await getTranslations("contact");
   const common = await getTranslations("common");
   const identity = await getTranslations("identity");
   const hero = await getTranslations("hero");
+  const locale = await getLocale();
   const channels = [
     {
       value: identity("email"),
@@ -42,7 +43,7 @@ export async function ContactSection() {
     },
     {
       value: common("downloadResume"),
-      href: siteConfig.resume["pt-BR"],
+      href: resumeHref(locale),
       icon: FileDown,
       target: "_self",
       download: true,

@@ -20,5 +20,13 @@ export const siteConfig = {
   resume: {
     "pt-BR": "/resume/tiago-castro-desenvolvedor-fullstack-cloud-pt-br.pdf",
     "en-US": "/resume/tiago-castro-fullstack-cloud-developer-en-us.pdf",
-  },
+    "es-ES": "/resume/tiago-castro-desenvolvedor-fullstack-cloud-pt-br.pdf",
+  } as const,
 } as const;
+
+export function resumeHref(locale: string): string {
+  return (
+    siteConfig.resume[locale as keyof typeof siteConfig.resume] ??
+    siteConfig.resume["pt-BR"]
+  );
+}

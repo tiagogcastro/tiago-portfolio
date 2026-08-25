@@ -38,7 +38,17 @@
   "metadata": {
     "title": "Tiago Castro · Desenvolvedor Full Stack e Cloud",
     "description": "Portfólio de Tiago Castro, desenvolvedor full stack que cria e evolui sites, sistemas e produtos digitais: interfaces, servidores, infraestrutura em nuvem, dados e operação. Remoto no Brasil e no exterior.",
-    "imageAlt": "Tiago Castro, desenvolvedor full stack. Criação e evolução de sites, sistemas e produtos digitais."
+    "imageAlt": "Tiago Castro, desenvolvedor full stack. Criação e evolução de sites, sistemas e produtos digitais.",
+    "pages": {
+      "projects": {
+        "title": "Projetos autorais e open source",
+        "description": "Kaguya, The Monkeynauts, NexSift e outros projetos com código aberto: problema resolvido, solução, arquitetura e resultados de cada construção."
+      },
+      "experience": {
+        "title": "Experiência profissional",
+        "description": "Cases da plataforma de dados LakeIT e do marketplace Futbuynow: decisões técnicas, infraestrutura na AWS, pagamentos e resultados acompanhados."
+      }
+    }
   },
   "accessibility": {
     "skip": "Pular para o conteúdo",
@@ -59,7 +69,9 @@
     "website": "Visitar {name}",
     "npm": "Ver {name} no npm",
     "source": "Ver código de {name}",
-    "learnMore": "Saiba mais"
+    "learnMore": "Saiba mais",
+    "npmShort": "npm",
+    "siteShort": "Site"
   },
   "header": {
     "navLabel": "Navegação principal",
@@ -105,7 +117,9 @@
     "futbuynowPeriod": "Fev/2023 - atual",
     "futbuynowStatus": "Marketplace em produção com pagamentos, SEO e automações.",
     "linkedinStatus": "Histórico profissional completo.",
-    "githubStatus": "Código aberto e projetos autorais."
+    "githubStatus": "Código aberto e projetos autorais.",
+    "positioningShort": "Criação e evolução de sites, sistemas e produtos.",
+    "narrativeShort": "Há mais de 6 anos construo sistemas que precisam continuar operando enquanto crescem."
   },
   "profile": {
     "index": "02 / Perfil",
@@ -215,6 +229,12 @@
       "role": "Desenvolvedor Fullstack Cloud",
       "period": "Jan/2024 - atual",
       "description": "Plataforma de dados usada por empresas para organizar, processar e consultar grandes volumes de informação.",
+      "figures": {
+        "pipeline": {
+          "title": "Do dado bruto à consulta pronta.",
+          "caption": "Pipelines automáticos preparam os arquivos no S3, o AWS Glue processa em escala e o Athena responde consultas sobre grandes volumes sem mover os dados de lugar."
+        }
+      },
       "blocks": {
         "data": {
           "label": "Dados",
@@ -277,6 +297,12 @@
       "company": "Futbuynow",
       "period": "Fev/2023 - atual",
       "description": "Marketplace em produção com compra, pagamento, vendedores e operação diária.",
+      "figures": {
+        "loop": {
+          "title": "Operação que se retroalimenta.",
+          "caption": "Compra, pagamento confirmado e dados de uso voltam para o produto em melhorias contínuas de interface, SEO e automação."
+        }
+      },
       "blocks": {
         "product": {
           "label": "Produto e operação",
@@ -344,8 +370,8 @@
   },
   "projects": {
     "index": "04 / Projetos",
-    "title": "Projetos que podem ser abertos.",
-    "intro": "Código, interface e decisões de arquitetura visíveis. O NexSift é o trabalho autoral mais completo desta seleção.",
+    "title": "Projetos autorais e de estudo.",
+    "intro": "Tudo aqui saiu das minhas mãos: construí, aprendi e documentei. Código, interface e decisões de arquitetura abertos para quem quiser conferir.",
     "featured": "Projeto em destaque",
     "signalInput": "Muitos sinais",
     "signalFilter": "Filtro",
@@ -354,28 +380,156 @@
       "nexsift": {
         "name": "NexSift",
         "type": "Projeto autoral",
-        "description": "Criei um radar que seleciona mudanças relevantes em tecnologia, verifica as fontes e explica por que cada sinal importa.",
+        "description": "Radar de tecnologia que filtra e contextualiza sinais com fontes verificadas. Nele aprofundei Next.js em produção, publicação por Lambda autenticada com Zod e infraestrutura S3 descrita em Terraform.",
         "homeAlt": "Página inicial do NexSift com a mensagem Menos ruído, mais sinal e quatro sinais recentes",
         "homeCaption": "Figura 1. Página inicial: proposta e seleção curta do radar, sem feed infinito.",
         "mobileAlt": "Versão móvel do NexSift mostrando três sinais recentes e suas notas de relevância",
         "mobileTitle": "A leitura continua curta no celular.",
         "mobileCaption": "A mesma hierarquia do radar foi preservada em uma coluna: título, relevância e data aparecem antes do contexto.",
-        "aiAlt": "Categoria de Inteligência Artificial do NexSift com busca e sinais acompanhados de fonte e relevância",
-        "aiCaption": "Figura 2. A categoria de Inteligência Artificial reúne sinais selecionados com contexto, fontes e relevância.",
+        "blogAlt": "Arquivo de sinais do NexSift com a lista de publicações e filtros por tópico",
+        "blogCaption": "Figura 2. O arquivo de sinais reúne o histórico de publicações com filtros por tópico.",
         "topicsAlt": "Página de tópicos do NexSift organizada em sete áreas de tecnologia",
-        "topicsCaption": "Figura 3. Sete lentes editoriais organizam o que o produto acompanha."
+        "topicsCaption": "Figura 3. Sete lentes editoriais organizam o que o produto acompanha.",
+        "coverAlt": "Página inicial do NexSift com a mensagem Menos ruído, mais sinal",
+        "images": {
+          "home": {
+            "alt": "Página inicial do NexSift com a proposta Menos ruído, mais sinal e sinais recentes"
+          },
+          "topics": {
+            "alt": "Página de tópicos do NexSift organizada em sete áreas de tecnologia"
+          },
+          "blog": {
+            "alt": "Arquivo de sinais do NexSift com filtros por tópico"
+          },
+          "signal": {
+            "alt": "Página de um sinal do NexSift com contexto e fontes verificadas"
+          }
+        },
+        "problem": "Acompanhar tecnologia em feeds infinitos consome tempo e confiança: volume demais, contexto de menos e fontes que quase nunca são verificadas.",
+        "solution": "Um radar editorial para desenvolvedores que filtra, verifica e contextualiza sinais de IA, cloud, desenvolvimento e carreiras, com nota de relevância e leitura igualmente curta no celular.",
+        "architecture": "Next.js e TypeScript com conteúdo publicado em um bucket S3 por uma Lambda autenticada e validada com Zod. Infraestrutura descrita em Terraform (S3, Lambda, IAM), ambiente local simulado com Docker e MiniStack, RSS, sitemap e dados estruturados de artigo.",
+        "results": "Produto no ar com publicação em produção, sete lentes editoriais ativas, fontes verificadas exibidas junto de cada sinal e interface institucional em três idiomas."
+      },
+      "kaguya": {
+        "name": "Kaguya",
+        "type": "Projeto autoral · Open Source",
+        "description": "Plataforma de estudos com trilhas, playlists e aulas em vídeo. Foi onde aprendi, na prática, Clean Architecture na API Express, injeção de dependência, RBAC por permissões e GraphQL Federation.",
+        "coverAlt": "Dashboard do aluno com a lista de trilhas em andamento e o progresso de cada uma",
+        "images": {
+          "dashboard": {
+            "alt": "Dashboard do aluno com trilhas em andamento e progresso"
+          },
+          "lessonPlayer": {
+            "alt": "Player de aula em vídeo dentro de uma trilha da Kaguya"
+          },
+          "mobileDashboard": {
+            "alt": "Versão móvel do dashboard de estudos da Kaguya"
+          }
+        },
+        "problem": "Estudar por vídeo sem estrutura vira lista de abas abertas: o aluno não sabe onde parou, o conteúdo se dispersa e organizar material depende sempre do time de desenvolvimento.",
+        "solution": "Plataforma em que trilhas agrupam playlists, blocos e aulas; o aluno acompanha progresso, histórico de exibição e curtidas, enquanto sub administradores criam conteúdo por um painel protegido por níveis de permissão.",
+        "architecture": "Monorepo com três aplicações independentes: API REST em Express organizada em rotas, controllers, services, repositórios e casos de uso; cliente web em Next.js com guarda de sessão validada na API antes de renderizar páginas protegidas; microsserviço de sugestões em NestJS exposto como subgraph GraphQL Federation v2. Autenticação local com JWT ou social via Firebase, validação Zod em todas as rotas, injeção de dependência com tsyringe e storage plugável entre disco local e S3.",
+        "results": "Backend com suítes de testes unitários e de integração, smoke test que exercita todas as rotas em ordem de dependência e restauração concluída em 2026: dependências atualizadas mantendo a stack original, falhas apontadas em auditoria corrigidas e seeds que sobem dois cursos completos para demonstração."
+      },
+      "monkeynauts": {
+        "name": "The Monkeynauts",
+        "type": "Projeto autoral · Restauração 2026",
+        "description": "Jogo play and earn de 2022 que restaurei do zero aplicando Clean Architecture, Either para erros explícitos e TypeScript strict, com driver plugável entre blockchain sandbox e BSC real e E2E nas 55 rotas.",
+        "coverAlt": "Área do jogador do The Monkeynauts mostrando carteira, saldo e dados da conta",
+        "images": {
+          "login": {
+            "alt": "Tela de acesso à plataforma The Monkeynauts"
+          },
+          "admin": {
+            "alt": "Painel administrativo do jogo com vendas, banimentos e parâmetros de balanceamento"
+          },
+          "account": {
+            "alt": "Área do jogador com carteira, depósitos e saques"
+          }
+        },
+        "problem": "Um jogo web3 de 2022 que nunca chegou ao ar carregava falhas graves: senha de recuperação trafegando em texto puro, escalada de privilégio e banimento sem persistência. Rodar qualquer coisa exigia credenciais externas e acesso real a blockchain.",
+        "solution": "Restaurei o produto fielmente e corrigi cada falha apontada. O jogador gerencia conta, carteira, depósitos, saques, loja, naves e tripulações; o painel administrativo opera eventos de venda, airdrops, banimentos, parâmetros de balanceamento e logs de auditoria. Tudo funciona offline, sem nenhuma credencial externa.",
+        "architecture": "Monorepo pnpm com SPA em React 19 e API Express 5 em TypeScript strict. Clean Architecture por módulo: casos de uso com erros explícitos no padrão Either, contratos de domínio isolados e Prisma restrito à infraestrutura. A blockchain é um driver plugável: o modo sandbox usa moeda fictícia e roda sem rede; o modo rpc valida transações reais na BSC pelo hash, com proteção contra replay nos logs de auditoria.",
+        "results": "Typecheck strict sem erros, teste E2E cobrindo as 55 rotas do fluxo completo, do registro ao painel de administrador, contrato oficial do token SPC verificado na mainnet e três vulnerabilidades de 2022 corrigidas com a intenção original preservada."
+      },
+      "pagarme": {
+        "name": "pagarme-simplified-psp",
+        "type": "Projeto de estudo · Open Source",
+        "description": "Serviço de pagamentos inspirado no desafio da Pagar.me onde treinei SOLID, TDD e DDD na prática: débito e crédito com recebíveis agendados, value objects com Either e saldos cobertos por testes no Vitest.",
+        "coverAlt": "Resultado da suíte de testes do serviço de pagamentos com todas as verificações passando",
+        "images": {
+          "apiDemo": {
+            "alt": "Demonstração da API criando uma transação e retornando o recebível calculado"
+          }
+        },
+        "problem": "O desafio de backend da Pagar.me pede o núcleo de um adquirente real: criar transações de débito e crédito, gerar recebíveis com taxas e prazos diferentes por método e consolidar saldos, tudo com domínio bem modelado.",
+        "solution": "Serviço que aplica as regras de liquidação: débito liquida em D+1 com taxa de 3% e crédito gera quatro recebíveis entre D+30 e D+120 com taxa de 5%. O cartão persiste apenas os quatro últimos dígitos, a transação guarda o valor bruto e as taxas descontam os recebíveis.",
+        "architecture": "Clean Architecture com blocos de DDD: entidades, value objects como CardNumber, mappers e erros de domínio; casos de uso retornam Either nas operações que podem falhar; um container único compartilha dependências entre rotas; repositórios em memória já seguem interfaces prontas para um banco real; o DateProvider plugável permite congelar o tempo nos testes; envelope de resposta consistente e middleware central de erros no Express 5.",
+        "results": "Regras de parcelamento cobertas por testes com Vitest, incluindo o resto de arredondamento absorvido pela última parcela, typecheck strict sem erros e build de produção empacotado com tsup."
+      },
+      "ignews": {
+        "name": "ig.news",
+        "type": "Projeto de estudo · Open Source",
+        "description": "Blog por assinatura do Ignite que modernizei em 2026: Stripe com webhook assinado, next-auth, ISR com Prismic, migração de FaunaDB para Prisma e testes E2E com Playwright.",
+        "problem": "Um blog por assinatura real envolve pagamento recorrente, autenticação social e conteúdo liberado por plano. O desafio é integrar as três frentes sem acoplar tudo e mantendo o projeto rodando mesmo sem credenciais externas.",
+        "solution": "Assinatura via Stripe Checkout com webhook assinado e gravação idempotente da inscrição; login pelo GitHub via next-auth com sessão JWT enriquecida pelo status da assinatura; visitantes anônimos veem prévia truncada do post e assinantes leem o conteúdo completo.",
+        "architecture": "Next.js no pages router com rotas de API validadas por Zod e envelope único de resposta; conteúdo em ISR vindo do CMS headless Prismic; camada de dados reescrita para Prisma com SQLite local após o encerramento do FaunaDB; provedores plugáveis permitem executar tudo offline com sandbox de Stripe e Prismic quando não há credenciais.",
+        "results": "Modernização concluída em 2026 para o Node 22 LTS com todas as dependências atuais, suíte E2E com Playwright cobrindo assinatura, login e paywall, e TypeScript strict de ponta a ponta.",
+        "coverAlt": "Página inicial do blog por assinatura ig.news com a lista de posts"
+      },
+      "letmeask": {
+        "name": "Let Me Ask",
+        "type": "Projeto de estudo · Open Source",
+        "description": "Salas de perguntas em tempo real do NLW 6 que restaurei com Firebase Auth e Realtime Database, regras de segurança para curtidas únicas, moderação ao vivo e validação com react-hook-form e Zod.",
+        "problem": "Durante lives e aulas, a caixa de chat mistura perguntas e comentários: quem apresenta perde as melhores dúvidas e a plateia não sabe o que já foi respondido.",
+        "solution": "O apresentador cria uma sala e compartilha o código; a plateia entra, pergunta e curte o que merece resposta primeiro. O painel de moderação destaca a pergunta sendo respondida, marca respondidas, remove ruído e encerra a sala levando todos de volta para a home. Salas fechadas podem ser reabertas depois.",
+        "architecture": "SPA em React 19 com Vite e TypeScript; Firebase Authentication para login com Google e Realtime Database sincronizando perguntas, curtidas e estados da sala em tempo real; regras de segurança limitam um like por pessoa; formulários com react-hook-form e Zod para validação inline.",
+        "results": "Restauração concluída em 2026 no Node 22 com dependências atualizadas, layout totalmente utilizável no celular e os fluxos de plateia, moderação e descoberta de salas documentados com telas.",
+        "coverAlt": "Sala de perguntas e respostas do Let Me Ask com a audiência acompanhando em tempo real"
       },
       "awsIac": {
         "name": "AWS IaC Blueprint",
         "type": "Open Source",
-        "description": "Criei uma forma segura e barata de testar, no próprio computador, a estrutura que depois mantém sistemas online."
+        "description": "Infraestrutura como código onde aprendi a estruturar Terraform e Terragrunt em escala: módulos sem valores fixos, ambientes idênticos em um único env.hcl e ciclo completo no LocalStack sem custo.",
+        "coverAlt": "Saídas do Terragrunt após aplicar os módulos de infraestrutura no LocalStack",
+        "images": {
+          "localstack": {
+            "alt": "Dashboard do LocalStack exibindo os recursos provisionados localmente"
+          }
+        },
+        "problem": "Estruturas reais de nuvem precisam de ambientes idênticos entre dev, staging e produção, mas aprender aplicando direto na AWS custa dinheiro, exige conta e torna cada erro caro.",
+        "solution": "Template de infraestrutura como código em que todos os ambientes compartilham exatamente a mesma configuração de módulos: VPC com subnets públicas e privadas, bucket S3 versionado e criptografado e papel IAM de menor privilégio, provisionados e destruídos quantas vezes forem necessárias sem custo.",
+        "architecture": "Módulos Terraform limpos, sem valores fixos nem declaração de provider, orquestrados por Terragrunt, que injeta provider, backend e versões por ambiente via root.hcl. Novo ambiente é um env.hcl e três arquivos de três linhas, sem tocar nos módulos. Terragrunt monta o grafo de execução sozinho: VPC e S3 aplicam em paralelo e o IAM espera o ARN do bucket, com mock outputs para validar tudo antes do apply.",
+        "results": "Ciclo completo de apply, inspeção e destroy rodando no LocalStack, sem conta AWS e sem custo, com conferência dos recursos pela CLI e pelo dashboard."
       },
       "aiI18n": {
         "name": "ai-i18n-translate",
         "type": "NPM · Open Source",
-        "description": "Criei uma ferramenta que traduz textos de sistemas sem quebrar os códigos usados para identificá-los."
+        "description": "Ferramenta publicada no npm que traduz arquivos i18n com IA sem quebrar placeholders. Com ela aprendi cache de traduções, execução paralela, retry com backoff e validação automática de chaves.",
+        "problem": "Traduzir arquivos i18n à mão é repetitivo e frágil: chaves aninhadas se perdem, placeholders como '{{count}}' desaparecem na tradução e cada versão nova obriga a retraduzir o que já estava pronto.",
+        "solution": "CLI e biblioteca que traduzem JSONs de idioma com IA preservando estrutura e placeholders, inclusive variantes regionais como pt-BR e es-MX, com cache de traduções, execução paralela, dry run, modo git diff para CI e relatório markdown com contagem de tokens.",
+        "architecture": "Agnóstica de framework: divide os arquivos em partes pequenas, monta as instruções por par de idiomas uma única vez, processa locales e arquivos em paralelo com retry e backoff exponencial, valida placeholders e chaves desbalanceadas e corrige fallbacks incompletos de execuções anteriores. Provedores plugáveis: presets para OpenAI, Anthropic, Gemini e DeepSeek ou função própria de tradução.",
+        "results": "Publicada no npm como @tiagogcastro/ai-i18n-translate, com garantia de zero fallbacks em tradução parcial e redução real de chamadas de API ao reutilizar traduções idênticas entre execuções.",
+        "coverAlt": "Terminal com o comando de execução da ai-i18n-translate e o resumo da tradução"
       }
+    },
+    "dates": {
+      "created": "Criado em {date}",
+      "restored": "Restaurado em {date}"
+    },
+    "cta": {
+      "label": "Página completa de projetos",
+      "title": "Quer ver cada projeto em detalhe?",
+      "text": "Na página de projetos reuni contexto, datas, stack e o que aprendi construindo cada um."
     }
+  },
+  "engagement": {
+    "label": "Disponível para oportunidades",
+    "text": "Aberto a conversas sobre vagas, projetos e networking.",
+    "whatsapp": "Chamar no WhatsApp",
+    "linkedin": "Abrir LinkedIn",
+    "dismiss": "Dispensar aviso",
+    "whatsappMessage": "Olá Tiago! Vi seu portfólio e gostaria de trocar uma ideia sobre oportunidades ou networking."
   },
   "contact": {
     "index": "05 / Contato",
