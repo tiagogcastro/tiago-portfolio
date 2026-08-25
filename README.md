@@ -4,6 +4,19 @@ Professional portfolio of Tiago Castro, a Full Stack Developer with over six yea
 
 [tiagogcastro.com.br](https://tiagogcastro.com.br)
 
+## Preview
+
+<p align="center">
+  <a href="https://tiagogcastro.com.br">
+    <img src="assets/portfolio-desktop.png" alt="tiagogcastro.com.br on desktop" width="760" />
+  </a>
+</p>
+<p align="center">
+  <a href="https://tiagogcastro.com.br">
+    <img src="assets/portfolio-mobile.png" alt="tiagogcastro.com.br on mobile" width="220" />
+  </a>
+</p>
+
 ## About
 
 This website presents my experience through real-world projects, responsibilities, and measurable outcomes. Instead of reproducing a traditional resume, it connects business context, engineering work, and production impact.
