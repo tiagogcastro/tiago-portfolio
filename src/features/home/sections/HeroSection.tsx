@@ -13,6 +13,20 @@ export async function HeroSection() {
   const common = await getTranslations("common");
   const experience = await getTranslations("experience");
 
+  const scopeList = (
+    <ul className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-2">
+      {scope.map((item) => (
+        <li
+          key={item}
+          className="border-mineral/35 bg-background/80 flex items-center gap-3 border-l-2 px-4 py-3 text-sm leading-6"
+        >
+          <span aria-hidden="true" className="size-1.5 shrink-0 bg-white/30" />
+          {t(`scope.${item}`)}
+        </li>
+      ))}
+    </ul>
+  );
+
   return (
     <section
       id="top"
@@ -26,28 +40,17 @@ export async function HeroSection() {
               <span className="text-mineral-bright block">{t("lastName")}</span>
             </h1>
             <p className="font-heading mt-6 max-w-2xl text-lg leading-7 font-medium text-white sm:text-2xl sm:leading-8">
-              {t("positioning")}
+              <span className="sm:hidden">{t("positioningShort")}</span>
+              <span className="hidden sm:inline">{t("positioning")}</span>
             </p>
           </Reveal>
 
           <Reveal>
             <p className="text-secondary max-w-[62ch] text-base leading-7">
-              {t("narrative")}
+              <span className="sm:hidden">{t("narrativeShort")}</span>
+              <span className="hidden sm:inline">{t("narrative")}</span>
             </p>
-            <ul className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-2">
-              {scope.map((item) => (
-                <li
-                  key={item}
-                  className="border-mineral/35 bg-background/80 flex items-center gap-3 border-l-2 px-4 py-3 text-sm leading-6"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="size-1.5 shrink-0 bg-white/30"
-                  />
-                  {t(`scope.${item}`)}
-                </li>
-              ))}
-            </ul>
+            <div className="hidden lg:block">{scopeList}</div>
           </Reveal>
 
           <div className="flex flex-wrap gap-3">
@@ -111,6 +114,8 @@ export async function HeroSection() {
             </div>
           </div>
         </Reveal>
+
+        <div className="lg:hidden">{scopeList}</div>
       </Container>
     </section>
   );

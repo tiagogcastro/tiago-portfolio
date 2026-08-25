@@ -4,14 +4,16 @@ import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { Reveal } from "@/components/visual/Reveal";
-import { siteConfig } from "@/config/site";
-import { TechnicalInterlude } from "../components/TechnicalInterlude";
+import { resumeHref, siteConfig } from "@/config/site";
+import { getLocale } from "next-intl/server";
+import { TechnicalInterlude } from "@/components/visual/TechnicalInterlude";
 
 const capabilities = ["backend", "frontend", "cloudData", "delivery"] as const;
 
 export async function ProfileSection() {
   const t = await getTranslations("profile");
   const common = await getTranslations("common");
+  const locale = await getLocale();
 
   return (
     <section id="perfil" className="section-rule bg-surface">
@@ -129,14 +131,17 @@ export async function ProfileSection() {
 
               <div className="grid gap-6 py-7 sm:grid-cols-[auto_1fr] sm:items-start">
                 <Languages aria-hidden="true" className="text-accent size-7" />
-                <div className="grid gap-5 sm:grid-cols-3">
+                <div className="grid gap-x-8 gap-y-6 sm:grid-cols-3">
                   {(["portuguese", "english", "spanish"] as const).map(
                     (language) => (
-                      <div key={language}>
-                        <p className="font-semibold">
+                      <div
+                        key={language}
+                        className="border-mineral/35 border-l-2 pl-4"
+                      >
+                        <p className="font-heading font-semibold">
                           {t(`education.languages.${language}.name`)}
                         </p>
-                        <p className="text-secondary mt-1 text-sm leading-6">
+                        <p className="text-secondary mt-2 text-sm leading-6">
                           {t(`education.languages.${language}.level`)}
                         </p>
                       </div>
@@ -150,7 +155,7 @@ export async function ProfileSection() {
           <Reveal className="mt-10 flex flex-col items-start justify-between gap-5 border-t border-white/15 pt-8 sm:flex-row sm:items-center">
             <p className="text-secondary max-w-md">{t("resumeText")}</p>
             <Button
-              href={siteConfig.resume["pt-BR"]}
+              href={resumeHref(locale)}
               download
               variant="outline"
               icon={FileDown}

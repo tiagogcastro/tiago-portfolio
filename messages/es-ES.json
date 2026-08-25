@@ -1,0 +1,554 @@
+{
+  "identity": {
+    "displayName": "Tiago Castro",
+    "fullName": "Tiago Gonçalves de Castro",
+    "initials": "TG",
+    "wordmarkFirst": "TIAGO",
+    "wordmarkMiddle": "G",
+    "wordmarkLast": "CASTRO",
+    "wordmark": "TIAGO G CASTRO",
+    "role": "Desarrollador Full Stack",
+    "email": "tiagogcastro1@gmail.com",
+    "phone": "+55 21 96428-4144",
+    "city": "Río de Janeiro",
+    "country": "Brasil",
+    "countryCode": "BR"
+  },
+  "structuredData": {
+    "language": "es-ES",
+    "openGraphLocale": "es_ES",
+    "knowsAbout": [
+      "Desarrollo Full Stack",
+      "React",
+      "Next.js",
+      "Node.js",
+      "TypeScript",
+      "Python",
+      "Amazon Web Services",
+      "Terraform",
+      "Infraestructura como código",
+      "SEO técnico"
+    ],
+    "languages": {
+      "portuguese": "Portugués",
+      "english": "Inglés",
+      "spanish": "Español"
+    }
+  },
+  "metadata": {
+    "title": "Tiago Castro · Desarrollador Full Stack y Cloud",
+    "description": "Portafolio de Tiago Castro, desarrollador full stack que crea y evoluciona sitios, sistemas y productos digitales: interfaces, servidores, infraestructura en la nube, datos y operación. Remoto en Brasil y el exterior.",
+    "imageAlt": "Tiago Castro, desarrollador full stack. Creación y evolución de sitios, sistemas y productos digitales.",
+    "pages": {
+      "projects": {
+        "title": "Proyectos autorales y open source",
+        "description": "Kaguya, The Monkeynauts, NexSift y otros proyectos de código abierto: problema resuelto, solución, arquitectura y resultados de cada construcción."
+      },
+      "experience": {
+        "title": "Experiencia profesional",
+        "description": "Cases de la plataforma de datos LakeIT y del marketplace Futbuynow: decisiones técnicas, infraestructura en AWS, pagos y resultados acompañados."
+      }
+    }
+  },
+  "accessibility": {
+    "skip": "Saltar al contenido",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "externalLink": "Se abre en una pestaña nueva"
+  },
+  "common": {
+    "current": "actual",
+    "viewExperience": "Ver experiencia",
+    "viewProjects": "Ver proyectos",
+    "talkToMe": "Hablar conmigo",
+    "downloadResume": "Descargar currículo",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "email": "Correo",
+    "whatsapp": "WhatsApp",
+    "website": "Visitar {name}",
+    "npm": "Ver {name} en npm",
+    "source": "Ver código de {name}",
+    "learnMore": "Saber más",
+    "npmShort": "npm",
+    "siteShort": "Sitio"
+  },
+  "header": {
+    "navLabel": "Navegación principal",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "profile": "Perfil",
+    "contact": "Contacto",
+    "language": "Idioma",
+    "languageLabel": "Seleccionar idioma",
+    "comingSoon": "pronto",
+    "languages": {
+      "shortPortuguese": "PT",
+      "portuguese": "PT-BR",
+      "english": "EN",
+      "spanish": "ES"
+    }
+  },
+  "hero": {
+    "eyebrow": "Desarrollador Full Stack",
+    "positioning": "Creación y evolución de sitios, sistemas y productos digitales.",
+    "firstName": "Tiago",
+    "lastName": "Castro",
+    "statement": "Producto, infraestructura y operación en el mismo trabajo.",
+    "narrative": "Hace más de 6 años construyo sistemas usados por empresas, clientes y equipos que necesitan seguir operando mientras crecen.",
+    "scope": {
+      "development": "Sitios y sistemas · pantallas, pagos e integraciones",
+      "seo": "Crecimiento · búsqueda en Google y tareas automáticas",
+      "cloud": "Estructura online · velocidad, seguridad y costos",
+      "data": "Información · organización, procesamiento y análisis"
+    },
+    "scopeLabel": "Frentes de actuación",
+    "scopeText": "Del producto a la infraestructura, conecto los frentes que sostienen crecimiento y operación.",
+    "location": "Río de Janeiro, Brasil",
+    "availabilityLabel": "Abierto a oportunidades",
+    "availability": "Siempre abierto a networking, oportunidades y proyectos que tengan sentido.",
+    "workModes": "CLT · PJ · Freelance · Consultoría · Proyectos recurrentes",
+    "remote": "Remoto en Brasil y el exterior",
+    "statusLabel": "Actuación ahora",
+    "lakeitRole": "Desarrollador Fullstack Cloud",
+    "lakeitPeriod": "Ene/2024 - actual",
+    "lakeitStatus": "Plataforma de datos con procesamiento, consultas e infraestructura en AWS.",
+    "futbuynowRole": "Freelance",
+    "futbuynowPeriod": "Feb/2023 - actual",
+    "futbuynowStatus": "Marketplace en producción con pagos, SEO y automatizaciones.",
+    "linkedinStatus": "Historial profesional completo.",
+    "githubStatus": "Código abierto y proyectos autorales.",
+    "positioningShort": "Creación y evolución de sitios, sistemas y productos.",
+    "narrativeShort": "Hace más de 6 años construyo sistemas que necesitan seguir operando mientras crecen."
+  },
+  "profile": {
+    "index": "02 / Perfil",
+    "title": "Cómo trabajo.",
+    "intro": "Construyo la parte visible y la que nadie ve, acompaño costos y resuelvo problemas después de que el sistema entra en uso.",
+    "processVisual": {
+      "title": "De la necesidad al software en uso.",
+      "caption": "El objetivo es reducir esfuerzo, evitar fallas y permitir que el producto siga evolucionando.",
+      "items": {
+        "understand": "Entender el trabajo real",
+        "build": "Construir sin complicar",
+        "improve": "Medir y mejorar"
+      }
+    },
+    "capabilities": {
+      "backend": {
+        "label": "Backend",
+        "title": "Sistemas que sostienen la operación",
+        "detail": "Pagos, registros y reglas de negocio funcionando juntos, sin trabajo manual.",
+        "tools": "Node.js · TypeScript · Python"
+      },
+      "frontend": {
+        "label": "Interfaces",
+        "title": "Sitios y productos digitales",
+        "detail": "Procesos complejos en pantallas rápidas y claras para clientes y equipos.",
+        "tools": "React · Next.js · Tailwind CSS"
+      },
+      "cloudData": {
+        "label": "Cloud y datos",
+        "title": "Información disponible y segura",
+        "detail": "Grandes volúmenes de información organizados para respuestas rápidas y seguras.",
+        "tools": "AWS · GCP · PostgreSQL · MySQL · Redis"
+      },
+      "delivery": {
+        "label": "Infraestructura",
+        "title": "Cambios sin detener la operación",
+        "detail": "Ambientes y entregas automatizados para menos errores y recuperación más segura.",
+        "tools": "Terraform · Docker · GitHub Actions"
+      }
+    },
+    "education": {
+      "label": "Formación y credenciales",
+      "title": "Formación y credenciales.",
+      "intro": "Formación concluida, práctica en sistemas que ajustan su capacidad según el uso y estudio continuo orientado a productos en operación.",
+      "degree": {
+        "label": "Grado",
+        "title": "Análisis y Desarrollo de Sistemas",
+        "institution": "Centro Universitário União das Américas Descomplica",
+        "detail": "Curso Superior de Tecnología",
+        "period": "Grado concluido en jul. 2026",
+        "action": "Validar conclusión"
+      },
+      "credentials": {
+        "label": "Credenciales y cursos",
+        "serverless": {
+          "title": "AWS Serverless Demonstrated",
+          "issuer": "Amazon Web Services Training and Certification",
+          "detail": "Credencial práctica sobre servicios que reciben solicitudes, coordinan tareas y almacenan datos conforme a la demanda.",
+          "action": "Ver credencial"
+        },
+        "technical": {
+          "title": "AWS Technical Essentials",
+          "issuer": "AWS Skill Builder",
+          "period": "Concluido en jul. 2025"
+        },
+        "javascript": {
+          "title": "JavaScript y TypeScript de Básico a Avanzado",
+          "issuer": "Udemy",
+          "period": "Concluido en feb. 2023"
+        }
+      },
+      "languages": {
+        "label": "Idiomas",
+        "portuguese": {
+          "name": "Portugués",
+          "level": "Nativo"
+        },
+        "english": {
+          "name": "Inglés",
+          "level": "Técnico para documentación y código"
+        },
+        "spanish": {
+          "name": "Español",
+          "level": "Básico"
+        }
+      }
+    },
+    "resumeText": "Si quieres ver mi experiencia completa, descarga mi currículo."
+  },
+  "experience": {
+    "title": "Experiencia profesional",
+    "intro": "Cada trabajo muestra el contexto que encontré, lo que cambié, por qué lo cambié y los resultados acompañados.",
+    "technologyHelp": "Tecnologías usadas",
+    "technologyHelpLabel": "Mostrar tecnologías usadas en {area}",
+    "interlude": {
+      "title": "De datos al comercio digital.",
+      "caption": "Contextos diferentes exigen decisiones diferentes, pero ambos necesitan seguir funcionando mientras cambian.",
+      "items": {
+        "understand": "Información lista para usar",
+        "change": "Costos y riesgos bajo control",
+        "measure": "Ventas en movimiento"
+      }
+    },
+    "lakeit": {
+      "label": "Experiencia profesional",
+      "company": "HITSS · Proyecto LakeIT",
+      "role": "Desarrollador Fullstack Cloud",
+      "period": "Ene/2024 - actual",
+      "description": "Plataforma de datos usada por empresas para organizar, procesar y consultar grandes volúmenes de información.",
+      "figures": {
+        "pipeline": {
+          "title": "Del dato bruto a la consulta lista.",
+          "caption": "Pipelines automáticos preparan los archivos en S3, AWS Glue procesa a escala y Athena responde consultas sobre grandes volúmenes sin mover los datos de lugar."
+        }
+      },
+      "blocks": {
+        "data": {
+          "label": "Datos",
+          "title": "Automatizé la preparación de la información en pipelines",
+          "detail": "Flujos automáticos que preparan la información sin trabajo manual.",
+          "evidence": "Decenas de flujos en uso por clientes",
+          "stack": "AWS Glue · S3 · Athena · Python",
+          "technologyDetail": "Python implementa las automatizaciones; AWS Glue ejecuta el procesamiento, S3 almacena los archivos y Athena permite consultar grandes volúmenes de información."
+        },
+        "infra": {
+          "label": "Cloud e infra",
+          "title": "Dividí una estructura compleja en partes menores",
+          "metricModules": "+29 módulos Terraform",
+          "metricEnvironments": "+3 ambientes versionados",
+          "detail": "Reorganicé la estructura en partes menores y repetibles entre ambientes.",
+          "evidence": "+29 partes reutilizables en +3 ambientes",
+          "stack": "AWS · Terraform · Terragrunt · GitHub Actions",
+          "technologyDetail": "Terraform y Terragrunt describen, versionan y reutilizan la estructura en archivos. GitHub Actions revisa y publica cambios automáticamente."
+        },
+        "ai": {
+          "label": "IA",
+          "title": "Transformé preguntas en respuestas y gráficos",
+          "detail": "Preguntas en lenguaje común se convierten en consultas, respuestas y gráficos.",
+          "evidence": "Respuestas y gráficos en lenguaje natural",
+          "stack": "Amazon Bedrock · Athena · Vertex AI · BigQuery",
+          "technologyDetail": "Amazon Bedrock y Vertex AI interpretan las preguntas; Athena y BigQuery consultan la información usada para armar respuestas y gráficos."
+        }
+      },
+      "cost": {
+        "label": "Costo AWS",
+        "title": "Reorganicé la estructura online para reducir costos.",
+        "detail": "Revisé componentes y ambientes para disminuir desperdicios y hacer futuros cambios más seguros.",
+        "before": "Antes",
+        "beforeValue": "> US$ 2.300 / mes",
+        "after": "Después",
+        "afterValue": "~ US$ 800 - 1.000 / mes",
+        "peak": "Los picos históricos de la cuenta analizada superaron los US$ 6 mil por mes.",
+        "savingValue": "+ US$ 15 mil / año",
+        "savingLabel": "ahorro anual estimado"
+      },
+      "responsibility": {
+        "label": "Responsabilidad de punta a punta",
+        "title": "Hoy conecto aplicación, datos, infraestructura y operación en <highlight>decisiones técnicas</highlight>.",
+        "progress": {
+          "label": "Evolución de la actuación",
+          "delivery": "Entrega de funcionalidades",
+          "decisions": "Decisiones técnicas",
+          "operation": "Visión de la operación"
+        },
+        "collaboration": {
+          "refinements": "Refinamientos",
+          "training": "Capacitaciones",
+          "demonstrations": "Demostraciones",
+          "clients": "Contacto con clientes"
+        }
+      }
+    },
+    "futbuynow": {
+      "label": "Cliente · Freelance\nResponsabilidad técnica",
+      "company": "Futbuynow",
+      "period": "Feb/2023 - actual",
+      "description": "Marketplace en producción con compra, pago, vendedores y operación diaria.",
+      "figures": {
+        "loop": {
+          "title": "Operación que se retroalimenta.",
+          "caption": "Compra, pago confirmado y datos de uso vuelven al producto en mejoras continuas de interfaz, SEO y automatización."
+        }
+      },
+      "blocks": {
+        "product": {
+          "label": "Producto y operación",
+          "title": "Reestructuré el recorrido de compra",
+          "detail": "Acompaño vendedores, afiliados, comisiones y fidelidad en el panel y en la compra.",
+          "tools": "Node.js · Next.js · MySQL · Redis",
+          "technologyDetail": "Next.js construye las pantallas y parte del servidor; Node.js ejecuta las reglas de la operación. MySQL guarda los datos principales y Redis acelera consultas frecuentes."
+        },
+        "payments": {
+          "label": "Pagos",
+          "title": "Conecté pago y confirmación",
+          "detail": "Pago conectado al pedido y a la fidelidad, sin conferencias manuales.",
+          "tools": "OpenPix · Stripe · PayPal",
+          "technologyDetail": "Conecté OpenPix, Stripe y PayPal al sistema para confirmar pagos y actualizar pedidos automáticamente."
+        },
+        "ai": {
+          "label": "IA y automatizaciones",
+          "title": "Automatizé análisis de la operación",
+          "detail": "Reportes y análisis de clics que orientan mejoras en las interfaces.",
+          "tools": "Agentes · monitoreo · traducción",
+          "technologyDetail": "Combiné rutinas automáticas, herramientas de análisis e inteligencia artificial para acompañar fallas, traducir contenido, generar reportes y entender cómo las personas usan las pantallas."
+        },
+        "seo": {
+          "label": "SEO y adquisición"
+        }
+      },
+      "metrics": {
+        "label": "Operación en números",
+        "monthlyValue": "~3.407",
+        "monthlyLabel": "pedidos pagos / mes",
+        "monthlyPeriod": "may-jul/2026",
+        "yearsValue": "+4",
+        "yearsLabel": "años de operación",
+        "yearsPeriod": "plataforma en producción",
+        "ordersValue": "+65.000",
+        "ordersLabel": "pedidos procesados",
+        "ordersPeriod": "volumen acumulado",
+        "coinsValue": "+30 mil M",
+        "coinsLabel": "coins comercializadas",
+        "coinsPeriod": "volumen acumulado",
+        "growthLabel": "Evolución de la operación después de que asumí el liderazgo técnico",
+        "growthTitle": "El promedio de pedidos pagos más que se duplicó <highlight>durante mi actuación</highlight>.",
+        "growthDetail": "Durante el período, evolucioné producto, pagos, SEO, analytics y estabilidad para acompañar el aumento de la operación.",
+        "growthFrom": "~1.483 / mes",
+        "growthFromPeriod": "oct-dic/2023",
+        "growthTo": "~3.407 / mes",
+        "growthToPeriod": "may-jul/2026",
+        "growthNote": "Evolución de la operación durante mi actuación; el crecimiento comercial resulta de diferentes frentes del negocio.",
+        "seoValue": "+84%",
+        "seoLabel": "clics provenientes de la búsqueda de Google",
+        "seoPeriod": "jun → jul/2026",
+        "seoTotalValue": "+30,4 mil",
+        "seoTotalLabel": "clics desde Google en 12 meses"
+      }
+    }
+  },
+  "contactBreak": {
+    "modes": {
+      "clt": "CLT",
+      "pj": "PJ",
+      "freelance": "Freelance",
+      "consulting": "Consultoría",
+      "recurring": "Proyectos recurrentes"
+    }
+  },
+  "projects": {
+    "index": "04 / Proyectos",
+    "title": "Proyectos autorales y de estudio.",
+    "intro": "Todo aquí salió de mis manos: construí, aprendí y documenté. Código, interfaz y decisiones de arquitectura abiertos para quien quiera conferir.",
+    "featured": "Proyecto destacado",
+    "signalInput": "Muchas señales",
+    "signalFilter": "Filtro",
+    "signalOutput": "Señal útil",
+    "items": {
+      "nexsift": {
+        "name": "NexSift",
+        "type": "Proyecto autoral",
+        "description": "Radar de tecnología que filtra y contextualiza señales con fuentes verificadas. Allí profundicé Next.js en producción, publicación por Lambda autenticada con Zod e infraestructura S3 descrita en Terraform.",
+        "homeAlt": "Página inicial de NexSift con el mensaje Menos ruido, más señal y cuatro señales recientes",
+        "homeCaption": "Figura 1. Página inicial: propuesta y selección corta del radar, sin feed infinito.",
+        "mobileAlt": "Versión móvil de NexSift mostrando tres señales recientes y sus notas de relevancia",
+        "mobileTitle": "La lectura sigue siendo corta en el celular.",
+        "mobileCaption": "La misma jerarquía del radar fue conservada en una columna: título, relevancia y fecha aparecen antes del contexto.",
+        "blogAlt": "Archivo de señales de NexSift con la lista de publicaciones y filtros por tópico",
+        "blogCaption": "Figura 2. El archivo de señales reúne el historial de publicaciones con filtros por tópico.",
+        "topicsAlt": "Página de tópicos de NexSift organizada en siete áreas de tecnología",
+        "topicsCaption": "Figura 3. Siete lentes editoriales organizan lo que el producto acompaña.",
+        "coverAlt": "Página inicial de NexSift con el mensaje Menos ruido, más señal",
+        "images": {
+          "home": {
+            "alt": "Página inicial de NexSift con la propuesta Menos ruido, más señal y señales recientes"
+          },
+          "topics": {
+            "alt": "Página de tópicos de NexSift organizada en siete áreas de tecnología"
+          },
+          "blog": {
+            "alt": "Archivo de señales de NexSift con filtros por tópico"
+          },
+          "signal": {
+            "alt": "Página de una señal de NexSift con contexto y fuentes verificadas"
+          }
+        },
+        "problem": "Acompañar tecnología en feeds infinitos consume tiempo y confianza: demasiado volumen, poco contexto y fuentes que casi nunca se verifican.",
+        "solution": "Un radar editorial para desarrolladores que filtra, verifica y contextualiza señales de IA, cloud, desarrollo y carreras, con nota de relevancia y lectura igualmente corta en el celular.",
+        "architecture": "Next.js y TypeScript con contenido publicado en un bucket S3 por una Lambda autenticada y validada con Zod. Infraestructura descrita en Terraform (S3, Lambda, IAM), ambiente local simulado con Docker y MiniStack, además de RSS, sitemap y datos estructurados de artículo.",
+        "results": "Producto en producción con publicación activa, siete lentes editoriales activas, fuentes verificadas exhibidas junto a cada señal e interfaz institucional en tres idiomas."
+      },
+      "kaguya": {
+        "name": "Kaguya",
+        "type": "Proyecto autoral · Open Source",
+        "description": "Plataforma de estudios con rutas, playlists y clases en video. Fue donde aprendí, en la práctica, Clean Architecture en la API Express, inyección de dependencias, RBAC por permisos y GraphQL Federation.",
+        "coverAlt": "Dashboard del alumno con la lista de rutas en curso y el progreso de cada una",
+        "images": {
+          "dashboard": {
+            "alt": "Dashboard del alumno con rutas en curso y progreso"
+          },
+          "lessonPlayer": {
+            "alt": "Player de clase en video dentro de una ruta de Kaguya"
+          },
+          "mobileDashboard": {
+            "alt": "Versión móvil del dashboard de estudios de Kaguya"
+          }
+        },
+        "problem": "Estudiar video sin estructura se convierte en una lista de pestañas abiertas: el alumno no sabe dónde paró, el contenido se dispersa y organizar material depende siempre del equipo de desarrollo.",
+        "solution": "Plataforma en que las rutas agrupan playlists, bloques y clases; el alumno acompaña progreso, historial de visualización y me gusta, mientras sub administradores crean contenido por un panel protegido por niveles de permiso.",
+        "architecture": "Monorepo con tres aplicaciones independientes: API REST en Express organizada en routes, controllers, services, repositories y use cases; cliente web en Next.js con guardia de sesión validada contra la API antes de renderizar páginas protegidas; microservicio de sugerencias en NestJS expuesto como subgraph GraphQL Federation v2. Autenticación local con JWT o social vía Firebase, validación Zod en todas las rutas, inyección de dependencias con tsyringe y storage plugable entre disco local y S3.",
+        "results": "Backend con suites de pruebas unitarias y de integración, smoke test que ejercita todas las rutas en orden de dependencia y restauración concluida en 2026: dependencias actualizadas manteniendo el stack original, fallas apuntadas en auditoría corregidas y seeds que levantan dos cursos completos para demostración."
+      },
+      "monkeynauts": {
+        "name": "The Monkeynauts",
+        "type": "Proyecto autoral · Restauración 2026",
+        "description": "Juego play and earn de 2022 que restauré desde cero aplicando Clean Architecture, Either para errores explícitos y TypeScript strict, con driver plugable entre blockchain sandbox y BSC real y E2E en las 55 rutas.",
+        "coverAlt": "Área del jugador de The Monkeynauts mostrando billetera, saldo y datos de la cuenta",
+        "images": {
+          "login": {
+            "alt": "Pantalla de acceso a la plataforma The Monkeynauts"
+          },
+          "admin": {
+            "alt": "Panel administrativo del juego con ventas, baneos y parámetros de balanceo"
+          },
+          "account": {
+            "alt": "Área del jugador con billetera, depósitos y retiros"
+          }
+        },
+        "problem": "Un juego web3 de 2022 que nunca llegó al aire cargaba fallas graves: contraseña de recuperación viajando en texto plano, escalada de privilegios y baneo sin persistencia. Ejecutar cualquier cosa exigía credenciales externas y acceso real a blockchain.",
+        "solution": "Restauré el producto fielmente y corregí cada falla apuntada. El jugador gestiona cuenta, billetera, depósitos, retiros, tienda, naves y tripulaciones; el panel administrativo opera eventos de venta, airdrops, baneos, parámetros de balanceo y logs de auditoría. Todo funciona offline, sin ninguna credencial externa.",
+        "architecture": "Monorepo pnpm con SPA en React 19 y API Express 5 en TypeScript strict. Clean Architecture por módulo: use cases con errores explícitos en el patrón Either, contratos de dominio aislados y Prisma restringido a la infraestructura. La blockchain es un driver plugable: el modo sandbox usa moneda ficticia y funciona sin red; el modo rpc valida transacciones reales en BSC por hash, con protección contra replay en los logs de auditoría.",
+        "results": "Typecheck strict sin errores, test E2E cubriendo las 55 rutas del flujo completo, del registro al panel de administrador, contrato oficial del token SPC verificado en mainnet y tres vulnerabilidades de 2022 corregidas con la intención original preservada."
+      },
+      "pagarme": {
+        "name": "pagarme-simplified-psp",
+        "type": "Proyecto de estudio · Open Source",
+        "description": "Servicio de pagos inspirado en el desafío clásico de Pagar.me donde entrené SOLID, TDD y DDD en la práctica: débito y crédito con cobros programados, value objects con Either y saldos cubiertos por tests en Vitest.",
+        "coverAlt": "Resultado de la suite de tests del servicio de pagos con todas las verificaciones pasando",
+        "images": {
+          "apiDemo": {
+            "alt": "Demostración de la API creando una transacción y devolviendo el cobro calculado"
+          }
+        },
+        "problem": "El desafío de backend de Pagar.me pide el núcleo de un adquirente real: crear transacciones de débito y crédito, generar cobros con tasas y plazos diferentes por método y consolidar saldos, todo con dominio bien modelado.",
+        "solution": "Servicio que aplica las reglas de liquidación: débito liquida en D+1 con tasa de 3% y crédito genera cuatro cobros entre D+30 y D+120 con tasa de 5%. La tarjeta persiste solo los cuatro últimos dígitos, la transacción guarda el valor bruto y las tasas descuentan los cobros.",
+        "architecture": "Clean Architecture con bloques de DDD: entidades, value objects como CardNumber, mappers y errores de dominio; use cases devuelven Either en las operaciones que pueden fallar; un contenedor único comparte dependencias entre rutas; repositorios en memoria ya siguen interfaces listas para una base de datos real; el DateProvider plugable permite congelar el tiempo en los tests; envelope de respuesta consistente y middleware central de errores en Express 5.",
+        "results": "Reglas de parcelamiento cubiertas por tests con Vitest, incluyendo el resto de redondeo absorbido por la última parcela, typecheck strict sin errores y build de producción empaquetado con tsup."
+      },
+      "ignews": {
+        "name": "ig.news",
+        "type": "Proyecto de estudio · Open Source",
+        "description": "Blog por suscripción del programa Ignite que modernicé en 2026: Stripe con webhook firmado, next-auth, ISR de Prismic, migración de FaunaDB a Prisma y tests E2E con Playwright.",
+        "problem": "Un blog por suscripción real envuelve pago recurrente, autenticación social y contenido liberado por plan. El desafío es integrar los tres frentes sin acoplar todo y manteniendo el proyecto funcionando incluso sin credenciales externas.",
+        "solution": "Suscripción vía Stripe Checkout con webhook firmado y grabación idempotente de la suscripción; login con GitHub vía next-auth con sesión JWT enriquecida por el estado de la suscripción; visitantes anónimos ven una vista previa truncada del post y suscriptores leen el contenido completo.",
+        "architecture": "Next.js en pages router con rutas de API validadas por Zod y envelope único de respuesta; contenido en ISR desde el CMS headless Prismic; capa de datos reescrita para Prisma con SQLite local tras el cierre de FaunaDB; proveedores plugables permiten ejecutar todo offline con sandbox de Stripe y Prismic cuando no hay credenciales.",
+        "results": "Modernización concluida en 2026 para Node 22 LTS con todas las dependencias actuales, suite E2E con Playwright cubriendo suscripción, login y paywall, y TypeScript strict de punta a punta.",
+        "coverAlt": "Página inicial del blog por suscripción ig.news con la lista de posts"
+      },
+      "letmeask": {
+        "name": "Let Me Ask",
+        "type": "Proyecto de estudio · Open Source",
+        "description": "Salas de preguntas en tiempo real de NLW 6 que restauré con Firebase Auth y Realtime Database, reglas de seguridad para me gusta únicos, moderación en vivo y validación con react-hook-form y Zod.",
+        "problem": "Durante lives y clases, la caja de chat mezcla preguntas y comentarios: quien presenta pierde las mejores dudas y la audiencia no sabe qué ya fue respondido.",
+        "solution": "El presentador crea una sala y comparte el código; la audiencia entra, pregunta y da me gusta en lo que merece respuesta primero. El panel de moderación destaca la pregunta siendo respondida, marca respondidas, elimina ruido y cierra la sala llevando a todos de vuelta a la home. Salas cerradas pueden reabrirse después.",
+        "architecture": "SPA en React 19 con Vite y TypeScript; Firebase Authentication para login con Google y Realtime Database sincronizando preguntas, me gusta y estados de la sala en tiempo real; reglas de seguridad limitan un me gusta por persona; formularios con react-hook-form y Zod para validación inline.",
+        "results": "Restauración concluida en 2026 en Node 22 con dependencias actualizadas, layout totalmente usable en el celular y los flujos de audiencia, moderación y descubrimiento de salas documentados con pantallas.",
+        "coverAlt": "Sala de preguntas y respuestas de Let Me Ask con la audiencia acompañando en tiempo real"
+      },
+      "awsIac": {
+        "name": "AWS IaC Blueprint",
+        "type": "Open Source",
+        "description": "Infraestructura como código donde aprendí a estructurar Terraform y Terragrunt a escala: módulos sin valores fijos, ambientes idénticos en un único env.hcl y ciclo completo en LocalStack sin costo.",
+        "coverAlt": "Salidas de Terragrunt tras aplicar los módulos de infraestructura en LocalStack",
+        "images": {
+          "localstack": {
+            "alt": "Dashboard de LocalStack mostrando los recursos provisionados localmente"
+          }
+        },
+        "problem": "Las estructuras reales de nube necesitan ambientes idénticos entre dev, staging y producción, pero aprender aplicando directamente en AWS cuesta dinero, exige cuenta y vuelve caro cada error.",
+        "solution": "Template de infraestructura como código en que todos los ambientes comparten exactamente la misma configuración de módulos: VPC con subnets públicas y privadas, bucket S3 versionado y encriptado y rol IAM de menor privilegio, provisionados y destruidos cuantas veces hagan falta sin costo.",
+        "architecture": "Módulos Terraform limpios, sin valores fijos ni declaración de provider, orquestados por Terragrunt, que inyecta provider, backend y versiones por ambiente vía root.hcl. Un ambiente nuevo es un env.hcl y tres archivos de tres líneas, sin tocar los módulos. Terragrunt arma el grafo de ejecución solo: VPC y S3 aplican en paralelo y el IAM espera el ARN del bucket, con mock outputs para validar todo antes del apply.",
+        "results": "Ciclo completo de apply, inspección y destroy corriendo en LocalStack, sin cuenta AWS y sin costo, con conferencia de los recursos por la CLI y por el dashboard."
+      },
+      "aiI18n": {
+        "name": "ai-i18n-translate",
+        "type": "NPM · Open Source",
+        "description": "Herramienta publicada en npm que traduce archivos i18n con IA sin romper placeholders. Con ella aprendí cache de traducciones, ejecución paralela, retry con backoff y validación automática de claves.",
+        "problem": "Traducir archivos i18n a mano es repetitivo y frágil: claves anidadas se pierden, placeholders como '{{count}}' desaparecen en la traducción y cada versión nueva obliga a retraducir lo que ya estaba listo.",
+        "solution": "CLI y biblioteca que traducen JSON de idiomas con IA preservando estructura y placeholders, inclusive variantes regionales como pt-BR y es-MX, con cache de traducciones, ejecución paralela, dry run, modo git diff para CI y reporte markdown con conteo de tokens.",
+        "architecture": "Agnóstica de framework: divide los archivos en partes pequeñas, monta las instrucciones por par de idiomas una única vez, procesa locales y archivos en paralelo con retry y backoff exponencial, valida placeholders y claves desbalanceadas y corrige fallbacks incompletos de ejecuciones anteriores. Proveedores plugables: presets para OpenAI, Anthropic, Gemini y DeepSeek o función propia de traducción.",
+        "results": "Publicada en npm como @tiagogcastro/ai-i18n-translate, con garantía de cero fallbacks en traducción parcial y reducción real de llamadas de API al reutilizar traducciones idénticas entre ejecuciones.",
+        "coverAlt": "Terminal ejecutando el comando de ai-i18n-translate con el resumen de la traducción"
+      }
+    },
+    "dates": {
+      "created": "Creado en {date}",
+      "restored": "Restaurado en {date}"
+    },
+    "cta": {
+      "label": "Página completa de proyectos",
+      "title": "¿Quieres ver cada proyecto en detalle?",
+      "text": "En la página de proyectos reuní contexto, fechas, stack y lo que aprendí construyendo cada uno."
+    }
+  },
+  "engagement": {
+    "label": "Disponible para oportunidades",
+    "text": "Abierto a conversas sobre vacantes, proyectos y networking.",
+    "whatsapp": "Escribir por WhatsApp",
+    "linkedin": "Abrir LinkedIn",
+    "dismiss": "Descartar aviso",
+    "whatsappMessage": "¡Hola Tiago! Vi tu portafolio y me gustaría conversar sobre oportunidades o networking."
+  },
+  "contact": {
+    "index": "05 / Contacto",
+    "title": "Ponte en contacto.",
+    "availabilityTitle": "Siempre abierto a networking, oportunidades y proyectos <highlight>que tengan sentido</highlight>.",
+    "ctaTitle": "¿Quieres un <highlight>sitio como este</highlight>, evolucionar un sistema que ya existe o <highlight>apoyo técnico</highlight> en un proyecto en curso?",
+    "ctaText": "Mi contacto está justo abajo, y respondo con el mismo cuidado que dedico a los sistemas en producción.",
+    "channels": {
+      "hiring": "Correo",
+      "project": "WhatsApp",
+      "networking": "LinkedIn",
+      "code": "GitHub",
+      "resume": "Currículo"
+    }
+  },
+  "footer": {
+    "role": "Desarrollador Full Stack",
+    "location": "Río de Janeiro, Brasil",
+    "availability": "Remoto Brasil + exterior",
+    "copyright": "© {year} Tiago Castro"
+  }
+}

@@ -7,8 +7,10 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { EngagementBox } from "@/components/layout/EngagementBox";
 import { siteConfig } from "@/config/site";
 import { routing } from "@/i18n/routing";
+import { buildAlternates } from "@/lib/seo";
 import "../globals.css";
 
 const newsreader = Newsreader({
@@ -66,7 +68,7 @@ export async function generateMetadata({
     creator: identity("fullName"),
     publisher: identity("displayName"),
     category: "technology",
-    alternates: { canonical: "/" },
+    alternates: buildAlternates("/"),
     robots: {
       index: true,
       follow: true,
@@ -227,6 +229,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
           <Header />
           {children}
           <Footer />
+          <EngagementBox />
         </NextIntlClientProvider>
         <script
           type="application/ld+json"

@@ -5,8 +5,8 @@ import { ExternalLink } from "@/components/ui/ExternalLink";
 import { Tooltip } from "@/components/ui/Tooltip";
 import { Reveal } from "@/components/visual/Reveal";
 import { siteConfig } from "@/config/site";
-import { CostComparison } from "../components/CostComparison";
-import { TechnicalInterlude } from "../components/TechnicalInterlude";
+import { CostComparison } from "@/features/experience/components/CostComparison";
+import { TechnicalInterlude } from "@/components/visual/TechnicalInterlude";
 
 const lakeItBlocks = ["data", "infra", "ai"] as const;
 const futbuynowBlocks = ["product", "payments", "ai"] as const;
