@@ -14,6 +14,7 @@ export type ProjectLink = {
 
 export type ProjectDates = {
   created?: string;
+  createdEnd?: string;
   restored?: string;
 };
 
@@ -52,7 +53,7 @@ const nexsiftFigures = [
 export const projects: readonly Project[] = [
   {
     id: "kaguya",
-    dates: { created: "2021-08", restored: "2026-08" },
+    dates: { created: "2021-08", createdEnd: "2021-12", restored: "2026-08" },
     translationKey: "projects.items.kaguya",
     featured: true,
     technologies: [
@@ -97,7 +98,7 @@ export const projects: readonly Project[] = [
   },
   {
     id: "monkeynauts",
-    dates: { created: "2021-12", restored: "2026-08" },
+    dates: { created: "2021-12", createdEnd: "2022-03", restored: "2026-08" },
     translationKey: "projects.items.monkeynauts",
     featured: true,
     technologies: [
@@ -146,7 +147,7 @@ export const projects: readonly Project[] = [
   },
   {
     id: "nexsift",
-    dates: { created: "2026-08" },
+    dates: { created: "2026-07" },
     translationKey: "projects.items.nexsift",
     featured: false,
     technologies: ["Next.js", "TypeScript", "AWS", "Terraform", "MCP", "IA"],
@@ -164,7 +165,7 @@ export const projects: readonly Project[] = [
   },
   {
     id: "pagarme-simplified-psp",
-    dates: { created: "2023-04", restored: "2026-08" },
+    dates: { created: "2023-04", createdEnd: "2023-06", restored: "2026-08" },
     translationKey: "projects.items.pagarme",
     featured: false,
     technologies: [
@@ -199,7 +200,7 @@ export const projects: readonly Project[] = [
   },
   {
     id: "ai-i18n-translate",
-    dates: { created: "2026-03" },
+    dates: { created: "2026-03", createdEnd: "2026-04" },
     translationKey: "projects.items.aiI18n",
     featured: false,
     technologies: [
@@ -232,7 +233,7 @@ export const projects: readonly Project[] = [
   {
     id: "aws-iac-blueprint",
     translationKey: "projects.items.awsIac",
-    dates: { created: "2026-05" },
+    dates: { created: "2026-05", createdEnd: "2026-06" },
     featured: false,
     technologies: ["Terraform", "Terragrunt", "LocalStack", "AWS"],
     links: [
@@ -251,7 +252,7 @@ export const projects: readonly Project[] = [
   },
   {
     id: "ignews",
-    dates: { created: "2022-05", restored: "2026-08" },
+    dates: { created: "2022-05", createdEnd: "2022-08", restored: "2026-08" },
     translationKey: "projects.items.ignews",
     featured: false,
     technologies: [
@@ -276,7 +277,7 @@ export const projects: readonly Project[] = [
   },
   {
     id: "letmeask",
-    dates: { created: "2021-06", restored: "2026-08" },
+    dates: { created: "2021-06", createdEnd: "2021-07", restored: "2026-08" },
     translationKey: "projects.items.letmeask",
     featured: false,
     technologies: [

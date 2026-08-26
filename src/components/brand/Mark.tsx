@@ -30,6 +30,7 @@ export function Mark({ className, ...props }: MarkProps) {
         stroke="var(--accent)"
         strokeWidth="7"
         strokeLinecap="round"
+        className="transition-transform duration-300 ease-out [transform-box:fill-box] group-hover:translate-x-1 motion-reduce:transform-none motion-reduce:transition-none"
       />
     </svg>
   );

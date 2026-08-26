@@ -1,14 +1,12 @@
 import Image from "next/image";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/layout/Container";
 import { BackgroundGrid } from "@/components/visual/BackgroundGrid";
 import { Reveal } from "@/components/visual/Reveal";
-import { formatMonthDate } from "@/lib/utils";
-import {
-  projects,
-} from "@/content/projects";
+import { projects } from "@/content/projects";
 import { ProjectLinkChips } from "@/components/ui/ProjectLinkChips";
+import { formatProjectDates } from "@/lib/projectDates";
 
 const nexsiftFigures = [
   {
@@ -32,7 +30,6 @@ const sideImageIds = new Set(["kaguya", "monkeynauts"]);
 export async function ProjectsSection() {
   const t = await getTranslations("projects");
   const tr = await getTranslations();
-  const locale = await getLocale();
   const common = await getTranslations("common");
   const featured = projects.find((project) => project.id === "nexsift")!;
   const sideImageProjects = projects.filter((project) =>
@@ -143,25 +140,10 @@ export async function ProjectsSection() {
         </article>
 
         <div className="mt-16 border-t border-white/15 lg:mt-24">
-          {sideImageProjects.map((project) => {
+          {sideImageProjects.map(async (project) => {
             const base = project.translationKey;
             const cover = project.cover;
-            const datesLabel = project.dates
-              ? [
-                  project.dates.created
-                    ? tr("projects.dates.created", {
-                        date: formatMonthDate(locale, project.dates.created),
-                      })
-                    : null,
-                  project.dates.restored
-                    ? tr("projects.dates.restored", {
-                        date: formatMonthDate(locale, project.dates.restored),
-                      })
-                    : null,
-                ]
-                  .filter(Boolean)
-                  .join(" · ")
-              : null;
+            const datesLabel = await formatProjectDates(project);
 
             return (
               <article
@@ -208,24 +190,9 @@ export async function ProjectsSection() {
         </div>
 
         <div className="mt-px grid gap-px border-x border-b border-white/15 bg-white/15 sm:grid-cols-2 lg:grid-cols-3">
-          {cardProjects.map((project) => {
+          {cardProjects.map(async (project) => {
             const base = project.translationKey;
-            const datesLabel = project.dates
-              ? [
-                  project.dates.created
-                    ? tr("projects.dates.created", {
-                        date: formatMonthDate(locale, project.dates.created),
-                      })
-                    : null,
-                  project.dates.restored
-                    ? tr("projects.dates.restored", {
-                        date: formatMonthDate(locale, project.dates.restored),
-                      })
-                    : null,
-                ]
-                  .filter(Boolean)
-                  .join(" · ")
-              : null;
+            const datesLabel = await formatProjectDates(project);
 
             return (
               <article

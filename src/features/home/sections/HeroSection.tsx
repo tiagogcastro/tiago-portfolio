@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { Logo } from "@/components/brand/Logo";
 import { GitHubIcon, LinkedInIcon } from "@/components/brand/SocialIcons";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
@@ -12,6 +13,7 @@ export async function HeroSection() {
   const t = await getTranslations("hero");
   const common = await getTranslations("common");
   const experience = await getTranslations("experience");
+  const identity = await getTranslations("identity");
 
   const scopeList = (
     <ul className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-2">
@@ -35,9 +37,13 @@ export async function HeroSection() {
       <Container className="grid min-h-[calc(88svh-var(--header-height))] gap-8 py-14 lg:grid-cols-[1.18fr_0.82fr] lg:items-center lg:gap-16 lg:py-24">
         <div className="flex flex-col gap-8 lg:order-1">
           <Reveal>
-            <h1 className="font-display text-[clamp(3.5rem,12vw,9.5rem)] leading-[0.82] font-semibold tracking-[-0.045em]">
-              <span className="block">{t("firstName")}</span>
-              <span className="text-mineral-bright block">{t("lastName")}</span>
+            <h1>
+              <Logo
+                name={identity("fullName")}
+                wordmark={identity("wordmark")}
+                size="hero"
+                linked={false}
+              />
             </h1>
             <p className="font-heading mt-6 max-w-2xl text-lg leading-7 font-medium text-white sm:text-2xl sm:leading-8">
               <span className="sm:hidden">{t("positioningShort")}</span>

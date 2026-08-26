@@ -89,7 +89,11 @@ export function Header() {
   return (
     <header className="bg-background/90 fixed inset-x-0 top-0 z-40 border-b border-white/10 backdrop-blur-xl">
       <Container className="flex h-[var(--header-height)] items-center justify-between gap-5">
-        <Logo name={identity("wordmark")} wordmark={identity("wordmark")} />
+        <Logo
+          name={identity("wordmark")}
+          wordmark={identity("wordmark")}
+          variant="mark"
+        />
 
         <nav
           aria-label={t("navLabel")}

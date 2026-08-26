@@ -3,18 +3,27 @@
 import { useEffect, useState } from "react";
 import { MessageCircle, X } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { Mark } from "@/components/brand/Mark";
+import {
+  AnimatePresence,
+  motion,
+  useDragControls,
+  useReducedMotion,
+  type PanInfo,
+} from "motion/react";
+import { Logo } from "@/components/brand/Logo";
 import { LinkedInIcon } from "@/components/brand/SocialIcons";
 import { siteConfig } from "@/config/site";
 
 const STORAGE_KEY = "tiago-portfolio-engagement-dismissed";
 const SHOW_DELAY_MS = 6000;
+const DISMISS_OFFSET_Y = 120;
+const DISMISS_VELOCITY_Y = 700;
 
 export function EngagementBox() {
   const t = useTranslations("engagement");
   const identity = useTranslations("identity");
   const reduceMotion = useReducedMotion();
+  const dragControls = useDragControls();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -34,6 +43,21 @@ export function EngagementBox() {
   }, []);
 
   if (typeof window === "undefined") return null;
+
+  const dismiss = () => {
+    try {
+      window.localStorage.setItem(STORAGE_KEY, "1");
+    } catch {
+      // localStorage unavailable, dismissal applies to this visit only
+    }
+    setVisible(false);
+  };
+
+  const handleDragEnd = (_: unknown, info: PanInfo) => {
+    if (info.offset.y > DISMISS_OFFSET_Y || info.velocity.y > DISMISS_VELOCITY_Y) {
+      dismiss();
+    }
+  };
 
   const whatsappHref = `${siteConfig.whatsappUrl}?text=${encodeURIComponent(
     t("whatsappMessage"),
@@ -65,18 +89,26 @@ export function EngagementBox() {
                     transition: { duration: 0.3, ease: [0.4, 0, 1, 1] },
                   }
             }
+            drag={reduceMotion ? false : "y"}
+            dragListener={false}
+            dragControls={dragControls}
+            dragConstraints={{ top: 0, bottom: 0 }}
+            dragElastic={{ top: 0, bottom: 0.55 }}
+            dragMomentum={false}
+            onDragEnd={handleDragEnd}
             className="bg-surface/90 shadow-accent/10 pointer-events-auto relative w-full border-t border-white/15 p-5 shadow-2xl backdrop-blur-xl sm:border-x sm:px-8 sm:py-6"
           >
+            <div
+              aria-hidden="true"
+              onPointerDown={(event) => dragControls.start(event)}
+              className="group absolute inset-x-0 top-0 z-10 flex cursor-grab touch-none items-center justify-center pt-3 pb-2 select-none active:cursor-grabbing"
+            >
+              <span className="h-1 w-12 rounded-full bg-white/25 transition-colors group-hover:bg-white/40" />
+            </div>
+
             <button
               type="button"
-              onClick={() => {
-                try {
-                  window.localStorage.setItem(STORAGE_KEY, "1");
-                } catch {
-                  // localStorage unavailable, dismissal applies to this visit only
-                }
-                setVisible(false);
-              }}
+              onClick={dismiss}
               aria-label={t("dismiss")}
               className="text-muted hover:text-accent absolute top-3 right-3 z-10 grid size-8 cursor-pointer place-items-center transition-colors"
             >
@@ -85,14 +117,15 @@ export function EngagementBox() {
 
             <div className="mx-auto flex w-full max-w-5xl flex-col gap-5 sm:flex-row sm:items-center sm:gap-10">
               <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-3">
-                  <Mark className="size-8 shrink-0" />
-                  <div>
-                    <p className="font-heading text-sm leading-5 font-semibold">
-                      {identity("displayName")}
-                    </p>
-                    <p className="mono-label text-muted">{identity("role")}</p>
-                  </div>
+                <div>
+                  <Logo
+                    name={identity("fullName")}
+                    wordmark={identity("wordmark")}
+                    linked={false}
+                  />
+                  <p className="mono-label text-muted mt-1 ml-12">
+                    {identity("role")}
+                  </p>
                 </div>
                 <p className="mono-label text-accent mt-4 flex items-center gap-2">
                   <span

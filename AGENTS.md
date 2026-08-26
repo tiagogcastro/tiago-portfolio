@@ -2,7 +2,7 @@
 
 ## Overview
 
-Next.js 16 (App Router) + React 19 + TypeScript strict portfolio, deployed on Vercel. Single locale: Brazilian Portuguese served at `/`. Yarn 4 (corepack) with `nodeLinker: node-modules`.
+Next.js 16 (App Router) + React 19 + TypeScript strict portfolio, deployed on Vercel. Locales: Brazilian Portuguese at `/`, English at `/en-US`, and Spanish at `/es-ES`. Yarn 4 (corepack) with `nodeLinker: node-modules`.
 
 ## Commands
 
@@ -11,7 +11,7 @@ yarn dev          # dev server (localhost:3000)
 yarn lint         # eslint
 yarn typecheck    # tsc --noEmit
 yarn build        # production build (required before deploying)
-yarn check        # full gate: lint + typecheck + build — run before finishing any task
+yarn check        # full gate: lint + typecheck + build (run before finishing any task)
 yarn format       # prettier --write (prettier-plugin-tailwindcss sorts classes)
 ```
 
@@ -19,16 +19,23 @@ Run `yarn check` after any code change. There are no tests.
 
 ## Localization (important)
 
-- **All visible copy lives in `messages/pt-BR.json`** — titles, labels, aria texts, metadata, JSON-LD. It is the only locale file; keep it consistent with any component you touch.
-- Locale wiring: `src/i18n/routing.ts` (locales list) + `src/i18n/request.ts` + `src/proxy.ts` (middleware rewriting `/` → `/pt-BR`, redirecting `/pt-BR` → `/`). Adding a locale requires updating all three plus a new `messages/<locale>.json`.
+- **All visible copy lives in `messages/*.json`**: titles, labels, aria texts, metadata, and JSON-LD. Keep `pt-BR`, `en-US`, and `es-ES` consistent with any component you touch.
+- Locale wiring: `src/i18n/routing.ts` (locales list) + `src/i18n/request.ts` + `src/proxy.ts` (middleware rewriting `/` to `/pt-BR`, redirecting `/pt-BR` to `/`). Adding a locale requires updating all three plus a new `messages/<locale>.json`.
 - Components read translations with `getTranslations(...)` / `t(...)` via namespaces like `experience.lakeit.blocks.<block>.title`.
+
+## Copy rules
+
+- **Never use em dashes or en dashes in copy, in any locale.** Use a comma, colon, period, or plain hyphen instead.
+- Write natural sentences with simple words and enough context for a non-technical reader.
+- Avoid vague claims, difficult words without explanation, and phrasing that sounds machine-generated.
+- Date ranges use a plain hyphen, for example `agosto - dezembro de 2021`.
 
 ## Architecture
 
-- `src/app/[locale]/` — routes; `layout.tsx` holds fonts (Newsreader display, IBM Plex Sans body/heading, Plex Mono), metadata, JSON-LD, Vercel Analytics. `globals.css` defines theme tokens via Tailwind 4 `@theme inline` (e.g. `text-accent`, `bg-surface`, `text-mineral`).
-- `src/features/home/` — HomePage composes `sections/` (Hero, Profile, Experience, Projects, Contact) and `components/` (CostComparison, LakeItJourney, TechnicalInterlude, ...).
-- `src/content/` — structured content (projects, contact) separate from translatable copy.
-- `src/app/opengraph-image/route.tsx` — dynamic OG image that **fetches fonts from fonts.gstatic.com** at request time; offline build/rendering of the OG route can fail.
+- `src/app/[locale]/`: routes; `layout.tsx` holds fonts (Newsreader display, IBM Plex Sans body/heading, Plex Mono), metadata, JSON-LD, Vercel Analytics. `globals.css` defines theme tokens via Tailwind 4 `@theme inline` (e.g. `text-accent`, `bg-surface`, `text-mineral`).
+- `src/features/home/`: HomePage composes `sections/` (Hero, Profile, Experience, Projects, Contact) and `components/` (CostComparison, LakeItJourney, TechnicalInterlude, ...).
+- `src/content/`: structured content (projects, contact) separate from translatable copy.
+- `src/app/opengraph-image/route.tsx`: dynamic OG image that **fetches fonts from fonts.gstatic.com** at request time; offline build/rendering of the OG route can fail.
 - `src/app` also has `manifest.ts`, `sitemap.ts`, `robots.ts`, `apple-icon.tsx`, `icon.svg`.
 - No environment variables are required anywhere.
 
@@ -36,6 +43,7 @@ Run `yarn check` after any code change. There are no tests.
 
 - Editorial dark theme; palette via CSS vars in `globals.css` (`--accent` gold, `--mineral` green, etc.). Use token classes (`text-accent`, `bg-surface-soft`, `text-secondary`, `text-muted`), not raw hex.
 - Font roles: display = Newsreader (serif, headings), heading/body = Plex Sans, mono = Plex Mono.
+- Brand variants live in `src/components/brand/Logo.tsx`: `mark` is the standalone `[T<]` symbol and `lockup` combines the symbol with the TIAGO G CASTRO wordmark. `Mark.tsx` and `Wordmark.tsx` remain separate sources. Static SVG and PNG exports live in `public/brand/` and are regenerated with `yarn brand:assets`; usage rules live in `docs/brand.md`.
 - Motion is used via `Reveal` wrapper; it respects `prefers-reduced-motion` (global CSS). Verify layout with both desktop and mobile viewports.
 - Section headings use `clamp()` fluid type; when editing headline copy, check line-wrapping at the actual column width (titles are expected to break into aligned 2-line blocks).
 
@@ -43,8 +51,8 @@ Run `yarn check` after any code change. There are no tests.
 
 - Feature branches; changes land via PR to `main` (`gh pr create --base main`). A `develop` branch also exists on origin but recent work targets `main` directly.
 - Commit messages follow conventional style (`feat:`, `chore:`, `fix:`) with PR number suffix on merge.
-- `next-env.d.ts` is auto-regenerated by the dev server (paths swap between `.next/types` and `.next/dev/types`) — revert these changes before committing.
-- `opencode.json` and all AI tooling configs (`.claude/`, `.codex/`, `.cursor/`, `.gemini/`, ...) are gitignored — **never add, force-add, commit, or push credentials or config for claude, opencode, codex, gemini, deepseek, or any other AI tooling**. This is a hard rule; a key was previously excluded from a commit and the config was removed from the repo.
+- `next-env.d.ts` is auto-regenerated by the dev server (paths swap between `.next/types` and `.next/dev/types`); revert these changes before committing.
+- `opencode.json` and all AI tooling configs (`.claude/`, `.codex/`, `.cursor/`, `.gemini/`, ...) are gitignored. **Never add, force-add, commit, or push credentials or config for claude, opencode, codex, gemini, deepseek, or any other AI tooling.** This is a hard rule; a key was previously excluded from a commit and the config was removed from the repo.
 
 ## Deploy
 
