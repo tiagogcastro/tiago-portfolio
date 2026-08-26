@@ -95,7 +95,7 @@
     "firstName": "Tiago",
     "lastName": "Castro",
     "statement": "Transformo seu negócio em realidade.",
-    "narrative": "Mais de 6 anos de experiência prática em desenvolvimento de software, começando com projetos freelancer em 2020 e evoluindo para sistemas em produção, cloud, marketplaces, Data Lake, DevOps e IA aplicada. Levo produtos do papel à produção em modelos B2B, B2C e D2C: um marketplace nacional com mais de 65 mil pedidos processados e uma plataforma de dados que economiza US$ 15 mil por ano.",
+    "narrative": "Mais de 6 anos de experiência prática em desenvolvimento de software, do freelancer em 2020 a sistemas em produção, cloud e IA.",
     "scope": {
       "development": "Sites, landing pages e sistemas · prontos para vender",
       "seo": "Crescimento · +30 mil cliques do Google em 12 meses",
@@ -118,8 +118,7 @@
     "futbuynowStatus": "Marketplace B2C de produtos e serviços: ~3,4 mil pedidos/mês e +65 mil acumulados.",
     "linkedinStatus": "Histórico profissional completo.",
     "githubStatus": "Código aberto e projetos autorais.",
-    "positioningShort": "Transformo negócios em produtos digitais que vendem.",
-    "narrativeShort": "Mais de 6 anos de experiência prática em desenvolvimento de software, do freelancer em 2020 a sistemas em produção, cloud e IA."
+    "positioningShort": "Transformo negócios em produtos digitais que vendem."
   },
   "profile": {
     "index": "02 / Perfil",

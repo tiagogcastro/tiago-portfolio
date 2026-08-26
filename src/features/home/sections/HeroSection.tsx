@@ -53,8 +53,7 @@ export async function HeroSection() {
 
           <Reveal>
             <p className="text-secondary max-w-[62ch] text-base leading-7">
-              <span className="sm:hidden">{t("narrativeShort")}</span>
-              <span className="hidden sm:inline">{t("narrative")}</span>
+              {t("narrative")}
             </p>
             <div className="hidden lg:block">{scopeList}</div>
           </Reveal>
