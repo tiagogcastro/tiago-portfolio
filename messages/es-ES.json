@@ -95,7 +95,7 @@
     "firstName": "Tiago",
     "lastName": "Castro",
     "statement": "Transformo tu negocio en realidad.",
-    "narrative": "Hace más de 6 años llevo productos del papel a la producción en modelos B2B, B2C y D2C: un marketplace nacional con más de 65 mil pedidos procesados y una plataforma de datos que ahorra US$ 15 mil por año.",
+    "narrative": "Más de 6 años de experiencia práctica en desarrollo de software, comenzando con proyectos freelance en 2020 y evolucionando hacia sistemas en producción, cloud, marketplaces, data lake, DevOps e IA aplicada. Llevo productos del papel a la producción en modelos B2B, B2C y D2C: un marketplace nacional con más de 65 mil pedidos procesados y una plataforma de datos que ahorra US$ 15 mil al año.",
     "scope": {
       "development": "Sitios, landing pages y sistemas · listos para vender",
       "seo": "Crecimiento · +30 mil clics de Google en 12 meses",
@@ -119,7 +119,7 @@
     "linkedinStatus": "Historial profesional completo.",
     "githubStatus": "Código abierto y proyectos autorales.",
     "positioningShort": "Transformo negocios en productos digitales que venden.",
-    "narrativeShort": "Hace más de 6 años transformo negocios en productos digitales que venden y siguen operando mientras crecen."
+    "narrativeShort": "Más de 6 años de experiencia práctica en desarrollo de software, del freelance en 2020 a sistemas en producción, cloud e IA."
   },
   "profile": {
     "index": "02 / Perfil",
@@ -177,7 +177,7 @@
         "serverless": {
           "title": "AWS Serverless Demonstrated",
           "issuer": "Amazon Web Services Training and Certification",
-          "detail": "Credencial práctica sobre servicios que reciben solicitudes, coordinan tareas y almacenan datos conforme a la demanda.",
+          "detail": "Credencial práctica sobre servicios que reciben solicitudes, coordinan tareas y almacenan datos conforme a la demanda. Badge verificable en Credly.",
           "action": "Ver credencial"
         },
         "technical": {
