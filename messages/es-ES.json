@@ -228,7 +228,7 @@
       "company": "HITSS · Proyecto LakeIT",
       "role": "Desarrollador Fullstack Cloud",
       "period": "Ene/2024 - actual",
-      "description": "Un data lake usado por empresas: el lago que reúne datos de todas las fuentes en un solo lugar, para organizar, procesar y consultar grandes volúmenes de información.",
+      "description": "Un data lake usado por empresas: datos de todas las fuentes reunidos en un solo lugar, para organizar, procesar y consultar grandes volúmenes de información.",
       "figures": {
         "pipeline": {
           "title": "Del dato bruto a la consulta lista.",

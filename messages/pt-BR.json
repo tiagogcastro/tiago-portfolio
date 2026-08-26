@@ -112,7 +112,7 @@
     "statusLabel": "Atuação agora",
     "lakeitRole": "Desenvolvedor Fullstack Cloud",
     "lakeitPeriod": "Jan/2024 - atual",
-    "lakeitStatus": "Data lake B2B na AWS: o lago que reúne os dados das empresas em um só lugar, com economia real de US$ 15 mil/ano.",
+    "lakeitStatus": "Data lake B2B na AWS: dados de todas as fontes reunidos em um só lugar, com economia real de US$ 15 mil/ano.",
     "futbuynowRole": "Freelance",
     "futbuynowPeriod": "Fev/2023 - atual",
     "futbuynowStatus": "Marketplace B2C de produtos e serviços: ~3,4 mil pedidos/mês e +65 mil acumulados.",
@@ -228,7 +228,7 @@
       "company": "HITSS · Projeto LakeIT",
       "role": "Desenvolvedor Fullstack Cloud",
       "period": "Jan/2024 - atual",
-      "description": "Um data lake usado por empresas: o lago que reúne dados de todas as fontes em um só lugar, para organizar, processar e consultar grandes volumes de informação.",
+      "description": "Um data lake usado por empresas: dados de todas as fontes reunidos em um só lugar, para organizar, processar e consultar grandes volumes de informação.",
       "figures": {
         "pipeline": {
           "title": "Do dado bruto à consulta pronta.",
