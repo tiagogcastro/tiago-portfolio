@@ -19,7 +19,7 @@ const mark = `
 `.trim();
 
 const lockup = `
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 80" role="img" aria-label="Tiago G Castro logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 80" role="img" aria-label="Tiago G Castro logo">
   <style>
     @font-face {
       font-family: "Newsreader Brand";
@@ -46,7 +46,7 @@ await Promise.all([
     .png()
     .toFile(join(output, "tiago-g-castro-mark.png")),
   sharp(Buffer.from(lockup))
-    .resize({ width: 1760 })
+    .resize({ width: 2000 })
     .png()
     .toFile(join(output, "tiago-g-castro-lockup.png")),
 ]);

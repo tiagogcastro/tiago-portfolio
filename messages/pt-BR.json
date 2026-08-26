@@ -392,20 +392,6 @@
         "topicsAlt": "Página do tópico de Inteligência Artificial do NexSift com seis sinais e notas de relevância",
         "topicsCaption": "Figura 3. Página do tópico de IA: sinais filtrados com nota de relevância, fontes e data.",
         "coverAlt": "Página inicial do NexSift com a mensagem Menos ruído, mais sinal",
-        "images": {
-          "home": {
-            "alt": "Página inicial do NexSift com a proposta Menos ruído, mais sinal e sinais recentes"
-          },
-          "topics": {
-            "alt": "Página do tópico de Inteligência Artificial do NexSift com sinais e notas de relevância"
-          },
-          "blog": {
-            "alt": "Arquivo de sinais do NexSift com filtros por tópico"
-          },
-          "signal": {
-            "alt": "Página de um sinal do NexSift com contexto e fontes verificadas"
-          }
-        },
         "problem": "Acompanhar tecnologia em feeds infinitos consome tempo e confiança: volume demais, contexto de menos e fontes que quase nunca são verificadas.",
         "solution": "Um radar editorial para desenvolvedores que filtra, verifica e contextualiza sinais de IA, cloud, desenvolvimento e carreiras, com nota de relevância e leitura igualmente curta no celular.",
         "architecture": "Next.js e TypeScript com conteúdo publicado em um bucket S3 por uma Lambda autenticada e validada com Zod. Infraestrutura descrita em Terraform (S3, Lambda, IAM), ambiente local simulado com Docker e MiniStack, RSS, sitemap e dados estruturados de artigo.",
@@ -416,17 +402,6 @@
         "type": "Projeto autoral · Open Source",
         "description": "Plataforma de estudos com trilhas, playlists e aulas em vídeo. Foi onde aprendi, na prática, Clean Architecture na API Express, injeção de dependência, RBAC por permissões e GraphQL Federation.",
         "coverAlt": "Página inicial da Kaguya com a proposta da plataforma de estudos em vídeo",
-        "images": {
-          "dashboard": {
-            "alt": "Dashboard do aluno com trilhas em andamento e progresso"
-          },
-          "lessonPlayer": {
-            "alt": "Player de aula em vídeo dentro de uma trilha da Kaguya"
-          },
-          "mobileDashboard": {
-            "alt": "Versão móvel do dashboard de estudos da Kaguya"
-          }
-        },
         "problem": "Estudar por vídeo sem estrutura vira lista de abas abertas: o aluno não sabe onde parou, o conteúdo se dispersa e organizar material depende sempre do time de desenvolvimento.",
         "solution": "Plataforma em que trilhas agrupam playlists, blocos e aulas; o aluno acompanha progresso, histórico de exibição e curtidas, enquanto sub administradores criam conteúdo por um painel protegido por níveis de permissão.",
         "architecture": "Monorepo com três aplicações independentes: API REST em Express organizada em rotas, controllers, services, repositórios e casos de uso; cliente web em Next.js com guarda de sessão validada na API antes de renderizar páginas protegidas; microsserviço de sugestões em NestJS exposto como subgraph GraphQL Federation v2. Autenticação local com JWT ou social via Firebase, validação Zod em todas as rotas, injeção de dependência com tsyringe e storage plugável entre disco local e S3.",
@@ -437,17 +412,6 @@
         "type": "Projeto autoral · Restauração 2026",
         "description": "Jogo web3 play and earn que construí com Clean Architecture, Either para erros explícitos e TypeScript strict, e restaurei em 2026 atualizando versões e ferramentas: driver plugável entre blockchain sandbox e BSC real e E2E nas 55 rotas.",
         "coverAlt": "Área do jogador do The Monkeynauts mostrando carteira, saldo e dados da conta",
-        "images": {
-          "login": {
-            "alt": "Tela de acesso à plataforma The Monkeynauts"
-          },
-          "admin": {
-            "alt": "Painel administrativo do jogo com vendas, banimentos e parâmetros de balanceamento"
-          },
-          "account": {
-            "alt": "Área do jogador com carteira, depósitos e saques"
-          }
-        },
         "problem": "Um jogo web3 de 2022 que nunca chegou ao ar carregava falhas graves: senha de recuperação trafegando em texto puro, escalada de privilégio e banimento sem persistência. Rodar qualquer coisa exigia credenciais externas e acesso real a blockchain.",
         "solution": "Restaurei o produto fielmente e corrigi cada falha apontada. O jogador gerencia conta, carteira, depósitos, saques, loja, naves e tripulações; o painel administrativo opera eventos de venda, airdrops, banimentos, parâmetros de balanceamento e logs de auditoria. Tudo funciona offline, sem nenhuma credencial externa.",
         "architecture": "Monorepo pnpm com SPA em React 19 e API Express 5 em TypeScript strict. Clean Architecture por módulo: casos de uso com erros explícitos no padrão Either, contratos de domínio isolados e Prisma restrito à infraestrutura. A blockchain é um driver plugável: o modo sandbox usa moeda fictícia e roda sem rede; o modo rpc valida transações reais na BSC pelo hash, com proteção contra replay nos logs de auditoria.",
@@ -458,11 +422,6 @@
         "type": "Projeto de estudo · Open Source",
         "description": "Serviço de pagamentos inspirado no desafio da Pagar.me onde treinei SOLID, TDD e DDD na prática: débito e crédito com recebíveis agendados, value objects com Either e saldos cobertos por testes no Vitest.",
         "coverAlt": "Resultado da suíte de testes do serviço de pagamentos com todas as verificações passando",
-        "images": {
-          "apiDemo": {
-            "alt": "Demonstração da API criando uma transação e retornando o recebível calculado"
-          }
-        },
         "problem": "O desafio de backend da Pagar.me pede o núcleo de um adquirente real: criar transações de débito e crédito, gerar recebíveis com taxas e prazos diferentes por método e consolidar saldos, tudo com domínio bem modelado.",
         "solution": "Serviço que aplica as regras de liquidação: débito liquida em D+1 com taxa de 3% e crédito gera quatro recebíveis entre D+30 e D+120 com taxa de 5%. O cartão persiste apenas os quatro últimos dígitos, a transação guarda o valor bruto e as taxas descontam os recebíveis.",
         "architecture": "Clean Architecture com blocos de DDD: entidades, value objects como CardNumber, mappers e erros de domínio; casos de uso retornam Either nas operações que podem falhar; um container único compartilha dependências entre rotas; repositórios em memória já seguem interfaces prontas para um banco real; o DateProvider plugável permite congelar o tempo nos testes; envelope de resposta consistente e middleware central de erros no Express 5.",
@@ -493,11 +452,6 @@
         "type": "Open Source",
         "description": "Infraestrutura como código onde aprendi a estruturar Terraform e Terragrunt em escala: módulos sem valores fixos, ambientes idênticos em um único env.hcl e ciclo completo no LocalStack sem custo.",
         "coverAlt": "Saídas do Terragrunt após aplicar os módulos de infraestrutura no LocalStack",
-        "images": {
-          "localstack": {
-            "alt": "Dashboard do LocalStack exibindo os recursos provisionados localmente"
-          }
-        },
         "problem": "Estruturas reais de nuvem precisam de ambientes idênticos entre dev, staging e produção, mas aprender aplicando direto na AWS custa dinheiro, exige conta e torna cada erro caro.",
         "solution": "Template de infraestrutura como código em que todos os ambientes compartilham exatamente a mesma configuração de módulos: VPC com subnets públicas e privadas, bucket S3 versionado e criptografado e papel IAM de menor privilégio, provisionados e destruídos quantas vezes forem necessárias sem custo.",
         "architecture": "Módulos Terraform limpos, sem valores fixos nem declaração de provider, orquestrados por Terragrunt, que injeta provider, backend e versões por ambiente via root.hcl. Novo ambiente é um env.hcl e três arquivos de três linhas, sem tocar nos módulos. Terragrunt monta o grafo de execução sozinho: VPC e S3 aplicam em paralelo e o IAM espera o ARN do bucket, com mock outputs para validar tudo antes do apply.",

@@ -34,8 +34,8 @@ export async function HeroSection() {
       id="top"
       className="hero-field relative min-h-[88svh] pt-[var(--header-height)]"
     >
-      <Container className="grid min-h-[calc(88svh-var(--header-height))] gap-8 py-14 lg:grid-cols-[1.18fr_0.82fr] lg:items-center lg:gap-16 lg:py-24">
-        <div className="flex flex-col gap-8 lg:order-1">
+      <Container className="grid min-h-[calc(88svh-var(--header-height))] gap-8 py-14 min-[1400px]:grid-cols-[1.18fr_0.82fr] min-[1400px]:items-center min-[1400px]:gap-16 min-[1400px]:py-24">
+        <div className="flex flex-col gap-8 min-[1400px]:order-1">
           <Reveal>
             <h1>
               <Logo
@@ -69,7 +69,7 @@ export async function HeroSection() {
           </div>
         </div>
 
-        <Reveal className="bg-surface-soft border border-white/15 p-5 sm:p-9 lg:order-2">
+        <Reveal className="bg-surface-soft border border-white/15 p-5 sm:p-9 min-[1400px]:order-2">
           <p className="text-accent font-mono text-sm">{t("statusLabel")}</p>
           <div className="mt-5 space-y-5">
             <div>

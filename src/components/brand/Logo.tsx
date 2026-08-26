@@ -24,14 +24,14 @@ export function Logo({
     <span
       className={cn(
         "group flex items-center",
-        size === "hero" ? "gap-4 sm:gap-5" : "gap-3",
+        size === "hero" ? "gap-3 sm:gap-5" : "gap-3",
         className,
       )}
     >
       <Mark
         className={cn(
           "shrink-0 transition-transform duration-300 ease-out group-hover:rotate-[4deg] motion-reduce:transform-none motion-reduce:transition-none",
-          size === "hero" ? "size-16 sm:size-20 lg:size-24" : "size-9",
+          size === "hero" ? "size-12 sm:size-20 lg:size-24" : "size-9",
         )}
       />
       {variant === "lockup" ? (
@@ -40,7 +40,7 @@ export function Logo({
           className={cn(
             "text-foreground",
             size === "hero"
-              ? "w-[min(68vw,20rem)] sm:w-96 lg:w-[30rem]"
+              ? "w-[min(60vw,15rem)] sm:w-96 lg:w-[30rem]"
               : "w-32 sm:w-36",
           )}
         />

@@ -36,7 +36,7 @@ Run `yarn check` after any code change. There are no tests.
 - `src/features/home/`: HomePage composes `sections/` (Hero, Profile, Experience, Projects, Contact) and `components/` (CostComparison, LakeItJourney, TechnicalInterlude, ...).
 - `src/content/`: structured content (projects, contact) separate from translatable copy.
 - `src/app/opengraph-image/route.tsx`: dynamic OG image that **fetches fonts from fonts.gstatic.com** at request time; offline build/rendering of the OG route can fail.
-- `src/app` also has `manifest.ts`, `sitemap.ts`, `robots.ts`, `apple-icon.tsx`, `icon.svg`.
+- `src/app` also has localized manifest routes, `sitemap.ts`, and `robots.ts`. Browser and install icons use the exports in `public/brand/`.
 - No environment variables are required anywhere.
 
 ## Design conventions

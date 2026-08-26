@@ -30,5 +30,6 @@ export default function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: "/((?!api|trpc|_next|_vercel|opengraph-image|apple-icon|.*\\..*).*)",
+  matcher:
+    "/((?!api|trpc|_next|_vercel|manifest|opengraph-image|.*\\..*).*)",
 };

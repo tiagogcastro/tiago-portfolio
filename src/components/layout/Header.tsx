@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Check, FileDown, Menu, X } from "lucide-react";
+import { Check, FileDown, Menu, MessageCircle, X } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
@@ -30,6 +30,7 @@ export function Header() {
   const common = useTranslations("common");
   const accessibility = useTranslations("accessibility");
   const identity = useTranslations("identity");
+  const engagement = useTranslations("engagement");
   const locale = useLocale();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
@@ -37,6 +38,9 @@ export function Header() {
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const isHome = pathname === "/";
+  const whatsappHref = `${siteConfig.whatsappUrl}?text=${encodeURIComponent(
+    engagement("whatsappMessage"),
+  )}`;
   const navItems = [
     { key: "experience", kind: "route", href: "/experience" },
     { key: "projects", kind: "route", href: "/projects" },
@@ -189,19 +193,39 @@ export function Header() {
           </a>
         </div>
 
-        <button
-          ref={menuButtonRef}
-          type="button"
-          className="grid size-11 place-items-center xl:hidden"
-          onClick={() => setIsOpen((value) => !value)}
-          aria-expanded={isOpen}
-          aria-controls="mobile-menu"
-          aria-label={
-            isOpen ? accessibility("closeMenu") : accessibility("openMenu")
-          }
-        >
-          {isOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
-        </button>
+        <div className="ml-auto flex items-center xl:hidden">
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={common("whatsapp")}
+            className="text-secondary hover:text-accent grid size-10 place-items-center transition-colors"
+          >
+            <MessageCircle aria-hidden="true" className="size-5" />
+          </a>
+          <a
+            href={siteConfig.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={common("linkedin")}
+            className="text-secondary hover:text-accent grid size-10 place-items-center transition-colors"
+          >
+            <LinkedInIcon aria-hidden="true" className="size-5" />
+          </a>
+          <button
+            ref={menuButtonRef}
+            type="button"
+            className="grid size-11 place-items-center"
+            onClick={() => setIsOpen((value) => !value)}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+            aria-label={
+              isOpen ? accessibility("closeMenu") : accessibility("openMenu")
+            }
+          >
+            {isOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+          </button>
+        </div>
       </Container>
 
       <div
@@ -260,16 +284,6 @@ export function Header() {
             })}
           </div>
           <div className="flex flex-wrap gap-5 pt-5">
-            <a
-              className="flex items-center gap-2"
-              href={siteConfig.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              onClick={() => setIsOpen(false)}
-            >
-              <LinkedInIcon aria-hidden="true" className="size-4" />
-              {common("linkedin")}
-            </a>
             <a
               className="flex items-center gap-2"
               href={siteConfig.github}

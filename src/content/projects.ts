@@ -25,30 +25,8 @@ export type Project = {
   technologies: readonly string[];
   links: readonly ProjectLink[];
   cover: ProjectFigure | null;
-  figures: readonly ProjectFigure[];
   dates?: ProjectDates;
 };
-
-const nexsiftFigures = [
-  {
-    src: "/projects/nexsift/topics.png",
-    width: 1200,
-    height: 750,
-    imageKey: "topics",
-  },
-  {
-    src: "/projects/nexsift/blog.png",
-    width: 1200,
-    height: 750,
-    imageKey: "blog",
-  },
-  {
-    src: "/projects/nexsift/sinal.png",
-    width: 760,
-    height: 1371,
-    imageKey: "signal",
-  },
-] as const;
 
 export const projects: readonly Project[] = [
   {
@@ -75,26 +53,6 @@ export const projects: readonly Project[] = [
       height: 750,
       imageKey: "cover",
     },
-    figures: [
-      {
-        src: "/projects/kaguya/dashboard.png",
-        width: 1200,
-        height: 750,
-        imageKey: "dashboard",
-      },
-      {
-        src: "/projects/kaguya/lesson-player.png",
-        width: 1200,
-        height: 750,
-        imageKey: "lessonPlayer",
-      },
-      {
-        src: "/projects/kaguya/mobile-dashboard.png",
-        width: 390,
-        height: 844,
-        imageKey: "mobileDashboard",
-      },
-    ],
   },
   {
     id: "monkeynauts",
@@ -124,26 +82,6 @@ export const projects: readonly Project[] = [
       height: 750,
       imageKey: "cover",
     },
-    figures: [
-      {
-        src: "/projects/themonkeynauts/login.png",
-        width: 1200,
-        height: 750,
-        imageKey: "login",
-      },
-      {
-        src: "/projects/themonkeynauts/admin.png",
-        width: 1200,
-        height: 750,
-        imageKey: "admin",
-      },
-      {
-        src: "/projects/themonkeynauts/account.png",
-        width: 1200,
-        height: 750,
-        imageKey: "account",
-      },
-    ],
   },
   {
     id: "nexsift",
@@ -161,7 +99,6 @@ export const projects: readonly Project[] = [
       height: 750,
       imageKey: "home",
     },
-    figures: [...nexsiftFigures],
   },
   {
     id: "pagarme-simplified-psp",
@@ -189,14 +126,6 @@ export const projects: readonly Project[] = [
       height: 360,
       imageKey: "cover",
     },
-    figures: [
-      {
-        src: "/projects/pagarme-simplified-psp/api-demo.png",
-        width: 1200,
-        height: 830,
-        imageKey: "apiDemo",
-      },
-    ],
   },
   {
     id: "ai-i18n-translate",
@@ -228,7 +157,6 @@ export const projects: readonly Project[] = [
       height: 750,
       imageKey: "cover",
     },
-    figures: [],
   },
   {
     id: "aws-iac-blueprint",
@@ -248,7 +176,6 @@ export const projects: readonly Project[] = [
       height: 531,
       imageKey: "cover",
     },
-    figures: [],
   },
   {
     id: "ignews",
@@ -273,7 +200,6 @@ export const projects: readonly Project[] = [
       height: 750,
       imageKey: "cover",
     },
-    figures: [],
   },
   {
     id: "letmeask",
@@ -298,6 +224,5 @@ export const projects: readonly Project[] = [
       height: 750,
       imageKey: "cover",
     },
-    figures: [],
   },
 ];
