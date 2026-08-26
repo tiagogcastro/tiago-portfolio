@@ -228,7 +228,7 @@
       "company": "HITSS · LakeIT Project",
       "role": "Fullstack Cloud Developer",
       "period": "Jan/2024 - present",
-      "description": "A data lake used by companies: the lake that gathers data from every source in one place, ready to organize, process and query large volumes of information.",
+      "description": "A data lake used by companies: data from every source gathered in one place, ready to organize, process and query large volumes of information.",
       "figures": {
         "pipeline": {
           "title": "From raw data to ready answers.",
