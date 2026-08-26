@@ -95,7 +95,7 @@
     "firstName": "Tiago",
     "lastName": "Castro",
     "statement": "I turn your business into reality.",
-    "narrative": "For over 6 years I have taken products from paper to production across B2B, B2C and D2C models: a national marketplace with 65k+ orders processed and a data platform that saves US$ 15k a year.",
+    "narrative": "Over 6 years of hands-on software development experience, starting with freelance projects in 2020 and growing into production systems, cloud, marketplaces, data lakes, DevOps and applied AI. I take products from paper to production across B2B, B2C and D2C models: a national marketplace with 65k+ orders processed and a data platform that saves US$ 15k a year.",
     "scope": {
       "development": "Sites, landing pages and systems · ready to sell",
       "seo": "Growth · +30k Google clicks in 12 months",
@@ -119,7 +119,7 @@
     "linkedinStatus": "Complete professional history.",
     "githubStatus": "Open source and authorial projects.",
     "positioningShort": "I turn businesses into digital products that sell.",
-    "narrativeShort": "For over 6 years I have turned businesses into digital products that sell and keep running as they grow."
+    "narrativeShort": "Over 6 years of hands-on software development experience, from freelance in 2020 to production systems, cloud and AI."
   },
   "profile": {
     "index": "02 / Profile",
@@ -177,7 +177,7 @@
         "serverless": {
           "title": "AWS Serverless Demonstrated",
           "issuer": "Amazon Web Services Training and Certification",
-          "detail": "Hands-on credential about services that receive requests, coordinate tasks and store data on demand.",
+          "detail": "Hands-on credential about services that receive requests, coordinate tasks and store data on demand. Badge verifiable on Credly.",
           "action": "View credential"
         },
         "technical": {
