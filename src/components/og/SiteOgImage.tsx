@@ -1,3 +1,5 @@
+import { brandLockup } from "@/lib/og";
+
 type SiteOgImageProps = {
   label?: string;
   title: string;
@@ -56,39 +58,16 @@ export function SiteOgImage({
           justifyContent: "space-between",
           position: "relative",
         }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: 56,
-              height: 56,
-              borderRadius: 12,
-              background: "#26372e",
-              border: "2px solid #789987",
-              color: "#f2f0e8",
-              fontSize: 40,
-              fontWeight: 600,
-              fontFamily: "Newsreader",
-              lineHeight: 1,
-            }}
-          >
-            T
-          </div>
-          <span
-            style={{
-              fontFamily: "Plex Mono",
-              fontSize: 22,
-              fontWeight: 500,
-              letterSpacing: 6,
-              color: "#f2f0e8",
-            }}
-          >
-            TIAGO G CASTRO
-          </span>
-        </div>
+        >
+          {/* ImageResponse requires a regular img element. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={brandLockup}
+            alt="Tiago G Castro"
+            width={350}
+            height={56}
+            style={{ objectFit: "contain", objectPosition: "left center" }}
+          />
         <span
           style={{
             fontFamily: "Plex Mono",

@@ -2,7 +2,6 @@
   "identity": {
     "displayName": "Tiago Castro",
     "fullName": "Tiago Gonçalves de Castro",
-    "initials": "TG",
     "wordmarkFirst": "TIAGO",
     "wordmarkMiddle": "G",
     "wordmarkLast": "CASTRO",
@@ -25,6 +24,7 @@
       "TypeScript",
       "Python",
       "Amazon Web Services",
+      "Data Lake",
       "Terraform",
       "Infraestructura como código",
       "SEO técnico"
@@ -37,8 +37,8 @@
   },
   "metadata": {
     "title": "Tiago Castro · Desarrollador Full Stack y Cloud",
-    "description": "Portafolio de Tiago Castro, desarrollador full stack que crea y evoluciona sitios, sistemas y productos digitales: interfaces, servidores, infraestructura en la nube, datos y operación. Remoto en Brasil y el exterior.",
-    "imageAlt": "Tiago Castro, desarrollador full stack. Creación y evolución de sitios, sistemas y productos digitales.",
+    "description": "Portafolio de Tiago Castro, desarrollador full stack que transforma negocios en productos digitales: marketplaces B2C, plataformas de datos B2B y SaaS del cero al aire. Ahorro real de US$ 15 mil/año y más de 65 mil pedidos procesados. Remoto en Brasil y el exterior.",
+    "imageAlt": "Tiago Castro, desarrollador full stack. Transformación de negocios en productos digitales que venden.",
     "pages": {
       "projects": {
         "title": "Proyectos autorales y open source",
@@ -46,7 +46,7 @@
       },
       "experience": {
         "title": "Experiencia profesional",
-        "description": "Cases de la plataforma de datos LakeIT y del marketplace Futbuynow: decisiones técnicas, infraestructura en AWS, pagos y resultados acompañados."
+        "description": "Cases del data lake LakeIT y del marketplace Futbuynow: decisiones técnicas, infraestructura en AWS, pagos y resultados acompañados."
       }
     }
   },
@@ -91,19 +91,19 @@
   },
   "hero": {
     "eyebrow": "Desarrollador Full Stack",
-    "positioning": "Creación y evolución de sitios, sistemas y productos digitales.",
+    "positioning": "Transformo negocios en productos digitales que venden: del cero al aire.",
     "firstName": "Tiago",
     "lastName": "Castro",
-    "statement": "Producto, infraestructura y operación en el mismo trabajo.",
-    "narrative": "Hace más de 6 años construyo sistemas usados por empresas, clientes y equipos que necesitan seguir operando mientras crecen.",
+    "statement": "Transformo tu negocio en realidad.",
+    "narrative": "Hace más de 6 años llevo productos del papel a la producción en modelos B2B, B2C y D2C: un marketplace nacional con más de 65 mil pedidos procesados y una plataforma de datos que ahorra US$ 15 mil por año.",
     "scope": {
-      "development": "Sitios y sistemas · pantallas, pagos e integraciones",
-      "seo": "Crecimiento · búsqueda en Google y tareas automáticas",
-      "cloud": "Estructura online · velocidad, seguridad y costos",
-      "data": "Información · organización, procesamiento y análisis"
+      "development": "Sitios, landing pages y sistemas · listos para vender",
+      "seo": "Crecimiento · +30 mil clics de Google en 12 meses",
+      "cloud": "Cloud y costos · AWS bajo control, US$ 15k+/año ahorrados",
+      "data": "Datos · información organizada para decidir rápido"
     },
     "scopeLabel": "Frentes de actuación",
-    "scopeText": "Del producto a la infraestructura, conecto los frentes que sostienen crecimiento y operación.",
+    "scopeText": "Del primer borrador al sistema en producción: resuelvo el producto completo.",
     "location": "Río de Janeiro, Brasil",
     "availabilityLabel": "Abierto a oportunidades",
     "availability": "Siempre abierto a networking, oportunidades y proyectos que tengan sentido.",
@@ -112,19 +112,19 @@
     "statusLabel": "Actuación ahora",
     "lakeitRole": "Desarrollador Fullstack Cloud",
     "lakeitPeriod": "Ene/2024 - actual",
-    "lakeitStatus": "Plataforma de datos con procesamiento, consultas e infraestructura en AWS.",
+    "lakeitStatus": "Data lake B2B en AWS: los datos de las empresas reunidos en un solo lugar, con ahorro real de US$ 15 mil/año.",
     "futbuynowRole": "Freelance",
     "futbuynowPeriod": "Feb/2023 - actual",
-    "futbuynowStatus": "Marketplace en producción con pagos, SEO y automatizaciones.",
+    "futbuynowStatus": "Marketplace B2C de productos y servicios: ~3,4 mil pedidos/mes y +65 mil acumulados.",
     "linkedinStatus": "Historial profesional completo.",
     "githubStatus": "Código abierto y proyectos autorales.",
-    "positioningShort": "Creación y evolución de sitios, sistemas y productos.",
-    "narrativeShort": "Hace más de 6 años construyo sistemas que necesitan seguir operando mientras crecen."
+    "positioningShort": "Transformo negocios en productos digitales que venden.",
+    "narrativeShort": "Hace más de 6 años transformo negocios en productos digitales que venden y siguen operando mientras crecen."
   },
   "profile": {
     "index": "02 / Perfil",
     "title": "Cómo trabajo.",
-    "intro": "Construyo la parte visible y la que nadie ve, acompaño costos y resuelvo problemas después de que el sistema entra en uso.",
+    "intro": "Transformé un marketplace B2C en referencia nacional con ahorro real de US$ 15 mil por año. Lo hago cuidando el producto completo: pantalla, servidor, datos e infraestructura.",
     "processVisual": {
       "title": "De la necesidad al software en uso.",
       "caption": "El objetivo es reducir esfuerzo, evitar fallas y permitir que el producto siga evolucionando.",
@@ -228,7 +228,7 @@
       "company": "HITSS · Proyecto LakeIT",
       "role": "Desarrollador Fullstack Cloud",
       "period": "Ene/2024 - actual",
-      "description": "Plataforma de datos usada por empresas para organizar, procesar y consultar grandes volúmenes de información.",
+      "description": "Un data lake usado por empresas: el lago que reúne datos de todas las fuentes en un solo lugar, para organizar, procesar y consultar grandes volúmenes de información.",
       "figures": {
         "pipeline": {
           "title": "Del dato bruto a la consulta lista.",
@@ -296,7 +296,7 @@
       "label": "Cliente · Freelance\nResponsabilidad técnica",
       "company": "Futbuynow",
       "period": "Feb/2023 - actual",
-      "description": "Marketplace en producción con compra, pago, vendedores y operación diaria.",
+      "description": "Marketplace en producción con compra, pago y operación diaria. Además de productos, los vendedores se registran en la plataforma para vender servicios, con gestión en el panel del vendedor y en el admin.",
       "figures": {
         "loop": {
           "title": "Operación que se retroalimenta.",
@@ -307,7 +307,7 @@
         "product": {
           "label": "Producto y operación",
           "title": "Reestructuré el recorrido de compra",
-          "detail": "Acompaño vendedores, afiliados, comisiones y fidelidad en el panel y en la compra.",
+          "detail": "Acompaño a los vendedores desde el registro hasta la venta de servicios, además de afiliados, comisiones y fidelidad, en el panel del vendedor y en el admin.",
           "tools": "Node.js · Next.js · MySQL · Redis",
           "technologyDetail": "Next.js construye las pantallas y parte del servidor; Node.js ejecuta las reglas de la operación. MySQL guarda los datos principales y Redis acelera consultas frecuentes."
         },
@@ -336,13 +336,13 @@
         "monthlyPeriod": "may-jul/2026",
         "yearsValue": "+4",
         "yearsLabel": "años de operación",
-        "yearsPeriod": "plataforma en producción",
+        "yearsPeriod": "feb/2023 - actual",
         "ordersValue": "+65.000",
         "ordersLabel": "pedidos procesados",
-        "ordersPeriod": "volumen acumulado",
+        "ordersPeriod": "acumulado hasta ago/2026",
         "coinsValue": "+30 mil M",
         "coinsLabel": "coins comercializadas",
-        "coinsPeriod": "volumen acumulado",
+        "coinsPeriod": "acumulado hasta ago/2026",
         "growthLabel": "Evolución de la operación después de que asumí el liderazgo técnico",
         "growthTitle": "El promedio de pedidos pagos más que se duplicó <highlight>durante mi actuación</highlight>.",
         "growthDetail": "Durante el período, evolucioné producto, pagos, SEO, analytics y estabilidad para acompañar el aumento de la operación.",
@@ -355,7 +355,8 @@
         "seoLabel": "clics provenientes de la búsqueda de Google",
         "seoPeriod": "jun → jul/2026",
         "seoTotalValue": "+30,4 mil",
-        "seoTotalLabel": "clics desde Google en 12 meses"
+        "seoTotalLabel": "clics desde Google en 12 meses",
+        "seoTotalPeriod": "12 meses hasta jul/2026"
       }
     }
   },
@@ -388,23 +389,9 @@
         "mobileCaption": "La misma jerarquía del radar fue conservada en una columna: título, relevancia y fecha aparecen antes del contexto.",
         "blogAlt": "Archivo de señales de NexSift con la lista de publicaciones y filtros por tópico",
         "blogCaption": "Figura 2. El archivo de señales reúne el historial de publicaciones con filtros por tópico.",
-        "topicsAlt": "Página de tópicos de NexSift organizada en siete áreas de tecnología",
-        "topicsCaption": "Figura 3. Siete lentes editoriales organizan lo que el producto acompaña.",
+        "topicsAlt": "Página del tópico de Inteligencia Artificial de NexSift con seis señales y notas de relevancia",
+        "topicsCaption": "Figura 3. Página del tópico de IA: señales filtradas con nota de relevancia, fuentes y fecha.",
         "coverAlt": "Página inicial de NexSift con el mensaje Menos ruido, más señal",
-        "images": {
-          "home": {
-            "alt": "Página inicial de NexSift con la propuesta Menos ruido, más señal y señales recientes"
-          },
-          "topics": {
-            "alt": "Página de tópicos de NexSift organizada en siete áreas de tecnología"
-          },
-          "blog": {
-            "alt": "Archivo de señales de NexSift con filtros por tópico"
-          },
-          "signal": {
-            "alt": "Página de una señal de NexSift con contexto y fuentes verificadas"
-          }
-        },
         "problem": "Acompañar tecnología en feeds infinitos consume tiempo y confianza: demasiado volumen, poco contexto y fuentes que casi nunca se verifican.",
         "solution": "Un radar editorial para desarrolladores que filtra, verifica y contextualiza señales de IA, cloud, desarrollo y carreras, con nota de relevancia y lectura igualmente corta en el celular.",
         "architecture": "Next.js y TypeScript con contenido publicado en un bucket S3 por una Lambda autenticada y validada con Zod. Infraestructura descrita en Terraform (S3, Lambda, IAM), ambiente local simulado con Docker y MiniStack, además de RSS, sitemap y datos estructurados de artículo.",
@@ -414,39 +401,17 @@
         "name": "Kaguya",
         "type": "Proyecto autoral · Open Source",
         "description": "Plataforma de estudios con rutas, playlists y clases en video. Fue donde aprendí, en la práctica, Clean Architecture en la API Express, inyección de dependencias, RBAC por permisos y GraphQL Federation.",
-        "coverAlt": "Dashboard del alumno con la lista de rutas en curso y el progreso de cada una",
-        "images": {
-          "dashboard": {
-            "alt": "Dashboard del alumno con rutas en curso y progreso"
-          },
-          "lessonPlayer": {
-            "alt": "Player de clase en video dentro de una ruta de Kaguya"
-          },
-          "mobileDashboard": {
-            "alt": "Versión móvil del dashboard de estudios de Kaguya"
-          }
-        },
+        "coverAlt": "Página inicial de Kaguya con la propuesta de la plataforma de estudios en video",
         "problem": "Estudiar video sin estructura se convierte en una lista de pestañas abiertas: el alumno no sabe dónde paró, el contenido se dispersa y organizar material depende siempre del equipo de desarrollo.",
         "solution": "Plataforma en que las rutas agrupan playlists, bloques y clases; el alumno acompaña progreso, historial de visualización y me gusta, mientras sub administradores crean contenido por un panel protegido por niveles de permiso.",
         "architecture": "Monorepo con tres aplicaciones independientes: API REST en Express organizada en routes, controllers, services, repositories y use cases; cliente web en Next.js con guardia de sesión validada contra la API antes de renderizar páginas protegidas; microservicio de sugerencias en NestJS expuesto como subgraph GraphQL Federation v2. Autenticación local con JWT o social vía Firebase, validación Zod en todas las rutas, inyección de dependencias con tsyringe y storage plugable entre disco local y S3.",
-        "results": "Backend con suites de pruebas unitarias y de integración, smoke test que ejercita todas las rutas en orden de dependencia y restauración concluida en 2026: dependencias actualizadas manteniendo el stack original, fallas apuntadas en auditoría corregidas y seeds que levantan dos cursos completos para demostración."
+        "results": "Backend con suites de pruebas unitarias y de integración, smoke test que ejercita todas las rutas en orden de dependencia y restauración concluida en 2026: upgrade para Next 15, React 19 y Nest 11, fallas apuntadas en auditoría corregidas y seeds que levantan dos cursos completos para demostración."
       },
       "monkeynauts": {
         "name": "The Monkeynauts",
         "type": "Proyecto autoral · Restauración 2026",
-        "description": "Juego play and earn de 2022 que restauré desde cero aplicando Clean Architecture, Either para errores explícitos y TypeScript strict, con driver plugable entre blockchain sandbox y BSC real y E2E en las 55 rutas.",
+        "description": "Juego web3 play and earn que construí con Clean Architecture, Either para errores explícitos y TypeScript strict, y restauré en 2026 actualizando versiones y herramientas: driver plugable entre blockchain sandbox y BSC real y E2E en las 55 rutas.",
         "coverAlt": "Área del jugador de The Monkeynauts mostrando billetera, saldo y datos de la cuenta",
-        "images": {
-          "login": {
-            "alt": "Pantalla de acceso a la plataforma The Monkeynauts"
-          },
-          "admin": {
-            "alt": "Panel administrativo del juego con ventas, baneos y parámetros de balanceo"
-          },
-          "account": {
-            "alt": "Área del jugador con billetera, depósitos y retiros"
-          }
-        },
         "problem": "Un juego web3 de 2022 que nunca llegó al aire cargaba fallas graves: contraseña de recuperación viajando en texto plano, escalada de privilegios y baneo sin persistencia. Ejecutar cualquier cosa exigía credenciales externas y acceso real a blockchain.",
         "solution": "Restauré el producto fielmente y corregí cada falla apuntada. El jugador gestiona cuenta, billetera, depósitos, retiros, tienda, naves y tripulaciones; el panel administrativo opera eventos de venta, airdrops, baneos, parámetros de balanceo y logs de auditoría. Todo funciona offline, sin ninguna credencial externa.",
         "architecture": "Monorepo pnpm con SPA en React 19 y API Express 5 en TypeScript strict. Clean Architecture por módulo: use cases con errores explícitos en el patrón Either, contratos de dominio aislados y Prisma restringido a la infraestructura. La blockchain es un driver plugable: el modo sandbox usa moneda ficticia y funciona sin red; el modo rpc valida transacciones reales en BSC por hash, con protección contra replay en los logs de auditoría.",
@@ -457,11 +422,6 @@
         "type": "Proyecto de estudio · Open Source",
         "description": "Servicio de pagos inspirado en el desafío clásico de Pagar.me donde entrené SOLID, TDD y DDD en la práctica: débito y crédito con cobros programados, value objects con Either y saldos cubiertos por tests en Vitest.",
         "coverAlt": "Resultado de la suite de tests del servicio de pagos con todas las verificaciones pasando",
-        "images": {
-          "apiDemo": {
-            "alt": "Demostración de la API creando una transacción y devolviendo el cobro calculado"
-          }
-        },
         "problem": "El desafío de backend de Pagar.me pide el núcleo de un adquirente real: crear transacciones de débito y crédito, generar cobros con tasas y plazos diferentes por método y consolidar saldos, todo con dominio bien modelado.",
         "solution": "Servicio que aplica las reglas de liquidación: débito liquida en D+1 con tasa de 3% y crédito genera cuatro cobros entre D+30 y D+120 con tasa de 5%. La tarjeta persiste solo los cuatro últimos dígitos, la transacción guarda el valor bruto y las tasas descuentan los cobros.",
         "architecture": "Clean Architecture con bloques de DDD: entidades, value objects como CardNumber, mappers y errores de dominio; use cases devuelven Either en las operaciones que pueden fallar; un contenedor único comparte dependencias entre rutas; repositorios en memoria ya siguen interfaces listas para una base de datos real; el DateProvider plugable permite congelar el tiempo en los tests; envelope de respuesta consistente y middleware central de errores en Express 5.",
@@ -480,7 +440,7 @@
       "letmeask": {
         "name": "Let Me Ask",
         "type": "Proyecto de estudio · Open Source",
-        "description": "Salas de preguntas en tiempo real de NLW 6 que restauré con Firebase Auth y Realtime Database, reglas de seguridad para me gusta únicos, moderación en vivo y validación con react-hook-form y Zod.",
+        "description": "Salas de preguntas en tiempo real de NLW 6 que construí con Firebase Auth y Realtime Database y restauré en 2026: migración para Vite 8 y React 19, reglas de me gusta únicos reparadas, moderación en vivo y validación con react-hook-form y Zod.",
         "problem": "Durante lives y clases, la caja de chat mezcla preguntas y comentarios: quien presenta pierde las mejores dudas y la audiencia no sabe qué ya fue respondido.",
         "solution": "El presentador crea una sala y comparte el código; la audiencia entra, pregunta y da me gusta en lo que merece respuesta primero. El panel de moderación destaca la pregunta siendo respondida, marca respondidas, elimina ruido y cierra la sala llevando a todos de vuelta a la home. Salas cerradas pueden reabrirse después.",
         "architecture": "SPA en React 19 con Vite y TypeScript; Firebase Authentication para login con Google y Realtime Database sincronizando preguntas, me gusta y estados de la sala en tiempo real; reglas de seguridad limitan un me gusta por persona; formularios con react-hook-form y Zod para validación inline.",
@@ -492,11 +452,6 @@
         "type": "Open Source",
         "description": "Infraestructura como código donde aprendí a estructurar Terraform y Terragrunt a escala: módulos sin valores fijos, ambientes idénticos en un único env.hcl y ciclo completo en LocalStack sin costo.",
         "coverAlt": "Salidas de Terragrunt tras aplicar los módulos de infraestructura en LocalStack",
-        "images": {
-          "localstack": {
-            "alt": "Dashboard de LocalStack mostrando los recursos provisionados localmente"
-          }
-        },
         "problem": "Las estructuras reales de nube necesitan ambientes idénticos entre dev, staging y producción, pero aprender aplicando directamente en AWS cuesta dinero, exige cuenta y vuelve caro cada error.",
         "solution": "Template de infraestructura como código en que todos los ambientes comparten exactamente la misma configuración de módulos: VPC con subnets públicas y privadas, bucket S3 versionado y encriptado y rol IAM de menor privilegio, provisionados y destruidos cuantas veces hagan falta sin costo.",
         "architecture": "Módulos Terraform limpios, sin valores fijos ni declaración de provider, orquestados por Terragrunt, que inyecta provider, backend y versiones por ambiente vía root.hcl. Un ambiente nuevo es un env.hcl y tres archivos de tres líneas, sin tocar los módulos. Terragrunt arma el grafo de ejecución solo: VPC y S3 aplican en paralelo y el IAM espera el ARN del bucket, con mock outputs para validar todo antes del apply.",
@@ -514,7 +469,6 @@
       }
     },
     "dates": {
-      "created": "Creado en {date}",
       "restored": "Restaurado en {date}"
     },
     "cta": {
@@ -535,8 +489,8 @@
     "index": "05 / Contacto",
     "title": "Ponte en contacto.",
     "availabilityTitle": "Siempre abierto a networking, oportunidades y proyectos <highlight>que tengan sentido</highlight>.",
-    "ctaTitle": "¿Quieres un <highlight>sitio como este</highlight>, evolucionar un sistema que ya existe o <highlight>apoyo técnico</highlight> en un proyecto en curso?",
-    "ctaText": "Mi contacto está justo abajo, y respondo con el mismo cuidado que dedico a los sistemas en producción.",
+    "ctaTitle": "¿Quieres una <highlight>landing page que convierta</highlight>, sacar tu <highlight>SaaS del papel</highlight> o tener en tu equipo a alguien que resuelva el <highlight>producto completo</highlight>?",
+    "ctaText": "Escríbeme y recibe el mismo cuidado que dedico a productos con miles de pedidos por mes.",
     "channels": {
       "hiring": "Correo",
       "project": "WhatsApp",

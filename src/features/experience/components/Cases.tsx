@@ -119,7 +119,7 @@ export async function FutbuynowCase() {
           ["monthlyValue", "monthlyLabel", "monthlyPeriod"],
           ["ordersValue", "ordersLabel", "ordersPeriod"],
           ["seoValue", "seoLabel", "seoPeriod"],
-          ["seoTotalValue", "seoTotalLabel", null],
+          ["seoTotalValue", "seoTotalLabel", "seoTotalPeriod"],
         ].map(([value, label, period]) => (
           <div key={value} className="bg-surface p-6 lg:p-8">
             <strong className="font-display text-accent block text-4xl font-semibold">

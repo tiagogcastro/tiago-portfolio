@@ -68,6 +68,11 @@ export async function generateMetadata({
     creator: identity("fullName"),
     publisher: identity("displayName"),
     category: "technology",
+    manifest: `/manifest/${locale}`,
+    icons: {
+      icon: "/brand/tiago-g-castro-mark.svg",
+      apple: "/brand/tiago-g-castro-mark.png",
+    },
     alternates: buildAlternates("/"),
     robots: {
       index: true,

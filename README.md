@@ -8,12 +8,12 @@ Professional portfolio of Tiago Castro, a Full Stack Developer with over six yea
 
 <p align="center">
   <a href="https://tiagogcastro.com.br">
-    <img src="assets/portfolio-desktop.png" alt="tiagogcastro.com.br on desktop" width="760" />
+    <img src=".github/assets/portfolio-desktop.png" alt="tiagogcastro.com.br on desktop" width="760" />
   </a>
 </p>
 <p align="center">
   <a href="https://tiagogcastro.com.br">
-    <img src="assets/portfolio-mobile.png" alt="tiagogcastro.com.br on mobile" width="220" />
+    <img src=".github/assets/portfolio-mobile.png" alt="tiagogcastro.com.br on mobile" width="220" />
   </a>
 </p>
 

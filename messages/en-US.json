@@ -2,7 +2,6 @@
   "identity": {
     "displayName": "Tiago Castro",
     "fullName": "Tiago Gonçalves de Castro",
-    "initials": "TG",
     "wordmarkFirst": "TIAGO",
     "wordmarkMiddle": "G",
     "wordmarkLast": "CASTRO",
@@ -25,6 +24,7 @@
       "TypeScript",
       "Python",
       "Amazon Web Services",
+      "Data Lake",
       "Terraform",
       "Infrastructure as Code",
       "Technical SEO"
@@ -37,8 +37,8 @@
   },
   "metadata": {
     "title": "Tiago Castro · Full Stack and Cloud Developer",
-    "description": "Portfolio of Tiago Castro, full stack developer who builds and evolves websites, systems and digital products: interfaces, servers, cloud infrastructure, data and operations. Remote across Brazil and abroad.",
-    "imageAlt": "Tiago Castro, full stack developer. Building and evolving websites, systems and digital products.",
+    "description": "Portfolio of Tiago Castro, full stack developer who turns businesses into digital products: B2C marketplaces, B2B data platforms and SaaS taken from zero to live. Real savings of US$ 15k/year and 65k+ orders processed. Remote across Brazil and abroad.",
+    "imageAlt": "Tiago Castro, full stack developer. Turning businesses into digital products that sell.",
     "pages": {
       "projects": {
         "title": "Authorial and open source projects",
@@ -46,7 +46,7 @@
       },
       "experience": {
         "title": "Professional experience",
-        "description": "Cases from the LakeIT data platform and the Futbuynow marketplace: technical decisions, AWS infrastructure, payments and tracked results."
+        "description": "Cases from the LakeIT data lake and the Futbuynow marketplace: technical decisions, AWS infrastructure, payments and tracked results."
       }
     }
   },
@@ -91,19 +91,19 @@
   },
   "hero": {
     "eyebrow": "Full Stack Developer",
-    "positioning": "Building and evolving websites, systems and digital products.",
+    "positioning": "I turn businesses into digital products that sell: from zero to live.",
     "firstName": "Tiago",
     "lastName": "Castro",
-    "statement": "Product, infrastructure and operation in the same body of work.",
-    "narrative": "For over 6 years I have built systems used by companies, clients and teams that must keep running while they grow.",
+    "statement": "I turn your business into reality.",
+    "narrative": "For over 6 years I have taken products from paper to production across B2B, B2C and D2C models: a national marketplace with 65k+ orders processed and a data platform that saves US$ 15k a year.",
     "scope": {
-      "development": "Sites and systems · screens, payments and integrations",
-      "seo": "Growth · Google search and automated tasks",
-      "cloud": "Online structure · speed, security and costs",
-      "data": "Information · organizing, processing and analysis"
+      "development": "Sites, landing pages and systems · ready to sell",
+      "seo": "Growth · +30k Google clicks in 12 months",
+      "cloud": "Cloud and costs · AWS under control, US$ 15k+/year saved",
+      "data": "Data · organized information for fast decisions"
     },
     "scopeLabel": "Areas of work",
-    "scopeText": "From product to infrastructure, I connect the fronts that sustain growth and day to day operation.",
+    "scopeText": "From first sketch to production system: I own the whole product.",
     "location": "Rio de Janeiro, Brazil",
     "availabilityLabel": "Open to opportunities",
     "availability": "Always open to networking, opportunities and projects that make sense.",
@@ -112,19 +112,19 @@
     "statusLabel": "Working now",
     "lakeitRole": "Fullstack Cloud Developer",
     "lakeitPeriod": "Jan/2024 - present",
-    "lakeitStatus": "Data platform with processing, queries and AWS infrastructure.",
+    "lakeitStatus": "B2B data lake on AWS: company data gathered in one place, with real savings of US$ 15k/year.",
     "futbuynowRole": "Freelance",
     "futbuynowPeriod": "Feb/2023 - present",
-    "futbuynowStatus": "Marketplace in production with payments, SEO and automations.",
+    "futbuynowStatus": "B2C marketplace for products and services: ~3.4k orders/month, 65k+ cumulative.",
     "linkedinStatus": "Complete professional history.",
     "githubStatus": "Open source and authorial projects.",
-    "positioningShort": "Building and evolving sites, systems and products.",
-    "narrativeShort": "For over 6 years I have built systems that must keep running while they grow."
+    "positioningShort": "I turn businesses into digital products that sell.",
+    "narrativeShort": "For over 6 years I have turned businesses into digital products that sell and keep running as they grow."
   },
   "profile": {
     "index": "02 / Profile",
     "title": "How I work.",
-    "intro": "I build the visible parts and the ones nobody sees, keep track of costs and solve problems once the system is in use.",
+    "intro": "I turned a B2C marketplace into a national reference with real savings of US$ 15k a year. I do it by owning the whole product: screen, server, data and infrastructure.",
     "processVisual": {
       "title": "From need to software in use.",
       "caption": "The goal is to reduce effort, avoid failures and let the product keep evolving.",
@@ -228,7 +228,7 @@
       "company": "HITSS · LakeIT Project",
       "role": "Fullstack Cloud Developer",
       "period": "Jan/2024 - present",
-      "description": "Data platform used by companies to organize, process and query large volumes of information.",
+      "description": "A data lake used by companies: the lake that gathers data from every source in one place, ready to organize, process and query large volumes of information.",
       "figures": {
         "pipeline": {
           "title": "From raw data to ready answers.",
@@ -296,7 +296,7 @@
       "label": "Client · Freelance\nTechnical responsibility",
       "company": "Futbuynow",
       "period": "Feb/2023 - present",
-      "description": "Marketplace in production with purchasing, payments, vendors and daily operation.",
+      "description": "Marketplace in production with purchasing, payments and daily operation. Beyond products, vendors register on the platform to sell services, managed in the vendor panel and the admin panel.",
       "figures": {
         "loop": {
           "title": "An operation that feeds itself back.",
@@ -307,7 +307,7 @@
         "product": {
           "label": "Product and operation",
           "title": "I restructured the purchase journey",
-          "detail": "I track vendors, affiliates, commissions and loyalty across the panel and checkout.",
+          "detail": "I follow vendors from registration to service sales, plus affiliates, commissions and loyalty, in the vendor panel and the admin.",
           "tools": "Node.js · Next.js · MySQL · Redis",
           "technologyDetail": "Next.js builds the screens and part of the server; Node.js runs the operation rules. MySQL stores the main data and Redis speeds up frequent queries."
         },
@@ -336,13 +336,13 @@
         "monthlyPeriod": "May-Jul/2026",
         "yearsValue": "+4",
         "yearsLabel": "years in operation",
-        "yearsPeriod": "platform in production",
+        "yearsPeriod": "Feb/2023 - present",
         "ordersValue": "+65,000",
         "ordersLabel": "orders processed",
-        "ordersPeriod": "accumulated volume",
+        "ordersPeriod": "accumulated through Aug/2026",
         "coinsValue": "+30B",
         "coinsLabel": "coins traded",
-        "coinsPeriod": "accumulated volume",
+        "coinsPeriod": "accumulated through Aug/2026",
         "growthLabel": "Operation evolution after I took technical leadership",
         "growthTitle": "The average of paid orders more than doubled <highlight>during my work</highlight>.",
         "growthDetail": "During this period, I evolved product, payments, SEO, analytics and stability to keep up with the growing operation.",
@@ -355,7 +355,8 @@
         "seoLabel": "clicks coming from Google search",
         "seoPeriod": "Jun → Jul/2026",
         "seoTotalValue": "+30.4k",
-        "seoTotalLabel": "clicks from Google in 12 months"
+        "seoTotalLabel": "clicks from Google in 12 months",
+        "seoTotalPeriod": "12 months through Jul/2026"
       }
     }
   },
@@ -388,23 +389,9 @@
         "mobileCaption": "The same radar hierarchy was preserved in a single column: title, relevance and date come before context.",
         "blogAlt": "NexSift signal archive with the post list and topic filters",
         "blogCaption": "Figure 2. The signal archive gathers the publication history with topic filters.",
-        "topicsAlt": "NexSift topics page organized in seven technology areas",
-        "topicsCaption": "Figure 3. Seven editorial lenses organize what the product tracks.",
+        "topicsAlt": "NexSift Artificial Intelligence topic page with six signals and relevance scores",
+        "topicsCaption": "Figure 3. AI topic page: filtered signals with relevance score, sources and date.",
         "coverAlt": "NexSift home page with the message Less noise, more signal",
-        "images": {
-          "home": {
-            "alt": "NexSift home page with the proposal Less noise, more signal and recent signals"
-          },
-          "topics": {
-            "alt": "NexSift topics page organized in seven technology areas"
-          },
-          "blog": {
-            "alt": "NexSift signal archive with topic filters"
-          },
-          "signal": {
-            "alt": "NexSift signal page with context and verified sources"
-          }
-        },
         "problem": "Tracking technology through infinite feeds consumes time and trust: too much volume, too little context and sources that are almost never verified.",
         "solution": "An editorial radar for developers that filters, verifies and contextualizes signals across AI, cloud, development and careers, with relevance scores and equally short reading on mobile.",
         "architecture": "Next.js and TypeScript with content published to an S3 bucket by an authenticated Lambda validated with Zod. Infrastructure described in Terraform (S3, Lambda, IAM), local environment simulated with Docker and MiniStack, plus RSS, sitemap and article structured data.",
@@ -414,39 +401,17 @@
         "name": "Kaguya",
         "type": "Authorial project · Open Source",
         "description": "Learning platform with study trails, playlists and video lessons. It is where I learned, hands on, Clean Architecture on the Express API, dependency injection, permission level RBAC and GraphQL Federation.",
-        "coverAlt": "Student dashboard listing ongoing trails and the progress of each one",
-        "images": {
-          "dashboard": {
-            "alt": "Student dashboard with ongoing trails and progress"
-          },
-          "lessonPlayer": {
-            "alt": "Video lesson player inside a Kaguya trail"
-          },
-          "mobileDashboard": {
-            "alt": "Mobile version of the Kaguya study dashboard"
-          }
-        },
+        "coverAlt": "Kaguya landing page presenting the video study platform",
         "problem": "Studying video without structure turns into a pile of open tabs: students lose track of where they stopped, content scatters and organizing material always depends on the development team.",
         "solution": "A platform where trails group playlists, blocks and lessons; students follow progress, watch history and likes, while sub administrators create content through a panel protected by permission levels.",
         "architecture": "Monorepo with three independent applications: REST API in Express organized into routes, controllers, services, repositories and use cases; web client in Next.js with session guards validated against the API before rendering protected pages; suggestions microservice in NestJS exposed as a GraphQL Federation v2 subgraph. Local authentication with JWT or social login via Firebase, Zod validation on every route, dependency injection with tsyringe and pluggable storage between local disk and S3.",
-        "results": "Backend with unit and integration test suites, a smoke test exercising every route in dependency order and a restoration completed in 2026: dependencies upgraded while keeping the original stack, audit findings fixed and seeds that load two full courses for demonstration."
+        "results": "Backend with unit and integration test suites, a smoke test exercising every route in dependency order and a restoration completed in 2026: upgraded to Next 15, React 19 and Nest 11, audit findings fixed and seeds that load two full courses for demonstration."
       },
       "monkeynauts": {
         "name": "The Monkeynauts",
         "type": "Authorial project · 2026 restoration",
-        "description": "Play and earn game from 2022 that I restored from scratch applying Clean Architecture, Either for explicit errors and strict TypeScript, with a pluggable driver between sandbox and real BSC blockchain and E2E across all 55 routes.",
+        "description": "Play and earn web3 game I built with Clean Architecture, Either for explicit errors and strict TypeScript, and restored in 2026 by updating versions and tooling: pluggable driver between sandbox and real BSC blockchain and E2E across all 55 routes.",
         "coverAlt": "The Monkeynauts player area showing wallet, balance and account details",
-        "images": {
-          "login": {
-            "alt": "Login screen of The Monkeynauts platform"
-          },
-          "admin": {
-            "alt": "Game admin panel with sales events, bans and balancing parameters"
-          },
-          "account": {
-            "alt": "Player area with wallet, deposits and withdrawals"
-          }
-        },
         "problem": "A 2022 web3 game that never shipped carried serious flaws: password reset traveling in plain text, privilege escalation and bans without persistence. Running anything required external credentials and real blockchain access.",
         "solution": "I restored the product faithfully and fixed every reported flaw. Players manage account, wallet, deposits, withdrawals, store, ships and crews; the admin panel operates sales events, airdrops, bans, balancing parameters and audit logs. Everything works offline, with no external credentials at all.",
         "architecture": "pnpm monorepo with a React 19 SPA and an Express 5 API in strict TypeScript. Clean Architecture per module: use cases with explicit Either error handling, isolated domain contracts and Prisma confined to infrastructure. The blockchain is a pluggable driver: sandbox mode uses a fictional currency and runs offline; rpc mode validates real BSC transactions by hash, with replay protection in the audit logs.",
@@ -457,11 +422,6 @@
         "type": "Study project · Open Source",
         "description": "Payment service inspired by the classic Pagar.me challenge where I trained SOLID, TDD and DDD hands on: debit and credit with scheduled payables, value objects with Either and balances covered by Vitest tests.",
         "coverAlt": "Payment service test suite result with every check passing",
-        "images": {
-          "apiDemo": {
-            "alt": "API demonstration creating a transaction and returning the calculated payable"
-          }
-        },
         "problem": "The Pagar.me backend challenge asks for the core of a real acquirer: create debit and credit transactions, generate payables with method specific fees and settlement dates and consolidate balances, all with a well modeled domain.",
         "solution": "A service that applies settlement rules: debit settles at D+1 with a 3% fee and credit generates four payables between D+30 and D+120 with a 5% fee. Cards persist only the last four digits, the transaction keeps the gross amount and fees discount the payables.",
         "architecture": "Clean Architecture with DDD building blocks: entities, value objects such as CardNumber, mappers and domain errors; use cases return Either on operations that can fail; a single container shares dependencies across routes; in memory repositories already follow interfaces ready for a real database; the pluggable DateProvider allows freezing time in tests; consistent response envelope and centralized error middleware on Express 5.",
@@ -480,7 +440,7 @@
       "letmeask": {
         "name": "Let Me Ask",
         "type": "Study project · Open Source",
-        "description": "Real time Q&A rooms from NLW 6 that I restored with Firebase Auth and Realtime Database, security rules for unique likes, live moderation and validation with react-hook-form and Zod.",
+        "description": "Real time Q&A rooms from NLW 6 that I built with Firebase Auth and Realtime Database and restored in 2026: migration to Vite 8 and React 19, repaired unique-like security rules, live moderation and validation with react-hook-form and Zod.",
         "problem": "During streams and classes, the chat box mixes questions and comments: presenters lose the best questions and the audience cannot tell what has already been answered.",
         "solution": "The presenter creates a room and shares the code; the audience joins, asks questions and upvotes what should be answered first. The moderation panel highlights the question being answered, marks answered ones, removes noise and closes the room sending everyone back home. Closed rooms can be reopened later.",
         "architecture": "React 19 SPA built with Vite and TypeScript; Firebase Authentication for Google sign in and Realtime Database syncing questions, likes and room states in real time; security rules enforce one like per person; forms use react-hook-form and Zod for inline validation.",
@@ -492,11 +452,6 @@
         "type": "Open Source",
         "description": "Infrastructure as code where I learned to structure Terraform and Terragrunt at scale: modules without hardcoded values, identical environments in a single env.hcl and a full cycle on LocalStack at no cost.",
         "coverAlt": "Terragrunt outputs after applying the infrastructure modules on LocalStack",
-        "images": {
-          "localstack": {
-            "alt": "LocalStack dashboard showing resources provisioned locally"
-          }
-        },
         "problem": "Real cloud structures need identical environments across dev, staging and production, but learning by applying directly on AWS costs money, requires an account and makes every mistake expensive.",
         "solution": "An infrastructure as code template where all environments share exactly the same module configuration: a VPC with public and private subnets, a versioned encrypted S3 bucket and a least privilege IAM role, provisioned and destroyed as many times as needed at no cost.",
         "architecture": "Clean Terraform modules, with no hardcoded values and no provider declaration, orchestrated by Terragrunt, which injects provider, backend and versions per environment through root.hcl. A new environment is one env.hcl plus three three-line files, with zero changes to modules. Terragrunt builds the execution graph on its own: VPC and S3 apply in parallel and IAM waits for the bucket ARN, with mock outputs to validate everything before apply.",
@@ -514,7 +469,6 @@
       }
     },
     "dates": {
-      "created": "Created {date}",
       "restored": "Restored {date}"
     },
     "cta": {
@@ -535,8 +489,8 @@
     "index": "05 / Contact",
     "title": "Get in touch.",
     "availabilityTitle": "Always open to networking, opportunities and projects <highlight>that make sense</highlight>.",
-    "ctaTitle": "Want a <highlight>website like this</highlight>, need to evolve an existing system or looking for <highlight>technical support</highlight> on an ongoing project?",
-    "ctaText": "My contact is right below, and I reply with the same care I dedicate to systems in production.",
+    "ctaTitle": "Want a <highlight>landing page that converts</highlight>, to get your <highlight>SaaS off the ground</highlight>, or someone on your team who owns the <highlight>whole product</highlight>?",
+    "ctaText": "Reach out and get the same care I put into products with thousands of orders a month.",
     "channels": {
       "hiring": "Email",
       "project": "WhatsApp",

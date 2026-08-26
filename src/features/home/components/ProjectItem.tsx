@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { getLocale, getTranslations } from "next-intl/server";
-import { formatMonthDate } from "@/lib/utils";
+import { getTranslations } from "next-intl/server";
 import { ProjectLinkChips } from "@/components/ui/ProjectLinkChips";
 import type { projects } from "@/content/projects";
+import { formatProjectDates } from "@/lib/projectDates";
 
 type Project = (typeof projects)[number];
 
@@ -16,26 +16,9 @@ export async function ProjectItem({
   showCover = false,
 }: ProjectItemProps) {
   const t = await getTranslations();
-  const locale = await getLocale();
   const base = project.translationKey;
   const cover = project.cover;
-
-  const datesLabel = project.dates
-    ? [
-        project.dates.created
-          ? t("projects.dates.created", {
-              date: formatMonthDate(locale, project.dates.created),
-            })
-          : null,
-        project.dates.restored
-          ? t("projects.dates.restored", {
-              date: formatMonthDate(locale, project.dates.restored),
-            })
-          : null,
-      ]
-        .filter(Boolean)
-        .join(" · ")
-    : null;
+  const datesLabel = await formatProjectDates(project);
 
   return (
     <article className="group hover:border-accent border-b border-white/15 py-8 transition-colors">

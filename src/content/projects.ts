@@ -14,6 +14,7 @@ export type ProjectLink = {
 
 export type ProjectDates = {
   created?: string;
+  createdEnd?: string;
   restored?: string;
 };
 
@@ -24,35 +25,13 @@ export type Project = {
   technologies: readonly string[];
   links: readonly ProjectLink[];
   cover: ProjectFigure | null;
-  figures: readonly ProjectFigure[];
   dates?: ProjectDates;
 };
-
-const nexsiftFigures = [
-  {
-    src: "/projects/nexsift/topics.png",
-    width: 1200,
-    height: 750,
-    imageKey: "topics",
-  },
-  {
-    src: "/projects/nexsift/blog.png",
-    width: 1200,
-    height: 750,
-    imageKey: "blog",
-  },
-  {
-    src: "/projects/nexsift/sinal.png",
-    width: 760,
-    height: 1371,
-    imageKey: "signal",
-  },
-] as const;
 
 export const projects: readonly Project[] = [
   {
     id: "kaguya",
-    dates: { created: "2021-08", restored: "2026-08" },
+    dates: { created: "2021-08", createdEnd: "2021-12", restored: "2026-08" },
     translationKey: "projects.items.kaguya",
     featured: true,
     technologies: [
@@ -74,30 +53,10 @@ export const projects: readonly Project[] = [
       height: 750,
       imageKey: "cover",
     },
-    figures: [
-      {
-        src: "/projects/kaguya/dashboard.png",
-        width: 1200,
-        height: 750,
-        imageKey: "dashboard",
-      },
-      {
-        src: "/projects/kaguya/lesson-player.png",
-        width: 1200,
-        height: 750,
-        imageKey: "lessonPlayer",
-      },
-      {
-        src: "/projects/kaguya/mobile-dashboard.png",
-        width: 390,
-        height: 844,
-        imageKey: "mobileDashboard",
-      },
-    ],
   },
   {
     id: "monkeynauts",
-    dates: { created: "2021-12", restored: "2026-08" },
+    dates: { created: "2021-12", createdEnd: "2022-03", restored: "2026-08" },
     translationKey: "projects.items.monkeynauts",
     featured: true,
     technologies: [
@@ -123,30 +82,10 @@ export const projects: readonly Project[] = [
       height: 750,
       imageKey: "cover",
     },
-    figures: [
-      {
-        src: "/projects/themonkeynauts/login.png",
-        width: 1200,
-        height: 750,
-        imageKey: "login",
-      },
-      {
-        src: "/projects/themonkeynauts/admin.png",
-        width: 1200,
-        height: 750,
-        imageKey: "admin",
-      },
-      {
-        src: "/projects/themonkeynauts/account.png",
-        width: 1200,
-        height: 750,
-        imageKey: "account",
-      },
-    ],
   },
   {
     id: "nexsift",
-    dates: { created: "2026-08" },
+    dates: { created: "2026-07" },
     translationKey: "projects.items.nexsift",
     featured: false,
     technologies: ["Next.js", "TypeScript", "AWS", "Terraform", "MCP", "IA"],
@@ -160,11 +99,10 @@ export const projects: readonly Project[] = [
       height: 750,
       imageKey: "home",
     },
-    figures: [...nexsiftFigures],
   },
   {
     id: "pagarme-simplified-psp",
-    dates: { created: "2023-04", restored: "2026-08" },
+    dates: { created: "2023-04", createdEnd: "2023-06", restored: "2026-08" },
     translationKey: "projects.items.pagarme",
     featured: false,
     technologies: [
@@ -188,18 +126,10 @@ export const projects: readonly Project[] = [
       height: 360,
       imageKey: "cover",
     },
-    figures: [
-      {
-        src: "/projects/pagarme-simplified-psp/api-demo.png",
-        width: 1200,
-        height: 830,
-        imageKey: "apiDemo",
-      },
-    ],
   },
   {
     id: "ai-i18n-translate",
-    dates: { created: "2026-03" },
+    dates: { created: "2026-03", createdEnd: "2026-04" },
     translationKey: "projects.items.aiI18n",
     featured: false,
     technologies: [
@@ -227,12 +157,11 @@ export const projects: readonly Project[] = [
       height: 750,
       imageKey: "cover",
     },
-    figures: [],
   },
   {
     id: "aws-iac-blueprint",
     translationKey: "projects.items.awsIac",
-    dates: { created: "2026-05" },
+    dates: { created: "2026-05", createdEnd: "2026-06" },
     featured: false,
     technologies: ["Terraform", "Terragrunt", "LocalStack", "AWS"],
     links: [
@@ -247,11 +176,10 @@ export const projects: readonly Project[] = [
       height: 531,
       imageKey: "cover",
     },
-    figures: [],
   },
   {
     id: "ignews",
-    dates: { created: "2022-05", restored: "2026-08" },
+    dates: { created: "2022-05", createdEnd: "2022-08", restored: "2026-08" },
     translationKey: "projects.items.ignews",
     featured: false,
     technologies: [
@@ -272,11 +200,10 @@ export const projects: readonly Project[] = [
       height: 750,
       imageKey: "cover",
     },
-    figures: [],
   },
   {
     id: "letmeask",
-    dates: { created: "2021-06", restored: "2026-08" },
+    dates: { created: "2021-06", createdEnd: "2021-07", restored: "2026-08" },
     translationKey: "projects.items.letmeask",
     featured: false,
     technologies: [
@@ -297,6 +224,5 @@ export const projects: readonly Project[] = [
       height: 750,
       imageKey: "cover",
     },
-    figures: [],
   },
 ];
