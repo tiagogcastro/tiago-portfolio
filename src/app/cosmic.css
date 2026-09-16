@@ -1,0 +1,831 @@
+/* A native-scroll journey. All narrative layers share the same camera timeline. */
+.cosmic-copy[aria-hidden="true"],
+.cosmic-story-card[aria-hidden="true"],
+.cosmic-inner[aria-hidden="true"],
+.cosmic-finale[aria-hidden="true"] {
+  visibility: hidden !important;
+  pointer-events: none;
+}
+.cosmic-hero {
+  position: relative;
+  height: 1000svh;
+}
+.cosmic-stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--background);
+  perspective: 1400px;
+  touch-action: pan-y;
+  cursor: grab;
+}
+.cosmic-stage[data-dragging="true"] {
+  cursor: grabbing;
+  user-select: none;
+}
+.cosmic-interaction {
+  position: absolute;
+  bottom: 5.8rem;
+  left: 5%;
+  font:
+    10px/1.6 var(--font-plex-mono),
+    monospace;
+  color: var(--mineral-bright);
+  pointer-events: none;
+}
+.cosmic-interaction button {
+  pointer-events: auto;
+  margin-top: 8px;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.cosmic-canvas,
+.cosmic-fallback,
+.cosmic-shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.cosmic-canvas {
+  z-index: -3;
+}
+.cosmic-fallback {
+  z-index: -4;
+  background: radial-gradient(
+    ellipse at 65% 45%,
+    color-mix(in srgb, var(--mineral) 18%, transparent),
+    transparent 65%
+  );
+}
+.cosmic-core {
+  position: absolute;
+  left: 65%;
+  top: 46%;
+  width: min(60vw, 680px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 100px color-mix(in srgb, var(--mineral) 15%, transparent),
+    0 0 100px color-mix(in srgb, var(--accent) 10%, transparent);
+  background:
+    radial-gradient(
+      ellipse,
+      color-mix(in srgb, var(--paper) 90%, transparent),
+      color-mix(in srgb, var(--accent) 25%, transparent) 2%,
+      transparent 30%
+    ),
+    repeating-radial-gradient(
+      ellipse,
+      transparent 0 12%,
+      color-mix(in srgb, var(--mineral) 10%, transparent) 13%,
+      transparent 14% 22%
+    );
+}
+.cosmic-pulse {
+  position: absolute;
+  top: 46%;
+  left: 65%;
+  width: 12rem;
+  height: 12rem;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  animation: cosmic-pulse 3s ease-out both;
+}
+.cosmic-shade {
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--background) 90%, transparent),
+      transparent 75%
+    ),
+    linear-gradient(
+      0deg,
+      var(--background),
+      transparent 18%,
+      transparent 82%,
+      var(--background)
+    );
+}
+.cosmic-coordinate {
+  position: absolute;
+  top: calc(var(--header-height) + 1.5rem);
+  left: 5%;
+  right: 5%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--muted);
+  font:
+    10px var(--font-plex-mono),
+    monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  z-index: 6;
+}
+.cosmic-chapter {
+  color: var(--accent);
+}
+.cosmic-chapter b {
+  margin-left: 1.5rem;
+  font-weight: 400;
+}
+.cosmic-copy {
+  position: absolute;
+  left: 5%;
+  top: 30%;
+  width: 46%;
+  transform-origin: left center;
+  z-index: 2;
+}
+.cosmic-story {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  perspective: 1400px;
+}
+.cosmic-story-card {
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(520px, 44vw);
+  padding: clamp(22px, 2.5vw, 38px);
+  border: 1px solid color-mix(in srgb, var(--mineral) 42%, transparent);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--surface) 96%, transparent),
+    color-mix(in srgb, var(--background) 88%, transparent)
+  );
+  box-shadow: 0 25px 100px
+    color-mix(in srgb, var(--background) 70%, transparent);
+  backdrop-filter: blur(14px);
+  transform-origin: center;
+}
+.cosmic-story-card::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 45%;
+  width: 15vw;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+.cosmic-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font:
+    10px var(--font-plex-mono),
+    monospace;
+  color: var(--mineral-bright);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.cosmic-card-top span:first-child {
+  color: var(--accent);
+  white-space: nowrap;
+}
+.cosmic-story-card h2 {
+  margin-top: 22px;
+  font-family: var(--font-newsreader), serif;
+  font-size: clamp(44px, 4.5vw, 68px);
+  line-height: 1;
+}
+.cosmic-tools {
+  margin-top: 20px;
+  color: var(--accent);
+  font:
+    12px/1.8 var(--font-plex-mono),
+    monospace;
+}
+.cosmic-tools span {
+  display: block;
+  font-size: 9px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 5px;
+}
+.cosmic-problem {
+  margin-top: 24px;
+}
+.cosmic-story-card h3 {
+  color: var(--muted);
+  font:
+    10px var(--font-plex-mono),
+    monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 9px;
+}
+.cosmic-problem p,
+.cosmic-result p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+.cosmic-result {
+  margin-top: 22px;
+  border-left: 2px solid var(--accent);
+  padding: 3px 0 3px 16px;
+}
+.cosmic-result p {
+  color: var(--text);
+}
+.cosmic-card-signal {
+  display: flex;
+  gap: 6px;
+  margin-top: 24px;
+}
+.cosmic-card-signal span {
+  width: 25px;
+  height: 3px;
+  background: var(--mineral);
+  opacity: 0.5;
+}
+.cosmic-card-signal span:first-child {
+  background: var(--accent);
+  opacity: 1;
+}
+.cosmic-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -44%;
+  width: min(600px, 85%);
+  text-align: center;
+  pointer-events: none;
+}
+.cosmic-eyebrow {
+  font:
+    10px var(--font-plex-mono),
+    monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.cosmic-inner h2 {
+  font:
+    clamp(30px, 3.7vw, 52px)/1.05 var(--font-newsreader),
+    serif;
+  text-wrap: balance;
+  margin: 18px auto 14px;
+}
+.cosmic-inner-description {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 53ch;
+  margin-inline: auto;
+}
+.cosmic-terminal {
+  text-align: left;
+  margin: 24px auto 0;
+  padding: 22px 26px;
+  border: 1px solid color-mix(in srgb, var(--accent) 48%, transparent);
+  background: color-mix(in srgb, var(--background) 94%, transparent);
+  box-shadow: 0 0 70px color-mix(in srgb, var(--accent) 12%, transparent);
+  font:
+    13px/2 var(--font-plex-mono),
+    monospace;
+}
+.cosmic-terminal-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+  font-size: 9px;
+  color: var(--muted);
+}
+.cosmic-terminal-bar span:last-child {
+  color: var(--mineral);
+}
+.cosmic-command {
+  color: var(--accent);
+  margin: 15px 0 8px;
+}
+.cosmic-terminal ol {
+  list-style: none;
+  padding: 0;
+  color: var(--mineral-bright);
+}
+.cosmic-terminal li span {
+  color: var(--muted);
+  margin-right: 20px;
+  font-size: 10px;
+}
+.cosmic-terminal-output {
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  color: var(--accent);
+  font-size: 11px;
+}
+.cosmic-cursor {
+  animation: cosmic-blink 1.8s steps(2, start) infinite;
+}
+.cosmic-finale {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.cosmic-final-copy {
+  position: absolute;
+  left: 5%;
+  top: 19%;
+  width: 33%;
+}
+.cosmic-final-copy h2 {
+  font:
+    clamp(36px, 4.4vw, 66px)/1.05 var(--font-newsreader),
+    serif;
+  text-wrap: balance;
+  margin: 20px 0;
+}
+.cosmic-final-copy > p:last-child {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 38ch;
+}
+.cosmic-overview {
+  list-style: none;
+  padding: 0;
+  position: absolute;
+  inset: 19% 4% 16% 43%;
+}
+.cosmic-overview li {
+  position: absolute;
+  width: min(230px, 18vw);
+  padding: 16px 20px;
+  border-top: 1px solid var(--mineral);
+  background: color-mix(in srgb, var(--background) 88%, transparent);
+}
+.cosmic-overview li::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+}
+.cosmic-overview li > span {
+  font:
+    10px var(--font-plex-mono),
+    monospace;
+  color: var(--accent);
+}
+.cosmic-overview h3 {
+  margin-top: 5px;
+  font:
+    24px var(--font-newsreader),
+    serif;
+}
+.cosmic-overview p {
+  font:
+    10px/1.8 var(--font-plex-mono),
+    monospace;
+  color: var(--text-secondary);
+  margin-top: 7px;
+}
+.cosmic-overview-0 {
+  top: 0;
+  left: 0;
+}
+.cosmic-overview-1 {
+  top: 4%;
+  right: 0;
+}
+.cosmic-overview-2 {
+  top: 46%;
+  right: 0;
+}
+.cosmic-overview-3 {
+  bottom: 0;
+  right: 22%;
+}
+.cosmic-overview-4 {
+  top: 52%;
+  left: 0;
+}
+.cosmic-continue {
+  position: absolute;
+  left: 5%;
+  bottom: 19%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: 14px;
+  pointer-events: auto;
+}
+.cosmic-bottom {
+  position: absolute;
+  bottom: 2rem;
+  left: 5%;
+  right: max(6rem, 5%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  z-index: 6;
+  font:
+    10px var(--font-plex-mono),
+    monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.cosmic-bottom a,
+.cosmic-bottom button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-secondary);
+}
+.cosmic-bottom button {
+  border: 1px solid var(--line);
+  border-radius: 50px;
+  padding: 12px 16px;
+  background: var(--background);
+}
+.cosmic-chapter-track {
+  display: flex;
+  gap: 8px;
+}
+.cosmic-chapter-track span {
+  width: 30px;
+  height: 2px;
+  background: var(--line);
+}
+.cosmic-chapter-track span[data-active="true"] {
+  background: var(--accent);
+}
+.cosmic-progress {
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  inset-inline: 0;
+  background: var(--accent);
+  transform-origin: left;
+}
+@keyframes cosmic-pulse {
+  from {
+    transform: translate(-50%, -50%) scale(0.1);
+    opacity: 0.8;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(7);
+    opacity: 0;
+  }
+}
+@keyframes cosmic-blink {
+  to {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .cosmic-coordinate {
+    top: calc(var(--header-height) + 1rem);
+    font-size: 8px;
+  }
+  .cosmic-coordinate > span:first-child {
+    max-width: 40%;
+    line-height: 1.7;
+  }
+  .cosmic-chapter {
+    text-align: right;
+  }
+  .cosmic-chapter b {
+    display: block;
+    margin: 5px 0 0;
+  }
+  .cosmic-copy {
+    width: 88%;
+    left: 6%;
+    top: auto;
+    bottom: 16%;
+  }
+  .cosmic-copy h1 {
+    font-size: clamp(3.4rem, 9vw, 5rem);
+  }
+  .cosmic-copy > p:first-child {
+    font-size: 9px;
+  }
+  .cosmic-copy > p {
+    margin-top: 1rem;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .cosmic-copy > div {
+    margin-top: 1.25rem;
+  }
+  .cosmic-core {
+    left: 50%;
+    top: 35%;
+    width: 85vw;
+  }
+  .cosmic-pulse {
+    left: 50%;
+    top: 35%;
+  }
+  .cosmic-shade {
+    background: linear-gradient(
+      0deg,
+      var(--background) 3%,
+      color-mix(in srgb, var(--background) 70%, transparent) 28%,
+      transparent 72%
+    );
+  }
+  .cosmic-story-card {
+    left: 50%;
+    width: 88%;
+    top: 52%;
+    bottom: auto;
+    padding: 24px;
+  }
+  .cosmic-story-card::after {
+    left: 50%;
+    top: auto;
+    bottom: 100%;
+    height: 80px;
+    width: 1px;
+    background: linear-gradient(0deg, var(--accent), transparent);
+  }
+  .cosmic-story-card h2 {
+    font-size: 40px;
+    margin-top: 16px;
+  }
+  .cosmic-tools {
+    margin-top: 14px;
+    font-size: 11px;
+  }
+  .cosmic-problem {
+    margin-top: 16px;
+  }
+  .cosmic-problem p,
+  .cosmic-result p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .cosmic-result {
+    margin-top: 16px;
+  }
+  .cosmic-card-signal {
+    margin-top: 18px;
+  }
+  .cosmic-inner {
+    width: 88%;
+    translate: -50% -40%;
+  }
+  .cosmic-inner h2 {
+    font-size: 34px;
+  }
+  .cosmic-inner-description {
+    font-size: 13px;
+  }
+  .cosmic-terminal {
+    padding: 16px;
+    font-size: 11px;
+    margin-top: 18px;
+  }
+  .cosmic-terminal li span {
+    margin-right: 12px;
+  }
+  .cosmic-final-copy {
+    top: 18%;
+    left: 6%;
+    width: 88%;
+  }
+  .cosmic-final-copy h2 {
+    font-size: 34px;
+    max-width: 18ch;
+    margin-block: 12px;
+  }
+  .cosmic-final-copy > p:last-child {
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: 44ch;
+  }
+  .cosmic-overview {
+    inset: 49% 6% 22%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .cosmic-overview li {
+    position: relative;
+    inset: auto;
+    width: auto;
+    padding: 8px 12px;
+  }
+  .cosmic-overview h3 {
+    font-size: 20px;
+    margin-top: 2px;
+  }
+  .cosmic-overview p {
+    font-size: 9px;
+    line-height: 1.5;
+    margin-top: 4px;
+  }
+  .cosmic-overview li > span {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    font-size: 8px;
+  }
+  .cosmic-continue {
+    left: 6%;
+    bottom: 12%;
+    font-size: 12px;
+  }
+  .cosmic-bottom {
+    bottom: 1.25rem;
+    right: 5%;
+    font-size: 8px;
+  }
+  .cosmic-chapter-track {
+    display: none;
+  }
+}
+@media (max-height: 740px) and (min-width: 901px) {
+  .cosmic-copy {
+    top: 25%;
+  }
+  .cosmic-copy h1 {
+    font-size: 5rem;
+  }
+  .cosmic-story-card {
+    padding: 22px;
+    top: 53%;
+  }
+  .cosmic-story-card h2 {
+    font-size: 40px;
+    margin-top: 14px;
+  }
+  .cosmic-tools,
+  .cosmic-problem,
+  .cosmic-result {
+    margin-top: 14px;
+  }
+  .cosmic-problem p,
+  .cosmic-result p {
+    font-size: 14px;
+  }
+  .cosmic-card-signal {
+    display: none;
+  }
+  .cosmic-inner h2 {
+    font-size: 36px;
+  }
+  .cosmic-terminal {
+    margin-top: 16px;
+    padding: 14px 22px;
+    font-size: 12px;
+  }
+}
+@media (max-height: 740px) and (max-width: 900px) {
+  .cosmic-copy {
+    bottom: 14%;
+  }
+  .cosmic-copy h1 {
+    font-size: 3.2rem;
+  }
+  .cosmic-story-card {
+    padding: 18px;
+  }
+  .cosmic-story-card h2 {
+    font-size: 34px;
+    margin-top: 12px;
+  }
+  .cosmic-tools,
+  .cosmic-problem,
+  .cosmic-result {
+    margin-top: 12px;
+  }
+  .cosmic-problem p,
+  .cosmic-result p {
+    font-size: 13px;
+  }
+  .cosmic-card-signal {
+    display: none;
+  }
+  .cosmic-inner {
+    translate: -50% -36%;
+  }
+  .cosmic-inner h2 {
+    font-size: 28px;
+    margin: 10px 0;
+  }
+  .cosmic-inner-description {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .cosmic-terminal {
+    padding: 12px 14px;
+    margin-top: 12px;
+    font-size: 10px;
+  }
+  .cosmic-terminal-output {
+    margin-top: 10px;
+    padding-top: 8px;
+    font-size: 9px;
+  }
+  .cosmic-final-copy {
+    top: 21%;
+  }
+  .cosmic-final-copy h2 {
+    font-size: 28px;
+  }
+  .cosmic-final-copy > p:last-child {
+    font-size: 12px;
+  }
+  .cosmic-overview {
+    inset-block: 52% 23%;
+    gap: 6px;
+  }
+  .cosmic-overview li {
+    padding: 6px 8px;
+  }
+  .cosmic-overview h3 {
+    font-size: 17px;
+  }
+  .cosmic-overview p {
+    font-size: 8px;
+  }
+}
+/* The full story remains readable without a scroll animation. Short landscape
+   screens use this layout too, rather than cropping long narrative cards. */
+@media (prefers-reduced-motion: reduce), (max-height: 540px) {
+  .cosmic-hero {
+    height: auto;
+  }
+  .cosmic-stage {
+    position: relative;
+    height: auto;
+    min-height: 100svh;
+    padding: calc(var(--header-height) + 6rem) 6% 7rem;
+  }
+  .cosmic-copy,
+  .cosmic-story,
+  .cosmic-story-card,
+  .cosmic-inner,
+  .cosmic-finale,
+  .cosmic-final-copy,
+  .cosmic-overview,
+  .cosmic-continue {
+    position: relative;
+    inset: auto;
+    translate: none;
+    transform: none !important;
+    opacity: 1 !important;
+    width: auto;
+    margin: 0;
+  }
+  .cosmic-copy {
+    max-width: 650px;
+    margin-bottom: 4rem;
+  }
+  .cosmic-story {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 20px;
+  }
+  .cosmic-story-card {
+    padding: 24px;
+  }
+  .cosmic-story-card::after,
+  .cosmic-pulse,
+  .cosmic-overview,
+  .cosmic-chapter-track,
+  .cosmic-interaction {
+    display: none;
+  }
+  .cosmic-inner {
+    max-width: 650px;
+    margin: 4rem auto;
+  }
+  .cosmic-finale {
+    margin-top: 4rem;
+  }
+  .cosmic-final-copy {
+    max-width: 650px;
+  }
+  .cosmic-continue {
+    margin-top: 24px;
+    width: fit-content;
+  }
+}

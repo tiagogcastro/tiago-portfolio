@@ -90,6 +90,80 @@
     }
   },
   "hero": {
+    "cosmic": {
+      "role": "Desarrollo · Cloud · Datos",
+      "titleFirst": "De la idea",
+      "titleSecond": "al impacto.",
+      "description": "Transformo necesidades complejas en productos digitales que funcionan y generan resultados.",
+      "coordinates": "Un universo de posibilidades",
+      "scroll": "Ir al perfil",
+      "interaction": "Desplázate para entrar. Arrastra el universo para girar.",
+      "reset": "Centrar el universo",
+      "soundOn": "Activar sonido",
+      "soundOff": "Desactivar sonido",
+      "terminal": "Proceso creativo",
+      "command": "> construir()",
+      "sequence": "idea > tecnología > impacto",
+      "chapters": {
+        "0": "El universo",
+        "1": "Las conexiones",
+        "2": "La construcción",
+        "3": "El producto",
+        "4": "Dentro del núcleo",
+        "5": "Todo conectado"
+      },
+      "problem": "El desafío",
+      "result": "En la práctica",
+      "tools": "Tecnologías y capacidades",
+      "coreTitle": "Código en el centro. Personas en el propósito.",
+      "coreDescription": "Cada conexión empieza con una necesidad real. Aquí el problema toma forma, gana estructura y se convierte en una solución que puede evolucionar.",
+      "terminalLines": {
+        "0": "entender(necesidad, personas)",
+        "1": "diseñar(arquitectura, datos)",
+        "2": "construir(interfaz, sistema)",
+        "3": "entregar(producto).mejorar()"
+      },
+      "finalTitle": "Un universo. Muchas conexiones.",
+      "finalDescription": "Desde la primera conversación hasta un sistema en producción, conecto cada parte para construir algo que tenga sentido para el negocio y sus usuarios.",
+      "continue": "Conoce mi forma de trabajar",
+      "topics": {
+        "development": {
+          "title": "Programación",
+          "detail": "Interfaces y sistemas",
+          "tools": "React · Next.js · TypeScript · Node.js",
+          "problem": "Convertir reglas de negocio complejas en una experiencia sencilla, desde la interfaz hasta el servidor.",
+          "result": "Registros, pagos e integraciones funcionando juntos en productos de uso real."
+        },
+        "cloud": {
+          "title": "Cloud",
+          "detail": "Infraestructura y operación",
+          "tools": "AWS · Terraform · Docker · GitHub Actions",
+          "problem": "Sostener la operación sin desperdiciar recursos ni convertir cada entrega en un riesgo.",
+          "result": "Más de US$15.000 ahorrados al año en infraestructura AWS en Lake.it."
+        },
+        "data": {
+          "title": "Datos",
+          "detail": "Información para decidir",
+          "tools": "Python · PostgreSQL · MySQL · Redis",
+          "problem": "Reunir información de distintas fuentes y hacerla disponible para la operación.",
+          "result": "Un data lake B2B en AWS que conecta fuentes y organiza datos en un solo lugar."
+        },
+        "seo": {
+          "title": "SEO",
+          "detail": "Descubrimiento y crecimiento",
+          "tools": "SEO técnico · Next.js · Rendimiento web",
+          "problem": "Lograr que un producto sea encontrado por quienes lo necesitan, además de funcionar bien.",
+          "result": "Más de 30.000 clics desde Google en 12 meses en FutBuyNow."
+        },
+        "product": {
+          "title": "Producto",
+          "detail": "De la necesidad al uso real",
+          "tools": "Interfaces · Integraciones · Operación",
+          "problem": "Conectar tecnología y negocio para que una idea forme parte del día a día de las personas.",
+          "result": "Marketplace FutBuyNow con unos 3.400 pedidos al mes y más de 65.000 acumulados."
+        }
+      }
+    },
     "eyebrow": "Desarrollador Full Stack",
     "positioning": "Transformo negocios en productos digitales que venden: del cero al aire.",
     "firstName": "Tiago",

@@ -38,16 +38,33 @@ export function EngagementBox() {
 
     if (dismissed) return;
 
-    const timer = window.setTimeout(() => {
-      try {
-        window.localStorage.setItem(STORAGE_KEY, "1");
-      } catch {
-        // localStorage unavailable, the sheet may appear again next visit
+    let timer: ReturnType<typeof window.setTimeout> | undefined;
+    let shown = false;
+    const schedule = () => {
+      if (shown || timer !== undefined) return;
+      timer = window.setTimeout(() => {
+        shown = true;
+        try {
+          window.localStorage.setItem(STORAGE_KEY, "1");
+        } catch {
+          // localStorage unavailable, the sheet may appear again next visit
+        }
+        setSheetVisible(true);
+      }, SHOW_DELAY_MS);
+    };
+    // Let the immersive hero finish before starting the automatic invitation.
+    const hero = document.querySelector(".cosmic-hero");
+    const observer = hero ? new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        window.clearTimeout(timer);
+        timer = undefined;
+      } else {
+        schedule();
       }
-      setSheetVisible(true);
-    }, SHOW_DELAY_MS);
-
-    return () => window.clearTimeout(timer);
+    }) : null;
+    if (hero && observer) observer.observe(hero);
+    else schedule();
+    return () => { window.clearTimeout(timer); observer?.disconnect(); };
   }, []);
 
   const dismissSheet = () => {
