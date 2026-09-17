@@ -46,7 +46,7 @@
       },
       "experience": {
         "title": "Experiencia profesional",
-        "description": "Cases del data lake LakeIT y del marketplace Futbuynow: decisiones técnicas, infraestructura en AWS, pagos y resultados acompañados."
+        "description": "Cases del data lake LakeIT y del marketplace FutBuyNow: decisiones técnicas, infraestructura en AWS, pagos y resultados acompañados."
       }
     }
   },
@@ -90,6 +90,121 @@
     }
   },
   "hero": {
+    "cosmic": {
+      "role": "Desarrollo · Cloud · Datos",
+      "titleFirst": "De la idea",
+      "titleSecond": "al impacto.",
+      "description": "Transformo necesidades complejas en productos digitales que funcionan y generan resultados.",
+      "coordinates": "Un universo de posibilidades",
+      "scroll": "Saltar a la experiencia",
+      "interaction": "Desplázate para viajar. Toca los puntos o elige qué girar.",
+      "reset": "Centrar el universo",
+      "soundOn": "Escuchar lo-fi",
+      "tiktok": "TikTok",
+      "soundOff": "Desactivar sonido",
+      "terminal": "Proceso creativo",
+      "command": "Cómo una idea se convierte en producto",
+      "sequence": "El ciclo continúa: escuchar, construir y mejorar.",
+      "name": "Tiago Castro",
+      "explore": "Explorar",
+      "close": "Cerrar descubrimiento",
+      "visit": "Explorar esta conexión",
+      "control": "Arrastra para girar:",
+      "volume": "Volumen del ambiente",
+      "soundError": "No se pudo iniciar el audio. Toca de nuevo para intentarlo.",
+      "targets": {
+        "universe": "Universo",
+        "core": "Corazón",
+        "avatar": "Personaje",
+        "orbit": "Órbitas"
+      },
+      "discoveries": {
+        "core": {
+          "title": "El corazón de código",
+          "text": "Aquí empiezan las conexiones entre personas, código y productos. Gira el corazón y sigue sus rutas.",
+          "action": "Mover el corazón"
+        },
+        "avatar": {
+          "title": "Dentro de la mente de Tiago",
+          "text": "Soy Tiago Castro, desarrollador en Río. Conecto interfaces, datos y cloud. ¿Mi superpoder? Hacer que las partes se comuniquen.",
+          "action": "Conocer a Tiago"
+        },
+        "lakeit": {
+          "title": "Planeta Cloud",
+          "text": "Espacio para crecer, costos bajo control. En LakeIT, mi trabajo con AWS ayudó a ahorrar más de US$15.000 al año.",
+          "action": "Explorar cloud"
+        },
+        "futbuy": {
+          "title": "Planeta Producto",
+          "text": "Ideas en uso real: en FutBuyNow, tecnología y operación se encuentran en un marketplace con más de 65.000 pedidos.",
+          "action": "Explorar productos"
+        },
+        "orbit": {
+          "title": "Rutas de conexión",
+          "text": "¡Encontraste la ruta secreta! Cada órbita conecta una habilidad. Gira los anillos por separado para explorar sus caminos.",
+          "action": "Girar las órbitas"
+        }
+      },
+      "chapters": {
+        "0": "El universo",
+        "1": "Las conexiones",
+        "2": "La construcción",
+        "3": "El producto",
+        "4": "Dentro del núcleo",
+        "5": "Todo conectado"
+      },
+      "problem": "El desafío",
+      "result": "En la práctica",
+      "tools": "Tecnologías y capacidades",
+      "coreTitle": "Código en el centro. Personas en el propósito.",
+      "coreDescription": "Cada conexión empieza con una necesidad real. Aquí el problema toma forma, gana estructura y se convierte en una solución que puede evolucionar.",
+      "terminalLines": {
+        "0": "Escuchar a las personas y entender el problema.",
+        "1": "Planear una solución sencilla y segura.",
+        "2": "Construir y probar con quienes la usarán.",
+        "3": "Publicar y mejorar con el uso real."
+      },
+      "finalTitle": "Un universo. Muchas conexiones.",
+      "finalDescription": "Desde la primera conversación hasta un sistema en producción, conecto cada parte para construir algo que tenga sentido para el negocio y sus usuarios.",
+      "continue": "Ver experiencias reales",
+      "topics": {
+        "development": {
+          "title": "Programación",
+          "detail": "Interfaces y sistemas",
+          "tools": "React · Next.js · TypeScript · Node.js",
+          "problem": "Convertir reglas de negocio complejas en una experiencia sencilla, desde la interfaz hasta el servidor.",
+          "result": "Registros, pagos e integraciones funcionando juntos en productos de uso real."
+        },
+        "cloud": {
+          "title": "Cloud",
+          "detail": "Infraestructura y operación",
+          "tools": "AWS · Terraform · Docker · GitHub Actions",
+          "problem": "Sostener la operación sin desperdiciar recursos ni convertir cada entrega en un riesgo.",
+          "result": "Más de US$15.000 ahorrados al año en infraestructura AWS en LakeIT."
+        },
+        "data": {
+          "title": "Datos",
+          "detail": "Información para decidir",
+          "tools": "Python · PostgreSQL · MySQL · Redis",
+          "problem": "Reunir información de distintas fuentes y hacerla disponible para la operación.",
+          "result": "Un data lake B2B en AWS que conecta fuentes y organiza datos en un solo lugar."
+        },
+        "seo": {
+          "title": "Visibilidad en Google",
+          "detail": "Cómo tus clientes encuentran tu producto en internet",
+          "tools": "SEO técnico · Next.js · Rendimiento web",
+          "problem": "No basta con que el producto funcione bien: los clientes deben encontrarlo orgánicamente en Google.",
+          "result": "Más de 30.000 clics desde Google en 12 meses en FutBuyNow con arquitectura optimizada."
+        },
+        "product": {
+          "title": "Producto",
+          "detail": "De la necesidad al uso real",
+          "tools": "Interfaces · Integraciones · Operación",
+          "problem": "Conectar tecnología y negocio para que una idea forme parte del día a día de las personas.",
+          "result": "Marketplace FutBuyNow con unos 3.400 pedidos al mes y más de 65.000 acumulados."
+        }
+      }
+    },
     "eyebrow": "Desarrollador Full Stack",
     "positioning": "Transformo negocios en productos digitales que venden: del cero al aire.",
     "firstName": "Tiago",
@@ -293,7 +408,7 @@
     },
     "futbuynow": {
       "label": "Cliente · Freelance\nResponsabilidad técnica",
-      "company": "Futbuynow",
+      "company": "FutBuyNow",
       "period": "Feb/2023 - actual",
       "description": "Marketplace en producción con compra, pago y operación diaria. Además de productos, los vendedores se registran en la plataforma para vender servicios, con gestión en el panel del vendedor y en el admin.",
       "figures": {

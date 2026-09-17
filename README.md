@@ -24,7 +24,7 @@ This website presents my experience through real-world projects, responsibilitie
 The main case studies are:
 
 - LakeIT: an enterprise data platform involving AWS infrastructure, Terraform, data pipelines, and applied AI.
-- Futbuynow: a marketplace covering payments, SEO, analytics, automation, and day-to-day technical ownership.
+- FutBuyNow: a marketplace covering payments, SEO, analytics, automation, and day-to-day technical ownership.
 - Personal and open source projects focused on AI, cloud, and developer productivity.
 
 ## Highlights

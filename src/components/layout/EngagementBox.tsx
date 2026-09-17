@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Logo } from "@/components/brand/Logo";
+import { LinkedInIcon } from "@/components/brand/SocialIcons";
+import { siteConfig } from "@/config/site";
 import { MessageCircle, X } from "lucide-react";
-import { useTranslations } from "next-intl";
 import {
   AnimatePresence,
   motion,
@@ -10,9 +11,8 @@ import {
   useReducedMotion,
   type PanInfo,
 } from "motion/react";
-import { Logo } from "@/components/brand/Logo";
-import { LinkedInIcon } from "@/components/brand/SocialIcons";
-import { siteConfig } from "@/config/site";
+import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
 const STORAGE_KEY = "tiago-portfolio-engagement-v2-dismissed";
 const SHOW_DELAY_MS = 6000;
@@ -38,16 +38,38 @@ export function EngagementBox() {
 
     if (dismissed) return;
 
-    const timer = window.setTimeout(() => {
-      try {
-        window.localStorage.setItem(STORAGE_KEY, "1");
-      } catch {
-        // localStorage unavailable, the sheet may appear again next visit
-      }
-      setSheetVisible(true);
-    }, SHOW_DELAY_MS);
-
-    return () => window.clearTimeout(timer);
+    let timer: ReturnType<typeof setTimeout> | number | undefined;
+    let shown = false;
+    const schedule = () => {
+      if (shown || timer !== undefined) return;
+      timer = window.setTimeout(() => {
+        shown = true;
+        try {
+          window.localStorage.setItem(STORAGE_KEY, "1");
+        } catch {
+          // localStorage unavailable, the sheet may appear again next visit
+        }
+        setSheetVisible(true);
+      }, SHOW_DELAY_MS);
+    };
+    // Let the immersive hero finish before starting the automatic invitation.
+    const hero = document.querySelector(".cosmic-hero");
+    const observer = hero
+      ? new IntersectionObserver(([entry]) => {
+          if (entry.isIntersecting) {
+            window.clearTimeout(timer);
+            timer = undefined;
+          } else {
+            schedule();
+          }
+        })
+      : null;
+    if (hero && observer) observer.observe(hero);
+    else schedule();
+    return () => {
+      window.clearTimeout(timer);
+      observer?.disconnect();
+    };
   }, []);
 
   const dismissSheet = () => {
@@ -60,7 +82,10 @@ export function EngagementBox() {
   };
 
   const handleDragEnd = (_: unknown, info: PanInfo) => {
-    if (info.offset.y > DISMISS_OFFSET_Y || info.velocity.y > DISMISS_VELOCITY_Y) {
+    if (
+      info.offset.y > DISMISS_OFFSET_Y ||
+      info.velocity.y > DISMISS_VELOCITY_Y
+    ) {
       dismissSheet();
     }
   };
@@ -181,7 +206,7 @@ export function EngagementBox() {
           <aside
             role="complementary"
             aria-label={t("label")}
-            className="bg-surface/95 invisible absolute right-0 bottom-[calc(100%+0.75rem)] w-[30rem] translate-y-3 border border-white/15 p-6 opacity-0 shadow-2xl backdrop-blur-xl transition duration-200 after:absolute after:top-full after:right-0 after:h-3 after:w-full after:content-[''] group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
+            className="bg-surface/95 invisible absolute right-0 bottom-[calc(100%+0.75rem)] w-[30rem] translate-y-3 border border-white/15 p-6 opacity-0 shadow-2xl backdrop-blur-xl transition duration-200 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 after:absolute after:top-full after:right-0 after:h-3 after:w-full after:content-['']"
           >
             <Logo
               name={identity("fullName")}
