@@ -1,17 +1,17 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { Check, FileDown, Menu, MessageCircle, X } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { resumeHref, siteConfig } from "@/config/site";
 import { Link, usePathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { siteConfig, resumeHref } from "@/config/site";
 import { cn } from "@/lib/utils";
-import { Logo } from "../brand/Logo";
-import { GitHubIcon, LinkedInIcon } from "../brand/SocialIcons";
-import { BrazilFlag } from "../brand/BrazilFlag";
-import { SpainFlag, USFlag } from "../brand/LocaleFlags";
-import { Container } from "./Container";
+import { Check, FileDown, Menu, MessageCircle, X } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
+import { useEffect, useRef, useState } from "react";
+import { BrazilFlag } from "@/components/brand/BrazilFlag";
+import { SpainFlag, USFlag } from "@/components/brand/LocaleFlags";
+import { Logo } from "@/components/brand/Logo";
+import { GitHubIcon, LinkedInIcon } from "@/components/brand/SocialIcons";
+import { Container } from "@/components/layout/Container";
 
 const localeLabels = {
   "pt-BR": "languages.portuguese",
@@ -38,6 +38,35 @@ export function Header() {
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const isHome = pathname === "/";
+  const [heroActive, setHeroActive] = useState(isHome);
+
+  useEffect(() => {
+    if (!isHome) return;
+
+    const checkHeroVisibility = () => {
+      const hero = document.getElementById("top");
+      if (!hero) {
+        setHeroActive(false);
+        return;
+      }
+      const rect = hero.getBoundingClientRect();
+      const anchorOffset =
+        Number.parseFloat(
+          getComputedStyle(document.documentElement).scrollPaddingTop,
+        ) || 96;
+      setHeroActive(rect.bottom > anchorOffset + 1);
+    };
+
+    window.addEventListener("scroll", checkHeroVisibility, { passive: true });
+    // Check after initial paint without synchronous effect setState
+    const frame = requestAnimationFrame(checkHeroVisibility);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", checkHeroVisibility);
+    };
+  }, [isHome]);
+
   const whatsappHref = `${siteConfig.whatsappUrl}?text=${encodeURIComponent(
     engagement("whatsappMessage"),
   )}`;
@@ -91,7 +120,16 @@ export function Header() {
   }, [isOpen]);
 
   return (
-    <header className="bg-background/90 fixed inset-x-0 top-0 z-40 border-b border-white/10 backdrop-blur-xl">
+    <header
+      inert={isHome && heroActive}
+      aria-hidden={isHome && heroActive}
+      className={cn(
+        "bg-background/90 fixed inset-x-0 top-0 z-40 border-b border-white/10 backdrop-blur-xl transition-all duration-300",
+        isHome && heroActive
+          ? "pointer-events-none -translate-y-full opacity-0"
+          : "pointer-events-auto translate-y-0 opacity-100",
+      )}
+    >
       <Container className="flex h-[var(--header-height)] items-center justify-between gap-5">
         <Logo
           name={identity("wordmark")}

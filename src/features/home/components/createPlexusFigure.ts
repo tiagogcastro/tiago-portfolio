@@ -254,10 +254,33 @@ export function createPlexusFigure(
   );
   figure.add(spine);
   const heart = new THREE.Mesh(
-    new THREE.IcosahedronGeometry(0.11, 1),
+    new THREE.IcosahedronGeometry(0.12, 1),
     new THREE.MeshBasicMaterial({ color: gold, wireframe: true }),
   );
   heart.position.set(-0.12, 1.24, 0.31);
   figure.add(heart);
-  return { figure, wire, nodeMaterial, heart, skin, circuitMaterial };
+
+  const heartGlow = new THREE.Sprite(
+    new THREE.SpriteMaterial({
+      map: texture,
+      color: gold,
+      transparent: true,
+      opacity: 0.85,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+    }),
+  );
+  heartGlow.scale.set(0.65, 0.65, 1);
+  heartGlow.position.set(-0.12, 1.24, 0.31);
+  figure.add(heartGlow);
+
+  return {
+    figure,
+    wire,
+    nodeMaterial,
+    heart,
+    heartGlow,
+    skin,
+    circuitMaterial,
+  };
 }

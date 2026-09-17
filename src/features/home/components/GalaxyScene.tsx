@@ -16,7 +16,7 @@ export function GalaxyScene({
     if (!element || reduced) return;
     let cancelled = false;
     let cleanup: (() => void) | undefined;
-    void import("./createUniverse")
+    void import("@/features/home/components/createUniverse")
       .then(({ createUniverse }) => {
         if (!cancelled) cleanup = createUniverse(element, progress);
       })

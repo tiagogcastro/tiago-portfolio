@@ -8,6 +8,7 @@ export const siteConfig = {
   whatsappUrl: "https://wa.me/5521964284144",
   linkedin: "https://linkedin.com/in/tiagogcastro",
   github: "https://github.com/tiagogcastro",
+  tiktok: "https://www.tiktok.com/@tiago.gcastro",
   nexsift: "https://nexsift.vercel.app",
   lakeit: "https://www.claro.com.br/empresas/data-analytics/lakeit",
   futbuynow: "https://www.futbuynow.com",
