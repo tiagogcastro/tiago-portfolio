@@ -4,8 +4,8 @@ import { ExternalLink } from "@/components/ui/ExternalLink";
 import { Tooltip } from "@/components/ui/Tooltip";
 import { Reveal } from "@/components/visual/Reveal";
 import { siteConfig } from "@/config/site";
-import { CaseFigure } from "./CaseFigure";
-import { CostComparison } from "./CostComparison";
+import { CaseFigure } from "@/features/experience/components/CaseFigure";
+import { CostComparison } from "@/features/experience/components/CostComparison";
 
 const lakeItBlocks = ["data", "infra", "ai"] as const;
 

@@ -77,7 +77,7 @@
     "navLabel": "Navegação principal",
     "experience": "Experiência",
     "projects": "Projetos",
-    "profile": "Perfil",
+    "profile": "Como trabalho",
     "contact": "Contato",
     "language": "Idioma",
     "languageLabel": "Selecionar idioma",
@@ -235,10 +235,43 @@
     "githubStatus": "Código aberto e projetos autorais.",
     "positioningShort": "Transformo negócios em produtos digitais que vendem."
   },
+  "work": {
+    "label": "Do universo ao trabalho real",
+    "title": "Duas formas de construir comigo.",
+    "intro": "Posso entrar no seu time para assumir decisões de produto e tecnologia, ou conduzir um projeto do primeiro recorte até a operação. Em ambos os casos, o objetivo é o mesmo: software claro, sustentável e ligado ao resultado.",
+    "paths": {
+      "team": {
+        "title": "Para fortalecer um time",
+        "text": "Atuação full stack com visão de produto, cloud e dados. Trabalho perto de pessoas técnicas e de negócio para transformar contexto em decisões e entregas.",
+        "action": "Ver experiência profissional"
+      },
+      "project": {
+        "title": "Para tirar um projeto do papel",
+        "text": "Landing pages, SaaS, integrações, pagamentos e sistemas internos. Posso cuidar da descoberta, construção, publicação e evolução.",
+        "action": "Conversar sobre um projeto"
+      }
+    },
+    "metrics": {
+      "savings": {
+        "value": "+ US$ 15 mil",
+        "label": "de economia anual estimada em infraestrutura AWS"
+      },
+      "orders": {
+        "value": "+65 mil",
+        "label": "pedidos processados em um marketplace em produção"
+      },
+      "search": {
+        "value": "+30,4 mil",
+        "label": "cliques vindos do Google em 12 meses"
+      }
+    }
+  },
   "profile": {
     "index": "02 / Perfil",
     "title": "Como eu trabalho.",
     "intro": "Transformei um marketplace B2C em referência nacional com economia real de US$ 15 mil por ano. Faço isso cuidando do produto inteiro: tela, servidor, dados e infraestrutura.",
+    "methodLabel": "Método e capacidades",
+    "methodIntro": "Começo pelo trabalho real, reduzo a complexidade e construo o necessário para colocar a solução em uso. Depois, acompanho sinais da operação para decidir o próximo passo.",
     "processVisual": {
       "title": "Da necessidade ao software em uso.",
       "caption": "O objetivo é reduzir esforço, evitar falhas e permitir que o produto continue evoluindo.",
@@ -326,6 +359,10 @@
   "experience": {
     "title": "Experiência profissional",
     "intro": "Cada trabalho mostra o contexto que encontrei, o que mudei, por que mudei e os resultados acompanhados.",
+    "homeLabel": "Provas em produção",
+    "homeIntro": "Dois contextos diferentes mostram como conecto aplicação, dados, infraestrutura e operação sem perder de vista o que precisa mudar para o negócio.",
+    "homeCta": "Ver experiência completa",
+    "homeCtaText": "Na página completa, detalho arquitetura, decisões técnicas, colaboração e a evolução de responsabilidade em cada trabalho.",
     "technologyHelp": "Tecnologias usadas",
     "technologyHelpLabel": "Mostrar tecnologias usadas em {area}",
     "interlude": {
@@ -487,6 +524,9 @@
     "index": "04 / Projetos",
     "title": "Projetos autorais e de estudo.",
     "intro": "Tudo aqui saiu das minhas mãos: construí, aprendi e documentei. Código, interface e decisões de arquitetura abertos para quem quiser conferir.",
+    "homeLabel": "Código que pode ser conferido",
+    "homeTitle": "Projetos selecionados.",
+    "homeIntro": "Uma seleção curta para mostrar produto, interface e arquitetura. O catálogo completo reúne o contexto, as decisões e o código de cada construção.",
     "featured": "Projeto em destaque",
     "signalInput": "Muitos sinais",
     "signalFilter": "Filtro",
@@ -588,7 +628,8 @@
     "cta": {
       "label": "Página completa de projetos",
       "title": "Quer ver cada projeto em detalhe?",
-      "text": "Na página de projetos reuni contexto, datas, stack e o que aprendi construindo cada um."
+      "text": "Na página de projetos reuni contexto, datas, stack e o que aprendi construindo cada um.",
+      "action": "Ver todos os projetos"
     }
   },
   "engagement": {

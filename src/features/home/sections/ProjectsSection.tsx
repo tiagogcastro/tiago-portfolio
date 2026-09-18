@@ -1,53 +1,36 @@
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/layout/Container";
+import { buttonStyles } from "@/components/ui/Button";
+import { ProjectLinkChips } from "@/components/ui/ProjectLinkChips";
 import { BackgroundGrid } from "@/components/visual/BackgroundGrid";
 import { Reveal } from "@/components/visual/Reveal";
 import { projects } from "@/content/projects";
-import { ProjectLinkChips } from "@/components/ui/ProjectLinkChips";
-import { formatProjectDates } from "@/lib/projectDates";
+import { Link } from "@/i18n/navigation";
 
-const nexsiftFigures = [
-  {
-    src: "/projects/nexsift/blog.png",
-    altKey: "blogAlt",
-    captionKey: "blogCaption",
-    width: 1200,
-    height: 750,
-  },
-  {
-    src: "/projects/nexsift/topics.png",
-    altKey: "topicsAlt",
-    captionKey: "topicsCaption",
-    width: 1200,
-    height: 750,
-  },
-] as const;
-
-const sideImageIds = new Set(["kaguya", "monkeynauts"]);
+const selectedIds = ["kaguya", "pagarme-simplified-psp"] as const;
 
 export async function ProjectsSection() {
   const t = await getTranslations("projects");
   const tr = await getTranslations();
-  const common = await getTranslations("common");
   const featured = projects.find((project) => project.id === "nexsift")!;
-  const sideImageProjects = projects.filter((project) =>
-    sideImageIds.has(project.id),
-  );
-  const cardProjects = projects.filter(
-    (project) => project.id !== "nexsift" && !sideImageIds.has(project.id),
+  const selected = selectedIds.map((id) =>
+    projects.find((project) => project.id === id)!,
   );
 
   return (
     <section id="projetos" className="section-rule bg-surface py-20 sm:py-28">
       <Container>
         <Reveal className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-end lg:gap-16">
-          <h2 className="font-display max-w-2xl text-[clamp(2.5rem,5vw,5rem)] leading-[0.92] font-semibold tracking-[-0.035em]">
-            {t("title")}
-          </h2>
+          <div>
+            <p className="mono-label text-mineral">{t("homeLabel")}</p>
+            <h2 className="font-display mt-5 max-w-2xl text-[clamp(2.75rem,5vw,5.25rem)] leading-[0.92] font-semibold tracking-[-0.04em]">
+              {t("homeTitle")}
+            </h2>
+          </div>
           <p className="text-secondary max-w-2xl text-base leading-7">
-            {t("intro")}
+            {t("homeIntro")}
           </p>
         </Reveal>
 
@@ -57,7 +40,7 @@ export async function ProjectsSection() {
               <p className="text-mineral font-mono text-sm">
                 {t("items.nexsift.type")}
               </p>
-              <h3 className="font-display mt-4 text-5xl font-semibold tracking-[-0.035em] sm:text-7xl">
+              <h3 className="font-display mt-4 text-5xl font-semibold tracking-[-0.04em] sm:text-7xl">
                 {t("items.nexsift.name")}
               </h3>
             </div>
@@ -69,8 +52,8 @@ export async function ProjectsSection() {
                 {featured.technologies.join(" · ")}
               </p>
               <div className="mt-6">
-            <ProjectLinkChips project={featured} />
-          </div>
+                <ProjectLinkChips project={featured} />
+              </div>
             </div>
           </Reveal>
 
@@ -84,7 +67,6 @@ export async function ProjectsSection() {
                   height={750}
                   sizes="(max-width: 1536px) 100vw, 1440px"
                   className="h-auto w-full"
-                  priority
                 />
               </div>
               <figcaption className="text-muted mt-3 font-mono text-sm leading-6">
@@ -92,129 +74,45 @@ export async function ProjectsSection() {
               </figcaption>
             </figure>
           </Reveal>
-
-          <Reveal className="mt-8 grid gap-8 border-y border-white/15 py-8 lg:grid-cols-[0.38fr_1.62fr] lg:items-center lg:gap-16">
-            <figure className="mx-auto max-w-[390px] lg:mx-0">
-              <div className="bg-background overflow-hidden border border-white/20 p-2">
-                <Image
-                  src="/projects/nexsift/mobile.png"
-                  alt={t("items.nexsift.mobileAlt")}
-                  width={390}
-                  height={844}
-                  sizes="(max-width: 1024px) 90vw, 390px"
-                  className="h-auto w-full"
-                />
-              </div>
-            </figure>
-            <div>
-              <p className="font-display text-3xl leading-tight font-semibold sm:text-4xl">
-                {t("items.nexsift.mobileTitle")}
-              </p>
-              <p className="text-secondary mt-5 max-w-xl text-base leading-7">
-                {t("items.nexsift.mobileCaption")}
-              </p>
-            </div>
-          </Reveal>
-
-          <div className="mt-8 grid gap-8 lg:grid-cols-2">
-            {nexsiftFigures.map((figure) => (
-              <Reveal key={figure.src}>
-                <figure>
-                  <div className="bg-background overflow-hidden border border-white/20 p-2">
-                    <Image
-                      src={figure.src}
-                      alt={t(`items.nexsift.${figure.altKey}`)}
-                      width={figure.width}
-                      height={figure.height}
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="h-auto w-full"
-                    />
-                  </div>
-                  <figcaption className="text-muted mt-3 max-w-[65ch] font-mono text-sm leading-6">
-                    {t(`items.nexsift.${figure.captionKey}`)}
-                  </figcaption>
-                </figure>
-              </Reveal>
-            ))}
-          </div>
         </article>
 
-        <div className="mt-16 border-t border-white/15 lg:mt-24">
-          {sideImageProjects.map(async (project) => {
+        <div className="mt-16 grid gap-px border border-white/15 bg-white/15 lg:mt-24 lg:grid-cols-2">
+          {selected.map((project, index) => {
             const base = project.translationKey;
-            const cover = project.cover;
-            const datesLabel = await formatProjectDates(project);
+            const cover = project.cover!;
 
             return (
-              <article
+              <Reveal
                 key={project.id}
-                className="border-b border-white/15 py-12 lg:py-16"
+                delay={index * 0.08}
+                className="bg-surface flex flex-col p-6 sm:p-8"
               >
-                <div className="grid items-center gap-8 lg:grid-cols-[1fr_0.85fr] lg:gap-14">
-                  <div>
-                    <p className="text-mineral font-mono text-sm">
-                      {tr(`${base}.type`)}
-                    </p>
-                    <h3 className="font-display mt-3 text-4xl font-semibold tracking-[-0.03em] sm:text-5xl">
-                      {tr(`${base}.name`)}
-                    </h3>
-                    <p className="text-secondary mt-4 max-w-2xl leading-7 line-clamp-3 lg:line-clamp-none">
-                      {tr(`${base}.description`)}
-                    </p>
-                    <p className="text-muted mt-5 font-mono text-xs leading-6">
-                      {project.technologies.join(" · ")}
-                    </p>
-                    {datesLabel ? (
-                      <p className="mono-label text-muted mt-4">{datesLabel}</p>
-                    ) : null}
-                    <div className="mt-6">
-                      <ProjectLinkChips project={project} />
-                    </div>
-                  </div>
-                  {cover ? (
-                    <figure className="bg-background overflow-hidden border border-white/20 p-2 max-lg:mx-auto max-lg:w-full max-lg:max-w-md">
-                      <Image
-                        src={cover.src}
-                        alt={tr(`${base}.coverAlt`)}
-                        width={cover.width}
-                        height={cover.height}
-                        sizes="(max-width: 1024px) 100vw, 45vw"
-                        className="h-auto w-full"
-                      />
-                    </figure>
-                  ) : null}
-                </div>
-              </article>
-            );
-          })}
-        </div>
-
-        <div className="mt-px grid gap-px border-x border-b border-white/15 bg-white/15 sm:grid-cols-2 lg:grid-cols-3">
-          {cardProjects.map(async (project) => {
-            const base = project.translationKey;
-            const datesLabel = await formatProjectDates(project);
-
-            return (
-              <article
-                key={project.id}
-                className="bg-surface flex flex-col p-5 sm:p-6"
-              >
-                <p className="mono-label text-mineral">{tr(`${base}.type`)}</p>
-                <h3 className="font-heading mt-2 text-lg font-semibold">
+                <figure className="bg-background overflow-hidden border border-white/15 p-2">
+                  <Image
+                    src={cover.src}
+                    alt={tr(`${base}.coverAlt`)}
+                    width={cover.width}
+                    height={cover.height}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="aspect-[8/5] h-auto w-full object-cover object-top"
+                  />
+                </figure>
+                <p className="text-mineral mt-7 font-mono text-xs">
+                  {tr(`${base}.type`)}
+                </p>
+                <h3 className="font-display mt-3 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">
                   {tr(`${base}.name`)}
                 </h3>
-                <p className="text-secondary mt-3 line-clamp-3 text-sm leading-6">
+                <p className="text-secondary mt-4 line-clamp-4 leading-7">
                   {tr(`${base}.description`)}
                 </p>
-                {datesLabel ? (
-                  <p className="mono-label text-muted mt-auto pt-4">
-                    {datesLabel}
-                  </p>
-                ) : null}
-                <div className="mt-4">
+                <p className="text-muted mt-5 font-mono text-xs leading-6">
+                  {project.technologies.slice(0, 6).join(" · ")}
+                </p>
+                <div className="mt-auto pt-6">
                   <ProjectLinkChips project={project} />
                 </div>
-              </article>
+              </Reveal>
             );
           })}
         </div>
@@ -231,11 +129,9 @@ export async function ProjectsSection() {
                 {t("cta.text")}
               </p>
             </div>
-            <Link
-              href="/projects"
-              className="font-heading bg-accent text-background hover:bg-accent-hover inline-flex min-h-11 shrink-0 items-center gap-3 self-start px-6 py-3 text-sm font-semibold transition-colors lg:self-center"
-            >
-              {common("viewProjects")}
+            <Link href="/projects" className={buttonStyles("primary")}>
+              {t("cta.action")}
+              <ArrowUpRight aria-hidden="true" className="size-4" />
             </Link>
           </div>
         </Reveal>

@@ -9,7 +9,7 @@ Next.js 16 (App Router) + React 19 + TypeScript strict portfolio, deployed on Ve
 ```bash
 yarn dev          # dev server (localhost:3000)
 yarn lint         # eslint
-yarn typecheck    # tsc --noEmit
+yarn typecheck    # next typegen + tsc --noEmit
 yarn build        # production build (required before deploying)
 yarn check        # full gate: lint + typecheck + build (run before finishing any task)
 yarn format       # prettier --write (prettier-plugin-tailwindcss sorts classes)
@@ -32,18 +32,18 @@ Run `yarn check` after any code change. There are no tests.
 
 ## Architecture
 
-- `src/app/[locale]/`: routes; `layout.tsx` holds fonts (Newsreader display, IBM Plex Sans body/heading, Plex Mono), metadata, JSON-LD, Vercel Analytics. `globals.css` defines theme tokens via Tailwind 4 `@theme inline` (e.g. `text-accent`, `bg-surface`, `text-mineral`).
-- `src/features/home/`: HomePage composes `sections/` (Hero, Profile, Experience, Projects, Contact) and `components/` (CostComparison, LakeItJourney, TechnicalInterlude, ...).
+- `src/app/[locale]/`: routes; `layout.tsx` holds fonts (Fraunces display, Familjen Grotesk body/heading, Plex Mono), global metadata, Vercel Analytics, and Speed Insights. Homepage metadata and JSON-LD live in `page.tsx`. `globals.css` defines theme tokens via Tailwind 4 `@theme inline` (e.g. `text-accent`, `bg-surface`, `text-mineral`).
+- `src/features/home/`: HomePage composes `sections/` (Hero, Work, Experience, Method, Projects, Credentials, Contact) and supporting components.
 - `src/content/`: structured content (projects, contact) separate from translatable copy.
-- `src/app/opengraph-image/route.tsx`: dynamic OG image that **fetches fonts from fonts.gstatic.com** at request time; offline build/rendering of the OG route can fail.
+- Localized Open Graph images live under `src/app/[locale]/` and use the local WOFF files in `public/fonts/og/`.
 - `src/app` also has localized manifest routes, `sitemap.ts`, and `robots.ts`. Browser and install icons use the exports in `public/brand/`.
 - No environment variables are required anywhere.
 
 ## Design conventions
 
 - Editorial dark theme; palette via CSS vars in `globals.css` (`--accent` gold, `--mineral` green, etc.). Use token classes (`text-accent`, `bg-surface-soft`, `text-secondary`, `text-muted`), not raw hex.
-- Font roles: display = Newsreader (serif, headings), heading/body = Plex Sans, mono = Plex Mono.
-- Brand variants live in `src/components/brand/Logo.tsx`: `mark` is the standalone `[T<]` symbol and `lockup` combines the symbol with the TIAGO G CASTRO wordmark. `Mark.tsx` and `Wordmark.tsx` remain separate sources. Static SVG and PNG exports live in `public/brand/` and are regenerated with `yarn brand:assets`; usage rules live in `docs/brand.md`.
+- Font roles: display = Fraunces, heading/body = Familjen Grotesk, mono = IBM Plex Mono.
+- Brand variants live in `src/components/brand/Logo.tsx`: `mark` is the standalone `[T<]` symbol and `lockup` combines the symbol with the TIAGO G CASTRO wordmark. `Mark.tsx` and `Wordmark.tsx` remain separate sources. Static SVG and PNG exports live in `public/brand/` and are maintained manually; usage rules live in `docs/brand.md`.
 - Motion is used via `Reveal` wrapper; it respects `prefers-reduced-motion` (global CSS). Verify layout with both desktop and mobile viewports.
 - Section headings use `clamp()` fluid type; when editing headline copy, check line-wrapping at the actual column width (titles are expected to break into aligned 2-line blocks).
 

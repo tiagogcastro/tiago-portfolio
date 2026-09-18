@@ -1,6 +1,6 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
-import { routing } from "./i18n/routing";
+import { routing } from "@/i18n/routing";
 
 export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -30,6 +30,5 @@ export default function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher:
-    "/((?!api|trpc|_next|_vercel|manifest|opengraph-image|.*\\..*).*)",
+  matcher: "/((?!api|trpc|_next|_vercel|manifest|opengraph-image|.*\\..*).*)",
 };

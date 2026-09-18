@@ -1,28 +1,28 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { IBM_Plex_Mono, IBM_Plex_Sans, Newsreader } from "next/font/google";
+import { Familjen_Grotesk, Fraunces, IBM_Plex_Mono } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { EngagementBox } from "@/components/layout/EngagementBox";
 import { siteConfig } from "@/config/site";
 import { routing } from "@/i18n/routing";
-import { buildAlternates } from "@/lib/seo";
 import "../globals.css";
 
-const newsreader = Newsreader({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-newsreader",
-  weight: ["400", "600"],
+  variable: "--font-fraunces",
+  weight: "variable",
+  axes: ["SOFT", "WONK", "opsz"],
   display: "swap",
 });
-const plexSans = IBM_Plex_Sans({
+const familjenGrotesk = Familjen_Grotesk({
   subsets: ["latin"],
-  variable: "--font-plex-sans",
-  weight: ["400", "500", "600"],
+  variable: "--font-familjen-grotesk",
+  weight: "variable",
   display: "swap",
 });
 const plexMono = IBM_Plex_Mono({
@@ -49,21 +49,15 @@ export async function generateMetadata({
   params,
 }: LayoutProps): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "metadata" });
   const identity = await getTranslations({ locale, namespace: "identity" });
-  const structuredData = await getTranslations({
-    locale,
-    namespace: "structuredData",
-  });
 
   return {
     metadataBase: new URL(siteConfig.domain),
     applicationName: identity("displayName"),
     title: {
-      default: t("title"),
+      default: identity("displayName"),
       template: `%s · ${identity("displayName")}`,
     },
-    description: t("description"),
     authors: [{ name: identity("fullName"), url: "/" }],
     creator: identity("fullName"),
     publisher: identity("displayName"),
@@ -73,7 +67,6 @@ export async function generateMetadata({
       icon: "/brand/tiago-g-castro-mark.svg",
       apple: "/brand/tiago-g-castro-mark.png",
     },
-    alternates: buildAlternates("/"),
     robots: {
       index: true,
       follow: true,
@@ -83,28 +76,6 @@ export async function generateMetadata({
       email: false,
       address: false,
       telephone: false,
-    },
-    openGraph: {
-      type: "website",
-      locale: structuredData("openGraphLocale"),
-      url: "/",
-      siteName: identity("displayName"),
-      title: t("title"),
-      description: t("description"),
-      images: [
-        {
-          url: "/opengraph-image",
-          width: 1200,
-          height: 630,
-          alt: t("imageAlt"),
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t("title"),
-      description: t("description"),
-      images: ["/opengraph-image"],
     },
     appleWebApp: {
       capable: true,
@@ -117,111 +88,14 @@ export async function generateMetadata({
 export default async function LocaleLayout({ children, params }: LayoutProps) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
-  setRequestLocale(locale);
 
   const accessibility = await getTranslations("accessibility");
-  const metadata = await getTranslations("metadata");
-  const identity = await getTranslations("identity");
   const structuredData = await getTranslations("structuredData");
-  const education = await getTranslations("profile.education");
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "ProfilePage",
-        "@id": `${siteConfig.domain}/#profile`,
-        url: siteConfig.domain,
-        name: metadata("title"),
-        description: metadata("description"),
-        inLanguage: structuredData("language"),
-        isPartOf: { "@id": `${siteConfig.domain}/#website` },
-        mainEntity: { "@id": `${siteConfig.domain}/#person` },
-      },
-      {
-        "@type": "Person",
-        "@id": `${siteConfig.domain}/#person`,
-        name: identity("fullName"),
-        alternateName: identity("displayName"),
-        url: siteConfig.domain,
-        jobTitle: identity("role"),
-        description: metadata("description"),
-        sameAs: [siteConfig.linkedin, siteConfig.github],
-        mainEntityOfPage: { "@id": `${siteConfig.domain}/#profile` },
-        knowsAbout: structuredData.raw("knowsAbout"),
-        knowsLanguage: [
-          structuredData("languages.portuguese"),
-          structuredData("languages.english"),
-          structuredData("languages.spanish"),
-        ],
-        alumniOf: {
-          "@type": "EducationalOrganization",
-          name: education("degree.institution"),
-        },
-        hasCredential: [
-          {
-            "@type": "EducationalOccupationalCredential",
-            name: education("degree.title"),
-            credentialCategory: education("degree.detail"),
-            dateCreated: "2026-07",
-            url: siteConfig.credentials.degree,
-            recognizedBy: {
-              "@type": "EducationalOrganization",
-              name: education("degree.institution"),
-            },
-          },
-          {
-            "@type": "EducationalOccupationalCredential",
-            name: education("credentials.serverless.title"),
-            credentialCategory: "Digital badge",
-            url: siteConfig.credentials.awsServerless,
-            recognizedBy: {
-              "@type": "Organization",
-              name: education("credentials.serverless.issuer"),
-            },
-          },
-          {
-            "@type": "EducationalOccupationalCredential",
-            name: education("credentials.technical.title"),
-            credentialCategory: "Course completion",
-            dateCreated: "2025-07",
-            recognizedBy: {
-              "@type": "Organization",
-              name: education("credentials.technical.issuer"),
-            },
-          },
-          {
-            "@type": "EducationalOccupationalCredential",
-            name: education("credentials.javascript.title"),
-            credentialCategory: "Course completion",
-            dateCreated: "2023-02",
-            recognizedBy: {
-              "@type": "Organization",
-              name: education("credentials.javascript.issuer"),
-            },
-          },
-        ],
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: identity("city"),
-          addressCountry: identity("countryCode"),
-        },
-      },
-      {
-        "@type": "WebSite",
-        "@id": `${siteConfig.domain}/#website`,
-        name: identity("displayName"),
-        url: siteConfig.domain,
-        inLanguage: structuredData("language"),
-        description: metadata("description"),
-        publisher: { "@id": `${siteConfig.domain}/#person` },
-      },
-    ],
-  };
 
   return (
     <html
       lang={structuredData("language")}
-      className={`${newsreader.variable} ${plexSans.variable} ${plexMono.variable}`}
+      className={`${fraunces.variable} ${familjenGrotesk.variable} ${plexMono.variable}`}
     >
       <body>
         <NextIntlClientProvider>
@@ -236,12 +110,6 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
           <Footer />
           <EngagementBox />
         </NextIntlClientProvider>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
-          }}
-        />
         <Analytics />
         <SpeedInsights />
       </body>

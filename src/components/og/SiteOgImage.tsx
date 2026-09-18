@@ -5,6 +5,8 @@ type SiteOgImageProps = {
   title: string;
   titleHighlight?: string;
   subtitle: string;
+  footerRole?: string;
+  expertise?: string;
 };
 
 export function SiteOgImage({
@@ -12,6 +14,8 @@ export function SiteOgImage({
   title,
   titleHighlight,
   subtitle,
+  footerRole = "Tiago Castro",
+  expertise = "FULL STACK · CLOUD · AWS",
 }: SiteOgImageProps) {
   return (
     <div
@@ -58,16 +62,16 @@ export function SiteOgImage({
           justifyContent: "space-between",
           position: "relative",
         }}
-        >
-          {/* ImageResponse requires a regular img element. */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={brandLockup}
-            alt="Tiago G Castro"
-            width={350}
-            height={56}
-            style={{ objectFit: "contain", objectPosition: "left center" }}
-          />
+      >
+        {/* ImageResponse requires a regular img element. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={brandLockup}
+          alt="Tiago G Castro"
+          width={350}
+          height={56}
+          style={{ objectFit: "contain", objectPosition: "left center" }}
+        />
         <span
           style={{
             fontFamily: "Plex Mono",
@@ -164,7 +168,7 @@ export function SiteOgImage({
               background: "#c9aa70",
             }}
           />
-          {label ? "Tiago Castro" : "Desenvolvedor Full Stack"}
+          {label ? "Tiago Castro" : footerRole}
         </div>
         <span
           style={{
@@ -175,7 +179,7 @@ export function SiteOgImage({
             color: "#789987",
           }}
         >
-          FULL STACK · CLOUD · AWS
+          {expertise}
         </span>
       </div>
     </div>

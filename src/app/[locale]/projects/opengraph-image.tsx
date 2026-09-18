@@ -17,6 +17,8 @@ export default async function Image({ params }: ImageProps) {
       label={copy.projectsLabel}
       title={copy.projectsTitle}
       subtitle={copy.projectsSubtitle}
+      footerRole={copy.footerRole}
+      expertise={copy.expertise}
     />,
     {
       ...size,

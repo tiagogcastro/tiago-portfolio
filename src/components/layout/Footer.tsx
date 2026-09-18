@@ -1,10 +1,10 @@
 import { Mail, MapPin, MessageCircle } from "lucide-react";
 import { getTranslations } from "next-intl/server";
-import { Logo } from "../brand/Logo";
-import { GitHubIcon, LinkedInIcon } from "../brand/SocialIcons";
-import { ExternalLink } from "../ui/ExternalLink";
+import { Logo } from "@/components/brand/Logo";
+import { GitHubIcon, LinkedInIcon } from "@/components/brand/SocialIcons";
+import { Container } from "@/components/layout/Container";
+import { ExternalLink } from "@/components/ui/ExternalLink";
 import { siteConfig } from "@/config/site";
-import { Container } from "./Container";
 
 export async function Footer() {
   const t = await getTranslations("footer");

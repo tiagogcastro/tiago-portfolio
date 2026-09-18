@@ -18,6 +18,11 @@ export function getOgCopy(locale: string) {
   const messages = getMessagesForLocale(locale);
 
   return {
+    homeTitle: String(messages.hero.firstName),
+    homeTitleHighlight: String(messages.hero.lastName),
+    homeSubtitle: String(messages.hero.positioning),
+    footerRole: String(messages.identity.role),
+    expertise: String(messages.hero.cosmic.role),
     projectsLabel: String(messages.header.projects),
     projectsTitle: String(messages.projects.title),
     projectsSubtitle: String(messages.metadata.pages.projects.description),

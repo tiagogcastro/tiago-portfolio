@@ -77,7 +77,7 @@
     "navLabel": "Main navigation",
     "experience": "Experience",
     "projects": "Projects",
-    "profile": "Profile",
+    "profile": "How I work",
     "contact": "Contact",
     "language": "Language",
     "languageLabel": "Select language",
@@ -235,10 +235,43 @@
     "githubStatus": "Open source and authorial projects.",
     "positioningShort": "I turn businesses into digital products that sell."
   },
+  "work": {
+    "label": "From the universe to real work",
+    "title": "Two ways to build with me.",
+    "intro": "I can join your team to own product and technology decisions, or lead a project from its first scope to daily operation. In both cases, the goal is the same: clear, sustainable software tied to results.",
+    "paths": {
+      "team": {
+        "title": "To strengthen a team",
+        "text": "Full stack work with product, cloud and data perspective. I work closely with technical and business people to turn context into decisions and deliveries.",
+        "action": "See professional experience"
+      },
+      "project": {
+        "title": "To get a project live",
+        "text": "Landing pages, SaaS, integrations, payments and internal systems. I can own discovery, development, launch and evolution.",
+        "action": "Discuss a project"
+      }
+    },
+    "metrics": {
+      "savings": {
+        "value": "+ US$ 15k",
+        "label": "in estimated yearly AWS infrastructure savings"
+      },
+      "orders": {
+        "value": "+65k",
+        "label": "orders processed by a marketplace in production"
+      },
+      "search": {
+        "value": "+30.4k",
+        "label": "clicks from Google in 12 months"
+      }
+    }
+  },
   "profile": {
     "index": "02 / Profile",
     "title": "How I work.",
     "intro": "I turned a B2C marketplace into a national reference with real savings of US$ 15k a year. I do it by owning the whole product: screen, server, data and infrastructure.",
+    "methodLabel": "Method and capabilities",
+    "methodIntro": "I start with the real work, reduce complexity and build what is needed to put the solution into use. Then I follow operational signals to decide the next step.",
     "processVisual": {
       "title": "From need to software in use.",
       "caption": "The goal is to reduce effort, avoid failures and let the product keep evolving.",
@@ -326,6 +359,10 @@
   "experience": {
     "title": "Professional experience",
     "intro": "Each job shows the context I found, what I changed, why I changed it and the results tracked along the way.",
+    "homeLabel": "Proof in production",
+    "homeIntro": "Two different contexts show how I connect applications, data, infrastructure and operations without losing sight of what the business needs to change.",
+    "homeCta": "See full experience",
+    "homeCtaText": "The full page covers architecture, technical decisions, collaboration and how my responsibility evolved in each role.",
     "technologyHelp": "Technologies used",
     "technologyHelpLabel": "Show technologies used in {area}",
     "interlude": {
@@ -487,6 +524,9 @@
     "index": "04 / Projects",
     "title": "Authorial and study projects.",
     "intro": "Everything here came from my own hands: built, learned and documented. Code, interface and architecture decisions open for anyone to dig into.",
+    "homeLabel": "Code you can inspect",
+    "homeTitle": "Selected projects.",
+    "homeIntro": "A short selection showing product, interface and architecture. The full catalog brings together context, decisions and code for every build.",
     "featured": "Featured project",
     "signalInput": "Many signals",
     "signalFilter": "Filter",
@@ -588,7 +628,8 @@
     "cta": {
       "label": "Full projects page",
       "title": "Want to see each project in detail?",
-      "text": "The projects page gathers context, dates, stack and what I learned building each one."
+      "text": "The projects page gathers context, dates, stack and what I learned building each one.",
+      "action": "See all projects"
     }
   },
   "engagement": {

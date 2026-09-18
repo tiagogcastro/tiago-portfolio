@@ -1,7 +1,7 @@
+import { Mark } from "@/components/brand/Mark";
+import { Wordmark } from "@/components/brand/Wordmark";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { Mark } from "./Mark";
-import { Wordmark } from "./Wordmark";
 
 type LogoProps = {
   name: string;

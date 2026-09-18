@@ -32,4 +32,4 @@ Files:
 - Keep the original proportions.
 - Leave clear space around the logo.
 - Do not rotate, stretch, recolor, or rearrange the static files.
-- Use `yarn brand:assets` after changing the source colors, shapes, or wordmark.
+- Keep the static SVG and PNG files in `public/brand/` updated manually when changing the source colors, shapes, or wordmark.

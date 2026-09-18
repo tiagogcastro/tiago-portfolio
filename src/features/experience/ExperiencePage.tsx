@@ -2,7 +2,10 @@ import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/layout/Container";
 import { Reveal } from "@/components/visual/Reveal";
 import { TechnicalInterlude } from "@/components/visual/TechnicalInterlude";
-import { FutbuynowCase, LakeItCase } from "./components/Cases";
+import {
+  FutbuynowCase,
+  LakeItCase,
+} from "@/features/experience/components/Cases";
 
 export async function ExperiencePage() {
   const t = await getTranslations("experience");

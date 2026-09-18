@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
 import { ProjectsPage } from "@/features/projects/ProjectsPage";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -12,8 +11,6 @@ export async function generateMetadata({
   return buildPageMetadata(locale, "/projects", "metadata.pages.projects");
 }
 
-export default async function Page({ params }: PageProps) {
-  const { locale } = await params;
-  setRequestLocale(locale);
+export default function Page() {
   return <ProjectsPage />;
 }

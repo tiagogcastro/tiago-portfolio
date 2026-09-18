@@ -9,9 +9,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "next typegen && tsc --noEmit",
     "format": "prettier --write .",
-    "brand:assets": "node scripts/generate-brand-assets.mjs",
     "check": "yarn lint && yarn typecheck && yarn build"
   },
   "keywords": [

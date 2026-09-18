@@ -71,12 +71,20 @@ export function Header() {
     engagement("whatsappMessage"),
   )}`;
   const navItems = [
-    { key: "experience", kind: "route", href: "/experience" },
-    { key: "projects", kind: "route", href: "/projects" },
+    {
+      key: "experience",
+      kind: "anchor",
+      href: isHome ? "#experiencia" : { pathname: "/", hash: "experiencia" },
+    },
+    {
+      key: "projects",
+      kind: "anchor",
+      href: isHome ? "#projetos" : { pathname: "/", hash: "projetos" },
+    },
     {
       key: "profile",
       kind: "anchor",
-      href: isHome ? "#perfil" : { pathname: "/", hash: "perfil" },
+      href: isHome ? "#metodo" : { pathname: "/", hash: "metodo" },
     },
     {
       key: "contact",
