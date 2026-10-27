@@ -18,3 +18,11 @@ export function LinkedInIcon(props: SocialIconProps) {
     </svg>
   );
 }
+
+export function TikTokIcon(props: SocialIconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M16.7 1h-3.5v14.5a3.2 3.2 0 1 1-2.8-3.2V8.8a6.7 6.7 0 1 0 6.3 6.7V8.2a9 9 0 0 0 5.3 1.7V6.4A5.3 5.3 0 0 1 16.7 1Z" />
+    </svg>
+  );
+}

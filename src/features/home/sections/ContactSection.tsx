@@ -1,51 +1,46 @@
-import { FileDown, Globe2, Mail, MapPin, MessageCircle } from "lucide-react";
+import {
+  FileDown,
+  Globe2,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Sparkles,
+} from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 import { GitHubIcon, LinkedInIcon } from "@/components/brand/SocialIcons";
 import { Container } from "@/components/layout/Container";
+import { Button } from "@/components/ui/Button";
 import { ExternalLink } from "@/components/ui/ExternalLink";
+import { ContactSignalField } from "@/components/visual/ContactSignalField";
 import { Reveal } from "@/components/visual/Reveal";
-import { resumeHref, siteConfig } from "@/config/site";
+import { linkedinHref, resumeHref, siteConfig } from "@/config/site";
 
 export async function ContactSection() {
   const t = await getTranslations("contact");
-  const common = await getTranslations("common");
   const identity = await getTranslations("identity");
   const hero = await getTranslations("hero");
+  const engagement = await getTranslations("engagement");
   const locale = await getLocale();
-  const channels = [
+  const whatsappHref = `${siteConfig.whatsappUrl}?text=${encodeURIComponent(
+    engagement("whatsappMessage"),
+  )}`;
+  const secondaryChannels = [
     {
-      value: identity("email"),
-      href: `mailto:${siteConfig.email}`,
-      icon: Mail,
-      target: "_self",
-      download: false,
-    },
-    {
-      value: common("whatsapp"),
-      href: siteConfig.whatsappUrl,
-      icon: MessageCircle,
-      target: "_blank",
-      download: false,
-    },
-    {
-      value: common("linkedin"),
-      href: siteConfig.linkedin,
+      value: t("channels.linkedinAction"),
+      href: linkedinHref(locale),
       icon: LinkedInIcon,
-      target: "_blank",
       download: false,
     },
     {
-      value: common("github"),
+      value: t("channels.githubAction"),
       href: siteConfig.github,
       icon: GitHubIcon,
-      target: "_blank",
       download: false,
     },
     {
-      value: common("downloadResume"),
+      value: t("channels.resumeAction"),
       href: resumeHref(locale),
       icon: FileDown,
-      target: "_self",
       download: true,
     },
   ] as const;
@@ -53,14 +48,20 @@ export async function ContactSection() {
   return (
     <section
       id="contato"
-      className="green-panel section-rule bg-mineral-deep py-20 sm:py-28"
+      className="green-panel section-rule bg-mineral-deep relative overflow-hidden py-16 sm:py-20"
     >
-      <Container>
-        <Reveal className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-end lg:gap-16">
-          <h2 className="font-display text-[clamp(3rem,6vw,6rem)] leading-[0.9] font-semibold tracking-[-0.035em]">
+      <ContactSignalField />
+      <div
+        aria-hidden="true"
+        className="border-accent/20 absolute -right-40 -bottom-64 size-[34rem] rounded-full border shadow-[0_0_120px_color-mix(in_srgb,var(--accent)_10%,transparent)]"
+      />
+      <Container className="relative">
+        <Reveal>
+          <p className="mono-label text-mineral-bright">{t("status")}</p>
+          <h2 className="font-display mt-3 max-w-5xl text-[clamp(2.4rem,4.2vw,4.5rem)] leading-[0.94] font-semibold tracking-[-0.035em]">
             {t("title")}
           </h2>
-          <p className="text-secondary max-w-xl text-base leading-7">
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-white/85">
             {t.rich("availabilityTitle", {
               highlight: (chunks) => (
                 <span className="text-accent font-semibold">{chunks}</span>
@@ -69,49 +70,75 @@ export async function ContactSection() {
           </p>
         </Reveal>
 
-        <Reveal className="bg-surface-soft border-accent/40 mt-12 grid gap-8 border-t-2 p-8 sm:p-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-end lg:gap-16">
-          <h3 className="font-display max-w-3xl text-2xl leading-[1.3] font-semibold sm:text-3xl">
-            {t.rich("ctaTitle", {
-              highlight: (chunks) => (
-                <span className="text-accent">{chunks}</span>
-              ),
-            })}
-          </h3>
-          <div>
-            <p className="text-secondary max-w-xl text-base leading-7">
-              {t("ctaText")}
-            </p>
-            <p className="text-secondary mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm">
-              <span className="flex items-center gap-2">
-                <MapPin aria-hidden="true" className="size-4" />
-                {hero("location")}
+        <Reveal className="bg-background/85 border-accent/40 mt-10 overflow-hidden border backdrop-blur-sm">
+          <div className="grid gap-8 p-6 sm:p-8 lg:grid-cols-[1.35fr_0.65fr] lg:items-end lg:p-10">
+            <div>
+              <span className="border-accent/35 bg-accent/10 text-accent inline-flex items-center gap-2 border px-3 py-2 text-xs font-bold tracking-[0.1em] uppercase">
+                <Sparkles aria-hidden="true" className="size-4" />
+                {t("response")}
               </span>
-              <span className="flex items-center gap-2">
-                <Globe2 aria-hidden="true" className="size-4" />
-                {hero("remote")}
-              </span>
-            </p>
+              <h3 className="font-display mt-6 max-w-3xl text-3xl leading-[1.12] font-semibold sm:text-4xl">
+                {t.rich("ctaTitle", {
+                  highlight: (chunks) => (
+                    <span className="text-accent">{chunks}</span>
+                  ),
+                })}
+              </h3>
+              <p className="text-secondary mt-4 max-w-2xl leading-7">
+                {t("ctaText")}
+              </p>
+            </div>
+
+            <div>
+              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
+                <Button
+                  href={`mailto:${siteConfig.email}`}
+                  icon={Mail}
+                  trailingIcon={false}
+                >
+                  {t("emailAction")}
+                </Button>
+                <Button
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  variant="outline"
+                  icon={MessageCircle}
+                  trailingIcon={false}
+                >
+                  {t("whatsappAction")}
+                </Button>
+              </div>
+              <p className="text-secondary mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+                <span className="flex items-center gap-2">
+                  <MapPin aria-hidden="true" className="text-mineral size-4" />
+                  {hero("location")}
+                </span>
+                <span className="flex items-center gap-2">
+                  <Globe2 aria-hidden="true" className="text-mineral size-4" />
+                  {hero("remote")}
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <div className="grid border-t border-white/15 sm:grid-cols-3">
+            {secondaryChannels.map((channel) => (
+              <ExternalLink
+                key={channel.href}
+                href={channel.href}
+                icon={channel.icon}
+                target={channel.download ? "_self" : "_blank"}
+                download={channel.download}
+                className="hover:bg-surface-soft group/channel flex min-h-24 items-center justify-between border-b border-white/15 p-5 no-underline transition-[background-color,color] hover:no-underline sm:border-r sm:border-b-0 sm:last:border-r-0"
+              >
+                <span className="font-semibold">{channel.value}</span>
+              </ExternalLink>
+            ))}
           </div>
         </Reveal>
 
-        <div className="mt-12 grid border-t border-l border-white/15 sm:grid-cols-2 lg:grid-cols-3">
-          {channels.map((channel) => (
-            <Reveal
-              key={channel.href}
-              className="border-r border-b border-white/15 p-6 sm:p-8"
-            >
-              <ExternalLink
-                href={channel.href}
-                icon={channel.icon}
-                target={channel.target}
-                download={channel.download}
-                className="font-heading w-fit text-lg font-semibold sm:text-xl"
-              >
-                {channel.value}
-              </ExternalLink>
-            </Reveal>
-          ))}
-        </div>
+        <p className="text-mineral-bright mt-6 text-sm">{identity("email")}</p>
       </Container>
     </section>
   );

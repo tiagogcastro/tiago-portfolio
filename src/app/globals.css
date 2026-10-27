@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./cosmic.css";
 
 :root {
   --background: #141815;
@@ -34,35 +35,31 @@
   --color-mineral-bright: var(--mineral-bright);
   --color-mineral-deep: var(--mineral-deep);
   --color-signal: var(--signal);
-  --font-display: var(--font-newsreader);
-  --font-heading: var(--font-plex-sans);
-  --font-body: var(--font-plex-sans);
-  --font-mono: var(--font-plex-mono);
+  --font-display: var(--font-fraunces);
+  --font-heading: var(--font-familjen-grotesk);
+  --font-body: var(--font-familjen-grotesk);
+  --font-mono: var(--font-familjen-grotesk);
 }
 
 * {
   box-sizing: border-box;
 }
-
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-height) + 1rem);
 }
-
 body {
   margin: 0;
   overflow-x: hidden;
   background: var(--background);
   color: var(--text);
-  font-family: var(--font-plex-sans), sans-serif;
+  font-family: var(--font-familjen-grotesk), sans-serif;
   text-rendering: optimizeLegibility;
 }
-
 ::selection {
   background: var(--accent);
   color: var(--background);
 }
-
 @layer base {
   a,
   button,
@@ -71,19 +68,16 @@ body {
     -webkit-tap-highlight-color: transparent;
   }
 }
-
 [aria-disabled="true"],
 button:disabled {
   cursor: not-allowed;
 }
-
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
 }
-
 .editorial-grid {
   background-image: linear-gradient(
     to right,
@@ -92,30 +86,19 @@ summary:focus-visible {
   );
   background-size: min(12vw, 9rem) 100%;
 }
-
 .contour-background {
   background: var(--background);
 }
-
-.hero-field {
-  background-image: url("/images/data-routes.svg");
-  background-repeat: no-repeat;
-  background-position: right center;
-  background-size: min(66rem, 76vw) auto;
-}
-
 .data-field {
   background-image: url("/images/data-routes.svg");
   background-repeat: no-repeat;
   background-position: right 12%;
   background-size: min(58rem, 70vw) auto;
 }
-
 .green-panel {
   --text-secondary: #ffffff;
   --muted: #ffffff;
 }
-
 .route-background::before {
   position: absolute;
   inset: 0;
@@ -129,27 +112,37 @@ summary:focus-visible {
     color-mix(in srgb, var(--text) 4%, transparent) calc(3rem + 1px)
   );
 }
-
 .text-balance {
   text-wrap: balance;
 }
-
 .section-rule {
   border-top: 1px solid var(--line);
 }
-
 .mono-label {
-  font-family: var(--font-plex-mono), monospace;
+  font-family: var(--font-familjen-grotesk), sans-serif;
   font-size: 0.75rem;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.04em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
-
+@keyframes gallery-enter {
+  from {
+    opacity: 0.55;
+    transform: translateX(0.35rem) scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+.animate-gallery-enter {
+  animation: gallery-enter 280ms ease-out both;
+}
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-
   *,
   *::before,
   *::after {

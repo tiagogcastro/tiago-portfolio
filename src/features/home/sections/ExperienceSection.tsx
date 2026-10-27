@@ -1,210 +1,313 @@
-import { ArrowRight } from "lucide-react";
+import {
+  Activity,
+  Bot,
+  Boxes,
+  CloudCog,
+  Code2,
+  CreditCard,
+  Database,
+  DollarSign,
+  SearchCheck,
+  ShoppingBag,
+  Store,
+} from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/layout/Container";
 import { ExternalLink } from "@/components/ui/ExternalLink";
-import { Tooltip } from "@/components/ui/Tooltip";
+import { ImageGallery } from "@/components/ui/ImageGallery";
+import { TechnologyChips } from "@/components/ui/TechnologyChips";
 import { Reveal } from "@/components/visual/Reveal";
 import { siteConfig } from "@/config/site";
-import { CostComparison } from "@/features/experience/components/CostComparison";
-import { TechnicalInterlude } from "@/components/visual/TechnicalInterlude";
 
-const lakeItBlocks = ["data", "infra", "ai"] as const;
-const futbuynowBlocks = ["product", "payments", "ai"] as const;
+const cases = [
+  {
+    key: "lakeit",
+    href: siteConfig.lakeit,
+    images: [
+      {
+        src: "/images/cases/lakeit_landingpage.png",
+        altKey: "experience.lakeit.figures.product.alt",
+        captionKey: "experience.lakeit.figures.product.caption",
+        width: 1400,
+        height: 1000,
+      },
+      {
+        src: "/images/cases/lakeit_platform.png",
+        altKey: "experience.lakeit.figures.platform.alt",
+        captionKey: "experience.lakeit.figures.platform.caption",
+        width: 1400,
+        height: 857,
+      },
+    ],
+    roleKey: "role",
+    icons: [Database, CloudCog, Bot],
+    highlights: ["data", "infra", "ai"],
+    stacks: ["data", "infra"],
+    stackProperty: "stack",
+    metrics: [
+      [
+        "experience.lakeit.cost.homeSavingValue",
+        "experience.lakeit.cost.homeSavingLabel",
+        DollarSign,
+      ],
+      [
+        "experience.lakeit.cost.homeAfterValue",
+        "experience.lakeit.cost.homeAfterLabel",
+        Activity,
+      ],
+      [
+        "experience.lakeit.blocks.infra.metricModules",
+        "experience.lakeit.blocks.infra.label",
+        Boxes,
+      ],
+    ],
+    accent: "mineral",
+  },
+  {
+    key: "futbuynow",
+    href: siteConfig.futbuynow,
+    images: [
+      {
+        src: "/images/cases/futbuynow_homepage.png",
+        altKey: "experience.futbuynow.figures.product.alt",
+        captionKey: "experience.futbuynow.figures.product.caption",
+        width: 1898,
+        height: 1079,
+      },
+      {
+        src: "/images/cases/futbuynow_marketplace.png",
+        altKey: "experience.futbuynow.figures.marketplace.alt",
+        captionKey: "experience.futbuynow.figures.marketplace.caption",
+        width: 1899,
+        height: 1079,
+      },
+      {
+        src: "/images/cases/futbuynow_checkout.png",
+        altKey: "experience.futbuynow.figures.checkout.alt",
+        captionKey: "experience.futbuynow.figures.checkout.caption",
+        width: 1901,
+        height: 1079,
+      },
+    ],
+    roleKey: "label",
+    icons: [Store, CreditCard, Bot],
+    highlights: ["product", "payments", "ai"],
+    stacks: ["product", "payments"],
+    stackProperty: "tools",
+    metrics: [
+      [
+        "experience.futbuynow.metrics.ordersValue",
+        "experience.futbuynow.metrics.ordersLabel",
+        ShoppingBag,
+      ],
+      [
+        "experience.futbuynow.metrics.monthlyValue",
+        "experience.futbuynow.metrics.monthlyLabel",
+        Activity,
+      ],
+      [
+        "experience.futbuynow.metrics.seoTotalValue",
+        "experience.futbuynow.metrics.seoTotalLabel",
+        SearchCheck,
+      ],
+    ],
+    accent: "accent",
+  },
+] as const;
 
 export async function ExperienceSection() {
-  const t = await getTranslations("experience");
+  const t = await getTranslations();
+  const experience = await getTranslations("experience");
+  const gallery = await getTranslations("common.gallery");
+  const galleryLabels = {
+    open: gallery("open"),
+    close: gallery("close"),
+    previous: gallery("previous"),
+    next: gallery("next"),
+    counter: gallery.raw("counter"),
+  };
 
   return (
-    <section id="experiencia" className="section-rule py-20 sm:py-28">
-      <Container>
-        <Reveal className="grid gap-6 border-b border-white/15 pb-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-end lg:gap-16">
-          <h2 className="font-display text-[clamp(2.5rem,5vw,5rem)] leading-[0.92] font-semibold tracking-[-0.035em]">
-            {t("title")}
+    <section
+      id="experiencia"
+      className="section-rule relative overflow-hidden py-16 sm:py-20"
+    >
+      <div
+        aria-hidden="true"
+        className="border-mineral/15 absolute top-24 -right-72 size-[38rem] rounded-full border shadow-[0_0_140px_color-mix(in_srgb,var(--mineral)_10%,transparent)]"
+      />
+      <Container className="relative">
+        <Reveal className="border-b border-white/15 pb-8">
+          <p className="mono-label text-mineral">{experience("homeLabel")}</p>
+          <h2 className="font-display mt-3 max-w-3xl text-[clamp(2.25rem,4vw,4rem)] leading-[0.95] font-semibold tracking-[-0.035em]">
+            {experience("title")}
           </h2>
-          <p className="text-secondary max-w-2xl text-base leading-7">
-            {t("intro")}
+          <p className="text-secondary mt-5 max-w-3xl leading-7">
+            {experience("homeIntro")}
           </p>
         </Reveal>
 
-        <article id="lakeit" className="py-16 lg:py-24">
-          <Reveal className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
-            <div>
-              <p className="text-muted font-mono text-sm">
-                {t("lakeit.period")}
-              </p>
-              <p className="text-mineral mt-3 font-mono text-sm">
-                {t("lakeit.role")}
-              </p>
-            </div>
-            <div>
-              <h3 className="font-display text-[clamp(2.25rem,4.25vw,4.5rem)] leading-[0.95] font-semibold tracking-[-0.035em]">
-                <ExternalLink
-                  href={siteConfig.lakeit}
-                  className="no-underline hover:no-underline"
-                >
-                  {t("lakeit.company")}
-                </ExternalLink>
-              </h3>
-              <p className="text-secondary mt-5 max-w-[68ch] text-lg leading-7">
-                {t("lakeit.description")}
-              </p>
-            </div>
-          </Reveal>
-
-          <div className="mt-12 grid border-y border-white/15 lg:grid-cols-3">
-            {lakeItBlocks.map((block) => {
-              const evidence = t(`lakeit.blocks.${block}.evidence`);
-
-              return (
-                <Reveal
-                  key={block}
-                  className="flex flex-col border-b border-white/15 py-7 lg:border-r lg:border-b-0 lg:px-7 lg:first:pl-0 lg:last:border-r-0 lg:last:pr-0"
-                >
-                  <h4 className="font-heading text-xl font-semibold">
-                    {t(`lakeit.blocks.${block}.title`)}
-                  </h4>
-                  <p className="text-secondary mt-4 leading-7">
-                    {t(`lakeit.blocks.${block}.detail`)}
-                  </p>
-                  <Tooltip
-                    label={t("technologyHelpLabel", {
-                      area: t(`lakeit.blocks.${block}.title`),
-                    })}
-                    content={t(`lakeit.blocks.${block}.technologyDetail`)}
-                    className="mt-4"
-                  >
-                    {t("technologyHelp")}
-                  </Tooltip>
-                  {evidence ? (
-                    <p className="text-accent mt-auto max-w-[18rem] border-t border-white/15 pt-6 font-semibold">
-                      {evidence}
-                    </p>
-                  ) : null}
-                </Reveal>
-              );
-            })}
-          </div>
-
-          <div className="mt-12">
-            <CostComparison />
-          </div>
-        </article>
-
-        <TechnicalInterlude
-          title={t("interlude.title")}
-          caption={t("interlude.caption")}
-          image="/images/impact-route.svg"
-          items={[
-            t("interlude.items.understand"),
-            t("interlude.items.change"),
-            t("interlude.items.measure"),
-          ]}
-        />
-
-        <article
-          id="futbuynow"
-          className="border-t border-white/15 py-16 lg:py-24"
-        >
-          <Reveal className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
-            <div>
-              <p className="text-muted font-mono text-sm">
-                {t("futbuynow.period")}
-              </p>
-              <p className="text-mineral mt-3 font-mono text-sm">
-                {t("futbuynow.label")}
-              </p>
-            </div>
-            <div>
-              <h3 className="font-display text-[clamp(2.25rem,4.25vw,4.5rem)] leading-[0.95] font-semibold tracking-[-0.035em]">
-                <ExternalLink
-                  href={siteConfig.futbuynow}
-                  className="no-underline hover:no-underline"
-                >
-                  {t("futbuynow.company")}
-                </ExternalLink>
-              </h3>
-              <p className="text-secondary mt-5 max-w-[68ch] text-lg leading-7">
-                {t("futbuynow.description")}
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal className="border-mineral/25 mt-12 grid gap-px border bg-white/15 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              ["monthlyValue", "monthlyLabel", "monthlyPeriod"],
-              ["ordersValue", "ordersLabel", "ordersPeriod"],
-              ["seoValue", "seoLabel", "seoPeriod"],
-              ["seoTotalValue", "seoTotalLabel", "seoTotalPeriod"],
-            ].map(([value, label, period]) => (
-              <div key={value} className="bg-surface p-6 lg:p-8">
-                <strong className="font-display text-accent block text-4xl font-semibold">
-                  {t(`futbuynow.metrics.${value}`)}
-                </strong>
-                <p className="mt-3 font-semibold">
-                  {t(`futbuynow.metrics.${label}`)}
-                </p>
-                {period ? (
-                  <p className="text-muted mt-2 font-mono text-sm">
-                    {t(`futbuynow.metrics.${period}`)}
-                  </p>
-                ) : null}
-              </div>
-            ))}
-          </Reveal>
-
-          <Reveal className="green-panel border-mineral/40 bg-mineral-deep mt-10 border p-6 sm:p-8">
-            <p className="text-mineral-bright font-mono text-sm">
-              {t("futbuynow.metrics.growthLabel")}
-            </p>
-            <div className="mt-6 grid max-w-3xl gap-4 sm:grid-cols-[1fr_auto_1fr] sm:items-center sm:gap-6">
-              <div>
-                <p className="text-secondary font-mono text-sm">
-                  {t("futbuynow.metrics.growthFromPeriod")}
-                </p>
-                <strong className="font-display mt-2 block text-4xl font-semibold">
-                  {t("futbuynow.metrics.growthFrom")}
-                </strong>
-              </div>
-              <ArrowRight
+        <div className="mt-10 space-y-10">
+          {cases.map((item) => (
+            <Reveal
+              key={item.key}
+              className={`bg-surface-soft relative overflow-hidden border ${
+                item.accent === "mineral"
+                  ? "border-mineral/35"
+                  : "border-accent/35"
+              }`}
+            >
+              <div
                 aria-hidden="true"
-                className="text-signal size-7 rotate-90 sm:rotate-0"
+                className={`absolute -top-32 -right-24 size-80 rounded-full border ${
+                  item.accent === "mineral"
+                    ? "border-mineral/20"
+                    : "border-accent/20"
+                }`}
               />
-              <div>
-                <p className="text-secondary font-mono text-sm">
-                  {t("futbuynow.metrics.growthToPeriod")}
-                </p>
-                <strong className="font-display text-accent mt-2 block text-4xl font-semibold">
-                  {t("futbuynow.metrics.growthTo")}
-                </strong>
-              </div>
-            </div>
-          </Reveal>
+              <article id={item.key} className="relative scroll-mt-24">
+                <header className="grid gap-6 border-b border-white/15 p-6 sm:p-8 lg:grid-cols-[0.32fr_0.68fr] lg:gap-12 lg:p-9">
+                  <div>
+                    <p className="text-muted text-sm font-semibold">
+                      {t(`experience.${item.key}.period`)}
+                    </p>
+                    <p
+                      className={`mt-2 max-w-xs text-sm leading-6 font-semibold whitespace-pre-line ${
+                        item.accent === "mineral"
+                          ? "text-mineral-bright"
+                          : "text-accent"
+                      }`}
+                    >
+                      {t(`experience.${item.key}.${item.roleKey}`)}
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="font-display max-w-4xl text-3xl leading-tight font-semibold tracking-[-0.03em] sm:text-4xl">
+                      <ExternalLink
+                        href={item.href}
+                        className="no-underline hover:no-underline"
+                      >
+                        {t(`experience.${item.key}.company`)}
+                      </ExternalLink>
+                    </h3>
+                    <p className="text-secondary mt-4 max-w-3xl leading-7">
+                      {t(`experience.${item.key}.description`)}
+                    </p>
+                  </div>
+                </header>
 
-          <div className="mt-10 grid gap-4 lg:grid-cols-3">
-            {futbuynowBlocks.map((block) => (
-              <Reveal
-                key={block}
-                className="border-mineral/25 bg-surface-soft border-t-2 p-6"
-              >
-                <h4 className="font-heading text-xl font-semibold">
-                  {t(`futbuynow.blocks.${block}.title`)}
-                </h4>
-                <p className="text-secondary mt-3 leading-7">
-                  {t(`futbuynow.blocks.${block}.detail`)}
-                </p>
-                <Tooltip
-                  label={t("technologyHelpLabel", {
-                    area: t(`futbuynow.blocks.${block}.title`),
-                  })}
-                  content={t(`futbuynow.blocks.${block}.technologyDetail`)}
-                  className="mt-5"
-                >
-                  {t("technologyHelp")}
-                </Tooltip>
-              </Reveal>
-            ))}
-          </div>
-        </article>
+                <div className="grid lg:grid-cols-[0.92fr_1.08fr]">
+                  <div className="border-white/15 p-4 sm:p-6 lg:border-r lg:p-7">
+                    <ImageGallery
+                      images={item.images.map((image) => ({
+                        src: image.src,
+                        alt: t(image.altKey),
+                        caption: t(image.captionKey),
+                        width: image.width,
+                        height: image.height,
+                      }))}
+                      labels={galleryLabels}
+                      compact
+                    />
+                  </div>
+
+                  <div className="p-6 sm:p-8 lg:p-9">
+                    <div className="mb-6 flex items-center gap-3">
+                      <Code2
+                        aria-hidden="true"
+                        className={
+                          item.accent === "mineral"
+                            ? "text-mineral size-5"
+                            : "text-accent size-5"
+                        }
+                      />
+                      <p className="text-sm font-bold tracking-[0.1em] uppercase">
+                        {experience("contributionsLabel")}
+                      </p>
+                    </div>
+                    <div className="space-y-5 sm:space-y-6">
+                      {item.highlights.map((highlight, index) => {
+                        const Icon = item.icons[index];
+
+                        return (
+                          <div
+                            key={highlight}
+                            className="grid grid-cols-[auto_1fr] items-center gap-x-3 gap-y-2 border-b border-white/10 pb-5 last:border-0 last:pb-0 sm:items-start sm:gap-x-4 sm:pb-6"
+                          >
+                            <span
+                              className={`grid size-10 place-items-center rounded-full border ${
+                                item.accent === "mineral"
+                                  ? "border-mineral/40 bg-mineral/10 text-mineral-bright"
+                                  : "border-accent/40 bg-accent/10 text-accent"
+                              }`}
+                            >
+                              <Icon aria-hidden="true" className="size-4" />
+                            </span>
+                            <h4 className="font-heading text-base leading-snug font-semibold sm:text-lg">
+                              {t(
+                                `experience.${item.key}.blocks.${highlight}.title`,
+                              )}
+                            </h4>
+                            <p className="text-secondary col-span-2 line-clamp-2 text-sm leading-6 sm:col-start-2 sm:line-clamp-none">
+                              {t(
+                                `experience.${item.key}.blocks.${highlight}.detail`,
+                              )}
+                            </p>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid gap-px border-t border-white/15 bg-white/15 lg:grid-cols-3">
+                  {item.metrics.map(([value, label, MetricIcon]) => (
+                    <div
+                      key={value}
+                      className="bg-background grid grid-cols-[auto_1fr] items-center gap-4 p-5 sm:p-6"
+                    >
+                      <MetricIcon
+                        aria-hidden="true"
+                        className={
+                          item.accent === "mineral"
+                            ? "text-mineral-bright size-5"
+                            : "text-accent size-5"
+                        }
+                      />
+                      <div className="min-w-0">
+                        <strong className="font-display text-accent block text-[clamp(1.1rem,1.45vw,1.4rem)] leading-tight font-semibold whitespace-nowrap">
+                          {t(value)}
+                        </strong>
+                        <p className="text-secondary mt-1 text-xs leading-5">
+                          {t(label)}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <footer className="border-t border-white/15 px-6 py-5 sm:px-8 lg:px-9">
+                  <p className="text-muted mb-3 text-xs font-bold tracking-[0.1em] uppercase">
+                    {experience("technologyHelp")}
+                  </p>
+                  <TechnologyChips
+                    technologies={[
+                      ...new Set(
+                        item.stacks.flatMap((block) =>
+                          t(
+                            `experience.${item.key}.blocks.${block}.${item.stackProperty}`,
+                          )
+                            .split(" · ")
+                            .slice(0, 6),
+                        ),
+                      ),
+                    ]}
+                  />
+                </footer>
+              </article>
+            </Reveal>
+          ))}
+        </div>
       </Container>
     </section>
   );

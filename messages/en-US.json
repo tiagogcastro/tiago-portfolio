@@ -36,17 +36,19 @@
     }
   },
   "metadata": {
-    "title": "Tiago Castro · Full Stack and Cloud Developer",
-    "description": "Portfolio of Tiago Castro, full stack developer who turns businesses into digital products: B2C marketplaces, B2B data platforms and SaaS taken from zero to live. Real savings of US$ 15k/year and 65k+ orders processed. Remote across Brazil and abroad.",
-    "imageAlt": "Tiago Castro, full stack developer. Turning businesses into digital products that sell.",
+    "title": "Tiago Castro · Full Stack and Backend Developer",
+    "description": "Portfolio of Tiago Castro, a full stack developer with 6+ years of experience in Node.js, TypeScript, React, Next.js and AWS, building production systems across backend, cloud, data and applied AI.",
+    "imageAlt": "Tiago Castro, full stack and backend developer with AWS experience.",
     "pages": {
       "projects": {
-        "title": "Authorial and open source projects",
-        "description": "Kaguya, The Monkeynauts, NexSift and other open source projects: the problem solved, the solution, the architecture and the results of each build."
+        "title": "Personal and open source projects",
+        "description": "Kaguya, The Monkeynauts, NexSift and other open source projects: the problem solved, the solution, the architecture and the results of each build.",
+        "imageAlt": "Tiago Castro, personal and open source projects"
       },
       "experience": {
         "title": "Professional experience",
-        "description": "Cases from the LakeIT data lake and the Futbuynow marketplace: technical decisions, AWS infrastructure, payments and tracked results."
+        "description": "Tiago Castro’s experience at Global HITSS on the LakeIT platform and at FutBuyNow, covering full stack development, backend, AWS, data, payments and applied AI.",
+        "imageAlt": "Tiago Castro, professional experience in full stack development, backend and AWS"
       }
     }
   },
@@ -71,13 +73,20 @@
     "source": "View {name} source code",
     "learnMore": "Learn more",
     "npmShort": "npm",
-    "siteShort": "Website"
+    "siteShort": "Website",
+    "gallery": {
+      "open": "Expand image",
+      "close": "Close image",
+      "previous": "Previous image",
+      "next": "Next image",
+      "counter": "{current} of {total}"
+    }
   },
   "header": {
     "navLabel": "Main navigation",
     "experience": "Experience",
     "projects": "Projects",
-    "profile": "Profile",
+    "profile": "How I work",
     "contact": "Contact",
     "language": "Language",
     "languageLabel": "Select language",
@@ -90,11 +99,126 @@
     }
   },
   "hero": {
+    "cosmic": {
+      "role": "Full Stack Developer · Backend · AWS",
+      "titleFirst": "From idea",
+      "titleSecond": "to impact.",
+      "description": "I build end-to-end software with Node.js, TypeScript, React, Next.js and AWS.",
+      "coordinates": "A universe of possibilities",
+      "scroll": "Skip to experience",
+      "interaction": "Scroll to travel. Click a point or choose what to rotate.",
+      "reset": "Center the universe",
+      "soundOn": "Play lo-fi",
+      "tiktok": "TikTok",
+      "soundOff": "Disable sound",
+      "terminal": "Creative process",
+      "command": "How an idea becomes a product",
+      "sequence": "The cycle continues: listen, build and improve.",
+      "name": "Tiago Castro",
+      "explore": "Explore",
+      "close": "Close discovery",
+      "visit": "Explore this connection",
+      "control": "Drag to rotate:",
+      "volume": "Ambient volume",
+      "soundError": "Audio could not start. Tap again to retry.",
+      "targets": {
+        "universe": "Universe",
+        "core": "Heart",
+        "avatar": "Character",
+        "orbit": "Orbits"
+      },
+      "discoveries": {
+        "core": {
+          "title": "The code heart",
+          "text": "Connections between people, code and products begin here. Rotate the heart and follow its routes.",
+          "action": "Move the heart"
+        },
+        "avatar": {
+          "title": "Inside Tiago's mind",
+          "text": "I am Tiago Castro, a developer based in Rio de Janeiro. I connect backend, interfaces, data and cloud to build production systems.",
+          "action": "Meet Tiago"
+        },
+        "lakeit": {
+          "title": "Cloud planet",
+          "text": "Room to grow, costs under control. At LakeIT, my work with AWS helped save over US$15,000 per year.",
+          "action": "Explore cloud"
+        },
+        "futbuy": {
+          "title": "Product planet",
+          "text": "Ideas in real use: at FutBuyNow, technology meets operations in a marketplace with over 65,000 orders.",
+          "action": "Explore products"
+        },
+        "orbit": {
+          "title": "Connection routes",
+          "text": "You found the secret route! Each orbit connects a skill. Rotate the rings independently to explore these paths.",
+          "action": "Rotate the orbits"
+        }
+      },
+      "chapters": {
+        "0": "The universe",
+        "1": "The connections",
+        "2": "The build",
+        "3": "The product",
+        "4": "Inside the core",
+        "5": "Everything connected"
+      },
+      "problem": "The challenge",
+      "result": "In practice",
+      "tools": "Technologies and capabilities",
+      "coreTitle": "Code at the core. People at the heart.",
+      "coreDescription": "Every connection starts with a real need. This is where a problem takes shape, gains structure and becomes a solution that can grow.",
+      "terminalLines": {
+        "0": "Listen to people and understand the problem.",
+        "1": "Plan a simple, secure solution.",
+        "2": "Build and test with the people who will use it.",
+        "3": "Launch and improve through real-world use."
+      },
+      "finalTitle": "One universe. Many connections.",
+      "finalDescription": "From the first conversation to a system in production, I connect every part to build something that makes sense for the business and its users.",
+      "continue": "See real experience",
+      "topics": {
+        "development": {
+          "title": "Programming",
+          "detail": "Interfaces and systems",
+          "tools": "React · Next.js · TypeScript · Node.js",
+          "problem": "Turning complex business rules into a simple experience, from the interface to the server.",
+          "result": "Registration, payments and integrations working together in products people actually use."
+        },
+        "cloud": {
+          "title": "Cloud",
+          "detail": "Infrastructure and operations",
+          "tools": "AWS · Terraform · Docker · GitHub Actions",
+          "problem": "Supporting operations without wasting resources or making every release a risk.",
+          "result": "Over US$15,000 saved annually on AWS infrastructure at LakeIT."
+        },
+        "data": {
+          "title": "Data",
+          "detail": "Information for decisions",
+          "tools": "Python · PostgreSQL · MySQL · Redis",
+          "problem": "Bringing information from different sources together and making it available for everyday operations.",
+          "result": "A B2B data lake on AWS connecting sources and organizing data in one place."
+        },
+        "seo": {
+          "title": "Visibility on Google",
+          "detail": "How customers find your product online",
+          "tools": "Technical SEO · Next.js · Web performance",
+          "problem": "Building a great product is not enough: people need to find it organically on Google search.",
+          "result": "More than 21,000 organic clicks and 1.5 million Google impressions in the 12 months through Sep 2026."
+        },
+        "product": {
+          "title": "Product",
+          "detail": "From need to real-world use",
+          "tools": "Interfaces · Integrations · Operations",
+          "problem": "Connecting technology and business so an idea becomes part of people's everyday lives.",
+          "result": "The FutBuyNow marketplace handles around 3,400 orders a month, with over 65,000 total."
+        }
+      }
+    },
     "eyebrow": "Full Stack Developer",
     "positioning": "I turn businesses into digital products that sell: from zero to live.",
     "firstName": "Tiago",
     "lastName": "Castro",
-    "statement": "I turn your business into reality.",
+    "statement": "I build software from backend to interface, using cloud, data and product context where they add value.",
     "narrative": "Over 6 years of hands-on software development experience, from freelance in 2020 to production systems, cloud and AI.",
     "scope": {
       "development": "Sites, landing pages and systems · ready to sell",
@@ -114,16 +238,49 @@
     "lakeitPeriod": "Jan/2024 - present",
     "lakeitStatus": "B2B data lake on AWS: company data gathered in one place, with real savings of US$ 15k/year.",
     "futbuynowRole": "Freelance",
-    "futbuynowPeriod": "Feb/2023 - present",
-    "futbuynowStatus": "B2C marketplace for products and services: ~3.4k orders/month, 65k+ cumulative.",
+    "futbuynowPeriod": "Feb/2023 - Aug/2026",
+    "futbuynowStatus": "International B2C marketplace with more than 65,000 orders through Aug 2026.",
     "linkedinStatus": "Complete professional history.",
     "githubStatus": "Open source and authorial projects.",
     "positioningShort": "I turn businesses into digital products that sell."
   },
+  "work": {
+    "label": "From the universe to real work",
+    "title": "Two ways to build with me.",
+    "intro": "I can join a development team or take ownership of a project with a clear scope. In both cases, I stay close to the problem, the code and the people who use the software.",
+    "paths": {
+      "team": {
+        "title": "To strengthen a team",
+        "text": "Full stack and backend work with Node.js, TypeScript, React, Next.js and AWS, supported by experience in cloud, data, DevOps and applied AI.",
+        "action": "See professional experience"
+      },
+      "project": {
+        "title": "To get a project live",
+        "text": "Development of applications, integrations, payments and internal systems, from technical definition through launch and evolution.",
+        "action": "Discuss a project"
+      }
+    },
+    "metrics": {
+      "savings": {
+        "value": "+ US$ 15k",
+        "label": "in estimated yearly AWS infrastructure savings"
+      },
+      "orders": {
+        "value": "+65k",
+        "label": "orders processed by a marketplace in production"
+      },
+      "search": {
+        "value": "+21k",
+        "label": "organic Google clicks in the 12 months through Sep 2026"
+      }
+    }
+  },
   "profile": {
     "index": "02 / Profile",
-    "title": "How I work.",
-    "intro": "I turned a B2C marketplace into a national reference with real savings of US$ 15k a year. I do it by owning the whole product: screen, server, data and infrastructure.",
+    "title": "How I work, in practice.",
+    "intro": "I connect product and engineering: understand the operation, define the smallest safe path, ship to production and use real signals to guide the next decision.",
+    "methodLabel": "Method and capabilities",
+    "methodIntro": "The work becomes clearer when each stage answers one question: what truly needs to change, how to deliver without unnecessary debt and which signal proves it improved.",
     "processVisual": {
       "title": "From need to software in use.",
       "caption": "The goal is to reduce effort, avoid failures and let the product keep evolving.",
@@ -131,53 +288,60 @@
         "understand": "Understand the real work",
         "build": "Build without overcomplicating",
         "improve": "Measure and improve"
+      },
+      "details": {
+        "understand": "I map people, rules, risks and integrations before choosing the solution.",
+        "build": "I split delivery into verifiable parts, with technical decisions proportional to the problem.",
+        "improve": "I monitor operations, performance and usage to correct issues early and evolve with evidence."
       }
     },
     "capabilities": {
       "backend": {
         "label": "Backend",
-        "title": "Systems that sustain the operation",
-        "detail": "Payments, records and business rules working together, with no manual work.",
+        "title": "APIs and rules that sustain operations",
+        "detail": "I structure authentication, payments, integrations and asynchronous processes so the product works consistently.",
         "tools": "Node.js · TypeScript · Python"
       },
       "frontend": {
         "label": "Interfaces",
-        "title": "Websites and digital products",
-        "detail": "Complex processes turned into fast, clear screens for clients and teams.",
+        "title": "Interfaces that simplify decisions",
+        "detail": "I turn complex flows into fast, accessible and clear screens for customers and teams.",
         "tools": "React · Next.js · Tailwind CSS"
       },
       "cloudData": {
         "label": "Cloud and data",
-        "title": "Information available and secure",
-        "detail": "Large volumes of information organized for fast and safe answers.",
+        "title": "Cloud, data and costs under control",
+        "detail": "I organize environments, databases and data flows with security, traceability and attention to real costs.",
         "tools": "AWS · GCP · PostgreSQL · MySQL · Redis"
       },
       "delivery": {
         "label": "Infrastructure",
-        "title": "Changes that never stop the operation",
-        "detail": "Automated environments and deliveries for fewer errors and safer recovery.",
+        "title": "Repeatable and observable delivery",
+        "detail": "I automate infrastructure and releases to reduce failures, ease recovery and make changes safer.",
         "tools": "Terraform · Docker · GitHub Actions"
       }
     },
     "education": {
       "label": "Education and credentials",
-      "title": "Education and credentials.",
-      "intro": "Completed degree, hands-on practice with systems that adjust capacity to usage, and continuous study focused on products in operation.",
+      "title": "Education and certifications.",
+      "intro": "Completed degree, official AWS certifications and continued training in architecture, cloud, AI, JavaScript and TypeScript.",
       "degree": {
         "label": "Degree",
         "title": "Systems Analysis and Development",
         "institution": "Centro Universitário União das Américas Descomplica",
-        "detail": "Bachelor of Technology",
-        "period": "Degree completed in Jul 2026",
+        "detail": "Technology degree covering software development, databases, systems architecture and web applications",
+        "period": "Degree completed in Aug 2026",
         "action": "Verify completion"
       },
       "credentials": {
-        "label": "Credentials and courses",
+        "label": "Certifications and credentials",
         "serverless": {
           "title": "AWS Serverless Demonstrated",
           "issuer": "Amazon Web Services Training and Certification",
-          "detail": "Hands-on credential about services that receive requests, coordinate tasks and store data on demand. Badge verifiable on Credly.",
-          "action": "View credential"
+          "detail": "Complementary hands-on credential covering serverless applications on AWS. Verifiable badge on Credly.",
+          "action": "View credential",
+          "period": "Credential earned in Aug 2026",
+          "category": "Complementary digital badge"
         },
         "technical": {
           "title": "AWS Technical Essentials",
@@ -188,6 +352,22 @@
           "title": "JavaScript and TypeScript from Basics to Advanced",
           "issuer": "Udemy",
           "period": "Completed in Feb 2023"
+        },
+        "cloudPractitioner": {
+          "title": "AWS Certified Cloud Practitioner",
+          "issuer": "Amazon Web Services Training and Certification",
+          "period": "Certified in Sep 2026",
+          "detail": "Official exam-based certification covering AWS fundamentals, cloud services, security, costs and the shared responsibility model.",
+          "category": "Professional certification",
+          "action": "View certification"
+        },
+        "aiPractitioner": {
+          "title": "AWS Certified AI Practitioner",
+          "issuer": "Amazon Web Services Training and Certification",
+          "period": "Certified in Sep 2026",
+          "detail": "Official exam-based certification covering artificial intelligence, machine learning, generative AI and responsible use on AWS.",
+          "category": "Professional certification",
+          "action": "View certification"
         }
       },
       "languages": {
@@ -210,7 +390,11 @@
   },
   "experience": {
     "title": "Professional experience",
-    "intro": "Each job shows the context I found, what I changed, why I changed it and the results tracked along the way.",
+    "intro": "Two contexts show my work across full stack development, backend, cloud, data, infrastructure and applied AI, with documented responsibilities and results.",
+    "homeLabel": "Proof in production",
+    "homeIntro": "At Global HITSS and FutBuyNow, I worked on applications, APIs, data, infrastructure and operations in production systems.",
+    "homeCta": "See full experience",
+    "homeCtaText": "The full page covers architecture, technical decisions, collaboration and how my responsibility evolved in each role.",
     "technologyHelp": "Technologies used",
     "technologyHelpLabel": "Show technologies used in {area}",
     "interlude": {
@@ -224,39 +408,49 @@
     },
     "lakeit": {
       "label": "Professional experience",
-      "company": "HITSS · LakeIT Project",
-      "role": "Fullstack Cloud Developer",
+      "company": "Global HITSS · LakeIT Platform",
+      "role": "Full Stack Developer",
       "period": "Jan/2024 - present",
-      "description": "A data lake used by companies: data from every source gathered in one place, ready to organize, process and query large volumes of information.",
+      "description": "Enterprise data platform on AWS for ingesting, processing, cataloging, governing, querying and exploring large volumes of information.",
       "figures": {
         "pipeline": {
           "title": "From raw data to ready answers.",
           "caption": "Automated pipelines prepare files in S3, AWS Glue processes them at scale and Athena answers queries over large volumes without moving the data around."
+        },
+        "product": {
+          "title": "A data platform used by companies.",
+          "caption": "The interface presents LakeIT as a central point for data ingestion, transformation, governance and consumption on AWS.",
+          "alt": "LakeIT home page presenting the cloud data platform and its capabilities"
+        },
+        "platform": {
+          "title": "The platform beyond the first screen.",
+          "caption": "Current view of the infrastructure proposition in the client AWS account, with control over data, costs and access.",
+          "alt": "LakeIT platform section explaining infrastructure running in the client AWS account"
         }
       },
       "blocks": {
         "data": {
           "label": "Data",
-          "title": "I automated data preparation into pipelines",
-          "detail": "Automatic flows that prepare information without manual work.",
-          "evidence": "Dozens of flows in use by clients",
-          "stack": "AWS Glue · S3 · Athena · Python",
-          "technologyDetail": "Python implements the automations; AWS Glue runs the processing, S3 stores the files and Athena allows querying large volumes of information."
+          "title": "I build APIs and pipelines that prepare data",
+          "detail": "I work on APIs, interfaces and ETL flows that receive, process and make information available for querying.",
+          "evidence": "Pipelines and APIs used by clients",
+          "stack": "Node.js · TypeScript · React · Next.js · AWS Glue · Python",
+          "technologyDetail": "Node.js, TypeScript, React and Next.js support APIs and interfaces. Python, AWS Glue, S3 and Athena process, store and query large data volumes."
         },
         "infra": {
           "label": "Cloud and infra",
-          "title": "I split a complex structure into smaller parts",
-          "metricModules": "+29 Terraform modules",
+          "title": "I contribute to consistent infrastructure across environments",
+          "metricModules": "29 structural modules",
           "metricEnvironments": "+3 versioned environments",
-          "detail": "I reorganized the structure into smaller parts, repeatable across environments.",
-          "evidence": "+29 reusable parts in +3 environments",
-          "stack": "AWS · Terraform · Terragrunt · GitHub Actions",
-          "technologyDetail": "Terraform and Terragrunt describe, version and reuse the structure in files. GitHub Actions checks and publishes changes automatically."
+          "detail": "I contribute to the infrastructure as code and reusable components shared across environments.",
+          "evidence": "Audited repository with 29 structural modules",
+          "stack": "AWS · ECS · Terraform · Terragrunt · Docker · GitHub Actions",
+          "technologyDetail": "Terraform and Terragrunt describe the infrastructure, Docker and ECS run applications, and GitHub Actions automates checks and delivery. The audited repository contains 29 structural modules developed and maintained by the team."
         },
         "ai": {
           "label": "AI",
-          "title": "I turned questions into answers and charts",
-          "detail": "Questions in plain language become queries, answers and charts.",
+          "title": "I build generative AI capabilities",
+          "detail": "I contribute to solutions that turn questions into queries, answers and data visualizations.",
           "evidence": "Answers and charts in natural language",
           "stack": "Amazon Bedrock · Athena · Vertex AI · BigQuery",
           "technologyDetail": "Amazon Bedrock and Vertex AI interpret the questions; Athena and BigQuery query the information used to assemble answers and charts."
@@ -264,15 +458,19 @@
       },
       "cost": {
         "label": "AWS cost",
-        "title": "I reorganized the cloud structure to reduce costs.",
-        "detail": "I reviewed components and environments to cut waste and make future changes safer.",
+        "title": "I contributed to reorganizing infrastructure and reducing costs.",
+        "detail": "I worked with the team to review AWS components and environments, reducing waste and making future changes safer.",
         "before": "Before",
         "beforeValue": "> US$ 2,300 / month",
         "after": "After",
         "afterValue": "~ US$ 800 - 1,000 / month",
         "peak": "Historical peaks of the analyzed account went above US$ 6k per month.",
         "savingValue": "+ US$ 15k / year",
-        "savingLabel": "estimated yearly savings"
+        "savingLabel": "estimated yearly savings",
+        "homeSavingValue": "US$15k",
+        "homeSavingLabel": "estimated annual savings",
+        "homeAfterValue": "US$800 to 1,000",
+        "homeAfterLabel": "monthly cost after the review"
       },
       "responsibility": {
         "label": "End to end responsibility",
@@ -292,23 +490,38 @@
       }
     },
     "futbuynow": {
-      "label": "Client · Freelance\nTechnical responsibility",
-      "company": "Futbuynow",
-      "period": "Feb/2023 - present",
-      "description": "Marketplace in production with purchasing, payments and daily operation. Beyond products, vendors register on the platform to sell services, managed in the vendor panel and the admin panel.",
+      "label": "Freelance technical lead, with occasional contributions afterward",
+      "company": "FutBuyNow",
+      "period": "Feb/2023 - Aug/2026",
+      "description": "International B2C marketplace for gaming digital products and services, covering purchases, payments, vendors, affiliates, loyalty and an operation available in 16 languages.",
       "figures": {
         "loop": {
           "title": "An operation that feeds itself back.",
           "caption": "Purchases, confirmed payments and usage data flow back into the product as continuous improvements to interface, SEO and automation."
+        },
+        "product": {
+          "title": "Product and marketplace in one operation.",
+          "caption": "The experience connects content, catalog, reputation and purchasing in an interface designed for daily use.",
+          "alt": "FutBuyNow home page with digital products, reviews and a purchase call to action"
+        },
+        "marketplace": {
+          "title": "A catalog for digital products and services.",
+          "caption": "The marketplace organizes categories, reputation and purchase information in a single navigation experience.",
+          "alt": "FutBuyNow marketplace with digital product and service categories"
+        },
+        "checkout": {
+          "title": "Payment connected to the order.",
+          "caption": "The journey brings together selection, loyalty, multiple payment methods and confirmation in one flow.",
+          "alt": "FutBuyNow checkout with order steps and Pix, card and PayPal payment options"
         }
       },
       "blocks": {
         "product": {
           "label": "Product and operation",
           "title": "I restructured the purchase journey",
-          "detail": "I follow vendors from registration to service sales, plus affiliates, commissions and loyalty, in the vendor panel and the admin.",
-          "tools": "Node.js · Next.js · MySQL · Redis",
-          "technologyDetail": "Next.js builds the screens and part of the server; Node.js runs the operation rules. MySQL stores the main data and Redis speeds up frequent queries."
+          "detail": "I evolved the marketplace, website, dashboard and rules for vendors, affiliates, commissions, loyalty and internationalization.",
+          "tools": "Node.js · Express · TypeScript · Next.js · React · Vite · Prisma · MySQL · Redis · Socket.IO",
+          "technologyDetail": "Node.js, Express and TypeScript support the API; Next.js and React power the website and dashboard. Prisma, MySQL, Redis and Socket.IO support data, performance and real-time updates."
         },
         "payments": {
           "label": "Payments",
@@ -320,9 +533,9 @@
         "ai": {
           "label": "AI and automation",
           "title": "I automated operational analysis",
-          "detail": "Reports and click analysis that guide interface improvements.",
-          "tools": "Agents · monitoring · translation",
-          "technologyDetail": "I combined automatic routines, analysis tools and artificial intelligence to track failures, translate content, generate reports and understand how people use the screens."
+          "detail": "I used agents, skills and MCP integrations for automation, analysis, translation and development support.",
+          "tools": "Agents · skills · MCP · monitoring · translation",
+          "technologyDetail": "AI agents, skills and MCP integrations support analysis, automation, translation, monitoring and software development tasks."
         },
         "seo": {
           "label": "SEO and acquisition"
@@ -335,29 +548,34 @@
         "monthlyPeriod": "May-Jul/2026",
         "yearsValue": "+4",
         "yearsLabel": "years in operation",
-        "yearsPeriod": "Feb/2023 - present",
+        "yearsPeriod": "Feb/2023 - Aug/2026",
         "ordersValue": "+65,000",
         "ordersLabel": "orders processed",
         "ordersPeriod": "accumulated through Aug/2026",
         "coinsValue": "+30B",
         "coinsLabel": "coins traded",
         "coinsPeriod": "accumulated through Aug/2026",
-        "growthLabel": "Operation evolution after I took technical leadership",
+        "growthLabel": "Operation evolution during my technical responsibility",
         "growthTitle": "The average of paid orders more than doubled <highlight>during my work</highlight>.",
-        "growthDetail": "During this period, I evolved product, payments, SEO, analytics and stability to keep up with the growing operation.",
+        "growthDetail": "During this period, I evolved product, payments, SEO, analytics and stability to support the growing operation.",
         "growthFrom": "~1,483 / month",
         "growthFromPeriod": "Oct-Dec/2023",
         "growthTo": "~3,407 / month",
         "growthToPeriod": "May-Jul/2026",
-        "growthNote": "Operation evolution during my work; commercial growth comes from different fronts of the business.",
+        "growthNote": "Comparison between documented periods. Commercial growth came from several areas of the business, not only technical work.",
         "seoValue": "+84%",
         "seoLabel": "clicks coming from Google search",
-        "seoPeriod": "Jun → Jul/2026",
-        "seoTotalValue": "+30.4k",
-        "seoTotalLabel": "clicks from Google in 12 months",
-        "seoTotalPeriod": "12 months through Jul/2026"
+        "seoPeriod": "Jun - Jul 2026",
+        "seoTotalValue": "+21k",
+        "seoTotalLabel": "organic Google clicks",
+        "seoTotalPeriod": "12 months through Sep 2026",
+        "searchImpressionsValue": "+1.5M",
+        "searchImpressionsLabel": "Google impressions",
+        "searchImpressionsPeriod": "12 months through Sep 2026",
+        "historicalSeo": "Historical record: more than 30.4k clicks in a different 12-month window."
       }
-    }
+    },
+    "contributionsLabel": "Key contributions"
   },
   "contactBreak": {
     "modes": {
@@ -370,8 +588,11 @@
   },
   "projects": {
     "index": "04 / Projects",
-    "title": "Authorial and study projects.",
-    "intro": "Everything here came from my own hands: built, learned and documented. Code, interface and architecture decisions open for anyone to dig into.",
+    "title": "Personal and open source projects.",
+    "intro": "Projects where I practiced full stack development, backend, architecture, cloud, infrastructure as code and applied AI. The code and decisions are open for review.",
+    "homeLabel": "Code you can inspect",
+    "homeTitle": "Selected projects.",
+    "homeIntro": "A short selection showing product, interface and architecture. The full catalog brings together context, decisions and code for every build.",
     "featured": "Featured project",
     "signalInput": "Many signals",
     "signalFilter": "Filter",
@@ -381,20 +602,25 @@
         "name": "NexSift",
         "type": "Authorial project",
         "description": "Technology radar that filters and contextualizes signals with verified sources. There I deepened production Next.js, publishing through an authenticated Zod-validated Lambda and S3 infrastructure described in Terraform.",
-        "homeAlt": "NexSift home page with the message Less noise, more signal and four recent signals",
-        "homeCaption": "Figure 1. Home page: product proposal and a short selection from the radar, with no infinite feed.",
-        "mobileAlt": "Mobile version of NexSift showing three recent signals and their relevance scores",
-        "mobileTitle": "Reading stays short on mobile.",
-        "mobileCaption": "The same radar hierarchy was preserved in a single column: title, relevance and date come before context.",
-        "blogAlt": "NexSift signal archive with the post list and topic filters",
-        "blogCaption": "Figure 2. The signal archive gathers the publication history with topic filters.",
-        "topicsAlt": "NexSift Artificial Intelligence topic page with six signals and relevance scores",
-        "topicsCaption": "Figure 3. AI topic page: filtered signals with relevance score, sources and date.",
-        "coverAlt": "NexSift home page with the message Less noise, more signal",
+        "homeAlt": "Current NexSift homepage with the Posts curtos sobre tecnologia que importa headline and four recent signals",
+        "homeCaption": "Current homepage: product proposition and four recent signals with relevance scores.",
+        "mobileAlt": "Current mobile version of NexSift with four recent signals and their relevance scores",
+        "mobileTitle": "Reading stays concise on mobile.",
+        "mobileCaption": "On mobile, titles, relevance scores and dates remain easy to scan.",
+        "blogAlt": "Current NexSift posts page with search, topic filter and publication list",
+        "blogCaption": "Current archive with 21 posts, search, topic filters, sources and relevance scores.",
+        "topicsAlt": "Current NexSift Artificial Intelligence topic page with three signals and relevance scores",
+        "topicsCaption": "Current AI topic with summaries, sources, relevance scores and dates.",
+        "coverAlt": "Current NexSift homepage with the Posts curtos sobre tecnologia que importa headline",
         "problem": "Tracking technology through infinite feeds consumes time and trust: too much volume, too little context and sources that are almost never verified.",
         "solution": "An editorial radar for developers that filters, verifies and contextualizes signals across AI, cloud, development and careers, with relevance scores and equally short reading on mobile.",
         "architecture": "Next.js and TypeScript with content published to an S3 bucket by an authenticated Lambda validated with Zod. Infrastructure described in Terraform (S3, Lambda, IAM), local environment simulated with Docker and MiniStack, plus RSS, sitemap and article structured data.",
-        "results": "Product live with publishing in production, seven active editorial lenses, verified sources shown alongside every signal and institutional interface in three languages."
+        "results": "Product live with publishing in production, seven active editorial lenses, verified sources shown alongside every signal and institutional interface in three languages.",
+        "homeProofs": {
+          "problem": "Technology news arrives in high volume and usually without enough context.",
+          "solution": "The radar filters, verifies sources and summarizes by relevance, topic and date.",
+          "results": "Published product using Next.js, Lambda, S3, Terraform and content in three languages."
+        }
       },
       "kaguya": {
         "name": "Kaguya",
@@ -473,7 +699,15 @@
     "cta": {
       "label": "Full projects page",
       "title": "Want to see each project in detail?",
-      "text": "The projects page gathers context, dates, stack and what I learned building each one."
+      "text": "The projects page gathers context, dates, stack and what I learned building each one.",
+      "action": "See all projects"
+    },
+    "details": {
+      "problem": "Problem",
+      "solution": "Solution",
+      "architecture": "Architecture",
+      "results": "Results",
+      "open": "View technical details"
     }
   },
   "engagement": {
@@ -486,22 +720,31 @@
   },
   "contact": {
     "index": "05 / Contact",
-    "title": "Get in touch.",
-    "availabilityTitle": "Always open to networking, opportunities and projects <highlight>that make sense</highlight>.",
-    "ctaTitle": "Want a <highlight>landing page that converts</highlight>, to get your <highlight>SaaS off the ground</highlight>, or someone on your team who owns the <highlight>whole product</highlight>?",
-    "ctaText": "Reach out and get the same care I put into products with thousands of orders a month.",
+    "title": "Let us build something that works in practice.",
+    "availabilityTitle": "Open to roles, technical collaboration and projects where <highlight>product and engineering move together</highlight>.",
+    "ctaTitle": "Share the <highlight>context</highlight>, what needs to change and where technology can help.",
+    "ctaText": "I reply directly so we can understand the scenario, collaboration format and next step.",
     "channels": {
       "hiring": "Email",
       "project": "WhatsApp",
       "networking": "LinkedIn",
       "code": "GitHub",
-      "resume": "Resume"
-    }
+      "resume": "Resume",
+      "linkedinAction": "Visit LinkedIn",
+      "githubAction": "View GitHub",
+      "resumeAction": "Download resume"
+    },
+    "status": "Available for new conversations",
+    "response": "Direct contact",
+    "emailAction": "Send an email",
+    "whatsappAction": "Talk on WhatsApp"
   },
   "footer": {
     "role": "Full Stack Developer",
     "location": "Rio de Janeiro, Brazil",
     "availability": "Remote Brazil + abroad",
-    "copyright": "© {year} Tiago Castro"
+    "copyright": "© {year} Tiago Castro",
+    "workModes": "Remote or hybrid in Rio de Janeiro",
+    "international": "Available for international opportunities"
   }
 }

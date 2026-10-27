@@ -21,3 +21,4 @@ opencode.jsonc
 .continue/
 .agent/
 .settings.json
+next-env.d.ts

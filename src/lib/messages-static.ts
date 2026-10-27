@@ -13,16 +13,3 @@ type MessagesShape = typeof ptBR;
 export function getMessagesForLocale(locale: string): MessagesShape {
   return messagesByLocale[locale as keyof typeof messagesByLocale] ?? ptBR;
 }
-
-export function getOgCopy(locale: string) {
-  const messages = getMessagesForLocale(locale);
-
-  return {
-    projectsLabel: String(messages.header.projects),
-    projectsTitle: String(messages.projects.title),
-    projectsSubtitle: String(messages.metadata.pages.projects.description),
-    experienceLabel: String(messages.header.experience),
-    experienceTitle: String(messages.experience.title),
-    experienceSubtitle: String(messages.metadata.pages.experience.description),
-  };
-}

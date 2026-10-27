@@ -96,7 +96,7 @@ export const projects: readonly Project[] = [
     cover: {
       src: "/projects/nexsift/home.png",
       width: 1200,
-      height: 750,
+      height: 800,
       imageKey: "home",
     },
   },

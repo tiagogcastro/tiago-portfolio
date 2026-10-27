@@ -1,17 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 import { routing } from "@/i18n/routing";
-
-type SitemapPath = {
-  path: string;
-  priority: number;
-};
-
-const paths: SitemapPath[] = [
-  { path: "/", priority: 1 },
-  { path: "/projects", priority: 0.8 },
-  { path: "/experience", priority: 0.8 },
-];
+import { localizedPath } from "@/lib/seo";
 
 function languageAlternates(path: string) {
   const languages: Record<string, string> = {};
@@ -31,10 +21,14 @@ function languageAlternates(path: string) {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return paths.map(({ path, priority }) => ({
-    url: path === "/" ? siteConfig.domain : `${siteConfig.domain}${path}`,
-    changeFrequency: "monthly",
-    priority,
-    alternates: languageAlternates(path),
-  }));
+  return routing.locales.map((locale) => {
+    const suffix = localizedPath(locale, "/");
+
+    return {
+      url: suffix === "/" ? siteConfig.domain : `${siteConfig.domain}${suffix}`,
+      changeFrequency: "monthly" as const,
+      priority: 1,
+      alternates: languageAlternates("/"),
+    };
+  });
 }

@@ -1,17 +1,27 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { Check, FileDown, Menu, MessageCircle, X } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { linkedinHref, resumeHref, siteConfig } from "@/config/site";
 import { Link, usePathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { siteConfig, resumeHref } from "@/config/site";
 import { cn } from "@/lib/utils";
-import { Logo } from "../brand/Logo";
-import { GitHubIcon, LinkedInIcon } from "../brand/SocialIcons";
-import { BrazilFlag } from "../brand/BrazilFlag";
-import { SpainFlag, USFlag } from "../brand/LocaleFlags";
-import { Container } from "./Container";
+import {
+  Briefcase,
+  Check,
+  FileDown,
+  FolderKanban,
+  Menu,
+  MessageCircle,
+  Send,
+  Workflow,
+  X,
+} from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
+import { useEffect, useRef, useState } from "react";
+import { BrazilFlag } from "@/components/brand/BrazilFlag";
+import { SpainFlag, USFlag } from "@/components/brand/LocaleFlags";
+import { Logo } from "@/components/brand/Logo";
+import { GitHubIcon, LinkedInIcon } from "@/components/brand/SocialIcons";
+import { Container } from "@/components/layout/Container";
 
 const localeLabels = {
   "pt-BR": "languages.portuguese",
@@ -38,19 +48,60 @@ export function Header() {
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const isHome = pathname === "/";
+  const [heroActive, setHeroActive] = useState(isHome);
+
+  useEffect(() => {
+    if (!isHome) return;
+
+    const checkHeroVisibility = () => {
+      const hero = document.getElementById("top");
+      if (!hero) {
+        setHeroActive(false);
+        return;
+      }
+      const rect = hero.getBoundingClientRect();
+      const anchorOffset =
+        Number.parseFloat(
+          getComputedStyle(document.documentElement).scrollPaddingTop,
+        ) || 96;
+      setHeroActive(rect.bottom > anchorOffset + 1);
+    };
+
+    window.addEventListener("scroll", checkHeroVisibility, { passive: true });
+    // Check after initial paint without synchronous effect setState
+    const frame = requestAnimationFrame(checkHeroVisibility);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", checkHeroVisibility);
+    };
+  }, [isHome]);
+
   const whatsappHref = `${siteConfig.whatsappUrl}?text=${encodeURIComponent(
     engagement("whatsappMessage"),
   )}`;
   const navItems = [
-    { key: "experience", kind: "route", href: "/experience" },
-    { key: "projects", kind: "route", href: "/projects" },
+    {
+      key: "experience",
+      icon: Briefcase,
+      kind: "anchor",
+      href: isHome ? "#experiencia" : { pathname: "/", hash: "experiencia" },
+    },
+    {
+      key: "projects",
+      icon: FolderKanban,
+      kind: "anchor",
+      href: isHome ? "#projetos" : { pathname: "/", hash: "projetos" },
+    },
     {
       key: "profile",
+      icon: Workflow,
       kind: "anchor",
-      href: isHome ? "#perfil" : { pathname: "/", hash: "perfil" },
+      href: isHome ? "#metodo" : { pathname: "/", hash: "metodo" },
     },
     {
       key: "contact",
+      icon: Send,
       kind: "anchor",
       href: isHome ? "#contato" : { pathname: "/", hash: "contato" },
     },
@@ -91,54 +142,208 @@ export function Header() {
   }, [isOpen]);
 
   return (
-    <header className="bg-background/90 fixed inset-x-0 top-0 z-40 border-b border-white/10 backdrop-blur-xl">
-      <Container className="flex h-[var(--header-height)] items-center justify-between gap-5">
-        <Logo
-          name={identity("wordmark")}
-          wordmark={identity("wordmark")}
-          variant="mark"
-        />
+    <>
+      <button
+        type="button"
+        tabIndex={-1}
+        aria-hidden="true"
+        onClick={() => setIsOpen(false)}
+        className={cn(
+          "fixed inset-0 z-30 bg-black/65 backdrop-blur-[2px] transition-opacity duration-300 xl:hidden",
+          isOpen
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0",
+        )}
+      />
+      <header
+        inert={isHome && heroActive}
+        aria-hidden={isHome && heroActive}
+        className={cn(
+          "bg-background/90 fixed inset-x-0 top-0 z-40 border-b border-white/10 backdrop-blur-xl transition-all duration-300",
+          isHome && heroActive
+            ? "pointer-events-none -translate-y-full opacity-0"
+            : "pointer-events-auto translate-y-0 opacity-100",
+        )}
+      >
+        <Container className="flex h-[var(--header-height)] items-center justify-between gap-5">
+          <Logo
+            name={identity("wordmark")}
+            wordmark={identity("wordmark")}
+            variant="mark"
+          />
 
-        <nav
-          aria-label={t("navLabel")}
-          className="hidden items-center gap-6 xl:flex"
-        >
-          {navItems.map((item) =>
-            typeof item.href === "string" && item.href.startsWith("#") ? (
-              <a
-                key={item.key}
-                href={item.href}
-                className="font-heading text-secondary hover:text-foreground text-xs font-medium tracking-wide transition-colors"
-              >
-                {t(item.key)}
-              </a>
-            ) : (
-              <Link
-                key={item.key}
-                href={item.href}
-                className="font-heading text-secondary hover:text-foreground text-xs font-medium tracking-wide transition-colors"
-              >
-                {t(item.key)}
-              </Link>
-            ),
-          )}
-        </nav>
+          <nav
+            aria-label={t("navLabel")}
+            className="hidden items-center gap-6 xl:flex"
+          >
+            {navItems.map((item) =>
+              typeof item.href === "string" && item.href.startsWith("#") ? (
+                <a
+                  key={item.key}
+                  href={item.href}
+                  className="font-heading text-secondary hover:text-foreground text-xs font-medium tracking-wide transition-colors"
+                >
+                  {t(item.key)}
+                </a>
+              ) : (
+                <Link
+                  key={item.key}
+                  href={item.href}
+                  className="font-heading text-secondary hover:text-foreground text-xs font-medium tracking-wide transition-colors"
+                >
+                  {t(item.key)}
+                </Link>
+              ),
+            )}
+          </nav>
 
-        <div className="hidden items-center gap-4 xl:flex">
-          <div className="group relative">
-            <button
-              type="button"
-              className="mono-label text-foreground flex min-h-11 items-center gap-2 px-2"
-              aria-label={t("languageLabel")}
-              aria-haspopup="true"
+          <div className="hidden items-center gap-4 xl:flex">
+            <div className="group relative">
+              <button
+                type="button"
+                className="mono-label text-foreground flex min-h-11 items-center gap-2 px-2"
+                aria-label={t("languageLabel")}
+                aria-haspopup="true"
+              >
+                {(() => {
+                  const Flag = localeFlags[locale as keyof typeof localeFlags];
+                  return <Flag />;
+                })()}
+                {t(localeLabels[locale as keyof typeof localeLabels])}
+              </button>
+              <div className="bg-surface invisible absolute top-full right-0 w-40 border border-white/15 p-2 opacity-0 shadow-2xl transition group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                {routing.locales.map((item) => {
+                  const Flag = localeFlags[item as keyof typeof localeFlags];
+
+                  return (
+                    <Link
+                      key={item}
+                      href={pathname}
+                      locale={item}
+                      className={cn(
+                        "hover:text-accent flex items-center justify-between gap-2 px-3 py-2 text-xs transition-colors",
+                        item === locale ? "text-accent" : "text-secondary",
+                      )}
+                      aria-current={item === locale ? "true" : undefined}
+                    >
+                      <span className="flex items-center gap-2">
+                        <Flag />
+                        {t(localeLabels[item as keyof typeof localeLabels])}
+                      </span>
+                      {item === locale ? (
+                        <Check aria-hidden="true" className="size-3.5" />
+                      ) : null}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+            <a
+              className="mono-label text-secondary hover:text-accent flex items-center gap-1.5"
+              href={linkedinHref(locale)}
+              target="_blank"
+              rel="noreferrer"
             >
-              {(() => {
-                const Flag = localeFlags[locale as keyof typeof localeFlags];
-                return <Flag />;
-              })()}
-              {t(localeLabels[locale as keyof typeof localeLabels])}
+              <LinkedInIcon aria-hidden="true" className="size-3.5" />
+              {common("linkedin")}
+            </a>
+            <a
+              className="mono-label text-secondary hover:text-accent flex items-center gap-1.5"
+              href={siteConfig.github}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GitHubIcon aria-hidden="true" className="size-3.5" />
+              {common("github")}
+            </a>
+            <a
+              className="mono-label text-secondary hover:text-accent flex items-center gap-1.5 border-l border-white/15 pl-4"
+              href={resumeHref(locale)}
+              download
+            >
+              <FileDown aria-hidden="true" className="size-3.5" />
+              {common("downloadResume")}
+            </a>
+          </div>
+
+          <div className="ml-auto flex items-center xl:hidden">
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={common("whatsapp")}
+              className="text-secondary hover:text-accent grid size-10 place-items-center transition-colors"
+            >
+              <MessageCircle aria-hidden="true" className="size-5" />
+            </a>
+            <a
+              href={linkedinHref(locale)}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={common("linkedin")}
+              className="text-secondary hover:text-accent grid size-10 place-items-center transition-colors"
+            >
+              <LinkedInIcon aria-hidden="true" className="size-5" />
+            </a>
+            <button
+              ref={menuButtonRef}
+              type="button"
+              className="grid size-11 place-items-center"
+              onClick={() => setIsOpen((value) => !value)}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
+              aria-label={
+                isOpen ? accessibility("closeMenu") : accessibility("openMenu")
+              }
+            >
+              {isOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
             </button>
-            <div className="bg-surface invisible absolute top-full right-0 w-40 border border-white/15 p-2 opacity-0 shadow-2xl transition group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+          </div>
+        </Container>
+
+        <div
+          ref={menuRef}
+          id="mobile-menu"
+          aria-hidden={!isOpen}
+          className={cn(
+            "bg-background absolute inset-x-0 top-full border-b border-white/10 px-5 transition-all xl:hidden",
+            isOpen
+              ? "visible translate-y-0 opacity-100"
+              : "invisible -translate-y-3 opacity-0",
+          )}
+        >
+          <nav className="flex flex-col py-5" aria-label={t("navLabel")}>
+            {navItems.map((item) => {
+              const Icon = item.icon;
+              const content = (
+                <>
+                  <Icon aria-hidden="true" className="text-accent size-5" />
+                  <span>{t(item.key)}</span>
+                </>
+              );
+
+              return typeof item.href === "string" &&
+                item.href.startsWith("#") ? (
+                <a
+                  key={item.key}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className="font-heading flex items-center gap-3 border-b border-white/10 py-4 text-xl"
+                >
+                  {content}
+                </a>
+              ) : (
+                <Link
+                  key={item.key}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className="font-heading flex items-center gap-3 border-b border-white/10 py-4 text-xl"
+                >
+                  {content}
+                </Link>
+              );
+            })}
+            <div className="text-secondary flex flex-wrap gap-2 pt-5 text-sm">
               {routing.locales.map((item) => {
                 const Flag = localeFlags[item as keyof typeof localeFlags];
 
@@ -147,16 +352,16 @@ export function Header() {
                     key={item}
                     href={pathname}
                     locale={item}
+                    onClick={() => setIsOpen(false)}
                     className={cn(
-                      "hover:text-accent flex items-center justify-between gap-2 px-3 py-2 text-xs transition-colors",
-                      item === locale ? "text-accent" : "text-secondary",
+                      "hover:text-accent flex items-center gap-2 rounded-sm border border-transparent px-2.5 py-2 transition-colors",
+                      item === locale &&
+                        "border-accent/40 bg-accent/10 text-accent",
                     )}
                     aria-current={item === locale ? "true" : undefined}
                   >
-                    <span className="flex items-center gap-2">
-                      <Flag />
-                      {t(localeLabels[item as keyof typeof localeLabels])}
-                    </span>
+                    <Flag />
+                    {t(localeLabels[item as keyof typeof localeLabels])}
                     {item === locale ? (
                       <Check aria-hidden="true" className="size-3.5" />
                     ) : null}
@@ -164,148 +369,30 @@ export function Header() {
                 );
               })}
             </div>
-          </div>
-          <a
-            className="mono-label text-secondary hover:text-accent flex items-center gap-1.5"
-            href={siteConfig.linkedin}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <LinkedInIcon aria-hidden="true" className="size-3.5" />
-            {common("linkedin")}
-          </a>
-          <a
-            className="mono-label text-secondary hover:text-accent flex items-center gap-1.5"
-            href={siteConfig.github}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <GitHubIcon aria-hidden="true" className="size-3.5" />
-            {common("github")}
-          </a>
-          <a
-            className="mono-label text-secondary hover:text-accent flex items-center gap-1.5 border-l border-white/15 pl-4"
-            href={resumeHref(locale)}
-            download
-          >
-            <FileDown aria-hidden="true" className="size-3.5" />
-            {common("downloadResume")}
-          </a>
-        </div>
-
-        <div className="ml-auto flex items-center xl:hidden">
-          <a
-            href={whatsappHref}
-            target="_blank"
-            rel="noreferrer"
-            aria-label={common("whatsapp")}
-            className="text-secondary hover:text-accent grid size-10 place-items-center transition-colors"
-          >
-            <MessageCircle aria-hidden="true" className="size-5" />
-          </a>
-          <a
-            href={siteConfig.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            aria-label={common("linkedin")}
-            className="text-secondary hover:text-accent grid size-10 place-items-center transition-colors"
-          >
-            <LinkedInIcon aria-hidden="true" className="size-5" />
-          </a>
-          <button
-            ref={menuButtonRef}
-            type="button"
-            className="grid size-11 place-items-center"
-            onClick={() => setIsOpen((value) => !value)}
-            aria-expanded={isOpen}
-            aria-controls="mobile-menu"
-            aria-label={
-              isOpen ? accessibility("closeMenu") : accessibility("openMenu")
-            }
-          >
-            {isOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
-          </button>
-        </div>
-      </Container>
-
-      <div
-        ref={menuRef}
-        id="mobile-menu"
-        aria-hidden={!isOpen}
-        className={cn(
-          "bg-background absolute inset-x-0 top-full border-b border-white/10 px-5 transition-all xl:hidden",
-          isOpen
-            ? "visible translate-y-0 opacity-100"
-            : "invisible -translate-y-3 opacity-0",
-        )}
-      >
-        <nav className="flex flex-col py-5" aria-label={t("navLabel")}>
-          {navItems.map((item) =>
-            typeof item.href === "string" && item.href.startsWith("#") ? (
+            <div className="flex flex-wrap gap-5 pt-5">
               <a
-                key={item.key}
-                href={item.href}
+                className="flex items-center gap-2"
+                href={siteConfig.github}
+                target="_blank"
+                rel="noreferrer"
                 onClick={() => setIsOpen(false)}
-                className="font-heading border-b border-white/10 py-4 text-xl"
               >
-                {t(item.key)}
+                <GitHubIcon aria-hidden="true" className="size-4" />
+                {common("github")}
               </a>
-            ) : (
-              <Link
-                key={item.key}
-                href={item.href}
+              <a
+                className="flex items-center gap-2"
+                href={resumeHref(locale)}
+                download
                 onClick={() => setIsOpen(false)}
-                className="font-heading border-b border-white/10 py-4 text-xl"
               >
-                {t(item.key)}
-              </Link>
-            ),
-          )}
-          <div className="text-secondary flex flex-wrap gap-x-6 gap-y-3 pt-5 text-sm">
-            {routing.locales.map((item) => {
-              const Flag = localeFlags[item as keyof typeof localeFlags];
-
-              return (
-                <Link
-                  key={item}
-                  href={pathname}
-                  locale={item}
-                  onClick={() => setIsOpen(false)}
-                  className={cn(
-                    "hover:text-accent flex items-center gap-2 transition-colors",
-                    item === locale && "text-foreground",
-                  )}
-                  aria-current={item === locale ? "true" : undefined}
-                >
-                  <Flag />
-                  {t(localeLabels[item as keyof typeof localeLabels])}
-                </Link>
-              );
-            })}
-          </div>
-          <div className="flex flex-wrap gap-5 pt-5">
-            <a
-              className="flex items-center gap-2"
-              href={siteConfig.github}
-              target="_blank"
-              rel="noreferrer"
-              onClick={() => setIsOpen(false)}
-            >
-              <GitHubIcon aria-hidden="true" className="size-4" />
-              {common("github")}
-            </a>
-            <a
-              className="flex items-center gap-2"
-              href={resumeHref(locale)}
-              download
-              onClick={() => setIsOpen(false)}
-            >
-              <FileDown aria-hidden="true" className="size-4" />
-              {common("downloadResume")}
-            </a>
-          </div>
-        </nav>
-      </div>
-    </header>
+                <FileDown aria-hidden="true" className="size-4" />
+                {common("downloadResume")}
+              </a>
+            </div>
+          </nav>
+        </div>
+      </header>
+    </>
   );
 }
