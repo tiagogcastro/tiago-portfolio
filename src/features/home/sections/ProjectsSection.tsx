@@ -106,7 +106,7 @@ export async function ProjectsSection() {
           </Reveal>
         </article>
 
-        <div className="mt-12 grid gap-px border border-white/15 bg-white/15 lg:mt-16 lg:grid-cols-2">
+        <div className="mt-12 grid min-w-0 gap-px border border-white/15 bg-white/15 lg:mt-16 lg:grid-cols-2">
           {selected.map((project, index) => {
             const base = project.translationKey;
             const cover = project.cover!;
@@ -115,7 +115,7 @@ export async function ProjectsSection() {
               <Reveal
                 key={project.id}
                 delay={index * 0.08}
-                className="bg-surface hover:border-accent/60 group/card relative flex flex-col border border-transparent p-6 transition-[border-color,transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_22px_70px_color-mix(in_srgb,var(--accent)_10%,transparent)] sm:p-8"
+                className="bg-surface hover:border-accent/60 group/card relative flex min-w-0 flex-col border border-transparent p-6 transition-[border-color,transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_22px_70px_color-mix(in_srgb,var(--accent)_10%,transparent)] sm:p-8"
               >
                 <figure className="bg-background overflow-hidden border border-white/15 p-2">
                   <Image

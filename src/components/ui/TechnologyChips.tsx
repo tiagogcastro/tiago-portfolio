@@ -89,7 +89,7 @@ export function TechnologyChips({
   return (
     <div
       className={cn(
-        "flex [scrollbar-width:none] flex-nowrap gap-2 overflow-x-auto pb-2 sm:flex-wrap sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden",
+        "flex max-w-full min-w-0 [scrollbar-width:none] flex-nowrap gap-2 overflow-x-auto pb-2 sm:flex-wrap sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden",
         className,
       )}
     >
