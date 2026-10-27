@@ -87,11 +87,16 @@ export function TechnologyChips({
   className,
 }: TechnologyChipsProps) {
   return (
-    <div className={cn("flex flex-wrap gap-2", className)}>
+    <div
+      className={cn(
+        "flex [scrollbar-width:none] flex-nowrap gap-2 overflow-x-auto pb-2 sm:flex-wrap sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden",
+        className,
+      )}
+    >
       {technologies.map((technology) => (
         <span
           key={technology}
-          className="bg-background/70 text-secondary inline-flex items-center gap-2 border border-white/15 px-2.5 py-1.5 text-xs font-semibold"
+          className="bg-background/70 text-secondary inline-flex shrink-0 items-center gap-2 border border-white/15 px-2.5 py-1.5 text-xs font-semibold whitespace-nowrap"
         >
           <TechnologyIcon technology={technology} />
           {technology}

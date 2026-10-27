@@ -225,14 +225,14 @@ export async function ExperienceSection() {
                         {experience("contributionsLabel")}
                       </p>
                     </div>
-                    <div className="space-y-6">
+                    <div className="space-y-5 sm:space-y-6">
                       {item.highlights.map((highlight, index) => {
                         const Icon = item.icons[index];
 
                         return (
                           <div
                             key={highlight}
-                            className="grid grid-cols-[auto_1fr] gap-4 border-b border-white/10 pb-6 last:border-0 last:pb-0"
+                            className="grid grid-cols-[auto_1fr] items-center gap-x-3 gap-y-2 border-b border-white/10 pb-5 last:border-0 last:pb-0 sm:items-start sm:gap-x-4 sm:pb-6"
                           >
                             <span
                               className={`grid size-10 place-items-center rounded-full border ${
@@ -243,18 +243,16 @@ export async function ExperienceSection() {
                             >
                               <Icon aria-hidden="true" className="size-4" />
                             </span>
-                            <div>
-                              <h4 className="font-heading text-lg leading-snug font-semibold">
-                                {t(
-                                  `experience.${item.key}.blocks.${highlight}.title`,
-                                )}
-                              </h4>
-                              <p className="text-secondary mt-2 text-sm leading-6">
-                                {t(
-                                  `experience.${item.key}.blocks.${highlight}.detail`,
-                                )}
-                              </p>
-                            </div>
+                            <h4 className="font-heading text-base leading-snug font-semibold sm:text-lg">
+                              {t(
+                                `experience.${item.key}.blocks.${highlight}.title`,
+                              )}
+                            </h4>
+                            <p className="text-secondary col-span-2 line-clamp-2 text-sm leading-6 sm:col-start-2 sm:line-clamp-none">
+                              {t(
+                                `experience.${item.key}.blocks.${highlight}.detail`,
+                              )}
+                            </p>
                           </div>
                         );
                       })}

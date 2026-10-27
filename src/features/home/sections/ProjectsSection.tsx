@@ -51,7 +51,7 @@ export async function ProjectsSection() {
           <h2 className="font-display mt-3 max-w-3xl text-[clamp(2.25rem,4vw,4rem)] leading-[0.95] font-semibold tracking-[-0.035em]">
             {t("homeTitle")}
           </h2>
-          <p className="text-secondary mt-5 max-w-3xl text-base leading-7">
+          <p className="text-secondary mt-5 line-clamp-3 max-w-3xl text-base leading-7 sm:line-clamp-none">
             {t("homeIntro")}
           </p>
         </Reveal>
@@ -64,7 +64,7 @@ export async function ProjectsSection() {
             <h3 className="font-display mt-3 text-4xl font-semibold tracking-[-0.035em] sm:text-5xl">
               {t("items.nexsift.name")}
             </h3>
-            <p className="text-secondary mt-5 max-w-3xl text-base leading-7">
+            <p className="text-secondary mt-5 line-clamp-2 max-w-3xl text-base leading-7 sm:line-clamp-none">
               {t("items.nexsift.description")}
             </p>
             <TechnologyChips
@@ -98,7 +98,7 @@ export async function ProjectsSection() {
                 <p className="text-mineral mt-4 text-xs font-bold tracking-[0.1em] uppercase">
                   {t(`details.${key}`)}
                 </p>
-                <p className="text-secondary mt-3 text-sm leading-6">
+                <p className="text-secondary mt-3 line-clamp-2 text-sm leading-6 md:line-clamp-none">
                   {t(`items.nexsift.homeProofs.${key}`)}
                 </p>
               </div>
@@ -133,7 +133,7 @@ export async function ProjectsSection() {
                 <h3 className="font-display mt-3 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">
                   {tr(`${base}.name`)}
                 </h3>
-                <p className="text-secondary mt-4 line-clamp-4 leading-7">
+                <p className="text-secondary mt-4 line-clamp-2 leading-7 sm:line-clamp-4">
                   {tr(`${base}.description`)}
                 </p>
                 <TechnologyChips

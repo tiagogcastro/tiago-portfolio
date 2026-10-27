@@ -34,7 +34,7 @@ export async function CredentialsSection() {
           <h2 className="font-display mt-3 max-w-3xl text-[clamp(2.25rem,4vw,4rem)] leading-[0.95] font-semibold tracking-[-0.035em]">
             {t("education.title")}
           </h2>
-          <p className="text-secondary mt-5 max-w-3xl text-base leading-7">
+          <p className="text-secondary mt-5 line-clamp-3 max-w-3xl text-base leading-7 sm:line-clamp-none">
             {t("education.intro")}
           </p>
         </Reveal>
@@ -59,7 +59,7 @@ export async function CredentialsSection() {
               <p className="text-secondary mt-3 text-sm leading-6">
                 {t("education.degree.institution")}
               </p>
-              <p className="text-secondary mt-4 text-sm leading-6">
+              <p className="text-secondary mt-4 line-clamp-2 text-sm leading-6 sm:line-clamp-none">
                 {t("education.degree.detail")}
               </p>
               <p className="text-accent mt-auto pt-5 text-xs font-bold tracking-[0.08em] uppercase">
@@ -95,7 +95,7 @@ export async function CredentialsSection() {
                 <h3 className="font-heading group-hover:text-accent relative mt-7 text-xl leading-tight font-semibold transition-colors sm:text-2xl">
                   {t(`education.credentials.${key}.title`)}
                 </h3>
-                <p className="text-secondary mt-4 text-sm leading-6">
+                <p className="text-secondary mt-4 line-clamp-2 text-sm leading-6 sm:line-clamp-none">
                   {t(`education.credentials.${key}.detail`)}
                 </p>
                 <p className="text-accent mt-auto pt-5 text-xs font-bold tracking-[0.08em] uppercase">
