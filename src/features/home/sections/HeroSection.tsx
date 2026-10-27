@@ -82,7 +82,7 @@ export async function HeroSection() {
           {t("role")}
         </p>
 
-        <h1 className="font-display text-[clamp(3.2rem,6vw,6.4rem)] leading-[0.96] tracking-[-0.04em]">
+        <h1 className="font-display text-[clamp(2.75rem,5vw,5.2rem)] leading-[0.96] tracking-[-0.04em]">
           <span className="text-foreground block">{t("titleFirst")}</span>
           <span className="text-accent block">{t("titleSecond")}</span>
         </h1>

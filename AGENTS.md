@@ -32,7 +32,7 @@ Run `yarn check` after any code change. There are no tests.
 
 ## Architecture
 
-- `src/app/[locale]/`: routes; `layout.tsx` holds fonts (Fraunces display, Familjen Grotesk body/heading, Plex Mono), global metadata, Vercel Analytics, and Speed Insights. Homepage metadata and JSON-LD live in `page.tsx`. `globals.css` defines theme tokens via Tailwind 4 `@theme inline` (e.g. `text-accent`, `bg-surface`, `text-mineral`).
+- `src/app/[locale]/`: routes; `layout.tsx` holds the two site fonts (Fraunces display and Familjen Grotesk for body, headings and compact labels), global metadata, Vercel Analytics, and Speed Insights. Homepage metadata and JSON-LD live in `page.tsx`. `globals.css` defines theme tokens via Tailwind 4 `@theme inline` (e.g. `text-accent`, `bg-surface`, `text-mineral`).
 - `src/features/home/`: HomePage composes `sections/` (Hero, Work, Experience, Method, Projects, Credentials, Contact) and supporting components.
 - `src/content/`: structured content (projects, contact) separate from translatable copy.
 - Localized Open Graph images live under `src/app/[locale]/` and use the local WOFF files in `public/fonts/og/`.
@@ -42,7 +42,7 @@ Run `yarn check` after any code change. There are no tests.
 ## Design conventions
 
 - Editorial dark theme; palette via CSS vars in `globals.css` (`--accent` gold, `--mineral` green, etc.). Use token classes (`text-accent`, `bg-surface-soft`, `text-secondary`, `text-muted`), not raw hex.
-- Font roles: display = Fraunces, heading/body = Familjen Grotesk, mono = IBM Plex Mono.
+- Font roles: display = Fraunces; heading, body and compact labels = Familjen Grotesk. Do not add a third family.
 - Brand variants live in `src/components/brand/Logo.tsx`: `mark` is the standalone `[T<]` symbol and `lockup` combines the symbol with the TIAGO G CASTRO wordmark. `Mark.tsx` and `Wordmark.tsx` remain separate sources. Static SVG and PNG exports live in `public/brand/` and are maintained manually; usage rules live in `docs/brand.md`.
 - Motion is used via `Reveal` wrapper; it respects `prefers-reduced-motion` (global CSS). Verify layout with both desktop and mobile viewports.
 - Section headings use `clamp()` fluid type; when editing headline copy, check line-wrapping at the actual column width (titles are expected to break into aligned 2-line blocks).

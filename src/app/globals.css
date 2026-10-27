@@ -18,8 +18,6 @@
   --signal: #c9aa70;
   --line: color-mix(in srgb, var(--text) 15%, transparent);
   --header-height: 4.5rem;
-  --font-newsreader: var(--font-fraunces);
-  --font-plex-sans: var(--font-familjen-grotesk);
 }
 
 @theme inline {
@@ -40,7 +38,7 @@
   --font-display: var(--font-fraunces);
   --font-heading: var(--font-familjen-grotesk);
   --font-body: var(--font-familjen-grotesk);
-  --font-mono: var(--font-plex-mono);
+  --font-mono: var(--font-familjen-grotesk);
 }
 
 * {
@@ -121,10 +119,25 @@ summary:focus-visible {
   border-top: 1px solid var(--line);
 }
 .mono-label {
-  font-family: var(--font-plex-mono), monospace;
+  font-family: var(--font-familjen-grotesk), sans-serif;
   font-size: 0.75rem;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.04em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+@keyframes gallery-enter {
+  from {
+    opacity: 0.55;
+    transform: translateX(0.35rem) scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+.animate-gallery-enter {
+  animation: gallery-enter 280ms ease-out both;
 }
 @media (prefers-reduced-motion: reduce) {
   html {

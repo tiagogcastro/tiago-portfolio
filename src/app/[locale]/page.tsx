@@ -68,7 +68,7 @@ export default async function Page({ params }: PageProps) {
             "@type": "EducationalOccupationalCredential",
             name: education("degree.title"),
             credentialCategory: education("degree.detail"),
-            dateCreated: "2026-07",
+            dateCreated: "2026-08",
             url: siteConfig.credentials.degree,
             recognizedBy: {
               "@type": "EducationalOrganization",
@@ -77,8 +77,35 @@ export default async function Page({ params }: PageProps) {
           },
           {
             "@type": "EducationalOccupationalCredential",
+            name: education("credentials.cloudPractitioner.title"),
+            credentialCategory: education(
+              "credentials.cloudPractitioner.category",
+            ),
+            dateCreated: "2026-09",
+            url: siteConfig.credentials.awsCloudPractitioner,
+            recognizedBy: {
+              "@type": "Organization",
+              name: education("credentials.cloudPractitioner.issuer"),
+            },
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            name: education("credentials.aiPractitioner.title"),
+            credentialCategory: education(
+              "credentials.aiPractitioner.category",
+            ),
+            dateCreated: "2026-09",
+            url: siteConfig.credentials.awsAiPractitioner,
+            recognizedBy: {
+              "@type": "Organization",
+              name: education("credentials.aiPractitioner.issuer"),
+            },
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
             name: education("credentials.serverless.title"),
-            credentialCategory: "Digital badge",
+            credentialCategory: education("credentials.serverless.category"),
+            dateCreated: "2026-08",
             url: siteConfig.credentials.awsServerless,
             recognizedBy: {
               "@type": "Organization",

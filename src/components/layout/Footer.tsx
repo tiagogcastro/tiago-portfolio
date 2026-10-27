@@ -1,4 +1,10 @@
-import { Mail, MapPin, MessageCircle } from "lucide-react";
+import {
+  BriefcaseBusiness,
+  Globe2,
+  Mail,
+  MapPin,
+  MessageCircle,
+} from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Logo } from "@/components/brand/Logo";
 import { GitHubIcon, LinkedInIcon } from "@/components/brand/SocialIcons";
@@ -27,10 +33,23 @@ export async function Footer() {
               {hero("statement")}
             </p>
           </div>
-          <p className="text-secondary flex items-center gap-2 text-sm">
-            <MapPin aria-hidden="true" className="text-mineral size-4" />
-            {t("location")}
-          </p>
+          <div className="space-y-3 text-sm">
+            <p className="text-secondary flex items-center gap-2">
+              <MapPin aria-hidden="true" className="text-mineral size-4" />
+              {t("location")}
+            </p>
+            <p className="text-secondary flex items-center gap-2">
+              <BriefcaseBusiness
+                aria-hidden="true"
+                className="text-accent size-4"
+              />
+              {t("workModes")}
+            </p>
+            <p className="text-secondary flex items-center gap-2">
+              <Globe2 aria-hidden="true" className="text-mineral size-4" />
+              {t("international")}
+            </p>
+          </div>
         </div>
 
         <div className="flex flex-col gap-6 pt-7 sm:flex-row sm:items-center sm:justify-between">

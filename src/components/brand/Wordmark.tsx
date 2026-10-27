@@ -18,7 +18,7 @@ export function Wordmark({ label, className, ...props }: WordmarkProps) {
         x="15"
         y="29"
         fill="currentColor"
-        style={{ fontFamily: "var(--font-newsreader), serif" }}
+        style={{ fontFamily: "var(--font-fraunces), serif" }}
         fontSize="23"
         fontWeight="600"
         letterSpacing="0.6"

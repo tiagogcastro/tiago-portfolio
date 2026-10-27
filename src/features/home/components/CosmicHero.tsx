@@ -203,6 +203,7 @@ export function CosmicHero({
 }) {
   const section = useRef<HTMLElement>(null);
   const discoveryAnchor = useRef<HTMLElement | null>(null);
+  const explorerButton = useRef<HTMLButtonElement>(null);
   const reduced = useSyncExternalStore(
     subscribeStatic,
     getStatic,
@@ -285,6 +286,19 @@ export function CosmicHero({
       soundSystem.current = null;
     };
   }, []);
+
+  useEffect(() => {
+    if (!exploring) return;
+
+    const closeExplorer = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      setExploring(false);
+      explorerButton.current?.focus();
+    };
+
+    document.addEventListener("keydown", closeExplorer);
+    return () => document.removeEventListener("keydown", closeExplorer);
+  }, [exploring]);
 
   function dispatch(name: string, detail?: unknown) {
     section.current
@@ -386,6 +400,7 @@ export function CosmicHero({
               );
             })}
           <button
+            ref={explorerButton}
             type="button"
             onClick={() => setExploring(!exploring)}
             aria-expanded={exploring}

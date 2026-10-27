@@ -27,7 +27,7 @@ Keep text, translated labels, terminal and cards in HTML. Do not bake them into 
 
 ## Behavior
 
-Native scrolling drives a 1000svh sticky scene, extended from the initial six-screen draft to give each capability a full reading interval. The timeline contains an introduction, five capability stops, the code terminal and a final outward camera movement revealing the whole universe. Each stop keeps the camera nearly stationary for most of its interval before flying into the next layer. The prior headline fades before the first card, and cards do not overlap in their opacity windows.
+Native scrolling drives a 760svh sticky scene, balancing the cinematic journey with faster access to the homepage content. The timeline contains an introduction, five capability stops, the code terminal and a final outward camera movement revealing the whole universe. Each stop keeps the camera nearly stationary for most of its interval before flying into the next layer. The prior headline fades before the first card, and cards do not overlap in their opacity windows.
 
 Drag the scene to rotate the selected target: universe, code heart, avatar or orbital rings. Vertical touch scrolling remains native. The center-universe button restores all orientations. Pointer hover adds subtle parallax. Cards remain attached to their world positions. The nucleus and avatar share a slow breathing cycle, with no repeated shockwave rings or flashing cursor.
 

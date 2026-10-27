@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Familjen_Grotesk, Fraunces, IBM_Plex_Mono } from "next/font/google";
+import { Familjen_Grotesk, Fraunces } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -23,12 +23,6 @@ const familjenGrotesk = Familjen_Grotesk({
   subsets: ["latin"],
   variable: "--font-familjen-grotesk",
   weight: "variable",
-  display: "swap",
-});
-const plexMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  variable: "--font-plex-mono",
-  weight: ["400", "500"],
   display: "swap",
 });
 type LayoutProps = {
@@ -95,7 +89,8 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   return (
     <html
       lang={structuredData("language")}
-      className={`${fraunces.variable} ${familjenGrotesk.variable} ${plexMono.variable}`}
+      data-scroll-behavior="smooth"
+      className={`${fraunces.variable} ${familjenGrotesk.variable}`}
     >
       <body>
         <NextIntlClientProvider>
