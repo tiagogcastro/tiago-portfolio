@@ -961,11 +961,11 @@
     margin-top: 18px;
   }
   .cosmic-source-identity {
-    top: 12%;
-    padding: 6px 12px;
+    top: 11%;
+    padding: 5px 10px;
   }
   .cosmic-source-identity .cosmic-identity > span {
-    font-size: 19px;
+    font-size: 17px;
     white-space: nowrap;
   }
   .cosmic-inner {
@@ -1012,19 +1012,23 @@
     margin-top: 12px;
   }
   .cosmic-final-copy {
-    top: 20%;
+    top: 19%;
     left: 6%;
     width: 88%;
   }
   .cosmic-final-copy h2 {
-    font-size: 27px;
-    margin-bottom: 8px;
+    font-size: 23px;
+    line-height: 1.05;
+    margin-bottom: 6px;
   }
   .cosmic-final-copy p {
-    font-size: 14px;
+    max-width: 40ch;
+    padding: 8px 10px;
+    font-size: 12px;
+    line-height: 1.5;
   }
   .cosmic-overview {
-    inset: 38% 4% 20%;
+    inset: 39% 4% 20%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, 1fr);
     gap: 10px;
@@ -1048,7 +1052,8 @@
     margin-right: 6px;
   }
   .cosmic-overview h3 {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 1.15;
     min-height: 20px;
   }
   .cosmic-overview p {
@@ -1222,6 +1227,15 @@
   }
   .cosmic-core-message > p:last-child {
     display: none;
+  }
+  .cosmic-stage[data-chapter="5"] .cosmic-source-identity {
+    top: 8%;
+  }
+  .cosmic-final-copy {
+    top: 16%;
+  }
+  .cosmic-overview {
+    inset-block: 37% 15%;
   }
 }
 
