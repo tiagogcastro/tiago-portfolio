@@ -5,14 +5,15 @@ import {
   MapPin,
   MessageCircle,
 } from "lucide-react";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Logo } from "@/components/brand/Logo";
 import { GitHubIcon, LinkedInIcon } from "@/components/brand/SocialIcons";
 import { Container } from "@/components/layout/Container";
 import { ExternalLink } from "@/components/ui/ExternalLink";
-import { siteConfig } from "@/config/site";
+import { linkedinHref, siteConfig } from "@/config/site";
 
 export async function Footer() {
+  const locale = await getLocale();
   const t = await getTranslations("footer");
   const common = await getTranslations("common");
   const identity = await getTranslations("identity");
@@ -57,7 +58,7 @@ export async function Footer() {
             {t("copyright", { year: new Date().getFullYear() })}
           </p>
           <div className="flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold">
-            <ExternalLink href={siteConfig.linkedin} icon={LinkedInIcon}>
+            <ExternalLink href={linkedinHref(locale)} icon={LinkedInIcon}>
               {common("linkedin")}
             </ExternalLink>
             <ExternalLink href={siteConfig.github} icon={GitHubIcon}>

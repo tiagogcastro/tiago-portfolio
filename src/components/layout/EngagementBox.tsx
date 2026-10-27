@@ -2,7 +2,7 @@
 
 import { Logo } from "@/components/brand/Logo";
 import { LinkedInIcon } from "@/components/brand/SocialIcons";
-import { siteConfig } from "@/config/site";
+import { linkedinHref, siteConfig } from "@/config/site";
 import { MessageCircle, X } from "lucide-react";
 import {
   AnimatePresence,
@@ -11,7 +11,7 @@ import {
   useReducedMotion,
   type PanInfo,
 } from "motion/react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
 const STORAGE_KEY = "tiago-portfolio-engagement-v2-dismissed";
@@ -20,6 +20,7 @@ const DISMISS_OFFSET_Y = 120;
 const DISMISS_VELOCITY_Y = 700;
 
 export function EngagementBox() {
+  const locale = useLocale();
   const t = useTranslations("engagement");
   const common = useTranslations("common");
   const identity = useTranslations("identity");
@@ -107,7 +108,7 @@ export function EngagementBox() {
         <span className="hidden sm:inline">{t("whatsapp")}</span>
       </a>
       <a
-        href={siteConfig.linkedin}
+        href={linkedinHref(locale)}
         target="_blank"
         rel="noreferrer"
         className="font-heading hover:border-accent hover:text-accent inline-flex min-h-11 items-center justify-center gap-2 border border-white/25 px-4 py-2.5 text-sm font-semibold whitespace-nowrap transition-colors"

@@ -37,3 +37,9 @@ export function resumeHref(locale: string): string {
     siteConfig.resume["pt-BR"]
   );
 }
+
+export function linkedinHref(locale: string): string {
+  return locale === "en-US"
+    ? "https://www.linkedin.com/in/tiagogcastro/?locale=en-US"
+    : siteConfig.linkedin;
+}

@@ -5,7 +5,7 @@ import {
   LinkedInIcon,
   TikTokIcon,
 } from "@/components/brand/SocialIcons";
-import { siteConfig } from "@/config/site";
+import { linkedinHref, siteConfig } from "@/config/site";
 import { CosmicAudio } from "@/features/home/components/CosmicAudio";
 import { CosmicConnections } from "@/features/home/components/CosmicConnections";
 import { CosmicIdentity } from "@/features/home/components/CosmicIdentity";
@@ -51,6 +51,7 @@ import {
   useSyncExternalStore,
   type ReactNode,
 } from "react";
+import { useLocale } from "next-intl";
 
 const STATIC_QUERY = "(prefers-reduced-motion: reduce), (max-height: 540px)";
 
@@ -201,6 +202,7 @@ export function CosmicHero({
   children: ReactNode;
   labels: CosmicLabels;
 }) {
+  const locale = useLocale();
   const section = useRef<HTMLElement>(null);
   const discoveryAnchor = useRef<HTMLElement | null>(null);
   const explorerButton = useRef<HTMLButtonElement>(null);
@@ -614,7 +616,7 @@ export function CosmicHero({
           </a>
           <div className="cosmic-socials">
             <a
-              href={siteConfig.linkedin}
+              href={linkedinHref(locale)}
               target="_blank"
               rel="noreferrer"
               aria-label={labels.linkedin}

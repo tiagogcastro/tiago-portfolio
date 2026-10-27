@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/Button";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { ContactSignalField } from "@/components/visual/ContactSignalField";
 import { Reveal } from "@/components/visual/Reveal";
-import { resumeHref, siteConfig } from "@/config/site";
+import { linkedinHref, resumeHref, siteConfig } from "@/config/site";
 
 export async function ContactSection() {
   const t = await getTranslations("contact");
@@ -27,7 +27,7 @@ export async function ContactSection() {
   const secondaryChannels = [
     {
       value: t("channels.linkedinAction"),
-      href: siteConfig.linkedin,
+      href: linkedinHref(locale),
       icon: LinkedInIcon,
       download: false,
     },

@@ -1,6 +1,6 @@
 "use client";
 
-import { resumeHref, siteConfig } from "@/config/site";
+import { linkedinHref, resumeHref, siteConfig } from "@/config/site";
 import { Link, usePathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
@@ -240,7 +240,7 @@ export function Header() {
             </div>
             <a
               className="mono-label text-secondary hover:text-accent flex items-center gap-1.5"
-              href={siteConfig.linkedin}
+              href={linkedinHref(locale)}
               target="_blank"
               rel="noreferrer"
             >
@@ -277,7 +277,7 @@ export function Header() {
               <MessageCircle aria-hidden="true" className="size-5" />
             </a>
             <a
-              href={siteConfig.linkedin}
+              href={linkedinHref(locale)}
               target="_blank"
               rel="noreferrer"
               aria-label={common("linkedin")}
