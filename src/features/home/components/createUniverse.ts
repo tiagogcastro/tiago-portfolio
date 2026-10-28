@@ -546,7 +546,7 @@ export function createUniverse(
     if (
       event.button !== 0 ||
       (event.target as HTMLElement).closest(
-        "a, button, input, .cosmic-discovery, .cosmic-story-card, .cosmic-terminal",
+        "a, button, input, summary, select, textarea, .cosmic-discovery, .cosmic-story-card, .cosmic-terminal",
       )
     )
       return;
