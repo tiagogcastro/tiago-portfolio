@@ -5,6 +5,8 @@ import {
   LinkedInIcon,
   TikTokIcon,
 } from "@/components/brand/SocialIcons";
+import { BrazilFlag } from "@/components/brand/BrazilFlag";
+import { SpainFlag, USFlag } from "@/components/brand/LocaleFlags";
 import { linkedinHref, siteConfig } from "@/config/site";
 import { CosmicAudio } from "@/features/home/components/CosmicAudio";
 import { CosmicConnections } from "@/features/home/components/CosmicConnections";
@@ -51,7 +53,9 @@ import {
   useSyncExternalStore,
   type ReactNode,
 } from "react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
 
 const STATIC_QUERY = "(prefers-reduced-motion: reduce), (max-height: 540px)";
 
@@ -72,6 +76,21 @@ const DISCOVERY_ICONS = {
   orbit: Orbit,
 };
 const TARGETS: ControlTarget[] = ["universe", "core", "avatar", "orbit"];
+const LOCALE_LABELS = {
+  "pt-BR": "languages.portuguese",
+  "en-US": "languages.english",
+  "es-ES": "languages.spanish",
+} as const;
+const LOCALE_FLAGS = {
+  "pt-BR": BrazilFlag,
+  "en-US": USFlag,
+  "es-ES": SpainFlag,
+} as const;
+const LOCALE_CODES = {
+  "pt-BR": "PT",
+  "en-US": "EN",
+  "es-ES": "ES",
+} as const;
 
 function SignalSegment({
   progress,
@@ -203,6 +222,8 @@ export function CosmicHero({
   labels: CosmicLabels;
 }) {
   const locale = useLocale();
+  const header = useTranslations("header");
+  const pathname = usePathname();
   const section = useRef<HTMLElement>(null);
   const discoveryAnchor = useRef<HTMLElement | null>(null);
   const explorerButton = useRef<HTMLButtonElement>(null);
@@ -383,6 +404,36 @@ export function CosmicHero({
             <b>{labels.chapters[reduced ? 5 : chapter]}</b>
           </span>
         </div>
+
+        <details className="cosmic-locales">
+          <summary aria-label={header("languageLabel")}>
+            {(() => {
+              const ActiveFlag =
+                LOCALE_FLAGS[locale as keyof typeof LOCALE_FLAGS];
+              return <ActiveFlag />;
+            })()}
+            <span>{LOCALE_CODES[locale as keyof typeof LOCALE_CODES]}</span>
+          </summary>
+          <div>
+            {routing.locales.map((item) => {
+              const Flag = LOCALE_FLAGS[item as keyof typeof LOCALE_FLAGS];
+              const active = item === locale;
+
+              return (
+                <Link
+                  key={item}
+                  href={pathname}
+                  locale={item}
+                  aria-current={active ? "page" : undefined}
+                >
+                  <Flag />
+                  <span>{header(LOCALE_LABELS[item])}</span>
+                  {active ? <Check aria-hidden="true" size={14} /> : null}
+                </Link>
+              );
+            })}
+          </div>
+        </details>
 
         <nav className="cosmic-navigation" aria-label={labels.tools}>
           {(chapter !== 5 || reduced) &&
