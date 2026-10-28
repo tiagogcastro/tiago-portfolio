@@ -506,6 +506,10 @@ export function createUniverse(
 
   const pointer = (event: PointerEvent) => {
     if (dragging) {
+      if (event.buttons === 0) {
+        cancelDragging(event.pointerId);
+        return;
+      }
       const dx = (event.clientX - lastPointerX) * 0.004;
       const dy = (event.clientY - lastPointerY) * 0.002;
       if (controlTarget === "universe") {
@@ -541,13 +545,13 @@ export function createUniverse(
   );
   const projected = new THREE.Vector3();
   const worldAnchor = new THREE.Vector3();
+  const interactiveSelector =
+    "a, button, input, summary, select, textarea, .cosmic-discovery, .cosmic-story-card, .cosmic-terminal";
 
   const down = (event: PointerEvent) => {
     if (
       event.button !== 0 ||
-      (event.target as HTMLElement).closest(
-        "a, button, input, summary, select, textarea, .cosmic-discovery, .cosmic-story-card, .cosmic-terminal",
-      )
+      (event.target as HTMLElement).closest(interactiveSelector)
     )
       return;
     pointerDownX = event.clientX;
@@ -557,6 +561,23 @@ export function createUniverse(
     lastPointerY = event.clientY;
     stage.setPointerCapture(event.pointerId);
     stage.dataset.dragging = "true";
+  };
+  const cancelDragging = (pointerId?: number) => {
+    dragging = false;
+    stage.dataset.dragging = "false";
+    if (pointerId !== undefined && stage.hasPointerCapture(pointerId)) {
+      try {
+        stage.releasePointerCapture(pointerId);
+      } catch {
+        // The browser may already have released a cancelled pointer.
+      }
+    }
+  };
+  const lostPointerCapture = () => cancelDragging();
+  const cancelDraggingOnBlur = () => cancelDragging();
+  const preventAutoScroll = (event: MouseEvent) => {
+    if (event.button === 1 && !(event.target as HTMLElement).closest("a[href]"))
+      event.preventDefault();
   };
 
   // Pick only visible object geometry, never sprite halos or the avatar's whole body.
@@ -612,10 +633,7 @@ export function createUniverse(
       event.clientX - pointerDownX,
       event.clientY - pointerDownY,
     );
-    dragging = false;
-    stage.dataset.dragging = "false";
-    if (stage.hasPointerCapture(event.pointerId))
-      stage.releasePointerCapture(event.pointerId);
+    cancelDragging(event.pointerId);
 
     if (moved < 6 && event.type === "pointerup") {
       pick(event.clientX, event.clientY);
@@ -645,8 +663,12 @@ export function createUniverse(
   stage.addEventListener("pointerdown", down);
   stage.addEventListener("pointerup", up);
   stage.addEventListener("pointercancel", up);
+  stage.addEventListener("lostpointercapture", lostPointerCapture);
   stage.addEventListener("pointermove", pointer);
   stage.addEventListener("pointerleave", resetPointer);
+  stage.addEventListener("mousedown", preventAutoScroll);
+  stage.addEventListener("auxclick", preventAutoScroll);
+  window.addEventListener("blur", cancelDraggingOnBlur);
   const render = (now: number) => {
     if (!active || document.hidden || lostContext) return;
     const rawDt = (now - last) / 1000,
@@ -881,6 +903,10 @@ export function createUniverse(
     stage.removeEventListener("pointerdown", down);
     stage.removeEventListener("pointerup", up);
     stage.removeEventListener("pointercancel", up);
+    stage.removeEventListener("lostpointercapture", lostPointerCapture);
+    stage.removeEventListener("mousedown", preventAutoScroll);
+    stage.removeEventListener("auxclick", preventAutoScroll);
+    window.removeEventListener("blur", cancelDraggingOnBlur);
     stage.removeEventListener("cosmic-reset", resetView);
     stage.removeEventListener("cosmic-target", changeTarget);
     stage.removeEventListener("cosmic-activate", activate);
