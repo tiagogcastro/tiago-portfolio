@@ -1,6 +1,6 @@
-# Tiago G Castro | Portfolio
+# Tiago G Castro | Portfolio V2
 
-Professional portfolio of Tiago Castro, a Full Stack Developer with over six years of experience building and evolving production software across backend, cloud, data, and infrastructure.
+Professional portfolio of Tiago Castro, a Full Stack Developer focused on backend systems, cloud architecture, AWS, data, and production software.
 
 [tiagogcastro.com.br](https://tiagogcastro.com.br)
 
@@ -8,33 +8,47 @@ Professional portfolio of Tiago Castro, a Full Stack Developer with over six yea
 
 <p align="center">
   <a href="https://tiagogcastro.com.br">
-    <img src=".github/assets/portfolio-desktop.png" alt="tiagogcastro.com.br on desktop" width="760" />
+    <img src=".github/assets/portfolio-desktop.png" alt="Portfolio V2 on desktop" width="760" />
   </a>
 </p>
 <p align="center">
   <a href="https://tiagogcastro.com.br">
-    <img src=".github/assets/portfolio-mobile.png" alt="tiagogcastro.com.br on mobile" width="220" />
+    <img src=".github/assets/portfolio-mobile.png" alt="Portfolio V2 on mobile" width="220" />
   </a>
 </p>
 
-## About
+## About V2
 
-This website presents my experience through real-world projects, responsibilities, and measurable outcomes. Instead of reproducing a traditional resume, it connects business context, engineering work, and production impact.
+V2 is a single-page portfolio that connects business context, engineering decisions, and measurable production results. The content follows one continuous narrative:
 
-The main case studies are:
+1. An interactive cosmic hero introduces the areas of work.
+2. Experience presents the LakeIT and FutBuyNow case studies.
+3. Education and credentials group the degree, AWS certifications, and courses.
+4. Projects highlight NexSift and selected open source work.
+5. Method explains how products move from context to production.
+6. Contact provides direct channels, work modes, and international availability.
 
-- LakeIT: an enterprise data platform involving AWS infrastructure, Terraform, data pipelines, and applied AI.
-- FutBuyNow: a marketplace covering payments, SEO, analytics, automation, and day-to-day technical ownership.
-- Personal and open source projects focused on AI, cloud, and developer productivity.
+The separate experience and project routes from the previous version were removed. Localized visitors stay on the same landing page and can move directly between sections.
 
-## Highlights
+## Main Features
 
-- Responsive editorial design for desktop and mobile.
-- Localized content powered by `next-intl`.
-- Professional case studies centered on impact and measurable results.
-- Dynamic Open Graph image, metadata, JSON-LD, sitemap, and robots configuration.
+- Procedural Three.js hero with a navigable scroll journey, capability chapters, discoveries, optional synthesized audio, and a CSS fallback.
+- Responsive case studies with image galleries, keyboard controls, captions, and a lightbox.
+- Real technology marks from Simple Icons, with Lucide reserved for interface actions and concepts.
+- Mobile-specific layouts with compact copy, internal horizontal technology lists, and an accessible menu.
+- Brazilian Portuguese, English, and Spanish content powered by `next-intl`.
+- Fraunces for display typography and Familjen Grotesk for headings, body copy, labels, and controls.
+- Static localized Open Graph PNGs, metadata, JSON-LD, sitemap, robots, and localized manifests.
 - Downloadable resumes in Portuguese and English.
-- Motion with support for `prefers-reduced-motion`.
+- Vercel Analytics and Speed Insights.
+- Reduced-motion behavior and readable fallbacks for constrained viewports.
+
+## Case Studies and Projects
+
+- **LakeIT:** enterprise data platform involving AWS, infrastructure as code, data pipelines, cost control, and applied AI.
+- **FutBuyNow:** international marketplace covering payments, sellers, affiliates, loyalty, SEO, analytics, automation, and technical ownership.
+- **NexSift:** technology radar that filters and contextualizes signals using verified sources.
+- **Selected projects:** open source work involving APIs, cloud, payments, architecture, and developer tooling.
 
 ## Tech Stack
 
@@ -43,8 +57,25 @@ The main case studies are:
 - Tailwind CSS 4
 - next-intl
 - Motion
-- Lucide React
-- Yarn 4
+- Three.js
+- Simple Icons and Lucide React
+- Yarn 4 with Corepack
+
+## Routes and Localization
+
+- Brazilian Portuguese: `/`
+- English: `/en-US`
+- Spanish: `/es-ES`
+
+All visible copy, accessible labels, metadata, and structured data are maintained in:
+
+```text
+messages/pt-BR.json
+messages/en-US.json
+messages/es-ES.json
+```
+
+Localized Open Graph images are static files under `public/og/`.
 
 ## Running Locally
 
@@ -59,14 +90,14 @@ yarn install
 yarn dev
 ```
 
-The development server starts at [localhost:3000](http://localhost:3000).
+The development server starts at [localhost:3000](http://localhost:3000). No environment variables are required.
 
 ## Scripts
 
 ```bash
 yarn dev        # start the development server
-yarn lint       # run static analysis
-yarn typecheck  # check TypeScript types
+yarn lint       # run ESLint
+yarn typecheck  # generate route types and check TypeScript
 yarn build      # create a production build
 yarn check      # run lint, type checking, and build
 yarn format     # format files with Prettier
@@ -75,34 +106,32 @@ yarn format     # format files with Prettier
 ## Project Structure
 
 ```text
-messages/               interface translations
+messages/               localized copy and metadata
+public/brand/           brand and partner marks
+public/images/cases/    case-study screenshots
+public/og/              localized Open Graph PNGs
+public/projects/        project screenshots
 public/resume/          downloadable resumes
-src/app/                routes, metadata, and global styles
-src/components/         shared components
-src/config/             public site configuration
-src/content/            structured content
-src/features/home/      home page sections and components
-src/i18n/               locale routing and configuration
+src/app/                routes, metadata, manifests, and global styles
+src/components/         shared UI, layout, brand, and visual components
+src/config/             public site configuration and localized links
+src/content/            structured project content
+src/features/home/      landing-page sections and cosmic hero
+src/i18n/               locale routing and request configuration
 ```
 
-## Internationalization
+## Quality Gate and Deployment
 
-Brazilian Portuguese is the default locale and is served from `/`. The routing structure supports additional languages through locale-prefixed paths.
-
-All visible copy is maintained in `messages/pt-BR.json`, including labels, dates, and accessible text.
-
-## Deployment
-
-The project can be deployed directly to Vercel and currently requires no environment variables.
-
-Run the complete verification pipeline before deploying:
+Run the complete verification pipeline before opening or merging a pull request:
 
 ```bash
 yarn check
 ```
 
+The site is deployed to Vercel through Git integration. Production requires no environment variables.
+
 ## License
 
 The source code is available under the [MIT License](LICENSE).
 
-Resumes, biographical information, portfolio copy, professional data, and visual identity assets are excluded from the code license. See the [Content Notice](CONTENT_NOTICE.md) for details.
+Resumes, biographical information, case-study content, screenshots, professional data, and visual identity assets are excluded from the code license. See the [Content Notice](CONTENT_NOTICE.md) for details.

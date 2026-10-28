@@ -7,7 +7,10 @@ The following materials are excluded from that license:
 - Resume files
 - Biographical and professional information
 - Portfolio copy and case-study content
+- Portfolio screenshots, project imagery, and Open Graph artwork
 - Personal metrics and employment data
 - Brand names, wordmarks, and visual identity assets
 
 These materials are copyright (c) 2026 Tiago Castro. All rights reserved. They may not be copied, redistributed, or used to create derivative content without prior permission.
+
+Third-party names, logos, and trademarks remain the property of their respective owners and are used only for identification.
