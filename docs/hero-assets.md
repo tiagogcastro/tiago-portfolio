@@ -1,42 +1,62 @@
-# Cosmic hero: asset specification
+# Cosmic hero implementation
 
-## Current implementation
+## Current baseline
 
-The hero is a working procedural scene, not an AI-generated render. Three.js draws a luminous spherical universe, spiral dust, nested membranes, a pulsing code nucleus and an articulated plexus avatar. Scroll moves the camera physically through world-space layers. Cards are HTML projected from world-space anchors, rather than independently sliding across the screen. CSS provides a fallback orb without WebGL. Optional sound is synthesized locally with Web Audio; no audio files or external services are required.
+The V2 hero is a procedural interactive scene, not a generated image or video. Three.js renders the spherical universe, spiral dust, nested membranes, code nucleus, planets, distant galaxies, and abstract plexus avatar. HTML remains responsible for translated copy, controls, capability cards, discoveries, terminal content, and the final topic map.
 
-## Art direction
+No external media or generation service is required at runtime. The only audio is synthesized locally with the Web Audio API after the visitor explicitly enables it.
 
-Dark green/charcoal (#141815), muted gold (#c9aa70), sage (#789987). Restrained cyan and violet may be introduced in rendered artwork. The galaxy is the central source connecting programming, cloud, data, SEO and product. Desktop: empty left copy area, galaxy center-right, abstract figure at right. Mobile: galaxy in upper half, copy beneath.
+## Visual direction
 
-## Generation prompt
+The scene follows the site palette:
 
-Abstract cinematic sci-fi environment for a cloud developer portfolio. Ultra-dark green and charcoal space, muted gold and sage spiral galaxy, soft cyan and deep violet dust accents. Central luminous nucleus, fine orbital threads, atmospheric depth, restrained bloom. Abstract human figure at right made from glowing wireframe plexus, illuminated nodes, no facial features. Left 45 percent remains dark and quiet for readable interface text. Sophisticated technical editorial aesthetic, no words, no logos, no watermarks, no baked-in UI. Perspective suitable for a slow camera approach. Deliver landscape 16:9 composition and separately composed portrait 9:16 version.
+- background: `#141815`
+- deep mineral: `#26372e`
+- mineral green: `#789987`
+- warm accent: `#c9aa70`
+- restrained cyan and violet for depth and topic differentiation
 
-## Separate deliverables
+The visual hierarchy must keep interface copy readable before adding spectacle. Desktop reserves a quiet area for the introduction while the universe occupies the center and right side. Mobile reorganizes the same content around the available height instead of reproducing the desktop composition at a smaller scale.
 
-1. Background nebula plate, without galaxy or figure, 2560x1440 and 1080x1920. AVIF/WebP, target under 500 KB each.
-2. Galaxy dust layer with transparent background, no text or UI. Preserve the bright nucleus and feathered edges. WebP/PNG source plus optimized web export.
-3. Figure independently rendered with alpha, or a licensed GLB mesh with unlit emissive/wireframe-compatible geometry. Target under 1 MB after optimization.
-4. Optional 8-12 second seamless dust loop, fixed camera, no cuts. WebM and MP4, muted, target under 3 MB. Export a matching still poster.
+## Journey and interaction
 
-Image-generation tools generally deliver raster images, not editable 3D models or reliable independent layers. Generate layers separately or finish them in a 3D/compositing tool. These assets have not yet been generated.
+Native scrolling drives a `760svh` sticky journey with these stages:
 
-## Integration constraints
+1. introduction and positioning
+2. programming
+3. cloud
+4. data
+5. Google visibility
+6. product
+7. code terminal and process synthesis
+8. final universe map
 
-Keep text, translated labels, terminal and cards in HTML. Do not bake them into the artwork. Preserve procedural interactive layers and camera motion. Test blending and alignment at the start and end of the zoom. Load a still first; defer optional video. Supply source/license information with assets. Keep all assets local, with no runtime dependency on a generation service.
+Visitors can rotate selected targets, open keyboard-accessible discoveries, jump between capability chapters, reset the universe, skip to Experience, and enable or mute procedural audio. The final map reconnects every capability to the central source.
 
-## Behavior
+The global header appears after the visitor leaves the hero. Social links and the audio control remain available inside the scene without replacing the primary journey.
 
-Native scrolling drives a 760svh sticky scene, balancing the cinematic journey with faster access to the homepage content. The timeline contains an introduction, five capability stops, the code terminal and a final outward camera movement revealing the whole universe. Each stop keeps the camera nearly stationary for most of its interval before flying into the next layer. The prior headline fades before the first card, and cards do not overlap in their opacity windows.
+## Responsive and accessibility requirements
 
-Drag the scene to rotate the selected target: universe, code heart, avatar or orbital rings. Vertical touch scrolling remains native. The center-universe button restores all orientations. Pointer hover adds subtle parallax. Cards remain attached to their world positions. The nucleus and avatar share a slow breathing cycle, with no repeated shockwave rings or flashing cursor.
+- Vertical touch scrolling must remain native.
+- Controls and discoveries must work with keyboard input.
+- Escape and outside click close transient UI.
+- `prefers-reduced-motion` and viewports shorter than 541 px use an unpinned readable layout.
+- Hidden stages must not remain focusable or exposed as active content to assistive technology.
+- Rendering pauses while offscreen or in a hidden tab.
+- Sustained slow frames reduce pixel density.
+- A CSS fallback preserves the composition when WebGL is unavailable.
+- Text, labels, and accessible names stay synchronized across all three locale files.
 
-Twenty-five distant galaxies add depth: seven dense formations and eighteen smaller ones. Five deep-space planets and two interactive planets sit beyond the main orb. Coherent cyan and violet pigment patches and soft nebula clouds enrich the dust. HTML hotspots follow projected 3D positions and stay faint until hover, focus or selection. Discoveries are compact anchored popovers, with no modal backdrop or focus trap. They close on Escape or outside click. Clicking empty space has no side effects. Discoveries also work through the keyboard-accessible explorer menu. The topic map jumps directly to a capability and resets orientation; only Explore remains in this navigation during the final stage. The skip action leads to Experience; the global header appears as the visitor leaves the hero. TikTok links to the confirmed profile @tiago.gcastro beside GitHub and LinkedIn.
+## Performance constraints
 
-The five segments inside each capability card fill progressively during its reading interval. The terminal uses plain-language process steps. A shared logo/name lockup rises from the core into the finale. Final cards connect to the visible source through SVG paths measured from their actual responsive positions, and can take visitors back to a capability.
+- Keep the first render independent of downloaded video or audio.
+- Avoid large texture sets unless they produce a clear visual improvement.
+- Prefer procedural geometry and local assets with explicit ownership or licenses.
+- New effects must be tested on desktop, mobile, short screens, reduced motion, and low-power hardware.
+- Interaction must never block access to the rest of the landing page.
 
-The avatar uses a continuous head and torso profile, jointed limbs, articulated fingers, shaded inner surfaces, fine wire mesh, rib contours, surface data paths and illuminated nodes. It is a procedural abstract avatar, not a scan or a personalized 3D likeness.
+## Future exploration
 
-Reduced motion and viewports shorter than 541px use an unpinned readable layout, including all capability cards and the final synthesis. Rendering pauses offscreen and in hidden tabs; sustained slow frames reduce pixel density. Sound starts only after the sound button is pressed, and is disabled when the tab becomes hidden. WebGL context restoration resumes the scene.
+A later design phase may explore a more navigable cosmic experience, such as piloting a small craft, discovering hidden systems, completing lightweight objectives, or finding easter eggs. This is intentionally not specified as part of V2. Before implementation, it needs a separate plan covering interaction model, controls, narrative purpose, mobile behavior, accessibility, performance budgets, fallback behavior, and how quickly a visitor can still reach the portfolio content.
 
-Audio is an original procedural 74 BPM lo-fi instrumental: four warm seventh-chord voicings, occasional melody, short bass notes, soft kick and filtered brush/hat percussion. An audio-clock lookahead scheduler adds light swing without depending on render frames. Individual envelopes, a low-pass filter, stereo convolution tail, compressor and adjustable master volume keep it restrained. There is no continuous bass drone or noise loop. Its lifecycle is independent of React's sound-button state. All visible copy and accessible labels are translated in the three message files.
+Any game-like layer should strengthen the professional story rather than turn the hero into an unrelated mini-game.
