@@ -1,6 +1,7 @@
+import type { SVGProps } from "react";
 import { cn } from "@/lib/utils";
 
-type WordmarkProps = React.ComponentProps<"svg"> & {
+type WordmarkProps = SVGProps<SVGSVGElement> & {
   label: string;
 };
 

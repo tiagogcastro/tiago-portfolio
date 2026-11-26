@@ -1,11 +1,13 @@
+import type { SVGProps } from "react";
 import { cn } from "@/lib/utils";
 
-export function BrazilFlag({ className }: { className?: string }) {
+export function BrazilFlag({ className, ...props }: SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 28 20"
       aria-hidden="true"
       className={cn("h-4 w-[1.4rem] overflow-hidden rounded-[2px]", className)}
+      {...props}
     >
       <rect width="28" height="20" fill="#2d7d4d" />
       <path d="M14 2.4 25 10 14 17.6 3 10Z" fill="#e6c84f" />

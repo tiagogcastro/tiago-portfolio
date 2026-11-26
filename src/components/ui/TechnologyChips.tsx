@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { SimpleIcon } from "simple-icons";
 import {
   siDatefns,
@@ -22,6 +21,7 @@ import {
   siZod,
 } from "simple-icons/icons";
 import { cn } from "@/lib/utils";
+import { AwsLogo } from "@/components/brand/AwsLogo";
 
 type TechnologyChipsProps = {
   technologies: readonly string[];
@@ -63,7 +63,7 @@ function TechnologyIcon({ technology }: { technology: string }) {
   if (icon === "aws") {
     return (
       <span className="bg-paper grid size-5 shrink-0 place-items-center rounded-sm p-0.5">
-        <Image src="/brand/aws.svg" alt="" width={18} height={11} />
+        <AwsLogo aria-hidden="true" className="h-[11px] w-[18px]" />
       </span>
     );
   }

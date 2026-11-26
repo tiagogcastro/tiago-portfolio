@@ -43,7 +43,8 @@ Run `yarn check` after any code change. There are no tests.
 
 - Editorial dark theme; palette via CSS vars in `globals.css` (`--accent` gold, `--mineral` green, etc.). Use token classes (`text-accent`, `bg-surface-soft`, `text-secondary`, `text-muted`), not raw hex.
 - Font roles: display = Fraunces; heading, body and compact labels = Familjen Grotesk. Do not add a third family.
-- Brand variants live in `src/components/brand/Logo.tsx`: `mark` is the standalone `[T<]` symbol and `lockup` combines the symbol with the TIAGO G CASTRO wordmark. `Mark.tsx` and `Wordmark.tsx` remain separate sources. Static SVG and PNG exports live in `public/brand/` and are maintained manually; usage rules live in `docs/brand.md`.
+- Brand variants live in `src/components/brand/Logo.tsx`: `mark` is the standalone `[T<]` symbol and `lockup` combines the symbol with the TIAGO G CASTRO wordmark. `Mark.tsx` and `Wordmark.tsx` remain separate sources. Raster brand exports live in `public/brand/`; usage rules live in `docs/brand.md`.
+- SVGs used in the interface must be React TypeScript components accepting `SVGProps<SVGSVGElement>`. Do not add new `.svg` files in `public/` for interface images. Reuse components for logos, icons, and vector illustrations. Static SVG files are allowed only when technically required, such as favicons or external integrations. Keep raster images in the appropriate asset directories.
 - Motion is used via the `Reveal` wrapper and the procedural Three.js cosmic hero. Both provide reduced-motion behavior. Verify layout with desktop and mobile viewports, including short mobile screens.
 - Section headings use `clamp()` fluid type; when editing headline copy, check line-wrapping at the actual column width (titles are expected to break into aligned 2-line blocks).
 

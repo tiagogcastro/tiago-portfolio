@@ -1,11 +1,13 @@
+import type { SVGProps } from "react";
 import { cn } from "@/lib/utils";
 
-export function USFlag({ className }: { className?: string }) {
+export function USFlag({ className, ...props }: SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 28 20"
       aria-hidden="true"
       className={cn("h-4 w-[1.4rem] overflow-hidden rounded-[2px]", className)}
+      {...props}
     >
       <rect width="28" height="20" fill="#f3f1eb" />
       {[0, 2, 4, 6, 8].map((row) => (
@@ -27,12 +29,13 @@ export function USFlag({ className }: { className?: string }) {
   );
 }
 
-export function SpainFlag({ className }: { className?: string }) {
+export function SpainFlag({ className, ...props }: SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 28 20"
       aria-hidden="true"
       className={cn("h-4 w-[1.4rem] overflow-hidden rounded-[2px]", className)}
+      {...props}
     >
       <rect width="28" height="20" fill="#c53f38" />
       <rect y="5" width="28" height="10" fill="#e6c84f" />

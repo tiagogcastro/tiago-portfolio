@@ -5,9 +5,6 @@ import { Familjen_Grotesk, Fraunces } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { Footer } from "@/components/layout/Footer";
-import { Header } from "@/components/layout/Header";
-import { EngagementBox } from "@/components/layout/EngagementBox";
 import { siteConfig } from "@/config/site";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
@@ -58,7 +55,7 @@ export async function generateMetadata({
     category: "technology",
     manifest: `/manifest/${locale}`,
     icons: {
-      icon: "/brand/tiago-g-castro-mark.svg",
+      icon: "/brand/tiago-g-castro-mark.png",
       apple: "/brand/tiago-g-castro-mark.png",
     },
     robots: {
@@ -100,10 +97,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
           >
             {accessibility("skip")}
           </a>
-          <Header />
           {children}
-          <Footer />
-          <EngagementBox />
         </NextIntlClientProvider>
         <Analytics />
         <SpeedInsights />

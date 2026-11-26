@@ -1,6 +1,7 @@
+import type { SVGProps } from "react";
 import { cn } from "@/lib/utils";
 
-type MarkProps = React.ComponentProps<"svg">;
+type MarkProps = SVGProps<SVGSVGElement>;
 
 export function Mark({ className, ...props }: MarkProps) {
   return (

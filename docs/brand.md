@@ -8,8 +8,8 @@ The standalone `[T<]` symbol. Use it when space is limited, such as the site hea
 
 Files:
 
-- `public/brand/tiago-g-castro-mark.svg`
-- `public/brand/tiago-g-castro-mark.png`
+- `src/components/brand/Mark.tsx` for the interface
+- `public/brand/tiago-g-castro-mark.png` for the favicon and web app manifest
 
 ### Lockup
 
@@ -17,7 +17,7 @@ The `[T<]` symbol combined with the `TIAGO G CASTRO` name. Use it in hero sectio
 
 Files:
 
-- `public/brand/tiago-g-castro-lockup.svg`
+- `src/components/brand/BrandLockupLogo.tsx` for vector rendering in React
 - `public/brand/tiago-g-castro-lockup.png`
 
 ## Colors
@@ -44,5 +44,5 @@ Localized Open Graph artwork is exported as static 1200 x 630 PNG files in `publ
 - Keep the original proportions.
 - Leave clear space around the logo.
 - Do not rotate, stretch, recolor, or rearrange the static files.
-- Keep the static SVG and PNG files in `public/brand/` updated manually when changing the source colors, shapes, or wordmark.
+- Use React SVG components for interface rendering. The favicon and manifest use the static PNG export. Keep raster exports in `public/brand/` updated when the source changes.
 - AWS and Udemy files are third-party marks used only to identify their respective credentials. They are not part of the Tiago G Castro brand.

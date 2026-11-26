@@ -226,3 +226,5 @@ export const projects: readonly Project[] = [
     },
   },
 ];
+
+export const cardProjectIds = ["nexsift", "kaguya"] as const;
