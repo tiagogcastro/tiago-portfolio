@@ -1,7 +1,6 @@
-type SocialIconProps = {
-  className?: string;
-  "aria-hidden"?: React.AriaAttributes["aria-hidden"];
-};
+import type { SVGProps } from "react";
+
+type SocialIconProps = SVGProps<SVGSVGElement>;
 
 export function GitHubIcon(props: SocialIconProps) {
   return (

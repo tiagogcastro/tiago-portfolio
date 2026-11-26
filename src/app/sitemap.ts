@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { headers } from "next/headers";
 import { siteConfig } from "@/config/site";
 import { routing } from "@/i18n/routing";
 import { localizedPath } from "@/lib/seo";
@@ -20,7 +21,24 @@ function languageAlternates(path: string) {
   return { languages };
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const host = (await headers()).get("host")?.split(":")[0];
+  if (host === "contato.tiagogcastro.com.br") {
+    const languages = Object.fromEntries(
+      routing.locales.map((locale) => [
+        locale,
+        `${siteConfig.cardDomain}${locale === routing.defaultLocale ? "" : `/${locale}`}`,
+      ]),
+    );
+    return routing.locales.map((locale) => ({
+      url: `${siteConfig.cardDomain}${locale === routing.defaultLocale ? "" : `/${locale}`}`,
+      changeFrequency: "monthly" as const,
+      priority: 1,
+      alternates: {
+        languages: { ...languages, "x-default": siteConfig.cardDomain },
+      },
+    }));
+  }
   return routing.locales.map((locale) => {
     const suffix = localizedPath(locale, "/");
 

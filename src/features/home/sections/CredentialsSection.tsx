@@ -1,6 +1,7 @@
 import { Award, GraduationCap, Languages } from "lucide-react";
-import Image from "next/image";
 import { getTranslations } from "next-intl/server";
+import { AwsLogo } from "@/components/brand/AwsLogo";
+import { UdemyLogo } from "@/components/brand/UdemyLogo";
 import { Container } from "@/components/layout/Container";
 import { Reveal } from "@/components/visual/Reveal";
 import { siteConfig } from "@/config/site";
@@ -82,13 +83,7 @@ export async function CredentialsSection() {
                 />
                 <div className="relative flex items-start justify-between gap-4">
                   <span className="bg-paper grid h-12 w-20 place-items-center rounded-sm p-2 shadow-lg">
-                    <Image
-                      src="/brand/aws.svg"
-                      alt=""
-                      width={64}
-                      height={38}
-                      className="h-auto w-12"
-                    />
+                    <AwsLogo aria-hidden="true" className="h-auto w-12" />
                   </span>
                   <Award aria-hidden="true" className="text-accent size-7" />
                 </div>
@@ -115,13 +110,7 @@ export async function CredentialsSection() {
               className="bg-background/60 hover:border-mineral group flex h-full gap-4 border border-white/15 p-5 transition-[border-color,transform] duration-300 hover:-translate-y-0.5"
             >
               <span className="bg-paper grid h-10 w-14 shrink-0 place-items-center rounded-sm p-2">
-                <Image
-                  src="/brand/aws.svg"
-                  alt=""
-                  width={42}
-                  height={25}
-                  className="h-auto w-9"
-                />
+                <AwsLogo aria-hidden="true" className="h-auto w-9" />
               </span>
               <div>
                 <h3 className="font-heading group-hover:text-mineral-bright font-semibold transition-colors">
@@ -142,13 +131,7 @@ export async function CredentialsSection() {
               className="bg-background/60 hover:border-accent group flex h-full gap-4 border border-white/15 p-5 transition-[border-color,transform] duration-300 hover:-translate-y-0.5"
             >
               <span className="bg-paper grid size-10 shrink-0 place-items-center rounded-sm p-2">
-                <Image
-                  src="/brand/udemy.svg"
-                  alt=""
-                  width={24}
-                  height={24}
-                  className="size-6"
-                />
+                <UdemyLogo aria-hidden="true" className="size-6" />
               </span>
               <div>
                 <h3 className="font-heading group-hover:text-accent font-semibold transition-colors">
@@ -167,13 +150,7 @@ export async function CredentialsSection() {
             className="bg-background/60 flex h-full gap-4 border border-white/15 p-5"
           >
             <span className="bg-paper grid h-10 w-14 shrink-0 place-items-center rounded-sm p-2">
-              <Image
-                src="/brand/aws.svg"
-                alt=""
-                width={42}
-                height={25}
-                className="h-auto w-9"
-              />
+              <AwsLogo aria-hidden="true" className="h-auto w-9" />
             </span>
             <div>
               <h3 className="font-heading font-semibold">

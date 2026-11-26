@@ -4,6 +4,7 @@ import {
   Mail,
   MapPin,
   MessageCircle,
+  QrCode,
   Sparkles,
 } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
@@ -56,6 +57,15 @@ export async function ContactSection() {
         className="border-accent/20 absolute -right-40 -bottom-64 size-[34rem] rounded-full border shadow-[0_0_120px_color-mix(in_srgb,var(--accent)_10%,transparent)]"
       />
       <Container className="relative">
+        <a
+          href={
+            siteConfig.cardDomain + (locale === "pt-BR" ? "" : `/${locale}`)
+          }
+          className="text-mineral-bright hover:text-accent mb-6 inline-flex items-center gap-2 text-sm underline-offset-4 hover:underline"
+        >
+          <QrCode aria-hidden="true" className="size-4" />
+          {t("cardAction")}
+        </a>
         <Reveal>
           <p className="mono-label text-mineral-bright">{t("status")}</p>
           <h2 className="font-display mt-3 max-w-5xl text-[clamp(2.4rem,4.2vw,4.5rem)] leading-[0.94] font-semibold tracking-[-0.035em]">

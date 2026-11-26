@@ -720,6 +720,7 @@
   },
   "contact": {
     "index": "05 / Contacto",
+    "cardAction": "Abrir tarjeta digital",
     "title": "Construyamos algo que funcione de verdad.",
     "availabilityTitle": "Abierto a puestos, colaboración técnica y proyectos donde <highlight>producto e ingeniería avancen juntos</highlight>.",
     "ctaTitle": "Cuéntame el <highlight>contexto</highlight>, qué debe cambiar y dónde puede ayudar la tecnología.",
@@ -746,5 +747,104 @@
     "copyright": "© {year} Tiago Castro",
     "workModes": "Remoto o híbrido en Río de Janeiro",
     "international": "Disponible para oportunidades internacionales"
+  },
+  "card": {
+    "emailSubject": "Contacto desde tu tarjeta digital",
+    "contactMessage": "¡Hola, Tiago! Encontré tu tarjeta digital y me gustaría conversar contigo.",
+    "role": "Desarrollador Full Stack",
+    "availability": "Disponible para oportunidades",
+    "language": "Idioma",
+    "brandAlt": "Símbolo de Tiago Castro",
+    "photoAlt": "Avatar de Tiago Castro",
+    "openAvatar": "Ampliar avatar de Tiago Castro",
+    "avatarTitle": "Avatar ampliado de Tiago Castro",
+    "closeAvatar": "Cerrar avatar ampliado",
+    "ai": "IA",
+    "technologies": "Tecnologías",
+    "connect": "Conecta conmigo",
+    "share": "Compartir tarjeta",
+    "shareTitle": "Tarjeta digital de Tiago Castro",
+    "credentials": "Formación y certificaciones",
+    "featuredProjects": "Experiencias y proyectos",
+    "previousShowcase": "Experiencia o proyecto anterior",
+    "nextShowcase": "Siguiente experiencia o proyecto",
+    "goToShowcase": "Ir a la experiencia o proyecto {number}",
+    "viewProject": "Conocer proyecto",
+    "visitExperience": "Visitar sitio de la empresa",
+    "previous": "Credencial anterior",
+    "next": "Siguiente credencial",
+    "goTo": "Ir a la credencial {number}",
+    "verify": "Verificar credencial",
+    "resume": "Descargar CV",
+    "resumeEnglish": "Currículo disponible en inglés",
+    "portfolio": "Ver portafolio",
+    "openQr": "Abrir código QR",
+    "qrTitle": "Código QR de la tarjeta digital",
+    "close": "Cerrar código QR",
+    "qrAlt": "Código QR para contato.tiagogcastro.com.br",
+    "scan": "Escanea para abrir mi tarjeta digital",
+    "save": "Guardar imagen",
+    "copy": "Copiar enlace",
+    "copied": "Enlace copiado",
+    "saved": "Imagen guardada",
+    "error": "No se pudo completar. Inténtalo de nuevo.",
+    "contacts": {
+      "linkedin": "LinkedIn",
+      "whatsapp": "WhatsApp",
+      "email": "Correo",
+      "github": "GitHub",
+      "tiktok": "TikTok"
+    },
+    "experienceItems": {
+      "lakeit": {
+        "company": "Global HITSS (LakeIT)",
+        "logoAlt": "Logo de Global HITSS",
+        "description": "APIs, aplicaciones web, pipelines de datos, infraestructura AWS y soluciones con IA."
+      },
+      "futbuynow": {
+        "logoAlt": "Logo de FutBuyNow",
+        "role": "Freelance y responsable técnico",
+        "description": "Marketplace internacional con pagos, integraciones y operación en 16 idiomas."
+      }
+    },
+    "projectItems": {
+      "nexsift": {
+        "description": "Plataforma editorial de tecnología con IA, fuentes verificadas y publicación multilingüe."
+      },
+      "kaguya": {
+        "description": "Plataforma de estudios con rutas, listas, clases en video y contenidos organizados."
+      }
+    },
+    "items": {
+      "degree": {
+        "title": "Análisis y Desarrollo de Sistemas",
+        "issuer": "Descomplica UniAmérica",
+        "detail": "Graduación finalizada",
+        "date": "ago. 2026"
+      },
+      "cloud": {
+        "title": "AWS Certified Cloud Practitioner (CLF-C02)",
+        "issuer": "Amazon Web Services",
+        "detail": "Fundamentos de computación en la nube",
+        "date": "sep. 2026"
+      },
+      "ai": {
+        "title": "AWS Certified AI Practitioner (AIF-C01)",
+        "issuer": "Amazon Web Services",
+        "detail": "Fundamentos de inteligencia artificial",
+        "date": "sep. 2026"
+      },
+      "serverless": {
+        "title": "AWS Serverless Demonstrated",
+        "issuer": "Amazon Web Services",
+        "detail": "Conocimientos de soluciones serverless",
+        "date": "ago. 2026"
+      }
+    },
+    "metadata": {
+      "title": "Tiago Castro | Tarjeta digital",
+      "description": "Contactos profesionales, currículo, portafolio y certificaciones de Tiago Castro, Desarrollador Full Stack.",
+      "imageAlt": "Tarjeta digital de Tiago Castro, Desarrollador Full Stack"
+    }
   }
 }
